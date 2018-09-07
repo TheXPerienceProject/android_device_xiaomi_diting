@@ -346,7 +346,6 @@ ro.frp.pst=/dev/block/bootdevice/by-name/frp
 vendor.gatekeeper.disable_spu=true
 
 # Graphics
-debug.sf.auto_latch_unsignaled=0
 persist.sys.sf.color_saturation=1.0
 persist.sys.sf.color_mode=0
 persist.sys.sf.native_mode=258
@@ -386,6 +385,9 @@ ro.vendor.all_modes.colorpick_adjust=true
 vendor.gralloc.disable_ubwc=0
 debug.sf.latch_unsignaled=1
 debug.sf.defer_refresh_rate_when_off=1
+
+# Keystore
+ro.hardware.keystore_desede=true
 
 # Refresh Rate
 ro.surface_flinger.set_display_power_timer_ms=1000
