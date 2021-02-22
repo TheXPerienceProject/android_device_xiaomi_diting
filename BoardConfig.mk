@@ -119,7 +119,8 @@ BOARD_KERNEL_CMDLINE := \
     swinfo.fingerprint=$(LINEAGE_VERSION) \
     mtdoops.fingerprint=$(LINEAGE_VERSION) \
     allow_file_spec_access \
-    irqaffinity=0-3
+    irqaffinity=0-3 \
+    pelt=8
 
 BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
