@@ -571,6 +571,15 @@ PRODUCT_COPY_FILES += \
 # Product
 PRODUCT_USE_SCUDO := true
 
+###########
+#QMAA flags starts
+###########
+#QMAA global flag for modular architecture
+#true means QMAA is enabled for system
+#false means QMAA is disabled for system
+
+TARGET_USES_QMAA := false
+
 # QTI
 PRODUCT_PACKAGES += \
     libvndfwk_detect_jni.qti_vendor \
