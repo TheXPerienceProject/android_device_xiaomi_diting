@@ -29,5 +29,4 @@ ro.telephony.sim_slots.count=1
 telephony.active_modems.max_count=2
 
 # Media
-media.settings.xml=/vendor/etc/media_profiles_cape.xml
 media.stagefright.thumbnail.prefer_hw_codecs=true
