@@ -1601,6 +1601,8 @@ vendor/lib/c2.dolby.hevc.dec.so|da728b13f3e5a2890395df773ab2b0174209f1a6
 vendor/lib/c2.dolby.hevc.enc.so|7e2d292742a08e9d703d02ea1a6619b3c228eae7
 vendor/lib/c2.dolby.hevc.sec.dec.so|8977974ee470a4618e3868d63caef18477af9f49
 vendor/lib/c2.dolby.store.so|a262a67d5264731651f98a2353f95361684d8995
+vendor/lib/libcodec2_vndk.so:vendor/lib/libcodec2_vndk.stock.so
+vendor/lib/libcodec2_hidl@1.0.so:vendor/lib/libcodec2_hidl@1.0.stock.so
 vendor/lib/libdeccfg.so|ddda752fe04aeb90c94ccc950b1c0cd07f7be804
 vendor/lib/libdapparamstorage.so|e9f21d9ca0bd28b705e91772041e706508131c72
 vendor/lib/libdolbyottcameracontrol.so|b0e2b145c2714c523d5f765f0691b9dffed906f8
