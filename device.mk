@@ -430,6 +430,7 @@ PRODUCT_PACKAGES += \
     WifiResCommon
 
 PRODUCT_PACKAGES += \
+    ApertureResOverlay \
     FrameworksResTarget_Vendor \
     FrameworksResXiaomi \
     SettingsProviderResXiaomi \
