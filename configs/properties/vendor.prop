@@ -336,6 +336,8 @@ ro.vendor.display.fod_monitor_default_fps=120
 # Fingerprint aidl
 ro.vendor.fingerprint.type=udfps_optical
 ro.vendor.fingerprint.sensor_location=610|2444|114
+persist.vendor.fingerprint.type=udfps_optical
+persist.vendor.fingerprint.sensor_location=610|2444|114
 
 # RFP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
@@ -344,6 +346,7 @@ ro.frp.pst=/dev/block/bootdevice/by-name/frp
 vendor.gatekeeper.disable_spu=true
 
 # Graphics
+debug.sf.auto_latch_unsignaled=0
 persist.sys.sf.color_saturation=1.0
 persist.sys.sf.color_mode=0
 persist.sys.sf.native_mode=258
