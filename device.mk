@@ -249,8 +249,8 @@ PRODUCT_COPY_FILES += \
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl-qti \
-    android.hardware.health@2.1-impl-qti.recovery \
+    android.hardware.health@2.1-impl-diting \
+    android.hardware.health@2.1-impl-diting.recovery \
     android.hardware.health@2.1-service
 
 # HIDL
