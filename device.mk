@@ -161,6 +161,15 @@ PRODUCT_COPY_FILES += \
 #include miui
  $(call inherit-product-if-exists, device/xiaomi/miuicamera-diting/device.mk)
 
+# Doze
+PRODUCT_PACKAGES += \
+    Doze
+
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    ro.sensor.pickup=xiaomi.sensor.pickup \
+    ro.sensor.pickup.lower.value=2 \
+    ro.sensor.proximity=true
+
 # Capabilityconfigstore
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.capabilityconfigstore@1.0.vendor
