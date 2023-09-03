@@ -206,9 +206,14 @@ PRODUCT_BOOT_JARS += \
     QPerformance \
     UxPerformance
 
+# Platform
+TARGET_BOARD_PLATFORM := taro
+TARGET_COMMON_QTI_COMPONENTS := \
+    bt
+
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service-qti
+    android.hardware.power-service
 
 # Properties
 include $(DEVICE_PATH)/configs/properties/default.mk
@@ -253,9 +258,6 @@ PRODUCT_PACKAGES += \
     qti-telephony-utils-prd \
     qti_telephony_utils.xml \
     qti_telephony_utils_prd.xml \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
     telephony-ext
 
 PRODUCT_COPY_FILES += \

@@ -5,13 +5,13 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/derp_diting.mk \
-    $(LOCAL_DIR)/derp_ditingp.mk
+    $(LOCAL_DIR)/xperience_diting.mk \
+    $(LOCAL_DIR)/xperience_ditingp.mk
 
 COMMON_LUNCH_CHOICES := \
-    derp_diting-eng \
-    derp_diting-userdebug \
-    derp_diting-user \
-    derp_ditingp-eng \
-    derp_ditingp-userdebug \
-    derp_ditingp-user
+    xperience_diting-eng \
+    xperience_diting-userdebug \
+    xperience_diting-user \
+    xperience_ditingp-eng \
+    xperience_ditingp-userdebug \
+    xperience_ditingp-user
