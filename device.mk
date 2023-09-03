@@ -85,9 +85,10 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     ro.sensor.pickup.lower.value=2 \
     ro.sensor.proximity=true
 
-# Dtb
+# Dtb and kernel 
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/prebuilts/dtb:dtb.img
+    $(DEVICE_PATH)/prebuilts/dtb:dtb.img \
+    $(DEVICE_PATH)/prebuilts/kernel:device/qcom/taro-kernel/kernel
 
 # DT2W
 PRODUCT_PACKAGES += \
