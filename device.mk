@@ -385,6 +385,7 @@ PRODUCT_COPY_FILES += \
 # Overlays
 PRODUCT_PACKAGES += \
     FrameworksResOverlayDiting \
+    FrameworksResOverlayDitingGlobal \
     SettingsOverlayDiting \
     SystemUIOverlayDiting \
 
