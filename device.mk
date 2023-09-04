@@ -88,7 +88,8 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 # Dtb and kernel 
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/prebuilts/dtb:dtb.img \
-    $(DEVICE_PATH)/prebuilts/kernel:device/qcom/taro-kernel/kernel
+    $(DEVICE_PATH)/prebuilts/kernel:device/qcom/taro-kernel/kernel \
+    $(DEVICE_PATH)/prebuilts/kernel:device/qcom/taro-kernel/Image
 
 # DT2W
 PRODUCT_PACKAGES += \
