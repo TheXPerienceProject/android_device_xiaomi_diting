@@ -76,4 +76,7 @@ void vendor_load_properties() {
 
     // SafetyNet workaround
     property_override("ro.boot.verifiedbootstate", "green");
+
+    // SF
+    property_override("vendor.display.enable_fb_scaling", "0");
 }

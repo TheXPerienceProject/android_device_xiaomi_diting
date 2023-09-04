@@ -29,6 +29,9 @@ bluetooth.profile.vcp.controller.enabled?=true
 ro.sf.blurs_are_expensive=1
 ro.surface_flinger.supports_background_blur=1
 
+# display 
+vendor.display.enable_fb_scaling=0
+
 # Netflix
 ro.netflix.channel=004ee050-1a17-11e9-bb61-6f1da27fb55b
 ro.netflix.signup=1
