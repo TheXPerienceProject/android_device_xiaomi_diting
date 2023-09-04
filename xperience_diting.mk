@@ -14,6 +14,9 @@ $(call inherit-product, vendor/xperience/config/common.mk)
 # Inherit from diting device.
 $(call inherit-product, device/xiaomi/diting/device.mk)
 
+# Device includes
+EXTRA_UDFPS_ANIMATIONS := true
+
 ## Device identifier
 PRODUCT_DEVICE := diting
 PRODUCT_NAME := xperience_diting
