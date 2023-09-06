@@ -167,6 +167,11 @@
         </service>-->
 
         <service
+            android:name=".display.ColorModeService"
+            android:permission="ColorModeService">
+        </service>
+
+        <service
             android:name=".dolby.DolbyTileService"
             android:icon="@drawable/ic_dolby_qs"
             android:label="@string/dolby_title"

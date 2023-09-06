@@ -26,6 +26,7 @@ import android.util.Log;
 import android.os.IBinder;
 import android.view.Display;
 import android.view.Display.HdrCapabilities;
+import com.xiaomi.settings.display.ColorModeService;
 
 import org.lineageos.settings.dirac.DiracUtils;
 import org.lineageos.settings.dolby.DolbyUtils;
@@ -46,6 +47,10 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         }
         if (DEBUG)
             Log.d(TAG, "Received boot completed intent");
+
+        // Display
+        context.startServiceAsUser(new Intent(context, ColorModeService.class),
+                UserHandle.CURRENT);
 
         // Dirac
         /*try {
