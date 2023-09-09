@@ -63,6 +63,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
 
+# Camera
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/prebuilts/camera/vendor/lib/camera/com.qti.sensormodule.diting_semco_s5khp1_wide.bin:$(TARGET_COPY_OUT_SYSTEM)/cncam/lib/camera/com.qti.sensormodule.diting_semco_s5khp1_wide.bin \
+    $(DEVICE_PATH)/prebuilts/camera/vendor/lib64/camera/com.qti.sensormodule.diting_semco_s5khp1_wide.bin:$(TARGET_COPY_OUT_SYSTEM)/cncam/lib64/camera/com.qti.sensormodule.diting_semco_s5khp1_wide.bin
+
 # Display - Graphics
 PRODUCT_PACKAGES += \
     android.hardware.graphics.common-V1-ndk_platform
