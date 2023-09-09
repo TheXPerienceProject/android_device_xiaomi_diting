@@ -2,3 +2,6 @@ allow shell sysfs_tp_fodstatus:file getattr;
 
 allow shell zygote:unix_stream_socket getopt;
 allow shell vendor_sysfs_displayfeature:dir search;
+
+# allow to read dmesg even on user build
+allow shell kernel:system syslog_read;

@@ -1,0 +1,3 @@
+# Qcom-battery
+allow mi_thermald sysfs_battery_supply:dir search;
+

@@ -13,3 +13,6 @@ allow init sysfs_graphics:file w_file_perms;
 
 # Address Init denial
 allow init property_type:file { append create getattr map open read relabelto rename setattr unlink write };
+
+# bind files
+allow init system_file:file mounton;

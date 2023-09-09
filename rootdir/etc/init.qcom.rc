@@ -5,7 +5,7 @@ on post-fs && property:ro.boot.hwc=CN
     mount none /dev/null /product/priv-app/EuiccGoogle/EuiccGoogle.apk bind
     mount none /dev/null /product/app/XiaomiEuicc/XiaomiEuicc.apk bind
 
-property:ro.boot.hwc=CN
+on property:ro.boot.hwc=CN
    # bind camera libs to fix camera issue on CN variant
    mount none /system/cncam/lib/com.qti.sensormodule.diting_semco_s5khp1_wide.bin /vendor/lib/camera/com.qti.sensormodule.diting_semco_s5khp1_wide.bin  bind
    mount none /system/cncam/lib64/com.qti.sensormodule.diting_semco_s5khp1_wide.bin /vendor/lib64/camera/com.qti.sensormodule.diting_semco_s5khp1_wide.bin  bind
