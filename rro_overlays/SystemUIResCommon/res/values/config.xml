@@ -22,6 +22,4 @@
     <dimen name="status_bar_height_default">120px</dimen>
     <dimen name="status_bar_height_portrait">120px</dimen>
 
-    <!-- Udfps fingerprint animation -->
-    <dimen name="udfps_animation_size">124dp</dimen>
 </resources>
