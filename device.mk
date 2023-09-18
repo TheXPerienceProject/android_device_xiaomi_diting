@@ -399,6 +399,7 @@ PRODUCT_PACKAGES += \
 # Overlays
 PRODUCT_PACKAGES += \
     CarrierConfigResCommon \
+    DitingNfcOverlay \
     FrameworksResCommon \
     SettingsResCommon \
     SystemUIResCommon \
