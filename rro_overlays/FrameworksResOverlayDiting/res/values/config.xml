@@ -154,32 +154,22 @@
     <integer-array name="config_autoBrightnessLevels">
         <item>1</item>
         <item>2</item>
-        <item>5</item>
-        <item>9</item>
-        <item>13</item>
-        <item>17</item>
-        <item>21</item>
-        <item>26</item>
-        <item>30</item>
-        <item>40</item>
-        <item>83</item>
-        <item>104</item>
-        <item>200</item>
-        <item>400</item>
-        <item>500</item>
-        <item>600</item>
-        <item>700</item>
-        <item>800</item>
-        <item>1000</item>
-        <item>1200</item>
-        <item>1500</item>
-        <item>1800</item>
-        <item>2000</item>
-        <item>2165</item>
-        <item>2680</item>
-        <item>3000</item>
-        <item>3540</item>
-        <item>4000</item>
+        <item>3</item>
+        <item>4</item>
+        <item>8</item>
+        <item>12</item>
+        <item>20</item>
+        <item>33</item>
+        <item>55</item>
+        <item>90</item>
+        <item>148</item>
+        <item>245</item>
+        <item>403</item>
+        <item>665</item>
+        <item>1097</item>
+        <item>1808</item>
+        <item>2981</item>
+        <item>5000</item>
     </integer-array>
 
     <!-- An array describing the screen's backlight values corresponding to the brightness
@@ -505,13 +495,11 @@
 
     <!-- The maximum range of gamma adjustment possible using the screen
          auto-brightness adjustment setting. -->
-    <fraction name="config_autoBrightnessAdjustmentMaxGamma">300.0%</fraction>
+    <fraction name="config_autoBrightnessAdjustmentMaxGamma">150%</fraction>
 
     <!-- True if the device supports Sustained Performance Mode-->
     <bool name="config_sustainedPerformanceModeSupported">true</bool>
 
     <!-- Whether devices suports in-display fingerprint when screen is off -->
     <bool name="config_supportsScreenOffUdfps">true</bool>
-
-    <bool name="config_wifi_wap3_sap_mode_enabled">true</bool>
 </resources>
