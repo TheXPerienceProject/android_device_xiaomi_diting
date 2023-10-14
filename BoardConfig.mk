@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/marble
+DEVICE_PATH := device/xiaomi/diting
 
 # Architecture
 TARGET_ARCH := arm64
@@ -29,6 +29,10 @@ AB_OTA_PARTITIONS += \
     vendor_boot \
     vendor_dlkm
 
+# Audio 
+TARGET_USES_QCOM_AUDIO_AR := true
+TARGET_USES_QCOM_MM_AUDIO := true
+
 # Bootloader
 TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
 
@@ -40,16 +44,16 @@ BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/configs/hidl/device_framework_compatibility_matrix.xml
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/hidl/manifest.xml
-ODM_MANIFEST_SKUS += marble
-ODM_MANIFEST_MARBLE_FILES := $(DEVICE_PATH)/configs/hidl/manifest_nfc.xml
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_marble
-TARGET_RECOVERY_DEVICE_MODULES := libinit_marble
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_diting
+TARGET_RECOVERY_DEVICE_MODULES := libinit_diting
 
 # Kernel
 BOARD_KERNEL_PAGESIZE := 4096
-BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+BOARD_INCLUDE_DTB_IN_BOOTIMG := false
+TARGET_KERNEL_APPEND_DTB := false
+BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_RAMDISK_USE_LZ4 := true
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 TARGET_HAS_GENERIC_KERNEL_HEADERS := true
@@ -69,7 +73,7 @@ BOARD_BOOTCONFIG := \
     androidboot.usbcontroller=a600000.dwc3
 
 # OTA
-TARGET_OTA_ASSERT_DEVICE := marble,marblein
+TARGET_OTA_ASSERT_DEVICE := diting
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
@@ -90,8 +94,14 @@ $(foreach p, $(call to-upper, $(BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST)), \
     $(eval BOARD_$(p)IMAGE_PARTITION_RESERVED_SIZE := 104857600) \
     $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
 
+# Platform
+TARGET_BOARD_PLATFORM := taro
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno730
+QCOM_BOARD_PLATFORMS += taro
+BOARD_USES_QCOM_HARDWARE := true
+
 # Power
-TARGET_POWER_FEATURE_EXT_LIB := //$(DEVICE_PATH):libpowerfeature_ext_marble
+TARGET_POWER_FEATURE_EXT_LIB := //$(DEVICE_PATH):libpowerfeature_ext_diting
 
 # Recovery
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true

@@ -97,7 +97,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.miui.notch=1 \
-    ro.product.mod_device=marble_global
+    ro.product.mod_device=diting_global
 
 PRODUCT_VENDOR_PROPERTIES += \
     camera.disable_zsl_mode=1 \
@@ -151,7 +151,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Doze
 PRODUCT_PACKAGES += \
-    ParanoidDoze
+    XPerienceDoze
 
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     ro.sensor.pickup=xiaomi.sensor.pickup \
@@ -172,19 +172,23 @@ PRODUCT_PACKAGES += \
 PRODUCT_VENDOR_PROPERTIES += \
     drm.service.enabled=true
 
+# Dtb and kernel 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)-kernel/dtbs/dtb.img:dtb.img
+
 # Fastboot
 PRODUCT_PACKAGES += \
     fastbootd
 
 # Fingerprint
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.3-service.xiaomi
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
 # Firmware
-$(call inherit-product-if-exists, vendor/xiaomi/firmware/marble/config.mk)
+#$(call inherit-product-if-exists, vendor/xiaomi/firmware/diting/config.mk)
 
 # FRP
 PRODUCT_VENDOR_PROPERTIES += \
@@ -200,8 +204,9 @@ PRODUCT_PACKAGES += \
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl-marble \
+    android.hardware.health@2.1-impl-qti \
     android.hardware.health@2.1-service
+#    android.hardware.health@2.1-impl-diting \
 
 # Identity
 PRODUCT_PACKAGES += \
@@ -214,10 +219,10 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Init scripts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/bin/init.kernel.post_boot.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.kernel.post_boot.sh \
-    $(LOCAL_PATH)/rootdir/etc/init.marble.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.marble.rc \
-    $(LOCAL_PATH)/rootdir/etc/init.marble.perf.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.marble.perf.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.diting.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.diting.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.diting.perf.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.diting.perf.rc \
     $(LOCAL_PATH)/rootdir/etc/init.target.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.target.rc \
-    $(LOCAL_PATH)/rootdir/etc/ueventd.marble.rc:$(TARGET_COPY_OUT_ODM)/etc/ueventd.rc
+    $(LOCAL_PATH)/rootdir/etc/ueventd.diting.rc:$(TARGET_COPY_OUT_ODM)/etc/ueventd.rc
 
 # IR
 PRODUCT_PACKAGES += \
@@ -247,8 +252,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/gpio-keys.kl \
     $(LOCAL_PATH)/configs/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl \
-    $(LOCAL_PATH)/configs/keylayout/uinput-goodix.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-goodix.kl \
-    $(LOCAL_PATH)/configs/keylayout/Button_Jack.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/ukee-mtp-snd-card_Button_Jack.kl
+    $(LOCAL_PATH)/configs/keylayout/uinput-goodix.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-goodix.kl
 
 # Media
 PRODUCT_PACKAGES += \
@@ -265,9 +269,6 @@ PRODUCT_VENDOR_PROPERTIES += \
 # NDK
 NEED_AIDL_NDK_PLATFORM_BACKEND := true
 
-# NFC
-TARGET_NFC_SKU := marble
-
 # Namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
@@ -275,25 +276,26 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    AOSPAMarbleFrameworksOverlay \
-    AOSPAMarbleSystemUIOverlay \
-    MarbleApertureOverlay \
-    MarbleCNSettingsOverlay \
-    MarbleCNSettingsProviderOverlay \
-    MarbleCNWifiOverlay \
-    MarbleCarrierConfigOverlay \
-    MarbleFrameworksOverlay \
-    MarbleGLSettingsOverlay \
-    MarbleGLSettingsProviderOverlay \
-    MarbleGLWifiOverlay \
-    MarbleINSettingsOverlay \
-    MarbleINSettingsProviderOverlay \
-    MarbleINWifiOverlay \
-    MarbleNfcOverlay \
-    MarbleSettingsOverlay \
-    MarbleSystemUIOverlay \
-    MarbleWifiOverlay \
-    NoCutoutOverlay
+    AospWifiResOverlayDiting \
+    FrameworksResOverlayDiting \
+    FrameworksResOverlayDitingGlobal \
+    SettingsOverlayDiting \
+    SettingsResCommon \
+    SystemUIOverlayDiting \
+    SystemUIResCommon \
+    TelecommResCommon \
+    TelephonyResCommon \
+    WifiResCommon
+
+PRODUCT_PACKAGES += \
+    AospWifiResOverlayDitingChina \
+    AospWifiResOverlayDitingGlobal \
+    AospWifiResOverlayDitingJapan \
+    DitingNfcOverlay \
+    SettingsOverlayGlobal \
+    SettingsOverlayChina \
+    SettingsProviderOverlayChina \
+    SettingsProviderOverlayGlobal
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -387,7 +389,7 @@ PRODUCT_COPY_FILES += \
     prebuilts/vndk/v32/arm64/arch-arm64-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libutils-v32.so
 
 # Vendor blobs
-$(call inherit-product, vendor/xiaomi/marble/marble-vendor.mk)
+$(call inherit-product, vendor/xiaomi/diting/diting-vendor.mk)
 
 # Verified Boot
 PRODUCT_COPY_FILES += \
@@ -398,4 +400,5 @@ $(call inherit-product, hardware/xiaomi/aidl/vibrator/vibrator-vendor-product.mk
 
 # Wi-Fi
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/qca6490/WCNSS_qcom_cfg.ini
+    $(LOCAL_PATH)/configs/qca6490/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/qca6490/WCNSS_qcom_cfg.ini \
+    $(LOCAL_PATH)/configs/qca6750/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/qca6750/WCNSS_qcom_cfg.ini 

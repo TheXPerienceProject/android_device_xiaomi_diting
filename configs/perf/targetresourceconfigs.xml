@@ -28,7 +28,6 @@ as anyway perflock calls of these resources would fail. -->
         <Config MajorValue="0x1" MinorValue="0x2" Node="/proc/sys/walt/sched_busy_hyst_ns" />
         <Config MajorValue="0x1" MinorValue="0x3" Supported="no" /> <!-- lpm_ref_stddev -->
         <Config MajorValue="0x1" MinorValue="0x4" Supported="no" /> <!-- lpm_tmr_add -->
-        <Config MajorValue="0x1" MinorValue="0x5" Node="/sys/devices/system/cpu/qcom_lpm/parameters/sleep_disabled" Supported="yes" />
 
         <Config MajorValue="0x2" MinorValue="0x0" Node="/sys/kernel/msm_performance/parameters/cpu_min_freq" /> <!-- cpu_min_freq -->
         <Config MajorValue="0x2" MinorValue="0x1" Node="/sys/kernel/msm_performance/parameters/cpu_max_freq" /> <!-- cpu_max_freq -->
@@ -73,7 +72,7 @@ as anyway perflock calls of these resources would fail. -->
         <Config MajorValue="0x3" MinorValue="0x37" Supported="no" /> <!-- Enabled till Kernel 4.19 -->
         <Config MajorValue="0x3" MinorValue="0x38" Node="/proc/sys/walt/%s" Supported="yes"/>
         <Config MajorValue="0x3" MinorValue="0x39" Supported="no" /> <!-- Enabled till Kernel 4.19 -->
-        <Config MajorValue="0x3" MinorValue="0x3C" Node="/proc/sys/walt/sched_wake_up_idle" />
+        <Config MajorValue="0x3" MinorValue="0x3C" Supported="no" />
         <Config MajorValue="0x3" MinorValue="0x3D" Node="/proc/sys/walt/%s" Supported="yes"/>
 
         <Config MajorValue="0x5" MinorValue="0xF" Node="/sys/devices/system/cpu/cpu0/cpufreq/walt/hispeed_freq" />
