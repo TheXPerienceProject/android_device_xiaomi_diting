@@ -25,8 +25,11 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
+import /vendor/etc/init/hw/init.qti.ufs.rc
 import /vendor/etc/init/hw/init.qcom.usb.rc
+import /vendor/etc/init/hw/init.qcom.test.rc
 import /vendor/etc/init/hw/init.target.rc
+import /vendor/etc/init/hw/init.qcom.factory.rc
 
 on early-init
     mount tracefs tracefs /sys/kernel/tracing
@@ -135,6 +138,76 @@ on boot
     mkdir /persist/bluetooth 0770 bluetooth bluetooth
     mkdir /persist/misc 0770 system system
     mkdir /persist/alarm 0770 system system
+    mkdir /mnt/vendor/persist/time 0770 system system
+    mkdir /mnt/vendor/persist/secnvm 0770 system system
+    mkdir /mnt/vendor/persist/iar_db 0770 system system
+    mkdir /mnt/vendor/spunvm 0770 system system
+
+    #Create WIGIG socket area
+    mkdir /dev/socket/wigig 0770 wifi wifi
+
+    setprop wifi.interface wlan0
+
+    setprop persist.bluetooth.a2dp_offload.disabled false
+
+    setprop ro.telephony.call_ring.multiple false
+
+    #Remove SUID bit for iproute2 ip tool
+    chmod 0755 /system/bin/ip
+
+
+    chmod 0444 /sys/devices/platform/msm_hsusb/gadget/usb_state
+
+    setprop net.tcp.2g_init_rwnd 10
+
+    # To prevent out of order acknowledgements from making
+    # connection tracking to treat them as not belonging to
+    # the connection they belong to.
+    # Otherwise, a weird issue happens in which some long
+    # connections on high-throughput links get dropped when
+    # an ack packet comes out of order
+    write /proc/sys/net/netfilter/nf_conntrack_tcp_be_liberal 1
+
+    # Allow access for CCID command/response timeout configuration
+    chown system system /sys/module/ccid_bridge/parameters/bulk_msg_timeout
+
+    # bond0 used by FST Manager
+    chown wifi wifi /sys/class/net/bond0/bonding/queue_id
+
+    # Allow access to dload sysfs node
+    chown root system /sys/kernel/dload/emmc_dload
+    chmod 0660 /sys/kernel/dload/emmc_dload
+    chown root system /dev/block/bootdevice/by-name/ramdump
+    chmod 0660 /dev/block/bootdevice/by-name/ramdump
+    chown root system /sys/kernel/dload/dload_mode
+    chmod 0660 /sys/kernel/dload/dload_mode
+
+    chown root graphics /sys/module/msm_drm/parameters/dsi_display0
+    chmod 0640 /sys/module/msm_drm/parameters/dsi_display0
+    chown root graphics /sys/module/msm_drm/parameters/dsi_display1
+    chmod 0640 /sys/module/msm_drm/parameters/dsi_display1
+
+    chown system system /sys/class/backlight/panel0-backlight/brightness
+    chown system system /sys/class/backlight/panel0-backlight/max_brightness
+    chown system system /sys/class/backlight/panel1-backlight/brightness
+    chown system system /sys/class/backlight/panel1-backlight/max_brightness
+
+    # Allow access to sensors device attributes
+    chown system system /sys/class/sensors/MPU6050-accel/enable
+    chown system system /sys/class/sensors/MPU6050-accel/poll_delay
+    chown system system /sys/class/sensors/MPU6050-gyro/enable
+    chown system system /sys/class/sensors/MPU6050-gyro/poll_delay
+    chown system system /sys/class/sensors/apds9930-light/enable
+    chown system system /sys/class/sensors/apds9930-light/poll_delay
+    chown system system /sys/class/sensors/apds9930-proximity/enable
+    chown system system /sys/class/sensors/apds9930-proximity/poll_delay
+
+    # Create directory used for display
+    # for backward compatibility
+    mkdir /persist/display 0770 system graphics
+    mkdir /mnt/vendor/persist/display 0770 system graphics
+
+    # Create vpp directory
     mkdir /mnt/vendor/persist/vpp 0770 media media
 
 
@@ -178,6 +251,12 @@ on post-fs-data
     mkdir /data/vendor/camera 0777 camera camera
     mkdir /data/vendor/camera/offlinelog 0777 cameraserver audio
     chmod 0666 /dev/camlog
+
+
+    #logturbo
+    chmod 0666 /dev/mi_exception_log
+    chown system system /proc/mi_log/binder_delay
+    chown system system /proc/mi_log/delay
 
 
     #Create directory for tftp
@@ -309,10 +388,6 @@ on post-fs-data
     # Create vpp directory
     mkdir /data/vendor/vpp 0770 media media
 
-    # Thermal Configs
-    chmod 0664 /sys/devices/virtual/thermal/thermal_message/sconfig
-    chown system system /sys/devices/virtual/thermal/thermal_message/sconfig
-
     #Create dir for TUI
     mkdir /data/vendor/tui 0700 system drmrpc
 
@@ -331,6 +406,18 @@ service iop /system/vendor/bin/iop
     group root
     disabled
     socket iop seqpacket 0666 root system
+
+service qcomsysd /system/vendor/bin/qcom-system-daemon
+    class main
+    user root
+    group root diag oem_2901
+    disabled
+
+on property:persist.vendor.qcomsysd.enabled=1
+    enable qcomsysd
+
+on property:persist.vendor.qcomsysd.enabled=0
+    stop qcomsysd
 
 service vendor.ssr_setup /system/vendor/bin/ssr_setup
     oneshot
@@ -462,6 +549,20 @@ service qmiproxy /system/bin/qmiproxy
     group radio diag
     disabled
 
+service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
+    -O/data/vendor/wifi/wpa/sockets -puse_p2p_group_interface=1 \
+    -g@android:vendor_wpa_wlan0
+#   we will start as root and wpa_supplicant will switch to user wifi
+#   after setting up the capabilities required for WEXT
+#   user wifi
+#   group wifi inet keystore
+    interface android.hardware.wifi.supplicant@1.0::ISupplicant default
+    interface android.hardware.wifi.supplicant@1.1::ISupplicant default
+    class main
+    socket vendor_wpa_wlan0 dgram 660 wifi wifi
+    disabled
+    oneshot
+
 service vendor.wigig_supplicant /vendor/bin/hw/wpa_supplicant \
     -iwigig0 -Dnl80211 -c/data/vendor/wifi/wigig_supplicant.conf \
     -m/data/vendor/wifi/wigig_p2p_supplicant.conf \
@@ -486,6 +587,7 @@ service vendor.move_wifi_data /system/bin/move_wifi_data.sh
     oneshot
 
 service wigignpt /vendor/bin/wigignpt
+    interface vendor.qti.hardware.wigig.netperftuner@1.0::INetPerfTuner default
     class hal
     socket wigig/wigignpt stream 660 system wifi
     user system
@@ -619,6 +721,13 @@ service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
     disabled
     oneshot
 
+service qti-testscripts /system/bin/sh /product/etc/init.qcom.testscripts.sh
+    class late_start
+    user root
+    disabled
+    oneshot
+    seclabel u:r:qti-testscripts:s0
+
 service wifi-sdio-on /vendor/bin/init.qcom.sdio.sh
     class late_start
     group wifi inet
@@ -633,7 +742,7 @@ service wifi-crda /vendor/bin/init.crda.sh
 
 on property:sys.boot_completed=1
     start qcom-post-boot
-    setprop vendor.post_boot.parsed 1
+    start qti-testscripts
     start qrtr-lookup
 
 on property:ro.vendor.ril.mbn_copy_completed=1
@@ -758,11 +867,10 @@ service vm_bms /vendor/bin/vm_bms
     disabled
 
 service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
-    socket msm_irqbalance seqpacket 660 root system
     class core
     user root
     group root
-    task_profiles ServiceCapacityLow
+    disabled
 
 service vendor.msm_irqbal_lb /vendor/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance_little_big.conf
     class core
@@ -894,3 +1002,4 @@ service qrtr-lookup /vendor/bin/qrtr-lookup
     group system
     disabled
     oneshot
+

@@ -1,6 +1,6 @@
 # Device tree for Redmi Note 12 Turbo/Poco F5
 
-Redmi Note 12 Turbo/Poco F5 (codenamed _"marble"_) is a high-end, mid-range smartphone from Xiaomi.
+Redmi Note 12 Turbo/Poco F5 (codenamed _"mondrian"_) is a high-end, mid-range smartphone from Xiaomi.
 
 It was announced & released in March 2023.
 

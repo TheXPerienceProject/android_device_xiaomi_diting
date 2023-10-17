@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/marble
-KERNEL_PATH := $(DEVICE_PATH)-kernel
+DEVICE_PATH := device/xiaomi/mondrian
+KERNEL_PATH := device/xiaomi/mondrian-kernel
 
 # A/B
 AB_OTA_UPDATER := true
@@ -77,7 +77,7 @@ TARGET_USES_HWC2 := true
 MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
-TARGET_SCREEN_DENSITY := 440
+TARGET_SCREEN_DENSITY := 560
 
 # Dolby Vision
 SOONG_CONFIG_NAMESPACES += dolby_vision
@@ -87,7 +87,7 @@ SOONG_CONFIG_dolby_vision_enabled := true
 # DTB
 BOARD_USES_DT := true
 BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/dtbs
-BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/dtbo.img
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilts/dtbo.img
 
 # Fstab
 PRODUCT_COPY_FILES += \
@@ -97,8 +97,8 @@ PRODUCT_COPY_FILES += \
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config/config.fs
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_marble
-TARGET_RECOVERY_DEVICE_MODULES ?= init_xiaomi_marble
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_mondrian
+TARGET_RECOVERY_DEVICE_MODULES ?= init_xiaomi_mondrian
 
 # Kernel
 BOARD_KERNEL_PAGESIZE := 4096
@@ -114,7 +114,8 @@ BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
     androidboot.memcg=1 \
     androidboot.usbcontroller=a600000.dwc3 \
-    androidboot.init_fatal_reboot_target=recovery
+    androidboot.init_fatal_reboot_target=recovery \
+    androidboot.selinux=permissive
 
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
@@ -125,34 +126,33 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_RAMDISK_USE_LZ4 := true
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 
+TARGET_FORCE_PREBUILT_KERNEL := true
+
 # Kill lineage kernel build task while preserving kernel
 TARGET_NO_KERNEL_OVERRIDE := true
 
 # Workaround to make lineage's soong generator work
 TARGET_KERNEL_SOURCE := $(KERNEL_PATH)/kernel-headers
 
-# Kernel Binary
-TARGET_KERNEL_VERSION := 5.10
-LOCAL_KERNEL := $(KERNEL_PATH)/Image
-PRODUCT_COPY_FILES += \
-	$(LOCAL_KERNEL):kernel
+# Kernel
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilts/kernel
 
 # Kernel modules
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/vendor_ramdisk/modules.load))
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(addprefix $(KERNEL_PATH)/vendor_ramdisk/, $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD))
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := $(KERNEL_PATH)/vendor_ramdisk/modules.blocklist
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/prebuilts/modules/ramdisk/modules.load))
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(addprefix $(DEVICE_PATH)/prebuilts/modules/ramdisk/, $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD))
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := $(DEVICE_PATH)/prebuilts/modules/ramdisk/modules.blocklist
 
 # Also add recovery modules to vendor ramdisk
-BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/vendor_ramdisk/modules.load.recovery))
-RECOVERY_MODULES := $(addprefix $(KERNEL_PATH)/vendor_ramdisk/, $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD))
+BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/prebuilts/modules/ramdisk/modules.load.recovery))
+RECOVERY_MODULES := $(addprefix $(DEVICE_PATH)/prebuilts/modules/ramdisk/, $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD))
 
 # Prevent duplicated entries (to solve duplicated build rules problem)
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(sort $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES) $(RECOVERY_MODULES))
 
 # Vendor modules (installed to vendor_dlkm)
-BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/vendor_dlkm/modules.load))
-BOARD_VENDOR_KERNEL_MODULES := $(addprefix $(KERNEL_PATH)/vendor_dlkm/, $(BOARD_VENDOR_KERNEL_MODULES_LOAD))
-BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE :=  $(KERNEL_PATH)/vendor_dlkm/modules.blocklist
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/prebuilts/modules/vendor/modules.load))
+BOARD_VENDOR_KERNEL_MODULES := $(addprefix $(DEVICE_PATH)/prebuilts/modules/vendor/, $(BOARD_VENDOR_KERNEL_MODULES_LOAD))
+BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE :=  $(DEVICE_PATH)/prebuilts/modules/vendor/modules.blocklist
 
 # Lineage Health
 TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
@@ -161,7 +161,7 @@ TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
 BOARD_USES_METADATA_PARTITION := true
 
 # OTA assert
-TARGET_OTA_ASSERT_DEVICE := marble, marblein
+TARGET_OTA_ASSERT_DEVICE := mondrian
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144
@@ -171,10 +171,10 @@ BOARD_BOOTIMAGE_PARTITION_SIZE := 201326592
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 104857600
 BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 100663296
 
-BOARD_SUPER_PARTITION_SIZE := 9663676416
+BOARD_SUPER_PARTITION_SIZE := 9126805504
 BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := odm product system system_ext vendor vendor_dlkm
-BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 9659482112
+BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 9122611200
 
 BOARD_PARTITION_LIST := $(call to-upper, $(BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST))
 $(foreach p, $(BOARD_PARTITION_LIST), $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := ext4))
@@ -219,16 +219,14 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # VINTF
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml
-DEVICE_MANIFEST_SKUS := ukee
-DEVICE_MANIFEST_UKEE_FILES := \
-    $(DEVICE_PATH)/configs/vintf/manifest_ukee.xml \
+DEVICE_MANIFEST_SKUS := cape
+DEVICE_MANIFEST_CAPE_FILES := \
+    $(DEVICE_PATH)/configs/vintf/manifest_cape.xml \
     $(DEVICE_PATH)/configs/vintf/manifest_xiaomi.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(DEVICE_PATH)/configs/vintf/vendor_framework_compatibility_matrix.xml \
     $(DEVICE_PATH)/configs/vintf/xiaomi_framework_compatibility_matrix.xml \
     vendor/lineage/config/device_framework_matrix.xml
-ODM_MANIFEST_SKUS += marble
-ODM_MANIFEST_MARBLE_FILES := $(DEVICE_PATH)/configs/vintf/manifest_nfc.xml
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
@@ -245,11 +243,6 @@ BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA4096
 BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 2
-
-# Vibrator
-SOONG_CONFIG_NAMESPACES += XIAOMI_VIBRATOR
-SOONG_CONFIG_XIAOMI_VIBRATOR := USE_EFFECT_STREAM
-SOONG_CONFIG_XIAOMI_VIBRATOR_USE_EFFECT_STREAM := true
 
 # WiFi
 BOARD_WLAN_DEVICE := qcwcn
@@ -272,4 +265,4 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from the proprietary version
--include vendor/xiaomi/marble/BoardConfigVendor.mk
+-include vendor/xiaomi/mondrian/BoardConfigVendor.mk

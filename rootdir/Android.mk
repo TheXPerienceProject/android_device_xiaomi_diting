@@ -110,9 +110,9 @@ LOCAL_MODULE_PATH  := $(TARGET_OUT_ODM)
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE       := init.marble.rc
+LOCAL_MODULE       := init.mondrian.rc
 LOCAL_MODULE_TAGS  := optional
 LOCAL_MODULE_CLASS := ETC
-LOCAL_SRC_FILES    := etc/init.marble.rc
+LOCAL_SRC_FILES    := etc/init.mondrian.rc
 LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/
 include $(BUILD_PREBUILT)
