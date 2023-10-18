@@ -317,10 +317,6 @@ PRODUCT_PACKAGES += \
     libOmxCore \
     libstagefrighthw
 
-# Mlipay
-PRODUCT_PACKAGES += \
-    IFAAService
-
 # Network
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.1.vendor
@@ -540,9 +536,6 @@ PRODUCT_COPY_FILES += \
 # Vibrator
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service.xiaomi
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
 
 # VNDK
 PRODUCT_COPY_FILES += \
