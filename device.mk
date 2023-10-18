@@ -19,6 +19,10 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 # Call the proprietary setup.
 $(call inherit-product, vendor/xiaomi/mondrian/mondrian-vendor.mk)
 
+# Test
+#PRODUCT_TARGET_VNDK_VERSION := 32
+#PRODUCT_EXTRA_VNDK_VERSIONS := 30 31 32
+
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi

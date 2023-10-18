@@ -7,6 +7,9 @@
 DEVICE_PATH := device/xiaomi/mondrian
 KERNEL_PATH := device/xiaomi/mondrian-kernel
 
+#Test
+#BOARD_VNDK_VERSION := current
+
 # A/B
 AB_OTA_UPDATER := true
 
@@ -136,6 +139,8 @@ TARGET_KERNEL_SOURCE := $(KERNEL_PATH)/kernel-headers
 
 # Kernel
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilts/kernel
+PRODUCT_COPY_FILES += \
+	$(TARGET_PREBUILT_KERNEL):kernel
 
 # Kernel modules
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/prebuilts/modules/ramdisk/modules.load))
