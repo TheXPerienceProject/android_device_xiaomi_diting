@@ -2805,6 +2805,7 @@ vendor/lib64/android.hardware.secure_element@1.0-impl.so
 vendor/lib64/jcos_nq_client.so
 vendor/lib64/ls_nq_client.so
 vendor/lib64/se_nq_extn_client-v1.so
+vendor/lib64/se_nq_extn_client.so
 
 # Sensor communicate
 vendor/bin/hw/vendor.xiaomi.sensor.communicate@1.0-service
