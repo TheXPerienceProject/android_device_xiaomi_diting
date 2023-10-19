@@ -122,6 +122,7 @@ PRODUCT_PACKAGES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0.vendor \
+    android.hardware.bluetooth.audio-V2-ndk.vendor \
     android.hardware.bluetooth.audio-impl \
     vendor.qti.hardware.bluetooth_audio@2.1.vendor \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
@@ -148,6 +149,9 @@ PRODUCT_PACKAGES_DEBUG += \
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.7.vendor \
+    android.hardware.camera.device-V1-ndk.vendor \
+    android.hardware.camera.metadata-V1-ndk.vendor \
+    android.hardware.camera.provider-V1-ndk.vendor \
     camera.device@1.0-impl \
     libcamera2ndk_vendor \
     vendor.qti.hardware.camera.aon@1.0.vendor \
@@ -215,6 +219,7 @@ PRODUCT_PACKAGES += \
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1.vendor \
+    android.hardware.gnss-V2-ndk.vendor \
     android.hardware.power@1.3 \
     android.hardware.power@1.3.vendor \
     libgrpc++_unsecure.vendor
@@ -225,6 +230,8 @@ PRODUCT_COPY_FILES += \
 # Graphics
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.4.vendor \
+    android.hardware.graphics.allocator-V1-ndk.vendor \
+    android.hardware.graphics.common-V3-ndk.vendor \
     libgralloc.qti \
     libgui_vendor \
     libqdMetaData \
@@ -468,6 +475,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.3.vendor \
     android.hardware.radio.deprecated@1.0.vendor \
+    android.hardware.radio-V1-ndk.vendor \
+    android.hardware.radio.config-V1-ndk.vendor \
+    android.hardware.radio.data-V1-ndk.vendor \
+    android.hardware.radio.messaging-V1-ndk.vendor \
+    android.hardware.radio.modem-V1-ndk.vendor \
+    android.hardware.radio.network-V1-ndk.vendor \
+    android.hardware.radio.sim-V1-ndk.vendor \
+    android.hardware.radio.voice-V1-ndk.vendor \
     libprotobuf-cpp-full \
     libprotobuf-cpp-lite-3.9.1-vendorcompat
 
