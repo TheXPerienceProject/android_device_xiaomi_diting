@@ -20,8 +20,12 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 $(call inherit-product, vendor/xiaomi/mondrian/mondrian-vendor.mk)
 
 # Test
-#PRODUCT_TARGET_VNDK_VERSION := 32
-#PRODUCT_EXTRA_VNDK_VERSIONS := 30 31 32
+PRODUCT_TARGET_VNDK_VERSION := 32
+PRODUCT_EXTRA_VNDK_VERSIONS := 30 31 32
+
+PRODUCT_SHIPPING_API_LEVEL := 31
+BOARD_API_LEVEL := 31
+BOARD_SHIPPING_API_LEVEL := 31
 
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
@@ -54,13 +58,7 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack-V1-ndk_platform.vendor \
     android.hardware.security.keymint-V1-ndk_platform.vendor \
     android.hardware.security.secureclock-V1-ndk_platform.vendor \
-    android.hardware.security.sharedsecret-V1-ndk_platform.vendor \
-    vendor.qti.hardware.display.config-V1-ndk_platform.vendor \
-    vendor.qti.hardware.display.config-V2-ndk_platform.vendor \
-    vendor.qti.hardware.display.config-V3-ndk_platform.vendor \
-    vendor.qti.hardware.display.config-V4-ndk_platform.vendor \
-    vendor.qti.hardware.display.config-V5-ndk_platform.vendor \
-    vendor.qti.hardware.display.config-V6-ndk_platform.vendor
+    android.hardware.security.sharedsecret-V1-ndk_platform.vendor
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -202,15 +200,20 @@ PRODUCT_PACKAGES += \
     libgui_vendor \
     libqdMetaData \
     vendor.display.config@1.11.vendor \
-    vendor.display.config@2.0.vendor \
     vendor.qti.hardware.display.allocator@1.0.vendor \
     vendor.qti.hardware.display.allocator@3.0.vendor \
     vendor.qti.hardware.display.allocator@4.0.vendor \
     vendor.qti.hardware.display.composer@1.0.vendor \
     vendor.qti.hardware.display.composer@2.0.vendor \
     vendor.qti.hardware.display.composer@3.1.vendor \
+    vendor.qti.hardware.display.config-V1-ndk_platform.vendor \
+    vendor.qti.hardware.display.config-V2-ndk_platform.vendor \
+    vendor.qti.hardware.display.config-V3-ndk_platform.vendor \
+    vendor.qti.hardware.display.config-V4-ndk_platform.vendor \
+    vendor.qti.hardware.display.config-V5-ndk_platform.vendor \
+    vendor.qti.hardware.display.config-V6-ndk_platform.vendor \
     vendor.qti.hardware.display.demura@2.0.vendor \
-    vendor.qti.hardware.display.mapper@1.1.vendor \
+    vendor.qti.hardware.display.mapper@1.0.vendor \
     vendor.qti.hardware.display.mapper@2.0.vendor \
     vendor.qti.hardware.display.mapper@3.0.vendor \
     vendor.qti.hardware.display.mapper@4.0.vendor \
