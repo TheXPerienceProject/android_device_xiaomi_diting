@@ -333,7 +333,6 @@ PRODUCT_COPY_FILES += \
 
 # NFC
 PRODUCT_PACKAGES += \
-    NfcNci \
     android.hardware.nfc@1.2.vendor \
     libchrome.vendor
 
@@ -427,6 +426,7 @@ PRODUCT_PACKAGES += \
 
 # Secure element
 PRODUCT_PACKAGES += \
+    android.hardware.secure_element@1.0 \
     android.hardware.secure_element@1.2.vendor
 
 PRODUCT_COPY_FILES += \

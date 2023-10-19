@@ -160,6 +160,7 @@ vendor/lib64/vendor.qti.hardware.AGMIPC@1.0.so
 -vendor/lib/libar-pal.so
 -vendor/lib64/libar-pal.so
 vendor/lib/hw/gyro_fusion_interface.so
+vendor/lib/libxlog.so
 vendor/lib/libadm.so
 vendor/lib/libadsprpc.so
 vendor/lib/libar-acdb.so
@@ -189,6 +190,7 @@ vendor/lib/vendor.qti.hardware.pal@1.0-impl.so
 vendor/lib/vendor.qti.hardware.pal@1.0.so
 vendor/lib64/hw/audio.primary.taro.so
 vendor/lib64/hw/gyro_fusion_interface.so
+vendor/lib64/libxlog.so
 vendor/lib64/libadm.so
 vendor/lib64/libadsprpc.so
 vendor/lib64/libar-acdb.so
