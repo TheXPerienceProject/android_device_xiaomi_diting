@@ -3026,6 +3026,11 @@ vendor/firmware/goodix_cfg_group_m11a.bin
 vendor/firmware/goodix_cfg_group_m11a_new.bin
 vendor/firmware/goodix_firmware_m11a.bin
 vendor/firmware/goodix_firmware_m11a_new.bin
+vendor/firmware/goodix_normalize.csv
+vendor/firmware/goodix_normalize_1.csv
+vendor/firmware/goodix_test_limits_1_255.csv
+vendor/firmware/goodix_test_limits_255.csv
+vendor/firmware/novatek_spi_fw.bin
 
 # Trusted Execution Environment connector
 vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service
