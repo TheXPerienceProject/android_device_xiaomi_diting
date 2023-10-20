@@ -312,6 +312,7 @@ vendor/lib64/hw/camera.xiaomi.so
 vendor/lib64/hw/com.qti.chi.override.so
 vendor/lib64/hw/vendor.xiaomi.hardware.quickcamera@1.0-impl.so
 vendor/lib64/libAF.so
+vendor/lib64/libalAILDC.so
 vendor/lib64/libHISCppAlgos.so
 vendor/lib64/libMiMotion.so
 vendor/lib64/libPlatformValidatorShared.so
@@ -373,6 +374,7 @@ vendor/lib64/libcom.xiaomi.mawutils.so
 vendor/lib64/libcom.xiaomi.metadatautils.so
 vendor/lib64/libcom.xiaomi.pluginutils.so
 vendor/lib64/libdeflicker.so
+vendor/lib64/libdualcam_optical_zoom_control.so
 vendor/lib64/libhdr10plus.so
 vendor/lib64/libhidltransport.so
 vendor/lib64/libhta.so
@@ -452,6 +454,7 @@ vendor/lib64/libvidhance_horizon_correction.so
 vendor/lib64/libvidhance_ldc.so
 vendor/lib64/libvidhance_stabilizer.so
 vendor/lib64/libvidhance_super_stabilization.so
+vendor/lib64/libwa_opticalzoom_fusion.so
 vendor/lib64/libxmi_hdr_checker.so
 vendor/lib64/libxmi_high_dynamic_range.so
 vendor/lib64/libxmi_slow_motion_mein.so
