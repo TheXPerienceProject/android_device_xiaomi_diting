@@ -35,13 +35,13 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
-    FILESYSTEM_TYPE_system=ext4 \
+    FILESYSTEM_TYPE_system=erofs \
     POSTINSTALL_OPTIONAL_system=true
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_vendor=true \
     POSTINSTALL_PATH_vendor=bin/checkpoint_gc \
-    FILESYSTEM_TYPE_vendor=ext4 \
+    FILESYSTEM_TYPE_vendor=erofs \
     POSTINSTALL_OPTIONAL_vendor=true
 
 PRODUCT_PACKAGES += \
@@ -165,10 +165,10 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # Fingerprint
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.3-service.xiaomi
 
-PRODUCT_COPY_FILES += \
+#PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
 # Dumpstate
@@ -187,7 +187,8 @@ PRODUCT_PACKAGES += \
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1.vendor \
-    android.hardware.power@1.2.vendor \
+    android.hardware.power@1.3 \
+    android.hardware.power@1.3.vendor \
     libgrpc++_unsecure.vendor
 
 PRODUCT_COPY_FILES += \
@@ -199,12 +200,15 @@ PRODUCT_PACKAGES += \
     libgralloc.qti \
     libgui_vendor \
     libqdMetaData \
+    libtinyxml \
+    libtinyxml2 \
     vendor.display.config@1.11.vendor \
     vendor.qti.hardware.display.allocator@1.0.vendor \
     vendor.qti.hardware.display.allocator@3.0.vendor \
     vendor.qti.hardware.display.allocator@4.0.vendor \
     vendor.qti.hardware.display.composer@1.0.vendor \
     vendor.qti.hardware.display.composer@2.0.vendor \
+    vendor.qti.hardware.display.composer@3.0.vendor \
     vendor.qti.hardware.display.composer@3.1.vendor \
     vendor.qti.hardware.display.config-V1-ndk_platform.vendor \
     vendor.qti.hardware.display.config-V2-ndk_platform.vendor \
@@ -217,6 +221,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.mapper@2.0.vendor \
     vendor.qti.hardware.display.mapper@3.0.vendor \
     vendor.qti.hardware.display.mapper@4.0.vendor \
+    vendor.qti.hardware.display.mapperextensions@1.1.vendor \
     vendor.qti.hardware.display.mapperextensions@1.2.vendor
 
 PRODUCT_COPY_FILES += \
@@ -290,7 +295,9 @@ PRODUCT_PACKAGES += \
 # Keymint
 PRODUCT_PACKAGES += \
     android.hardware.hardware_keystore.xml \
+    android.hardware.security.keymint-V2-ndk \
     android.hardware.security.keymint-V1-ndk.vendor \
+    android.hardware.security.keymint-V2-ndk.vendor \
     android.hardware.security.secureclock-V1-ndk.vendor \
     android.hardware.security.sharedsecret-V1-ndk.vendor
 
@@ -319,6 +326,7 @@ PRODUCT_PACKAGES += \
     libcodec2_hidl@1.1.vendor \
     libcodec2_hidl@1.2.vendor \
     libcodec2_vndk.vendor \
+    libmediaplayerservice \
     libsfplugin_ccodec_utils.vendor
 
 PRODUCT_COPY_FILES += \

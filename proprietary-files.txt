@@ -314,6 +314,7 @@ vendor/lib64/hw/com.qti.chi.override.so
 vendor/lib64/hw/vendor.xiaomi.hardware.quickcamera@1.0-impl.so
 vendor/lib64/libAF.so
 vendor/lib64/libalAILDC.so
+vendor/lib64/libalAI_Seg.so
 vendor/lib64/libHISCppAlgos.so
 vendor/lib64/libMiMotion.so
 vendor/lib64/libPlatformValidatorShared.so
@@ -1968,6 +1969,14 @@ vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0.so
 
 # Media
+system_ext/lib/extractors/libmmparserextractor.so
+system_ext/lib/libavenhancements.so
+system_ext/lib/libmmosal.so
+system_ext/lib/libmmparser_lite.so
+system_ext/lib64/extractors/libmmparserextractor.so
+system_ext/lib64/libavenhancements.so
+system_ext/lib64/libmmosal.so
+system_ext/lib64/libmmparser_lite.so
 vendor/bin/hw/vendor.qti.media.c2@1.0-service
 vendor/bin/hw/vendor.qti.media.c2audio@1.0-service
 vendor/bin/init.qti.media.sh
@@ -1985,6 +1994,10 @@ vendor/etc/media_profiles.xml
 vendor/etc/media_profiles_V1_0.xml
 vendor/etc/media_profiles_cape.xml
 vendor/etc/media_cape/video_system_specs.json
+vendor/etc/seccomp_policy/c2audio.vendor.base-arm.policy
+vendor/etc/seccomp_policy/c2audio.vendor.base-arm64.policy
+vendor/etc/seccomp_policy/c2audio.vendor.ext-arm.policy
+vendor/etc/seccomp_policy/c2audio.vendor.ext-arm64.policy
 vendor/etc/seccomp_policy/codec2.vendor.base-arm64.policy
 vendor/etc/seccomp_policy/codec2.vendor.ext-arm64.policy
 vendor/etc/vintf/manifest/c2_manifest_vendor.xml
@@ -3259,6 +3272,12 @@ vendor/firmware/96_nfcCard_P_RTP.bin
 vendor/firmware/98_nfcCardSlow_P_RTP.bin
 vendor/firmware/99_POCO_P_RTP.bin
 vendor/firmware/9_seqbinwav_P_RTP.bin
+
+# Video
+vendor/lib64/libfastcrc.so
+vendor/lib64/libvideooptfeature.so
+vendor/lib64/libvideotxr.so
+vendor/lib64/libvideoutils.so
 
 # VM mem
 vendor/lib/libvmmem.so
