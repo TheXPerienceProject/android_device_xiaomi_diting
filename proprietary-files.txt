@@ -159,6 +159,7 @@ vendor/lib64/vendor.qti.hardware.AGMIPC@1.0.so
 # Audio libraries
 -vendor/lib/libar-pal.so
 -vendor/lib64/libar-pal.so
+vendor/lib/hw/audio.primary.taro.so
 vendor/lib/hw/gyro_fusion_interface.so
 vendor/lib/libxlog.so
 vendor/lib/libadm.so
@@ -1084,6 +1085,9 @@ vendor/lib64/libsdsprpc.so
 vendor/bin/hw/vendor.xiaomi.sensor.citsensorservice@2.0-service
 vendor/etc/init/vendor.xiaomi.sensor.citsensorservice@2.0-service.rc
 vendor/etc/vintf/manifest/vendor.xiaomi.sensor.citsensorservice@2.0-service.xml
+vendor/lib/hw/vendor.xiaomi.sensor.citsensorservice@2.0-impl.so
+vendor/lib/vendor.xiaomi.sensor.citsensorservice@1.1.so
+vendor/lib/vendor.xiaomi.sensor.citsensorservice@2.0.so
 vendor/lib64/hw/vendor.xiaomi.sensor.citsensorservice@2.0-impl.so
 vendor/lib64/vendor.xiaomi.sensor.citsensorservice@1.1.so
 vendor/lib64/vendor.xiaomi.sensor.citsensorservice@2.0.so
@@ -1635,6 +1639,7 @@ vendor/lib64/vendor.qti.hardware.qseecom@1.0.so
 vendor/bin/dspservice
 vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc
 vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy
+vendor/lib/vendor.qti.hardware.dsp@1.0.so
 vendor/lib64/vendor.qti.hardware.dsp@1.0.so
 
 # eid
@@ -1927,6 +1932,7 @@ vendor/etc/init/android.hardware.keymaster@4.1-service-qti.rc
 vendor/lib/libkeymasterdeviceutils.so
 vendor/lib/libkeymasterprovision.so
 vendor/lib/libkeymasterutils.so
+vendor/lib/libqcbor.so
 vendor/lib/libqtikeymaster4.so
 vendor/lib64/libkeymasterdeviceutils.so
 vendor/lib64/libkeymasterprovision.so
