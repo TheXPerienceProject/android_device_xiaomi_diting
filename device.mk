@@ -48,7 +48,7 @@ PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
 
-# AIDL NDK backend
+# AIDL NDK backend vendor
 PRODUCT_PACKAGES += \
     android.hardware.common-V2-ndk_platform.vendor \
     android.hardware.gnss-V1-ndk_platform.vendor \
