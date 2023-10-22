@@ -242,6 +242,9 @@ PRODUCT_PACKAGES += \
     android.hidl.memory.block@1.0.vendor \
     android.hidl.allocator@1.0.vendor \
     libhidltransport.vendor \
+    libhidltransport \
+    libhidltransport.vendor \
+    libhwbinder \
     libhwbinder.vendor
 
 # HotwordEnrollement
