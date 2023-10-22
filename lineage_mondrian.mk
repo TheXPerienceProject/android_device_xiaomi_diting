@@ -25,3 +25,8 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=mondrian_global
+
+# Test
+PRODUCT_PACKAGES += \
+    libstdc++ \
+    libstdc++.vendor 
