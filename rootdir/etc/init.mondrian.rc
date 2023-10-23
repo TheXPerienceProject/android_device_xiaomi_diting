@@ -5,6 +5,10 @@ on early-boot
     write /sys/class/remoteproc/remoteproc2/recovery enabled
     write /sys/class/remoteproc/remoteproc3/recovery enabled
 
+    # Fingerprint
+    chown system graphics /sys/bus/platform/devices/soc:xiaomi_fingerprint/fingerdown
+    chmod 0664 /sys/bus/platform/devices/soc:xiaomi_fingerprint/fingerdown
+
 on boot
     # citsensorservice
     start citsensor-hal-2-0
@@ -24,6 +28,31 @@ on boot
 
     # Disable doze brightness handling
     write /sys/devices/virtual/mi_display/disp_feature/disp-DSI-0/doze_brightness -1
+
+    # fingerprint
+    chmod 0666 /dev/goodix_fp
+    chown system system /dev/goodix_fp
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/irq
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/irq_enable
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/wakeup_enable
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/hw_reset
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/device_prepare
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/fingerdown_wait
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/vendor
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/request_vreg
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/simulate_irq
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/finger_irq
+    chown system system /sys/bus/platform/devices/soc:fingerprint_fpc/power_cfg
+    chmod 0700 /sys/bus/platform/devices/soc:fingerprint_fpc/irq
+    chmod 0700 /sys/bus/platform/devices/soc:fingerprint_fpc/wakeup_enable
+    chmod 0700 /sys/bus/platform/devices/soc:fingerprint_fpc/hw_reset
+    chmod 0700 /sys/bus/platform/devices/soc:fingerprint_fpc/device_prepare
+    chmod 0700 /sys/bus/platform/devices/soc:fingerprint_fpc/vendor
+    chmod 0700 /sys/bus/platform/devices/soc:fingerprint_fpc/request_vreg
+    chmod 0700 /sys/bus/platform/devices/soc:fingerprint_fpc/simulate_irq
+    chmod 0700 /sys/bus/platform/devices/soc:fingerprint_fpc/finger_irq
+    chmod 0700 /sys/bus/platform/devices/soc:fingerprint_fpc/power_cfg
+    chmod 0666 /dev/input/event2
 
 on post-fs
     chown system system /sys/class/backlight/panel0-backlight/brightness
@@ -48,6 +77,17 @@ on post-fs-data
 
     # qrtr-lookup
     mkdir /data/vendor/qrtr 0775 system system
+
+    mkdir /data/vendor/misc 01771 system system
+    mkdir /data/vendor/misc/mi_fp 0770 system system
+    mkdir /persist/mi_fp 0770 system system
+    mkdir /mnt/vendor/persist/mi_fp 0770 system system
+    mkdir /data/vendor/fpc 0770 system system
+    mkdir /data/vendor/fpdump 0770 system system
+    mkdir /data/vendor/goodix 0770 system system
+    mkdir /data/vendor/fingerprint 0770 system system
+    mkdir /mnt/vendor/persist/goodix 0770 system system
+    mkdir /mnt/vendor/persist/fpc 0770 system system
 
 service citsensor-hal-2-0 /vendor/bin/hw/vendor.xiaomi.sensor.citsensorservice@2.0-service
     class late_start
