@@ -279,6 +279,10 @@ on boot
     chown root system /sys/devices/platform/soc/1d84000.ufshc/ufsfbs/fbs_support
     chown root system /sys/devices/platform/soc/1d84000.ufshc/ufsfbs/fbs_wholefile_enable
 
+    # Goodix fingerprint
+    chmod 0660 /dev/goodix_fp
+    chown system system /dev/goodix_fp
+
 on property:vendor.display.lcd_density=560
    setprop dalvik.vm.heapgrowthlimit 256m
 
@@ -574,6 +578,10 @@ on post-fs-data
 
     chmod 0662 /dev/miev
     restorecon /dev/miev
+
+    # Goodix fingerprint
+    mkdir /data/vendor/goodix 0770 system system
+    mkdir /mnt/vendor/persist/goodix 0770 system system
 
 on property:sys.lmkd.memory.compact=1
     setprop sys.lmkd.memory.compact 0
