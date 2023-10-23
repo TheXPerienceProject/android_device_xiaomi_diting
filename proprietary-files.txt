@@ -1141,7 +1141,6 @@ vendor/lib/libcneqmiutils.so
 vendor/lib/libmasc.so
 vendor/lib/libshsc.so
 vendor/lib/libvndfwk_detect_jni.qti.so
-vendor/lib/libvndfwk_detect_jni.qti_vendor.so
 vendor/lib/libwms.so
 vendor/lib/libwqe.so
 vendor/lib/libxml.so
@@ -1178,7 +1177,6 @@ vendor/lib64/libcneqmiutils.so
 vendor/lib64/libmasc.so
 vendor/lib64/libshsc.so
 vendor/lib64/libvndfwk_detect_jni.qti.so
-vendor/lib64/libvndfwk_detect_jni.qti_vendor.so
 vendor/lib64/libwms.so
 vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
@@ -1931,17 +1929,16 @@ vendor/etc/init/hw/init.qti.kernel.rc
 
 # Keymaster
 vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
+vendor/bin/hw/android.hardware.keymaster@4.0-strongbox-service-qti
 vendor/bin/hw/android.hardware.keymaster@4.1-service-qti
 vendor/etc/init/android.hardware.keymaster@4.1-service-qti.rc
 vendor/lib/libkeymasterdeviceutils.so
 vendor/lib/libkeymasterprovision.so
 vendor/lib/libkeymasterutils.so
-vendor/lib/libqcbor.so
 vendor/lib/libqtikeymaster4.so
 vendor/lib64/libkeymasterdeviceutils.so
 vendor/lib64/libkeymasterprovision.so
 vendor/lib64/libkeymasterutils.so
-vendor/lib64/libqcbor.so
 vendor/lib64/libqtikeymaster4.so
 
 # Keymint
@@ -1949,7 +1946,9 @@ vendor/bin/hw/android.hardware.security.keymint-service-qti
 vendor/etc/init/android.hardware.security.keymint-service-qti.rc
 vendor/etc/permissions/android.hardware.hardware_keystore.xml
 vendor/etc/vintf/manifest/android.hardware.security.keymint-service-support-rkp-qti.xml
+vendor/lib/libqcbor.so
 vendor/lib/libqtikeymint.so
+vendor/lib64/libqcbor.so
 vendor/lib64/libqtikeymint.so
 
 # Listen
@@ -1984,14 +1983,11 @@ vendor/etc/backend_conf.xml
 vendor/etc/init/init.qti.media.rc
 vendor/etc/init/vendor.qti.media.c2@1.0-service.rc
 vendor/etc/init/vendor.qti.media.c2audio@1.0-service.rc
-vendor/etc/media_codecs.xml
 vendor/etc/media_codecs_performance_cape.xml
-vendor/etc/media_codecs_performance_cape_vendor.xml
 vendor/etc/media_codecs_cape.xml
-vendor/etc/media_codecs_cape_vendor.xml
-vendor/etc/media_profiles.xml
-vendor/etc/media_profiles_V1_0.xml
 vendor/etc/media_profiles_cape.xml
+vendor/etc/media_codecs_system_default.xml
+vendor/etc/media_codecs_with_dolby_taro.xml
 vendor/etc/media_cape/video_system_specs.json
 vendor/etc/seccomp_policy/c2audio.vendor.base-arm.policy
 vendor/etc/seccomp_policy/c2audio.vendor.base-arm64.policy
@@ -3065,6 +3061,8 @@ vendor/firmware/goodix_normalize_1.csv
 vendor/firmware/goodix_test_limits_1_255.csv
 vendor/firmware/goodix_test_limits_255.csv
 vendor/firmware/novatek_spi_fw.bin
+vendor/bin/touch_report
+vendor/bin/touch_report:recovery/root/vendor/bin/touch_report
 
 # Trusted Execution Environment connector
 vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service

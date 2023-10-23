@@ -228,18 +228,17 @@ SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # VINTF
-DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml
+# HIDL
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/hidl/compatibility_matrix.xml
+
 DEVICE_MANIFEST_SKUS := cape
 DEVICE_MANIFEST_CAPE_FILES := \
-    $(DEVICE_PATH)/configs/vintf/manifest_cape.xml \
-    $(DEVICE_PATH)/configs/vintf/manifest_xiaomi.xml \
-    $(DEVICE_PATH)/configs/vintf/gatekeeper-manifest.xml \
-    $(DEVICE_PATH)/configs/vintf/keymaster-manifest.xml
+    $(DEVICE_PATH)/hidl/manifest_cape.xml \
+    $(DEVICE_PATH)/hidl/manifest_xiaomi.xml
 
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
-    $(DEVICE_PATH)/configs/vintf/framework_compatibility_matrix.xml \
-    $(DEVICE_PATH)/configs/vintf/vendor_framework_compatibility_matrix.xml \
-    $(DEVICE_PATH)/configs/vintf/xiaomi_framework_compatibility_matrix.xml \
+    $(DEVICE_PATH)/hidl/vendor_framework_compatibility_matrix.xml \
+    $(DEVICE_PATH)/hidl/xiaomi_framework_compatibility_matrix.xml \
     vendor/lineage/config/device_framework_matrix.xml
 
 # Verified Boot
@@ -259,6 +258,7 @@ BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 2
 
 # WiFi
+BOARD_HAS_QCOM_WLAN := true
 BOARD_WLAN_DEVICE := qcwcn
 BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
@@ -277,6 +277,11 @@ WIFI_HIDL_FEATURE_AWARE := true
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
+
+PRODUCT_VENDOR_MOVE_ENABLED := true
+
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB_EVENT := "ON"
+BOARD_HOSTAPD_PRIVATE_LIB_EVENT := "ON"
 
 # Inherit from the proprietary version
 -include vendor/xiaomi/mondrian/BoardConfigVendor.mk

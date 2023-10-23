@@ -25,6 +25,36 @@ value:2908
 [AID_VENDOR_QTR]
 value:2909
 
+[AID_VENDOR_NXP_STRONGBOX]
+value:2910
+
+[AID_VENDOR_NXP_WEAVER]
+value:2911
+
+[AID_VENDOR_SSGTZD]
+value:2912
+
+[AID_VENDOR_THALES_STRONGBOX]
+value:2913
+
+[vendor/bin/hw/android.hardware.security.keymint-service.strongbox-thales]
+mode: 0755
+user: AID_VENDOR_THALES_STRONGBOX
+group: AID_SYSTEM
+caps: SYS_ADMIN SYS_NICE
+
+[vendor/bin/hw/android.hardware.security.keymint-service.strongbox]
+mode: 0755
+user: AID_VENDOR_NXP_STRONGBOX
+group: AID_SYSTEM
+caps: SYS_ADMIN SYS_NICE
+
+[vendor/bin/hw/android.hardware.weaver@1.0-service]
+mode: 0755
+user: AID_VENDOR_NXP_WEAVER
+group: AID_SYSTEM
+caps: SYS_ADMIN SYS_NICE
+
 [vendor/bin/wcnss_filter]
 mode: 0755
 user: AID_BLUETOOTH
@@ -59,6 +89,18 @@ caps: BLOCK_SUSPEND NET_ADMIN
 mode: 0755
 user: AID_SYSTEM
 group: AID_SYSTEM
+caps: BLOCK_SUSPEND NET_ADMIN
+
+[vendor/bin/hw/android.hardware.bluetooth@1.1-service-qti]
+mode: 0755
+user: AID_BLUETOOTH
+group: AID_BLUETOOTH
+caps: BLOCK_SUSPEND NET_ADMIN
+
+[vendor/bin/hw/android.hardware.bluetooth@1.1-service-qti-lazy]
+mode: 0755
+user: AID_BLUETOOTH
+group: AID_BLUETOOTH
 caps: BLOCK_SUSPEND NET_ADMIN
 
 [system/bin/cnss-daemon]
