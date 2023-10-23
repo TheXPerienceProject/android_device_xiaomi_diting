@@ -1,0 +1,3 @@
+allow vendor_rfs_access vfat:dir { read open search };
+allow vendor_rfs_access vfat:file r_file_perms;
+

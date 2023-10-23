@@ -1,0 +1,3 @@
+allow vendor_feature_enabler_client vfat:dir search;
+allow vendor_feature_enabler_client vfat:file r_file_perms;
+

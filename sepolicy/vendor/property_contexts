@@ -25,6 +25,7 @@ persist.vendor.disable_idle_fps                       u:object_r:vendor_displayf
 persist.vendor.disable_idle_fps.threshold             u:object_r:vendor_displayfeature_prop:s0
 persist.vendor.displayfeature.video.pq.type           u:object_r:vendor_displayfeature_prop:s0
 persist.vendor.dolbyvision.flat_on                    u:object_r:vendor_displayfeature_prop:s0
+persist.vendor.EnableP3ColorSpace                     u:object_r:vendor_displayfeature_prop:s0
 persist.vendor.fod.modified.dc_status                 u:object_r:vendor_displayfeature_prop:s0
 persist.vendor.max.brightness                         u:object_r:vendor_displayfeature_prop:s0
 persist.vendor.power.dfps.level                       u:object_r:vendor_displayfeature_prop:s0
@@ -126,6 +127,8 @@ persist.vendor.sys.pay.                               u:object_r:vendor_mlipay_p
 persist.vendor.sys.provision.status                   u:object_r:vendor_mlipay_prop:s0
 vendor.sys.feature_state                              u:object_r:vendor_payment_security_prop:s0
 vendor.sys.rpmb_state                                 u:object_r:vendor_payment_security_prop:s0
+persist.vendor.sys.pay.fido                           u:object_r:vendor_payment_security_prop:s0
+persist.vendor.sys.pay.widevine                       u:object_r:vendor_payment_security_prop:s0
 
 # NFC
 ro.vendor.nfc.                                        u:object_r:vendor_nfc_mi_prop:s0

@@ -54,6 +54,9 @@
 /vendor/lib(64)?/rfsa/adsp/libsnpe_htp_v66_skel\.so                       u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/rfsa/adsp/libsnpe_htp_v68_skel\.so                       u:object_r:same_process_hal_file:s0
 
+# CNE
+vendor/bin/mutualex                                                       u:object_r:vendor_mutualex_exec:s0
+
 # Diag
 /data/vendor/modem(/.*)?                                                  u:object_r:vendor_modem_data_file:s0
 

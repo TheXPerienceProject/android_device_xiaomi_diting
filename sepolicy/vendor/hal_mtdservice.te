@@ -54,3 +54,6 @@ set_prop(hal_mtdservice_default, vendor_payment_security_prop)
 hwbinder_use(hal_mtdservice_default)
 hal_server_domain(hal_mtdservice_default, hal_mtdservice)
 add_hwservice(hal_mtdservice_server, hal_mtdservice_hwservice)
+
+allow hal_mtdservice_default vfat:dir search;
+allow hal_mtdservice_default vfat:file r_file_perms;
