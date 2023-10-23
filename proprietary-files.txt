@@ -1453,6 +1453,7 @@ vendor/lib64/libbacklight-calib.so
 vendor/lib64/libclient2slpi.notifier.so
 vendor/lib64/libdigital-dimming.so
 vendor/lib64/libdpps.so
+vendor/lib64/libgame_enhance.so
 vendor/lib64/libhistogram.so
 vendor/lib64/libmemutils.so
 vendor/lib64/libqdcm-algo.so
@@ -1672,17 +1673,10 @@ vendor/lib64/vendor.qti.esepowermanager@1.0.so
 vendor/lib64/vendor.qti.esepowermanager@1.1.so
 
 # Fingerprint
-#vendor/bin/hw/mfp-daemon
-#vendor/bin/hw/vendor.xiaomi.hardware.dtool@1.0-service
-#vendor/etc/init/init.mfp-daemon.rc								
-#vendor/etc/init/vendor.xiaomi.hardware.dtool@1.0-service.rc
-#vendor/lib64/hw/fingerprint.fpc_fod.so
-#vendor/lib64/hw/fingerprint.goodix_fod.so
-#vendor/lib64/com.fingerprints.extension@3.0.so
-#vendor/lib64/libgf_hal.so
-#vendor/lib64/vendor.xiaomi.hardware.dtool@1.0.so
-#vendor/lib64/vendor.xiaomi.hardware.fingerprintextension@1.0.so
-#vendor/lib64/vendor.xiaomi.hardware.fx.tunnel@1.0.so
+vendor/lib64/hw/fingerprint.fpc_fod.so:vendor/lib64/hw/fingerprint.fpc_fod.default.so
+vendor/lib64/hw/fingerprint.goodix_fod.so:vendor/lib64/hw/fingerprint.goodix_fod.default.so
+vendor/lib64/libgf_hal.so
+vendor/lib64/vendor.xiaomi.hardware.fx.tunnel@1.0.so
 
 # FM
 vendor/etc/init.qti.fm.sh
