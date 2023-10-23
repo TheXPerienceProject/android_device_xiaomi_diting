@@ -1090,7 +1090,6 @@ vendor/lib64/libsdsprpc.so
 vendor/bin/hw/vendor.xiaomi.sensor.citsensorservice@2.0-service
 vendor/etc/init/vendor.xiaomi.sensor.citsensorservice@2.0-service.rc
 vendor/etc/vintf/manifest/vendor.xiaomi.sensor.citsensorservice@2.0-service.xml
-vendor/lib/hw/vendor.xiaomi.sensor.citsensorservice@2.0-impl.so
 vendor/lib/vendor.xiaomi.sensor.citsensorservice@1.1.so
 vendor/lib/vendor.xiaomi.sensor.citsensorservice@2.0.so
 vendor/lib64/hw/vendor.xiaomi.sensor.citsensorservice@2.0-impl.so
@@ -2114,7 +2113,18 @@ vendor/etc/seccomp_policy/modemManager.policy
 vendor/etc/public.libraries.txt
 
 # Neural networks
+vendor/bin/hw/android.hardware.neuralnetworks-shim-service-qti
+vendor/etc/init/android.hardware.neuralnetworks-shim-service-qti.rc
+vendor/etc/vintf/manifest/android.hardware.neuralnetworks-shim-service-qti.xml
+vendor/lib64/libQnnGpu.so
+vendor/lib64/libQnnHtp.so
 vendor/lib64/libQnnHtpAltPrepV69Stub.so
+vendor/lib64/libQnnHtpPrepare.so
+vendor/lib64/libQnnHtpV69Stub.so
+vendor/lib64/libUnnhalAccCommon.so
+vendor/lib64/libUnnhalAccGpu.so
+vendor/lib64/libUnnhalAccHtp.so
+vendor/lib64/libnnapi_sl_driver.so
 
 # NFC
 vendor/bin/hw/vendor.nxp.hardware.nfc@2.0-service
