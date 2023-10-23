@@ -116,17 +116,9 @@ $(FIRMWARE_WLAN_QCA_CLD_QCA6490_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) ln -sf /vendor/etc/wifi/qca6490/WCNSS_qcom_cfg.ini $@/WCNSS_qcom_cfg.ini
 	$(hide) ln -sf /mnt/vendor/persist/qca6490/wlan_mac.bin $@/wlan_mac.bin
 
-FIRMWARE_WLAN_QCA_CLD_QCA6750_SYMLINKS := $(TARGET_OUT_VENDOR)/firmware/wlan/qca_cld/qca6750/
-$(FIRMWARE_WLAN_QCA_CLD_QCA6750_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "Creating qca6750 qca_cld wlan firmware symlinks: $@"
-	mkdir -p $@
-	$(hide) ln -sf /vendor/etc/wifi/qca6750/WCNSS_qcom_cfg.ini $@/WCNSS_qcom_cfg.ini
-	$(hide) ln -sf /mnt/vendor/persist/qca6750/wlan_mac.bin $@/wlan_mac.bin
-
 ALL_DEFAULT_INSTALLED_MODULES += \
     $(FIRMWARE_WLAN_QCA_CLD_SYMLINKS) \
-    $(FIRMWARE_WLAN_QCA_CLD_QCA6490_SYMLINKS) \
-    $(FIRMWARE_WLAN_QCA_CLD_QCA6750_SYMLINKS)
+    $(FIRMWARE_WLAN_QCA_CLD_QCA6490_SYMLINKS)
 
 EGL_LIB_SYMLINKS := $(TARGET_OUT_VENDOR)/lib
 $(EGL_LIB_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
