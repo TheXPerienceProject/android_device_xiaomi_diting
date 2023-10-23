@@ -77,8 +77,8 @@
         <item>192.168.51.254</item>
     </string-array>
 
-    <!-- Common options are [1, 4] for TYPE_WIFI and TYPE_MOBILE_DUN or
-    <!== [0,1,5,7] for TYPE_MOBILE, TYPE_WIFI, TYPE_MOBILE_HIPRI and TYPE_BLUETOOTH -->
+    <!-- This setting is deprecated, please use
+         com.android.networkstack.tethering.R.array.config_tether_upstream_types. -->
     <integer-array name="config_tether_upstream_types" translatable="false">
         <item>0</item>
         <item>1</item>
@@ -102,11 +102,16 @@
         <item>0</item>
         <item>1</item>
         <item>3</item>
-        <item>256</item> <!--saturated-->
-        <item>257</item> <!--original-->
-        <item>258</item> <!--vivid-->
-        <item>267</item> <!--srgb-->
-        <item>268</item> <!--P3-->
+        <item>256</item>
+        <item>257</item>
+        <item>258</item>
+        <item>259</item>
+        <item>260</item>
+        <item>261</item>
+        <item>262</item>
+        <item>263</item>
+        <item>264</item>
+        <item>265</item>
     </integer-array>
 
     <!-- Is the device capable of hot swapping an UICC Card -->
@@ -187,6 +192,10 @@
          Doze dreams will run whenever the power manager is in a dozing state. -->
     <string name="config_dozeComponent" translatable="false">com.android.systemui/com.android.systemui.doze.DozeService</string>
 
+    <!-- If true, the doze component is not started until after the screen has been
+         turned off and the screen off animation has been performed. -->
+    <bool name="config_dozeAfterScreenOffByDefault">true</bool>
+
     <!-- Power Management: Specifies whether to decouple the interactive state of the
          device from the display on/off state.
 
@@ -206,7 +215,7 @@
     -->
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">false</bool>
 
-  <!-- Set to false to disable emergency alert. -->
+    <!-- Set to true to add links to Cell Broadcast app from Settings and MMS app. -->
     <bool name="config_cellBroadcastAppLinks">true</bool>
 
     <!--  Maximum number of supported users -->
@@ -214,11 +223,6 @@
 
     <!-- Whether UI for multi user should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
-
-    <!-- Safe headphone volume index. When music stream volume is below this index
-    the SPL on headphone output is compliant to EN 60950 requirements for portable music
-    players. -->
-    <integer name="config_safe_media_volume_index">100</integer>
 
     <!-- Configure mobile tcp buffer sizes in the form:
          rat-name:rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max
@@ -256,7 +260,7 @@
     <bool name="config_wifiDisplaySupportsProtectedBuffers">true</bool>
 
     <!-- Whether camera shutter sound is forced or not  (country specific). -->
-    <bool name="config_camera_sound_forced">true</bool>
+    <bool name="config_camera_sound_forced">false</bool>
 
     <!-- Flag indicating if the speed up audio on mt call code should be executed -->
     <bool name="config_speed_up_audio_on_mt_calls">true</bool>
@@ -322,11 +326,4 @@
 
     <!-- Whether to select voice/data/sms preference without user confirmation -->
     <bool name="config_voice_data_sms_auto_fallback">true</bool>
-
-    <!-- Determines whether the shell features all run on another thread. -->
-    <bool name="config_enableShellMainThread">true</bool>
-
-    <dimen name="rounded_corner_content_padding">0dp</dimen>
-    <dimen name="rounded_corner_radius">20dp</dimen>
-
 </resources>

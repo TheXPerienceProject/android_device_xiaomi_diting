@@ -379,21 +379,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage
-
 PRODUCT_PACKAGES += \
-    AospWifiResOverlayMondrian \
-    CarrierConfigResCommon \
-    FrameworksResCommon \
     FrameworksResOverlayMondrian \
     SettingsOverlayMondrian \
-    SettingsResCommon \
     SystemUIOverlayMondrian \
-    SystemUIResCommon \
-    TelecommResCommon \
-    TelephonyResCommon \
-    WifiResCommon
 
 PRODUCT_PACKAGES += \
     AospWifiResOverlayMondrianChina \
@@ -402,6 +391,26 @@ PRODUCT_PACKAGES += \
     SettingsOverlayChina \
     SettingsProviderOverlayChina \
     SettingsProviderOverlayGlobal
+
+# Overlays
+PRODUCT_PACKAGES += \
+    CarrierConfigResCommon \
+    FrameworksResCommon \
+    SettingsResCommon \
+    SystemUIResCommon \
+    TelecommResCommon \
+    TelephonyResCommon \
+    WifiResCommon
+
+PRODUCT_PACKAGES += \
+    FrameworksResTarget_Vendor \
+    FrameworksResXiaomi \
+    SettingsProviderResXiaomi \
+    WifiResTarget \
+    WifiResTarget_spf
+
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay-lineage
 
 # Partitions
 PRODUCT_BUILD_SUPER_PARTITION := false

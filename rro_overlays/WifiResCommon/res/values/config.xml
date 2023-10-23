@@ -13,6 +13,12 @@
     <!-- boolean indicating whether or not to auto-upgrade band setting configuration to dual bands during cloud configuration restore when device supported -->
     <bool name="config_wifiSoftapAutoUpgradeToBridgedConfigWhenSupported" translatable="false">false</bool>
 
+    <!-- Boolean indicating whether the wifi chipset supports background scanning mechanism.
+         This mechanism allows the host to remain in suspend state and the dongle to actively
+         scan and wake the host when a configured SSID is detected by the dongle. This chipset
+         capability can provide power savings when wifi needs to be always kept on. -->
+    <bool name="config_wifi_background_scan_support" translatable="false">true</bool>
+
     <!-- Integer indicating maximum hardware supported client number of soft ap -->
     <integer name="config_wifiHardwareSoftapMaxClientCount" translatable="false">32</integer>
 
@@ -58,12 +64,6 @@
     <!-- Wifi driver Automatic channel selection (ACS) for softap to include DFS channels -->
     <bool name="config_wifiSoftapAcsIncludeDfs" translatable="false">true</bool>
 
-    <!-- Boolean indicating whether the wifi chipset supports background scanning mechanism.
-         This mechanism allows the host to remain in suspend state and the dongle to actively
-         scan and wake the host when a configured SSID is detected by the dongle. This chipset
-         capability can provide power savings when wifi needs to be always kept on. -->
-    <bool name="config_wifi_background_scan_support" translatable="false">true</bool>
-
     <!-- integer indicating additional disconnect delay (in ms) after IMS onLost() indication is received -->
     <integer name="config_wifiDelayDisconnectOnImsLostMs" translatable="false">1000</integer>
 
@@ -72,4 +72,18 @@
      Enabling this configuration will restore legacy behavior but may result in incorrect behavior.
      -->
     <bool name="config_wifiAllowMultipleNetworksOnSameAwareNdi" translatable="false">true</bool>
+
+    <!-- A boolean indicate if device supports ser channel on the Aware data-path setup. If the
+    value is false, channel setting on the data-path request will be ignored.
+    -->
+    <bool name="config_wifiSupportChannelOnDataPath" translatable="false">true</bool>
+
+    <!-- Indicates whether or not the WLAN driver supports the NL80211_CMD_REG_CHANGE or
+         NL80211_CMD_WIPHY_REG_CHANGE events which indicate the current country code which is
+         being used by the WLAN driver. If the driver doesn't support these events
+         (configuration is `false`) then the driver must handle the setCountryCode request from
+         HAL as a blocking call. In such a case the country code will be applied
+         immediately after the country code is sent to the driver (if the method returns a
+         success). -->
+    <bool name="config_wifiDriverSupportedNl80211RegChangedEvent" translatable="false">true</bool>
 </resources>

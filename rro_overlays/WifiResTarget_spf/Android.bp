@@ -5,6 +5,6 @@
 //
 
 runtime_resource_overlay {
-    name: "AospWifiResOverlayMondrian",
-    product_specific: true,
+    name: "WifiResTarget_spf",
+    vendor: true,
 }
