@@ -1676,6 +1676,7 @@ vendor/lib64/vendor.qti.esepowermanager@1.1.so
 vendor/lib64/hw/fingerprint.fpc_fod.so:vendor/lib64/hw/fingerprint.fpc_fod.default.so
 vendor/lib64/hw/fingerprint.goodix_fod.so:vendor/lib64/hw/fingerprint.goodix_fod.default.so
 vendor/lib64/libgf_hal.so
+vendor/lib64/libgf_ca.so
 vendor/lib64/vendor.xiaomi.hardware.fx.tunnel@1.0.so
 
 # FM
@@ -3357,10 +3358,25 @@ vendor/lib64/mediadrm/libwvdrmengine.so
 
 # WiFi
 vendor/bin/cnss-daemon
+vendor/bin/athdiag
+vendor/bin/cnss-daemon
+vendor/bin/cnss_diag
+vendor/bin/hal_proxy_daemon
+vendor/bin/pktlogconf
+vendor/bin/spectraltool
+vendor/bin/vendor_cmd_tool
+vendor/bin/wificfrtool
+vendor/bin/wifilearner
+vendor/etc/init/vendor.qti.hardware.wifi.wificfr@1.0-service.rc
+vendor/etc/init/vendor.qti.hardware.wifi.wifilearner@1.0-service.rc
 vendor/etc/init/init.vendor.wlan.rc
+vendor/etc/vintf/manifest/vendor.qti.hardware.wifi.wificfr@1.0-service.xml
 vendor/etc/wifi/p2p_supplicant_overlay.conf
 vendor/etc/wifi/vendor_cmd.xml
 vendor/etc/wifi/wpa_supplicant_overlay.conf
+vendor/lib64/libspectre.so
+vendor/lib64/vendor.qti.hardware.wifi.wificfr@1.0.so
+vendor/lib64/vendor.qti.hardware.wifi.wifilearner@1.0.so
 
 # Wi-Fi Display
 vendor/bin/wfdhdcphalservice

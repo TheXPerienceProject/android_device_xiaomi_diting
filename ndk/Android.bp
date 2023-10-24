@@ -46,3 +46,24 @@ cc_library_shared {
     system_ext_specific: true,
     vendor_available: true,
 }
+
+prebuilt_hidl_interfaces {
+    name: "hidl_Wificfr_interface",
+    interfaces: [
+        "vendor.qti.hardware.wifi.wificfr@1.0::IWificfr",
+    ],
+}
+
+prebuilt_hidl_interfaces {
+    name: "hidl_WifiMyFtm_interface",
+    interfaces: [
+        "vendor.qti.hardware.wifi.wifimyftm@1.0::IWifiMyFtm",
+    ],
+}
+
+prebuilt_hidl_interfaces {
+    name: "hidl_WifiStats_interface",
+    interfaces: [
+        "vendor.qti.hardware.wifi.wifilearner@1.0::IWifiStats"
+    ],
+}
