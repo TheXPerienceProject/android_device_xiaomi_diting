@@ -17,9 +17,6 @@ on boot
     # citsensorservice
     start citsensor-hal-2-0
 
-    # Disable doze brightness handling
-    write /sys/devices/virtual/mi_display/disp_feature/disp-DSI-0/doze_brightness -1
-
     # fingerprint
     chmod 0666 /dev/goodix_fp
     chown system system /dev/goodix_fp
