@@ -1,0 +1,3 @@
+allow vendor_hal_esepowermanager_qti vfat:dir search;
+allow vendor_hal_esepowermanager_qti vfat:dir r_file_perms;
+
