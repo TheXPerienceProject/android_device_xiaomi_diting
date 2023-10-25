@@ -233,16 +233,16 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # VINTF
 # HIDL
-DEVICE_MATRIX_FILE := $(DEVICE_PATH)/hidl/compatibility_matrix.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml
 
 DEVICE_MANIFEST_SKUS := cape
 DEVICE_MANIFEST_CAPE_FILES := \
-    $(DEVICE_PATH)/hidl/manifest_cape.xml \
-    $(DEVICE_PATH)/hidl/manifest_xiaomi.xml
+    $(DEVICE_PATH)/configs/vintf/manifest_cape.xml \
+    $(DEVICE_PATH)/configs/vintf/manifest_xiaomi.xml
 
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
-    $(DEVICE_PATH)/hidl/vendor_framework_compatibility_matrix.xml \
-    $(DEVICE_PATH)/hidl/xiaomi_framework_compatibility_matrix.xml \
+    $(DEVICE_PATH)/configs/vintf/vendor_framework_compatibility_matrix.xml \
+    $(DEVICE_PATH)/configs/vintf/xiaomi_framework_compatibility_matrix.xml \
     vendor/lineage/config/device_framework_matrix.xml
 
 # Verified Boot

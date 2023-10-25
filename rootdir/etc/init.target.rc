@@ -65,8 +65,6 @@
 import /vendor/etc/init/hw/init.qti.kernel.rc
 import /vendor/etc/init/hw/init.mi_thermald.rc
 import /vendor/etc/init/hw/init.batterysecret.rc
-import /system/etc/init/init.factory.rc
-import /vendor/etc/init/init.charge_logger.rc
 
 on early-init
     write /proc/sys/kernel/printk_devkmsg ratelimited
@@ -276,6 +274,10 @@ on boot
     chown root system /sys/devices/platform/soc/1d84000.ufshc/ufsfbs/fbs_support
     chown root system /sys/devices/platform/soc/1d84000.ufshc/ufsfbs/fbs_wholefile_enable
 
+    # Goodix fingerprint
+    chmod 0660 /dev/goodix_fp
+    chown system system /dev/goodix_fp
+
 on property:vendor.display.lcd_density=560
    setprop dalvik.vm.heapgrowthlimit 256m
 
@@ -481,6 +483,7 @@ service vendor.sniffer.circular /vendor/bin/tcpdump -i wlan0 -W 3 -C 300 -w /dat
     oneshot
 
 on property:sys.boot_completed=1
+    write /sys/devices/virtual/thermal/thermal_message/sconfig 1
     enable vendor.qvirtmgr
     start  vendor.qvirtmgr
 
@@ -581,9 +584,15 @@ on post-fs-data
     restorecon /sys/module/metis/parameters/del_mi_viptask_sched_lit_core
     chmod 0666 /sys/module/metis/parameters/is_break_enable
     restorecon /sys/module/metis/parameters/is_break_enable
+    chmod 0666 /sys/module/metis/parameters/binder_from_pid
+    restorecon /sys/module/metis/parameters/binder_from_pid
 
     chmod 0662 /dev/miev
     restorecon /dev/miev
+
+    # Goodix fingerprint
+    mkdir /data/vendor/goodix 0770 system system
+    mkdir /mnt/vendor/persist/goodix 0770 system system
 
 on property:sys.lmkd.memory.compact=1
     setprop sys.lmkd.memory.compact 0
