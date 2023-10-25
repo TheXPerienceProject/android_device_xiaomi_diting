@@ -1721,7 +1721,7 @@ product/priv-app/EuiccGoogle/EuiccGoogle.apk;PRESIGNED
 # Fingerprint
 vendor/lib64/hw/fingerprint.goodix_fod.so:vendor/lib64/hw/fingerprint.goodix_fod.default.so
 vendor/lib64/libgf_hal.so
-vendor/lib64/libgf_ca.so
+#vendor/lib64/libgf_ca.so
 vendor/lib64/vendor.xiaomi.hardware.fx.tunnel@1.0.so
 
 # FM
