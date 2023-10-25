@@ -273,13 +273,14 @@ persist.vendor.dpm.vndr.feature=1
 drm.service.enabled=true
 
 # Fingerprint
+pro.hardware.fp.fod=true
 persist.vendor.sys.fp.expolevel=0x88
-persist.vendor.sys.fp.fod.location.X_Y=596,2758
-persist.vendor.sys.fp.fod.size.width_height=248,248
+persist.vendor.sys.fp.fod.location.X_Y=496,2330
+persist.vendor.sys.fp.fod.size.width_height=228,228
+persist.vendor.sys.fp.fod.location.X_Y.fhd=439,2062
+persist.vendor.sys.fp.fod.size.width_height.fhd=202,202
 ro.hardware.fp.fod.location=low
-ro.hardware.fp.fod.need.X_Y=false
 ro.hardware.fp.fod.touch.ctl.version=2.0
-ro.hardware.fp.fod=true
 
 # RFP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
