@@ -3105,8 +3105,6 @@ vendor/etc/ftm_test_config_diwali-idp-snd-card
 vendor/etc/ftm_test_config_diwali-qrd-sku1-snd-card
 vendor/etc/ftm_test_config_diwali-qrd-snd-card
 vendor/etc/ftm_test_config_waipio-qrd-snd-card
-vendor/bin/touch_report
-vendor/bin/touch_report:recovery/root/vendor/bin/touch_report
 
 # Trusted Execution Environment connector
 vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service
