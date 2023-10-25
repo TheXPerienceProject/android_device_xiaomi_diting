@@ -20,7 +20,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Call the proprietary setup.
-$(call inherit-product, vendor/xiaomi/mondrian/mondrian-vendor.mk)
+$(call inherit-product, vendor/xiaomi/diting/diting-vendor.mk)
 
 # Test
 PRODUCT_TARGET_VNDK_VERSION := 32
@@ -382,13 +382,13 @@ PRODUCT_COPY_FILES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    FrameworksResOverlayMondrian \
-    SettingsOverlayMondrian \
-    SystemUIOverlayMondrian \
+    FrameworksResOverlayDiting \
+    SettingsOverlayDiting \
+    SystemUIOverlayDiting \
 
 PRODUCT_PACKAGES += \
-    AospWifiResOverlayMondrianChina \
-    AospWifiResOverlayMondrianGlobal \
+    AospWifiResOverlayDitingChina \
+    AospWifiResOverlayDitingGlobal \
     SettingsOverlayGlobal \
     SettingsOverlayChina \
     SettingsProviderOverlayChina \
@@ -417,10 +417,6 @@ DEVICE_PACKAGE_OVERLAYS += \
 # Partitions
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
-# Parts
-PRODUCT_PACKAGES += \
-    XiaomiParts
 
 # Perf
 PRODUCT_PACKAGES += \
@@ -458,7 +454,7 @@ PRODUCT_PACKAGES += \
     charger_fw_fstab.qti \
     fstab.qcom \
     init.class_main.sh \
-    init.mondrian.rc \
+    init.diting.rc \
     init.qcom.class_core.sh \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \

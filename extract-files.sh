@@ -8,7 +8,7 @@
 
 set -e
 
-DEVICE=mondrian
+DEVICE=diting
 VENDOR=xiaomi
 
 # Load extract_utils and do some sanity checks
@@ -59,7 +59,7 @@ function blob_fixup() {
     vendor/bin/hw/vendor.qti.hardware.display.composer-service)
         "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
         ;;
-    vendor/etc/camera/mondrian*_motiontuning.xml)
+    vendor/etc/camera/diting*_motiontuning.xml)
         sed -i 's/xml=version/xml\ version/g' "${2}"
         ;;
     vendor/etc/camera/pureView_parameter.xml)

@@ -65,6 +65,8 @@
 import /vendor/etc/init/hw/init.qti.kernel.rc
 import /vendor/etc/init/hw/init.mi_thermald.rc
 import /vendor/etc/init/hw/init.batterysecret.rc
+import /system/etc/init/init.factory.rc
+import /vendor/etc/init/init.charge_logger.rc
 
 on early-init
     write /proc/sys/kernel/printk_devkmsg ratelimited
@@ -101,6 +103,11 @@ on fs
     mkdir /mnt/vendor/persist/qca6490/ 0700 system system
     chmod 0666 /dev/xlog
 
+on fs && property:ro.boot.product.vendor.sku=taro
+    mkdir /mnt/vendor/spunvm 0660 system system
+    wait /dev/block/bootdevice/by-name/spunvm
+    mount vfat /dev/block/bootdevice/by-name/spunvm /mnt/vendor/spunvm rw noatime shortname=lower,uid=1000,gid=1000,dmask=007,fmask=007,context=u:object_r:vendor_spunvm_file:s0
+
 on post-fs
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
@@ -115,8 +122,6 @@ on post-fs-data
     mkdir /data/vendor/thermal 0771 root system
     mkdir /data/vendor/thermal/config 0771 root system
     mkdir /data/vendor/perfspy 0775 camera camera
-    
-    
     chmod 0660 /dev/ir_spi
     chown system system /dev/ir_spi
     #nfc
@@ -210,7 +215,7 @@ on boot
     chmod 0664 /sys/class/thermal/thermal_message/flash_state
     chown cameraserver cameraserver /sys/class/thermal/thermal_message/flash_state
     chown system system /sys/module/perf_helper/mimd/mimdtrigger
-    write /dev/cpuset/audio-app/cpus 0-7
+    write /dev/cpuset/audio-app/cpus 1-2
     # Add a cpuset for the camera daemon
     # We want all cores for camera
     mkdir /dev/cpuset/camera-daemon
@@ -236,19 +241,11 @@ on boot
     chown system system /sys/class/qcom-battery/input_suspend
     chmod 774 /sys/class/qcom-battery/input_suspend
 
-
     # game plaid mode
     chown system system  /sys/devices/virtual/gpu_plaid/plaid/game_data
 
     # Create persist for camera calibration data
     mkdir /mnt/vendor/persist/camera 0755 system cameraserver
-
-    mkdir /dev/cpuctl/misc
-    chown system system /dev/cpuctl/misc
-    chown system system /dev/cpuctl/misc/tasks
-    chown system system /dev/cpuctl/misc/cgroup.procs
-    chmod 0664 /dev/cpuctl/misc/cgroup.procs
-    chmod 0664 /dev/cpuctl/misc/tasks
 
     #ufscld functions permission
     chown root system /sys/devices/platform/soc/1d84000.ufshc/ufscld/auto_hibern8_enable
@@ -278,10 +275,6 @@ on boot
     chown root system /sys/devices/platform/soc/1d84000.ufshc/ufsfbs/fbs_send_lr_list
     chown root system /sys/devices/platform/soc/1d84000.ufshc/ufsfbs/fbs_support
     chown root system /sys/devices/platform/soc/1d84000.ufshc/ufsfbs/fbs_wholefile_enable
-
-    # Goodix fingerprint
-    chmod 0660 /dev/goodix_fp
-    chown system system /dev/goodix_fp
 
 on property:vendor.display.lcd_density=560
    setprop dalvik.vm.heapgrowthlimit 256m
@@ -391,6 +384,22 @@ on property:sys.shutdown.requested=*
     write /sys/kernel/qcom_rproc/shutdown_in_progress 1
     stop vendor.per_proxy
 
+#on property:vold.decrypt=trigger_restart_framework
+#   start vendor.cnss_diag
+
+on property:persist.vendor.cnss_diag.enable=true
+    start vendor.cnss_diag
+
+on property:persist.vendor.cnss_diag.enable=false
+    stop vendor.cnss_diag
+
+service vendor.cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM -b 2048 --time_interval 11 -s
+   class main
+   user system
+   group system wifi inet sdcard_rw media_rw diag
+   disabled
+   oneshot
+
 service vendor.nv_mac /vendor/bin/nv_mac
     class late_start
     user system
@@ -472,7 +481,6 @@ service vendor.sniffer.circular /vendor/bin/tcpdump -i wlan0 -W 3 -C 300 -w /dat
     oneshot
 
 on property:sys.boot_completed=1
-    write /sys/devices/virtual/thermal/thermal_message/sconfig 1
     enable vendor.qvirtmgr
     start  vendor.qvirtmgr
 
@@ -573,15 +581,9 @@ on post-fs-data
     restorecon /sys/module/metis/parameters/del_mi_viptask_sched_lit_core
     chmod 0666 /sys/module/metis/parameters/is_break_enable
     restorecon /sys/module/metis/parameters/is_break_enable
-    chmod 0666 /sys/module/metis/parameters/binder_from_pid
-    restorecon /sys/module/metis/parameters/binder_from_pid
 
     chmod 0662 /dev/miev
     restorecon /dev/miev
-
-    # Goodix fingerprint
-    mkdir /data/vendor/goodix 0770 system system
-    mkdir /mnt/vendor/persist/goodix 0770 system system
 
 on property:sys.lmkd.memory.compact=1
     setprop sys.lmkd.memory.compact 0
@@ -605,40 +607,6 @@ on property:sys.volume.stream.music.device.bluetooth=*
 
 on property:sys.volume.stream.bluetoothsco=*
     setprop vendor.volume.stream.bluetoothsco ${sys.volume.stream.bluetoothsco}
-
-# Logger
-service boot_lc /system/bin/logcat -db all -D -f /cache/boot_lc_full.log
-    class main
-    user root
-    group root system
-    disabled
-    oneshot
-
-service boot_lc_crash /system/bin/logcat -db crash -D -f /cache/boot_lc_crash.log
-    class main
-    user root
-    group root system
-    disabled
-    oneshot
-
-service boot_lc_kernel /system/bin/logcat -db kernel -D -f /cache/boot_lc_kernel.log
-    class main
-    user root
-    group root system
-    disabled
-    oneshot
-
-on post-fs-boot
-
-on property:sys.boot_completed=1
-    stop boot_lc
-    stop boot_lc_crash
-    stop boot_lc_kernel
-
-on property:dev.bootcomplete=1
-    stop boot_lc
-    stop boot_lc_crash
-    stop boot_lc_kernel
 
 service vendor.sensors-hal-2-1-multihal /vendor/bin/hw/android.hardware.sensors@2.1-service.xiaomi-multihal
     override

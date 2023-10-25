@@ -4,8 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/mondrian
-KERNEL_PATH := device/xiaomi/mondrian-kernel
+DEVICE_PATH := device/xiaomi/diting
+KERNEL_PATH := device/xiaomi/diting-kernel
 
 #Test
 #BOARD_VNDK_VERSION := current
@@ -105,8 +105,8 @@ PRODUCT_COPY_FILES += \
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config/config.fs
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_mondrian
-TARGET_RECOVERY_DEVICE_MODULES ?= init_xiaomi_mondrian
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_diting
+TARGET_RECOVERY_DEVICE_MODULES ?= init_xiaomi_diting
 
 # Kernel
 BOARD_KERNEL_PAGESIZE := 4096
@@ -171,7 +171,7 @@ TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
 BOARD_USES_METADATA_PARTITION := true
 
 # OTA assert
-TARGET_OTA_ASSERT_DEVICE := mondrian
+TARGET_OTA_ASSERT_DEVICE := diting
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144
@@ -278,4 +278,4 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 PRODUCT_VENDOR_MOVE_ENABLED := true
 
 # Inherit from the proprietary version
--include vendor/xiaomi/mondrian/BoardConfigVendor.mk
+-include vendor/xiaomi/diting/BoardConfigVendor.mk

@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_mondrian.mk
+    $(LOCAL_DIR)/lineage_diting.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_mondrian-eng \
-    lineage_mondrian-userdebug \
-    lineage_mondrian-user
+    lineage_diting-eng \
+    lineage_diting-userdebug \
+    lineage_diting-user
