@@ -1,0 +1,3 @@
+allow vendor_hal_perf_default hal_mtdservice_default:dir search;
+allow vendor_hal_perf_default hal_mtdservice_default:file r_file_perms;
+
