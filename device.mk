@@ -469,7 +469,6 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.recovery.qcom.rc \
     init.target.rc \
-    init.touch.rc \
     ueventd.qcom.rc \
     ueventd-odm.rc
 
