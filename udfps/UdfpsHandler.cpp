@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#define LOG_TAG "UdfpsHandler.mondrian"
+#define LOG_TAG "UdfpsHandler.diting"
 
 #include <android-base/logging.h>
 #include <android-base/unique_fd.h>
