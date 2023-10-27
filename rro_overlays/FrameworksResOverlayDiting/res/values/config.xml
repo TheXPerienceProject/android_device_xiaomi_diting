@@ -64,6 +64,6 @@
     <integer-array name="config_udfps_sensor_props" translatable="false">
         <item>610</item>
         <item>2444</item>
-        <item>119</item>
+        <item>114</item>
     </integer-array>
 </resources>
