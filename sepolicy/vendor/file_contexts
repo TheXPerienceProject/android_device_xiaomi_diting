@@ -61,6 +61,7 @@ vendor/bin/mutualex                                                       u:obje
 /data/vendor/modem(/.*)?                                                  u:object_r:vendor_modem_data_file:s0
 
 # Display
+/sys/devices/virtual/mi_display/disp_feature/disp-DSI-0/disp_param        u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/virtual/mi_display/disp_feature/disp-DSI-+[0-1](/.*)?        u:object_r:vendor_sysfs_graphics:s0
 
 # Displayfeature
