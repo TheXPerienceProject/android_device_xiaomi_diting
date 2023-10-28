@@ -26,7 +26,6 @@ persist.vendor.disable_idle_fps                       u:object_r:vendor_displayf
 persist.vendor.disable_idle_fps.threshold             u:object_r:vendor_displayfeature_prop:s0
 persist.vendor.displayfeature.video.pq.type           u:object_r:vendor_displayfeature_prop:s0
 persist.vendor.dolbyvision.flat_on                    u:object_r:vendor_displayfeature_prop:s0
-persist.vendor.EnableP3ColorSpace                     u:object_r:vendor_displayfeature_prop:s0
 persist.vendor.fod.modified.dc_status                 u:object_r:vendor_displayfeature_prop:s0
 persist.vendor.max.brightness                         u:object_r:vendor_displayfeature_prop:s0
 persist.vendor.power.dfps.level                       u:object_r:vendor_displayfeature_prop:s0
