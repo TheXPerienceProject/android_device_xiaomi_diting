@@ -149,7 +149,6 @@ on property:sys.boot_completed=1
 on charger
     chmod 0660 /sys/class/power_supply/wireless/reverse_chg_mode
 
-
 # Override hals
 service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
     override
