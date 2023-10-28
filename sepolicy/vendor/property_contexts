@@ -3,6 +3,7 @@ vendor.camera.                                        u:object_r:vendor_camera_p
 persist.camera.                                       u:object_r:vendor_camera_prop:s0
 ro.boot.camera.                                       u:object_r:vendor_camera_prop:s0
 vendor.camera.sensor.                                 u:object_r:vendor_camera_sensor_prop:s0
+persist.vendor.EnableP3ColorSpace                     u:object_r:vendor_camera_sensor_prop:s0
 
 # DDR
 vendor.ddr_training.is.start                          u:object_r:vendor_ddr_prop:s0
@@ -114,13 +115,18 @@ vendor.fps_hal.                                       u:object_r:vendor_fp_prop:
 vendor.panel.display.                                 u:object_r:vendor_fp_prop:s0
 vendor.sys.fp                                         u:object_r:vendor_fp_prop:s0
 persist.vendor.goodix.                                u:object_r:vendor_fp_prop:s0
-ro.hardware.fp.udfps u:object_r:vendor_fp_prop:s0
+ro.hardware.fp.udfps                                  u:object_r:vendor_fp_prop:s0
+vendor.xiaomi.hardware.dtool::IDtool                  u:object_r:vendor_fp_prop:s0
 
 # GNSS
 ro.vendor.gnss.edgnss.downloadQxwzAk                  u:object_r:vendor_edgnss_qxwz_downloadak_prop:s0
 
 # Panel
 vendor.panel.                                         u:object_r:vendor_panel_info_prop:s0
+vendor.touchfeature.                                  u:object_r:vendor_touchfeature_prop:s0
+ro.vendor.touchfeature.type                           u:object_r:vendor_touchfeature_prop:s0
+persist.vendor.touchfeature.                          u:object_r:vendor_touchfeature_prop:s0
+persist.vendor.hostprocess.waterproof                 u:object_r:vendor_touch_hostprocess_prop:s0
 
 # Mlipay
 persist.vendor.sys.pay.                               u:object_r:vendor_mlipay_prop:s0
@@ -137,6 +143,7 @@ ro.vendor.se.                                         u:object_r:vendor_nfc_mi_p
 # Sensors
 persist.vendor.sensors.ins.                           u:object_r:vendor_mi_ins_prop:s0
 persist.vendor.sensors.ins_debug                      u:object_r:vendor_mi_ins_prop:s0
+persist.vendor.sensors.parsedalgo.                    u:object_r:vendor_parsedalgo_prop:s0
 
 # SLA
 vendor.sla.enabled                                    u:object_r:vendor_slad_prop:s0
