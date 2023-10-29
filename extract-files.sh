@@ -65,11 +65,14 @@ function blob_fixup() {
     vendor/etc/camera/pureView_parameter.xml)
         sed -i "s/=\([0-9]\+\)>/=\"\1\">/g" "${2}"
         ;;
-        vendor/bin/hw/vendor.qti.secure_element@1.2-service)
-            "${PATCHELF}" --replace-needed "jcos_nq_client-v1.so" "jcos_nq_client.so" "${2}"
-            "${PATCHELF}" --replace-needed "ls_nq_client-v1.so" "ls_nq_client.so" "${2}"
-            "${PATCHELF}" --replace-needed "se_nq_extn_client-v1.so" "se_nq_extn_client.so" "${2}"
-            ;;
+    vendor/bin/hw/vendor.qti.secure_element@1.2-service)
+        "${PATCHELF}" --replace-needed "jcos_nq_client-v1.so" "jcos_nq_client.so" "${2}"
+        "${PATCHELF}" --replace-needed "ls_nq_client-v1.so" "ls_nq_client.so" "${2}"
+        "${PATCHELF}" --replace-needed "se_nq_extn_client-v1.so" "se_nq_extn_client.so" "${2}"
+        ;;
+    vendor/lib64/libmialgoengine.so)
+        "${PATCHELF}" --remove-needed "libui.so" "${2}"
+        ;;
     esac
 }
 
