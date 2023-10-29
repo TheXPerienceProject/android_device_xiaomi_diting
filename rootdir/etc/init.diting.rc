@@ -186,4 +186,3 @@ service mfp-daemon /vendor/bin/hw/mfp-daemon
     user system
     group system drmrpc diag input uhid
     override
-    disabled
