@@ -6,6 +6,6 @@
 
 runtime_resource_overlay {
     name: "CarrierConfigResCommon",
-    vendor: true,
+    product_specific: true,
     aaptflags: ["--keep-raw-values"],
 }

@@ -6,5 +6,5 @@
 
 runtime_resource_overlay {
     name: "AospWifiResOverlayDitingGlobal",
-    vendor: true,
+    product_specific: true,
 }

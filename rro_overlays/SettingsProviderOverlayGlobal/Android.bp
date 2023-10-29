@@ -1,4 +1,4 @@
 runtime_resource_overlay {
     name: "SettingsProviderOverlayGlobal",
-    vendor: true,
+    product_specific: true,
 }
