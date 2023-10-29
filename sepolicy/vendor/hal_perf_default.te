@@ -1,0 +1,3 @@
+allow vendor_hal_perf_default vendor_vppservice:dir search;
+allow vendor_hal_perf_default vendor_vppservice:file r_file_perms;
+

@@ -35,7 +35,7 @@ static const variant_info_t diting_info = {
     .device = "diting",
     .marketname = "Redmi K50 Ultra",
     .model = "22081212C",
-    .mod_device = "diting_global",
+    .mod_device = "diting",
     .build_fingerprint = FINGERPRINT_CN,
 };
 
