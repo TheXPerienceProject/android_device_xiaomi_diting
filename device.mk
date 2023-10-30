@@ -252,6 +252,11 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl-diting \
     android.hardware.health@2.1-service
 
+# HotwordEnrollement
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/permissions/hotword-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/hotword-hiddenapi-package-whitelist.xml \
+    $(DEVICE_PATH)/configs/permissions/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml
+
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.manager@1.0 \
