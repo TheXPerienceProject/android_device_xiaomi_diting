@@ -1740,7 +1740,7 @@ vendor/lib64/vendor.xiaomi.hardware.fx.tunnel@1.0.so
 # Test FP on k50u
 vendor/bin/hw/mfp-daemon
 vendor/etc/init/init.mfp-daemon.rc
-vendor/etc/vintf/manifest/AHBF@2.1-service.xml
+#vendor/etc/vintf/manifest/AHBF@2.1-service.xml
 vendor/lib64/vendor.xiaomi.hardware.fingerprintextension@1.0.so
 
 # FM
