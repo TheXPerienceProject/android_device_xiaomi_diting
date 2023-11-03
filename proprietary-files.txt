@@ -471,6 +471,7 @@ vendor/lib64/libos.so
 vendor/lib64/libqll.so
 vendor/lib64/libqll10.so
 vendor/lib64/libqllengine.so
+vendor/lib64/libqnnwrapper.so
 vendor/lib64/libqshcamera.so
 vendor/lib64/libquickcamera.so
 vendor/lib64/librelight_only.so

@@ -32,7 +32,7 @@ if ! apktool d "${SRC}" -o "${TMPDIR}"/out &> "${log}"; then
 fi
 
 rm -rf mkdir ./rro_overlays/${name}
-mkdir ./rro_overlays/${name}
+mkdir -p ./rro_overlays/${name}
 
 # Copy resources from apktool dump
 cp -r ${TMPDIR}/out/res ./rro_overlays/${name}/
