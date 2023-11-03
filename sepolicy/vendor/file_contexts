@@ -11,6 +11,9 @@
 # Battery secret
 /(vendor|system/vendor)/bin/batterysecret                                 u:object_r:batterysecret_exec:s0
 
+# Brightness
+/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/backlight/panel0-backlight/brightness        u:object_r:vendor_sysfs_graphics:s0
+
 # Camera
 /(vendor|system/vendor)/bin/hw/vendor.xiaomi.hardware.quickcamera@1.0-service             u:object_r:hal_quickcamera_default_exec:s0
 /mnt/vendor/persist/camera(/.*)?                                          u:object_r:camera_persist_file:s0
@@ -53,6 +56,7 @@
 /vendor/lib(64)?/rfsa/adsp/libsnpe_htp_v65_skel\.so                       u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/rfsa/adsp/libsnpe_htp_v66_skel\.so                       u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/rfsa/adsp/libsnpe_htp_v68_skel\.so                       u:object_r:same_process_hal_file:s0
+/system/lib(64)?/libcamera_metadata\.so                       u:object_r:same_process_hal_file:s0
 
 # CNE
 vendor/bin/mutualex                                                       u:object_r:vendor_mutualex_exec:s0
@@ -75,6 +79,7 @@ vendor/bin/mutualex                                                       u:obje
 /data/vendor/goodix/gf_data(/.*)?		                                  u:object_r:vendor_fingerprint_data_file:s0
 /data/vendor_de/[0-9]+/goodix(/.*)?	                                      u:object_r:vendor_fingerprint_data_file:s0
 /dev/goodix_fp                                                            u:object_r:vendor_fingerprint_device:s0
+/data/vendor/fpdump/(/.*)?	                                              u:object_r:vendor_fingerprint_data_file:s0
 /mnt/vendor/persist/goodix(/.*)?                                          u:object_r:vendor_fingerprint_data_file:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.xiaomi u:object_r:hal_fingerprint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hardware\.dtool@1\.0-service   u:object_r:hal_fingerprint_default_exec:s0
@@ -177,6 +182,7 @@ vendor/bin/mutualex                                                       u:obje
 /sys/devices/virtual/touch/touch_dev/tx_num                                      u:object_r:sysfs_touch_hostprocess:s0
 /sys/devices/virtual/touch/touch_dev/update_rawdata                           u:object_r:sysfs_touch_hostprocess:s0
 /sys/devices/virtual/touch/tp_dev/fod_status                                       u:object_r:sysfs_tp_fodstatus:s0
+/sys/devices/virtual/touch/touch_dev/fod_press_status                              u:object_r:sysfs_tp_fodstatus:s0
 
 # Vibrator
 /vendor/bin/hw/vendor\.qti\.hardware\.vibrator\.service\.xiaomi           u:object_r:hal_vibrator_default_exec:s0

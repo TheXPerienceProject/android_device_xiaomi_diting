@@ -44,3 +44,8 @@ r_dir_file(hal_fingerprint_default, firmware_file)
 # Read the firmware (cuz seclabel on fstab is broken)
 allow hal_fingerprint_default vfat:dir { search };
 allow hal_fingerprint_default vfat:file r_file_perms;
+
+# MFP-DAEMON
+allow hal_fingerprint_default vendor_data_file:dir { add_name create write };
+allow hal_fingerprint_default vendor_data_file:file { read open append getattr };
+allow hal_fingerprint_default graphics_device:chr_file { read open write ioctl };
