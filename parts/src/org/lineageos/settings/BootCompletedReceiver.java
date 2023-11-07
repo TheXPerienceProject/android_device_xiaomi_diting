@@ -2,6 +2,8 @@
  * Copyright (C) 2015 The CyanogenMod Project
  *               2017-2020 The LineageOS Project
  *
+ * Copyright (C) 2023-2024 Paranoid Android
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -43,11 +45,18 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(final Context context, Intent intent) {
-        if (!intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
-            return;
+        if (DEBUG) Log.i(TAG, "Received intent: " + intent.getAction());
+        switch (intent.getAction()) {
+            case Intent.ACTION_LOCKED_BOOT_COMPLETED:
+                onLockedBootCompleted(context);
+                break;
+            case Intent.ACTION_BOOT_COMPLETED:
+                onBootCompleted(context);
+                break;
         }
-        if (DEBUG)
-            Log.d(TAG, "Received boot completed intent");
+    }
+
+    private static void onLockedBootCompleted(Context context) {
 
         // Display
         context.startServiceAsUser(new Intent(context, ColorModeService.class),
@@ -80,5 +89,9 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         displayManager.overrideHdrTypes(Display.DEFAULT_DISPLAY, new int[]{
                 HdrCapabilities.HDR_TYPE_DOLBY_VISION, HdrCapabilities.HDR_TYPE_HDR10,
                 HdrCapabilities.HDR_TYPE_HLG, HdrCapabilities.HDR_TYPE_HDR10_PLUS});
+    }
+
+    private static void onBootCompleted(Context context) {
+
     }
 }
