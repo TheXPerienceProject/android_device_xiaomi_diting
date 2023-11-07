@@ -230,7 +230,9 @@ PRODUCT_COPY_FILES += \
 # Graphics
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.4.vendor \
+    android.hardware.graphics.allocator-V1-ndk \
     android.hardware.graphics.allocator-V1-ndk.vendor \
+    android.hardware.graphics.common-V3-ndk \
     android.hardware.graphics.common-V3-ndk.vendor \
     libgralloc.qti \
     libgui_vendor \
@@ -238,6 +240,8 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     libtinyxml2 \
     vendor.display.config@1.11.vendor \
+    vendor.display.config@2.0 \
+    vendor.display.config@2.0.vendor \
     vendor.qti.hardware.display.allocator@1.0.vendor \
     vendor.qti.hardware.display.allocator@3.0.vendor \
     vendor.qti.hardware.display.allocator@4.0.vendor \
