@@ -78,6 +78,7 @@ SOONG_CONFIG_android_hardware_audio += \
 SOONG_CONFIG_android_hardware_audio_run_64bit := true
 
 PRODUCT_PACKAGES += \
+    android.media.audio.common.types-V1-cpp.vendor \
     android.hardware.audio@7.0-impl \
     android.hardware.audio.effect@7.0-impl \
     android.hardware.audio.service \
@@ -240,8 +241,6 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     libtinyxml2 \
     vendor.display.config@1.11.vendor \
-    vendor.display.config@2.0 \
-    vendor.display.config@2.0.vendor \
     vendor.qti.hardware.display.allocator@1.0.vendor \
     vendor.qti.hardware.display.allocator@3.0.vendor \
     vendor.qti.hardware.display.allocator@4.0.vendor \
@@ -331,6 +330,7 @@ PRODUCT_PACKAGES += \
 
 # Keymaster
 PRODUCT_PACKAGES += \
+    android.hardware.identity-V4-ndk.vendor \
     android.hardware.keymaster@4.1 \
     android.hardware.keymaster@4.1.vendor \
     libkeymaster_messages \
