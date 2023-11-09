@@ -56,9 +56,6 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-    vendor/bin/hw/vendor.qti.hardware.display.composer-service)
-        "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
-        ;;
     vendor/etc/camera/diting*_motiontuning.xml)
         sed -i 's/xml=version/xml\ version/g' "${2}"
         ;;
