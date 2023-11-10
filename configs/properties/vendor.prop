@@ -161,6 +161,9 @@ vendor.audio.feature.audiozoom.enable=false
 vendor.audio.feature.snd_mon.enable=true
 vendor.audio.feature.dmabuf.cma.memory.enable=true
 
+# Battery
+persist.vendor.battery.health=true
+
 # Bluetooth
 bluetooth.hardware.power.idle_cur_ma=6
 bluetooth.hardware.power.operating_voltage_mv=3700
@@ -198,6 +201,19 @@ ro.camera.enableCamera1MaxZsl=1
 ro.hardware.camera=xiaomi
 persist.sys.miui.camera.version=2.7
 persist.sys.miui.camera.boost.killAdj_threshold=100
+persist.sys.miui.camera.boost.task=6
+persist.sys.camera.boost.threshold=2621440
+persist.sys.camera.boost.ext.mem=1048576
+persist.sys.camera.boost.reclaim.pages=524288
+persist.sys.miui.camera.boost.force_stop=false
+persist.sys.miui.camera.boost.kill701_threshold=307200
+persist.sys.miui.camera.boost.killAdj_threshold=201
+persist.sys.miui.camera.inhibit_procs.enable=false
+persist.sys.miui.camera.intercept_restart.time=2000
+persist.sys.miui.camera.restrict_procs.time=2000
+persist.sys.miui.camera.boost.enable=true
+persist.sys.miui.camera.boost.opt=true
+ro.vendor.display.video_or_camera_fps.support=true
 
 # Display
 vendor.display.disable_hw_recovery_dump=1
@@ -371,13 +387,29 @@ persist.sys.lmkd.extend_reclaim.enable=true
 
 # Media
 debug.c2.use_dmabufheaps=1
+debug.config.media.video.aie.support=true
+debug.config.media.video.ais.support=true
+debug.config.media.video.frc.support=true
 debug.mdpcomp.logs=0
-debug.stagefright.omx_default_rank=0
+debug.media.video.chipset=5
+debug.media.video.frc=false
+debug.media.video.vpp=false
 debug.stagefright.c2inputsurface=-1
 debug.stagefright.ccodec=4
+debug.stagefright.omx_default_rank=0
+ro.vendor.media.video.frc.support=true
+ro.vendor.media.video.vpp.support=true
+vendor.media.vpp.aie.cade=100
+vendor.media.vpp.aie.ltm=1
+vendor.media.vpp.aie.ltmacebrih=0
+vendor.media.vpp.aie.ltmacebril=20
+vendor.media.vpp.aie.ltmacestr=37
+vendor.media.vpp.aie.ltmsatgain=55
+vendor.media.vpp.aie.ltmsatoff=55
+vendor.media.vpp.debug.value.use=false
+vendor.mm.enable.qcom_parser=16777215
 ro.mediaserver.64b.enable=true
 vendor.media.omx=0
-vendor.mm.enable.qcom_parser=16777215
 
 # Misc
 sys.vendor.shutdown.waittime=500
@@ -400,6 +432,10 @@ ro.vendor.perf.scroll_opt=1
 ro.vendor.perf.scroll_opt.heavy_app=2
 vendor.power.pasr.enabled=false
 vendor.pasr.activemode.enabled=false
+ro.vendor.beluga.c=0x4800
+ro.vendor.beluga.p=0x3
+ro.vendor.beluga.s=0x900
+ro.vendor.beluga.t=0x240
 
 # QFP
 persist.vendor.qfp=true
@@ -409,13 +445,16 @@ ro.vendor.qspm.enable=true
 
 # Radio
 persist.radio.multisim.config=dsds
-persist.vendor.radio.dynamic_sar=1
 persist.vendor.radio.apm_sim_not_pwdn=1
-persist.vendor.radio.sib16_support=1
 persist.vendor.radio.custom_ecc=1
-persist.vendor.radio.procedure_bytes=SKIP
+persist.vendor.radio.dynamic_sar=1
+persist.vendor.radio.enable_temp_dds=true
 persist.vendor.radio.enableadvancedscan=true
-persist.vendor.radio.redir_party_num=0
+persist.vendor.radio.procedure_bytes=SKIP
+persist.vendor.radio.sib16_support=1
+rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
+ro.vendor.radio.5g=3
+ro.vendor.radio.features_common=3
 
 # RCS
 persist.vendor.rcs.singlereg.feature=1
