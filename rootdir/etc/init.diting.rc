@@ -110,6 +110,13 @@ on fs
     chown system system /sys/bus/i2c/drivers/awinic_haptic/6-005a/custom_wave
     chmod 0666  /sys/bus/i2c/drivers/awinic_haptic/6-005a/custom_wave
 
+on post-fs
+    chown system system /sys/class/backlight/panel0-backlight/brightness
+    chown system system /sys/class/backlight/panel0-backlight/max_brightness
+
+    # Bind mount brightness node
+    mount none /sys/class/backlight/panel0-backlight/brightness /sys/class/mi_display/disp-DSI-0/brightness_clone bind
+
 on post-fs-data
 
     # Create directory for mbnconfig

@@ -31,3 +31,6 @@ allow init vendor_dmabuf_qseecom_heap_device:chr_file  { ioctl read open };
 allow init sysfs_tp_fodstatus:file open;
 # /dev/xiaomi-touch
 allow init touchfeature_device:chr_file { read open write ioctl};
+
+# allow to bind brightness
+allow init vendor_sysfs_graphics:file mounton;
