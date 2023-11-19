@@ -1538,7 +1538,6 @@ vendor/lib64/vendor.display.color@1.7.so
 vendor/lib64/vendor.display.postproc@1.0.so
 
 # Display SDM
-vendor/etc/display/advanced_sf_offsets.xml
 vendor/etc/display/DPU660.xml
 vendor/etc/display/DPU670.xml
 vendor/etc/display/DPU720.xml

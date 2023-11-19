@@ -162,6 +162,10 @@ PRODUCT_COPY_FILES += \
 #include miui
 $(call inherit-product-if-exists, device/xiaomi/miuicamera-diting/device.mk)
 
+# Display
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/display/advanced_sf_offsets.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display/advanced_sf_offsets.xml
+
 # Doze
 PRODUCT_PACKAGES += \
     Doze
