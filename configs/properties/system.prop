@@ -1,3 +1,7 @@
+#button jack mode & switch
+persist.audio.button_jack.profile=volume
+persist.audio.button_jack.switch=0
+
 # Bluetooth
 persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptiver2-aac-ldac-lhdc
 persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aptxadaptiver2-aac-ldac-lhdc
@@ -58,14 +62,26 @@ ro.lmk.direct_reclaim_pressure=45
 ro.lmk.reclaim_scan_threshold=0
 
 # Media
-media.aac_51_output_enabled=true
-media.stagefright.enable-aac=true
-media.stagefright.enable-fma2dp=true
-media.stagefright.enable-http=true
 media.stagefright.enable-player=true
+media.stagefright.enable-http=true
+media.stagefright.enable-aac=true
 media.stagefright.enable-qcp=true
+media.stagefright.enable-fma2dp=true
 media.stagefright.enable-scan=true
 media.stagefright.thumbnail.prefer_hw_codecs=true
+mmp.enable.3g2=true
+media.aac_51_output_enabled=true
+media.settings.xml=/vendor/etc/media_profiles_cape.xml
+qcom.hw.aac.encoder=true
+vendor.mm.enable.qcom_parser=16777215
+persist.mm.enable.prefetch=true
+#Property to enable Codec2 for audio and OMX for Video
+debug.stagefright.ccodec=1
+#Property to set native recorder's maximum base layer fps
+ro.media.recorder-max-base-layer-fps=60
+
+#Disable MTE Async for system server
+arm64.memtag.process.system_server=off
 
 # Radio VoNR Calling
 persist.radio.is_vonr_enabled_0=true
@@ -74,16 +90,40 @@ persist.radio.is_vonr_enabled_1=true
 # MGLRU Config
 persist.device_config.mglru_native.lru_gen_config=all
 
+# Opengl
+ro.opengles.version=196610
+
 # Property to enable HWC for VDS
 debug.sf.enable_hwc_vds=1
 
 # RIL
+persist.rild.nitz_plmn=
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
+ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
 persist.vendor.data.mode=concurrent
 ril.subscription.types=NV,RUIM
 ro.telephony.default_network=33,33
 telephony.lteOnCdmaDevice=1
 persist.sys.radio.force_lte_ca=true
+
+#system prop for RmNet Data
+persist.rmnet.data.enable=true
+persist.data.wda.enable=true
+persist.data.df.dl_mode=5
+persist.data.df.ul_mode=5
+persist.data.df.agg.dl_pkt=10
+persist.data.df.agg.dl_size=4096
+persist.data.df.mux_count=8
+persist.data.df.iwlan_mux=9
+persist.data.df.dev_name=rmnet_usb0
 
 # Sensors
 persist.vendor.sensors.enable.mag_filter=true
@@ -93,6 +133,9 @@ persist.vendor.ssr.enable_ramdumps=1
 
 # System prop for NFC DT
 ro.nfc.port=I2C
+
+# Time service
+persist.timed.enable=true
 
 # WiFi display
 persist.debug.wfd.enable=1
