@@ -279,7 +279,6 @@ PRODUCT_PACKAGES += \
     android.hidl.memory.block@1.0 \
     android.hidl.memory.block@1.0.vendor \
     android.hidl.allocator@1.0.vendor \
-    libhidltransport.vendor \
     libhidltransport \
     libhidltransport.vendor \
     libhwbinder \
@@ -301,7 +300,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml \
-    IPACM_Filter_cfg.xml
+    IPACM_Filter_cfg.xml \
+    libipanat \
+    liboffloadhal
 
 # IR
 PRODUCT_PACKAGES += \
@@ -681,3 +682,7 @@ BOARD_SHIPPING_API_LEVEL := 31
 # Partition source order for Product/Build properties pickup.
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.product.property_source_order=odm,vendor,product,system_ext,system
+
+# debug
+PRODUCT_PACKAGES += \
+    strace
