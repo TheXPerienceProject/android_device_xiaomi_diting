@@ -354,6 +354,7 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video_le.xml
 
 PRODUCT_PACKAGES += \
+    android.hardware.media.c2@1.2.vendor \
     libavservices_minijail \
     libavservices_minijail_vendor \
     libavservices_minijail.vendor \
@@ -361,7 +362,7 @@ PRODUCT_PACKAGES += \
     libcodec2_soft_common.vendor \
     libcodec2_vndk.vendor \
     libpalclient \
-    android.hardware.media.c2@1.2.vendor
+    libsfplugin_ccodec_utils.vendor
 
 PRODUCT_PACKAGES += \
     init.qti.media.rc \
