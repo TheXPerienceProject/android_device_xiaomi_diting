@@ -78,7 +78,7 @@ public class ColorModeService extends Service {
                     break;
                 case Intent.ACTION_SCREEN_OFF:
                     if (!mAmbientConfig.alwaysOnEnabled(UserHandle.USER_CURRENT)) {
-                        Log.e(TAG, "AOD is not enabled");
+                        dlog("AOD is not enabled");
                         mIsDozing = false;
                         break;
                     }
@@ -94,7 +94,7 @@ public class ColorModeService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.e(TAG, "onCreate");
+        dlog("onCreate");
         mAmbientConfig = new AmbientDisplayConfiguration(this);
         getContentResolver().registerContentObserver(Settings.System.getUriFor(DISPLAY_COLOR_MODE),
                     false, mSettingObserver, UserHandle.USER_CURRENT);
