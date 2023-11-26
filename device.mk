@@ -89,6 +89,7 @@ PRODUCT_PACKAGES += \
     audio.usb.default
 
 PRODUCT_PACKAGES += \
+    libhfp_pal \
     libvolumelistener
 
 PRODUCT_COPY_FILES += \
