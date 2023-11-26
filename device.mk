@@ -361,6 +361,9 @@ PRODUCT_PACKAGES += \
     libpalclient \
     android.hardware.media.c2@1.2.vendor
 
+PRODUCT_PACKAGES += \
+    init.qti.media.rc \
+    init.qti.media.sh
 
 # OMX
 PRODUCT_PACKAGES += \
