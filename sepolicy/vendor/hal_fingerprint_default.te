@@ -49,3 +49,5 @@ allow hal_fingerprint_default vfat:file r_file_perms;
 allow hal_fingerprint_default vendor_data_file:dir { add_name create write };
 allow hal_fingerprint_default vendor_data_file:file { read open append getattr };
 allow hal_fingerprint_default graphics_device:chr_file { read open write ioctl };
+allow hal_fingerprint_default vendor_data_file:file create_file_perms;
+
