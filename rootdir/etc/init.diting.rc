@@ -179,7 +179,6 @@ service vendor.fps_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.
     class late_start
     user system
     group system input uhid
-    disabled
 
 service mfp-daemon /vendor/bin/hw/mfp-daemon
     class late_start
