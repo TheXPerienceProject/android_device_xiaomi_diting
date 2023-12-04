@@ -2297,24 +2297,26 @@ vendor/lib64/libqti-util.so
 vendor/lib64/libqti-utils.so
 vendor/lib64/libskewknob.so
 
+# Perf LM - from pong
+vendor/etc/lm/AdaptLaunchFeature.xml
+vendor/etc/lm/LightningLaunchesFeature.xml
+vendor/etc/lm/QGPE.xml
+vendor/etc/lm/QGPEActionMap.xml
+vendor/etc/lm/sPLHFeature.xml
+
 # Perf LM
 vendor/bin/hw/vendor.qti.hardware.iop@2.0-service
 vendor/bin/perf_qesdk_client
 vendor/etc/init/qapeservice.rc
 vendor/etc/init/vendor.qti.hardware.iop@2.0-service.rc
-vendor/etc/lm/AdaptLaunchFeature.xml
 vendor/etc/lm/AppClassifierFeature.xml
-vendor/etc/lm/LightningLaunchesFeature.xml
 vendor/etc/lm/PreKillFeature.xml
 vendor/etc/lm/ProCompFeature.xml
 vendor/etc/lm/QAPE.xml
-vendor/etc/lm/QGPE.xml
-vendor/etc/lm/QGPEActionMap.xml
 vendor/etc/lm/SilkyScrollsFeature.xml
 vendor/etc/lm/prekill/prekill_2GB.data
 vendor/etc/lm/prekill/prekill_4GB.data
 vendor/etc/lm/prekill/prekill_6GB.data
-vendor/etc/lm/sPLHFeature.xml
 vendor/lib/libpasrutils.so
 vendor/lib/libqti-iopd-client.so
 vendor/lib/libqti-iopd.so
