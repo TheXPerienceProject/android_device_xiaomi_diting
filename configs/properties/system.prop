@@ -61,24 +61,6 @@ ro.lmk.psi_scrit_complete_stall_ms=150
 ro.lmk.direct_reclaim_pressure=45
 ro.lmk.reclaim_scan_threshold=0
 
-# Media
-media.stagefright.enable-player=true
-media.stagefright.enable-http=true
-media.stagefright.enable-aac=true
-media.stagefright.enable-qcp=true
-media.stagefright.enable-fma2dp=true
-media.stagefright.enable-scan=true
-media.stagefright.thumbnail.prefer_hw_codecs=true
-mmp.enable.3g2=true
-media.aac_51_output_enabled=true
-qcom.hw.aac.encoder=true
-vendor.mm.enable.qcom_parser=16777215
-persist.mm.enable.prefetch=true
-#Property to enable Codec2 for audio and OMX for Video
-debug.stagefright.ccodec=1
-#Property to set native recorder's maximum base layer fps
-ro.media.recorder-max-base-layer-fps=60
-
 #Disable MTE Async for system server
 arm64.memtag.process.system_server=off
 
