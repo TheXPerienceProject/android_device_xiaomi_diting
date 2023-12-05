@@ -34,3 +34,6 @@ set_prop(hal_touchfeature_xiaomi_default, vendor_touch_hostprocess_prop)
 unix_socket_connect(hal_touchfeature_xiaomi_default, property, init)
 unix_socket_connect(hal_touchfeature_xiaomi_default, property, touchreport)
 unix_socket_connect(hal_touchfeature_xiaomi_default, property, tpevent)
+
+# mfp daemon
+allow hal_touchfeature_xiaomi_default touchfeature_device:chr_file rw_file_perms;
