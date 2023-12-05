@@ -669,4 +669,6 @@ PRODUCT_SYSTEM_PROPERTIES += \
 
 # debug
 PRODUCT_PACKAGES += \
-    strace
+    strace \
+    libstdc++ \
+    libstdc++.vendor 
