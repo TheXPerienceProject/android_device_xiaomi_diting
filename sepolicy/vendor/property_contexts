@@ -116,6 +116,7 @@ vendor.sys.fp                                         u:object_r:vendor_fp_prop:
 persist.vendor.goodix.                                u:object_r:vendor_fp_prop:s0
 ro.hardware.fp.udfps                                  u:object_r:vendor_fp_prop:s0
 vendor.xiaomi.hardware.dtool::IDtool                  u:object_r:vendor_fp_prop:s0
+vendor.dtool.           u:object_r:vendor_fp_prop:s0
 android.hardware.biometrics.fingerprint::IBiometricsFingerprint               u:object_r:vendor_fp_prop:s0
 vendor.xiaomi.hardware.fingerprintextension::IXiaomiFingerprint               u:object_r:vendor_fp_prop:s0
 
@@ -137,7 +138,10 @@ persist.vendor.sys.provision.status                   u:object_r:vendor_mlipay_p
 vendor.sys.feature_state                              u:object_r:vendor_payment_security_prop:s0
 vendor.sys.rpmb_state                                 u:object_r:vendor_payment_security_prop:s0
 persist.vendor.sys.pay.fido                           u:object_r:vendor_payment_security_prop:s0
+persist.vendor.sys.pay.fido2                          u:object_r:vendor_payment_security_prop:s0
 persist.vendor.sys.pay.widevine                       u:object_r:vendor_payment_security_prop:s0
+persist.vendor.sys.pay.ifaa                           u:object_r:vendor_payment_security_prop:s0
+persist.vendor.sys.pay.soter                          u:object_r:vendor_payment_security_prop:s0
 
 # NFC
 ro.vendor.nfc.                                        u:object_r:vendor_nfc_mi_prop:s0
