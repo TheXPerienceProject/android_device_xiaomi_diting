@@ -26,3 +26,4 @@ get_prop(platform_app, vendor_fp_prop)
 # MFP
 allow platform_app vendor_sysfs_graphics:dir search;
 allow platform_app vendor_sysfs_graphics:file r_file_perms;
+allow platform_app vendor_hal_fingerprint_hwservice_xiaomi:hwservice_manager { find };
