@@ -76,6 +76,8 @@ void vendor_load_properties() {
 
     // SafetyNet workaround
     property_override("ro.boot.verifiedbootstate", "green");
+    property_override("ro.build.type", "user");
+    property_override("ro.build.tags", "release-keys");
 
     // SF
     property_override("vendor.display.enable_fb_scaling", "0");
