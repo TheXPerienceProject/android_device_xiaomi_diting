@@ -587,6 +587,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
 
+# Touch sample rate
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.diting
+
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.3-service-qti
