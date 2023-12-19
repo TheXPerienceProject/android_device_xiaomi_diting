@@ -1,0 +1,2 @@
+# for debug purposes
+allow shell vendor_file:file getattr;
