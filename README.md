@@ -18,6 +18,7 @@ It is also known as Xiaomi 12t pro (globally) and Redmi k50 ultra (China).
 | Dimensions | 163.1 x 75.9 x 8.6 mm (6.42 x 2.99 x 0.34 in) |
 | Display |	6.67 inch, 1220 x 2712 pixels, AMOLED, Dolby Vision, HDR10+, 120Hz |
 | Camera | 200 MP (main), 8 MP (ultrawide), 2 MP (macro), 20 MP (front) |
+| Camera K50u | 108 MP (main), 8 MP (ultrawide), 2 MP (macro), 20 MP (front) |
 | Fingerprint |	under display, optical |
 | Sensors | accelerometer, gyro, proximity, compass, color spectrum |
 
