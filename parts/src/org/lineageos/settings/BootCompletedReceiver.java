@@ -24,9 +24,10 @@ import android.content.IntentFilter;
 import android.hardware.display.DisplayManager;
 import android.util.Log;
 import android.os.IBinder;
+import android.os.UserHandle;
 import android.view.Display;
 import android.view.Display.HdrCapabilities;
-import com.xiaomi.settings.display.ColorModeService;
+import org.lineageos.settings.display.ColorModeService;
 
 import org.lineageos.settings.dirac.DiracUtils;
 import org.lineageos.settings.dolby.DolbyUtils;
