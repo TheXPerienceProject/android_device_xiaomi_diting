@@ -1,0 +1,3 @@
+# Displayfeature
+type vendor_hal_displayfeature_xiaomi_hwservice, hwservice_manager_type;
+
