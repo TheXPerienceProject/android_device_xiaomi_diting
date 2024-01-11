@@ -694,3 +694,7 @@ PRODUCT_PACKAGES += \
     strace \
     libstdc++ \
     libstdc++_vendor
+
+ifneq ($(TARGET_BUILD_VARIANT),eng)
+PRODUCT_PRODUCT_PROPERTIES := dalvik.vm.image-dex2oat-filter=speed
+endif
