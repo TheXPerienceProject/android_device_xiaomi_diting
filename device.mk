@@ -24,7 +24,7 @@ $(call inherit-product, vendor/xiaomi/diting/diting-vendor.mk)
 
 # Test
 PRODUCT_TARGET_VNDK_VERSION := 32
-PRODUCT_EXTRA_VNDK_VERSIONS := 30 31 32
+PRODUCT_EXTRA_VNDK_VERSIONS := 30 31 32 33
 
 PRODUCT_SHIPPING_API_LEVEL := 31
 BOARD_API_LEVEL := 31
