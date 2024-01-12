@@ -143,7 +143,7 @@ vendor/etc/models/acd/music.eai
 vendor/etc/models/acd/speech.eai
 vendor/etc/usecaseKvManager.xml
 
-# Audio firmware
+# Audio firmware 
 vendor/firmware/B-cs35l41-dsp1-spk-cali.bin
 vendor/firmware/B-cs35l41-dsp1-spk-prot.bin
 vendor/firmware/B-handfree.txt
@@ -266,9 +266,9 @@ vendor/lib64/soundfx/libvisualizer.so
 vendor/lib64/vendor.qti.hardware.pal@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.pal@1.0.so
 
-# Batterysecret
-vendor/bin/batterysecret
-vendor/etc/init/hw/init.batterysecret.rc
+# Batterysecret  - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+vendor/bin/batterysecret|c43ff25b0dde6ac7890426ca220503f0ee78f8f5
+vendor/etc/init/hw/init.batterysecret.rc|f43a2c265b79442fb8e82244caefdd2d3cdce48a
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
@@ -1249,99 +1249,99 @@ vendor/lib64/vendor.qti.hardware.slmadapter@1.0.so
 vendor/lib64/vendor.qti.latency@2.0.so
 vendor/lib64/vendor.qti.latency@2.1.so
 
-# Computer vision
-vendor/etc/eva/facedetection/model3.dat
-vendor/etc/face3d/qcnn_concat_file_model-0324_2_encrypted
-vendor/lib/libFace3DTA.so
-vendor/lib/libFace3D_hlos.so
-vendor/lib/libQ6MSFR_manager_stub.so
-vendor/lib/libcv_common.so
-vendor/lib/libcvp2_1.so
-vendor/lib/libcvpcpuRev_skel.so
-vendor/lib/libeva.so
-vendor/lib/libeva_util.so
-vendor/lib/libface3d_dev.so
-vendor/lib/libfastcrc.so
-vendor/lib/libfastcvdsp_stub.so
-vendor/lib/libfastcvopt.so
-vendor/lib/libscveCommon.so
-vendor/lib/libscveCommon_stub.so
-vendor/lib/libscveObjectSegmentation.so
-vendor/lib/libscveObjectTracker.so
-vendor/lib/libscveObjectTracker_stub.so
-vendor/lib/libvideoutils.so
-vendor/lib64/libFace3DTA.so
-vendor/lib64/libFace3D_hlos.so
-vendor/lib64/libQ6MSFR_manager_stub.so
-vendor/lib64/libcv_common.so
-vendor/lib64/libcvp2_1.so
-vendor/lib64/libcvpcpuRev_skel.so
-vendor/lib64/libeva.so
-vendor/lib64/libeva_util.so
-vendor/lib64/libface3d_dev.so
-vendor/lib64/libfastcvdsp_stub.so
-vendor/lib64/libfastcvopt.so
-vendor/lib64/libscveCommon.so
-vendor/lib64/libscveCommon_stub.so
-vendor/lib64/libscveObjectSegmentation.so
-vendor/lib64/libscveObjectTracker.so
-vendor/lib64/libscveObjectTracker_stub.so
-vendor/lib64/libvideoutils.so
+# Computer vision - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+vendor/etc/eva/facedetection/model3.dat|f5a84a7df043e2a77a9e344a1c94dee164f141cc
+vendor/etc/face3d/qcnn_concat_file_model-0324_2_encrypted|502912d220281d07cf87604a5a85c69fe3ea5034
+vendor/lib/libFace3DTA.so|19193ea7faa83ee40243a2eb55971f58537130d2
+vendor/lib/libFace3D_hlos.so|dd28b86071036cabdadf77d32cd02ab9fe28bc1d
+vendor/lib/libQ6MSFR_manager_stub.so|cc668764482024ec7f729eada9237cc2ea284fb9
+vendor/lib/libcv_common.so|1eceaaf7f69ec5a8d61af7cf8078ccb5aba5aa5e
+vendor/lib/libcvp2_1.so|349d9b8adefe4fc06a2e016939da9eef89fd3ee2
+vendor/lib/libcvpcpuRev_skel.so|f46a21c96e601f59c2c2016d44ab55c1e6a3fc64
+vendor/lib/libeva.so|b3a17f1a661b16ac85c4282a354f0428982872d4
+vendor/lib/libeva_util.so|6acbca6c93f572c4ac40ad674baa3f1252d42a5d
+vendor/lib/libface3d_dev.so|d3387602afb38c5645b35124eea867a3adb36900
+vendor/lib/libfastcrc.so|3953e94445c0f35ad94a549d78ea4ebb5d968b7d
+vendor/lib/libfastcvdsp_stub.so|da3e170328c4cd7f50dd81ed428a0aa023f72fa4
+vendor/lib/libfastcvopt.so|7fed12df0ee5b776525922d370d98bd4396b50fd
+vendor/lib/libscveCommon.so|384b7a0986bdebe84362dbd75be23246b5a2d508
+vendor/lib/libscveCommon_stub.so|e95115e82149ecb152c18fb08209903c713e58c9
+vendor/lib/libscveObjectSegmentation.so|9bfe709dffe2b75d7631697d9fdeff0a8fe354f8
+vendor/lib/libscveObjectTracker.so|00e94270ae7a837057723dd18788151a218da64c
+vendor/lib/libscveObjectTracker_stub.so|05b6d5080b3fe31ea7ada930a2da977bbf943dcd
+vendor/lib/libvideoutils.so|100889699325a1a01ff97cca8b7316fcd89c2986
+vendor/lib64/libFace3DTA.so|892d66365271c752cfd1beed0cf0bfe139ab103a
+vendor/lib64/libFace3D_hlos.so|4add002718be82681013569c8fced5b796c00dde
+vendor/lib64/libQ6MSFR_manager_stub.so|f1cfb47fbe6c3fca1c9e3077428f5222d3549a5e
+vendor/lib64/libcv_common.so|99fe7475ab038267305e9bafa4407025c2629ab3
+vendor/lib64/libcvp2_1.so|604e8955ca9536b41921ec87fd8af1e8d51d3a3f
+vendor/lib64/libcvpcpuRev_skel.so|ae19161cb21de054e6e1a57b179765aed3f59c80
+vendor/lib64/libeva.so|e97c45877688dde8ead5d6070a41ff63d6659713
+vendor/lib64/libeva_util.so|1ba60c3c176173ed2697a31dfcb07c8f0d3b1fb8
+vendor/lib64/libface3d_dev.so|960a304b53c97e072a344a7fafe142aa22c7b03c
+vendor/lib64/libfastcvdsp_stub.so|b71d08a7a32d795e90b9b20b5b651ef2f7479a8c
+vendor/lib64/libfastcvopt.so|4115095e871a3ffe75ccacdb8fda9408da2b2e43
+vendor/lib64/libscveCommon.so|64df2008cffc3ca18629e831e6c95cc8e798b199
+vendor/lib64/libscveCommon_stub.so|f4ca6b46eb6c7d87f9e1aff84bfe9feccac13f45
+vendor/lib64/libscveObjectSegmentation.so|4d031350c73b7c885a44d6d84962538d21203f33
+vendor/lib64/libscveObjectTracker.so|0b83ce848f7085105bb6a3b294fbcb76237d57aa
+vendor/lib64/libscveObjectTracker_stub.so|12d54ab6959833d01f56e11873d1c349aedbf7f7
+vendor/lib64/libvideoutils.so|8d2d3f35ddd3eebdbdc3e7b359898ba65f6b1971
 
-# Computer vision firmware
-vendor/firmware/evass-lt-21.b00
-vendor/firmware/evass-lt-21.b01
-vendor/firmware/evass-lt-21.b02
-vendor/firmware/evass-lt-21.b03
-vendor/firmware/evass-lt-21.b04
-vendor/firmware/evass-lt-21.b05
-vendor/firmware/evass-lt-21.b06
-vendor/firmware/evass-lt-21.b07
-vendor/firmware/evass-lt-21.b08
-vendor/firmware/evass-lt-21.b09
-vendor/firmware/evass-lt-21.b10
-vendor/firmware/evass-lt-21.b11
-vendor/firmware/evass-lt-21.b12
-vendor/firmware/evass-lt-21.b13
-vendor/firmware/evass-lt-21.b14
-vendor/firmware/evass-lt-21.b15
-vendor/firmware/evass-lt-21.b16
-vendor/firmware/evass-lt-21.b17
-vendor/firmware/evass-lt-21.b18
-vendor/firmware/evass-lt-21.b19
-vendor/firmware/evass-lt-21.mbn
-vendor/firmware/evass-lt-21.mdt
-vendor/firmware/evass.b00
-vendor/firmware/evass.b01
-vendor/firmware/evass.b02
-vendor/firmware/evass.b03
-vendor/firmware/evass.b04
-vendor/firmware/evass.b05
-vendor/firmware/evass.b06
-vendor/firmware/evass.b07
-vendor/firmware/evass.b08
-vendor/firmware/evass.b09
-vendor/firmware/evass.b10
-vendor/firmware/evass.b11
-vendor/firmware/evass.b12
-vendor/firmware/evass.b13
-vendor/firmware/evass.b14
-vendor/firmware/evass.b15
-vendor/firmware/evass.b16
-vendor/firmware/evass.b17
-vendor/firmware/evass.b18
-vendor/firmware/evass.b19
-vendor/firmware/evass.mbn
-vendor/firmware/evass.mdt
-vendor/firmware/evautil64.b00
-vendor/firmware/evautil64.b01
-vendor/firmware/evautil64.b02
-vendor/firmware/evautil64.b03
-vendor/firmware/evautil64.b04
-vendor/firmware/evautil64.b05
-vendor/firmware/evautil64.b06
-vendor/firmware/evautil64.b07
-vendor/firmware/evautil64.mdt
+# Computer vision firmware - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+vendor/firmware/evass-lt-21.b00|45ff5328135846c91c6f04b37fd660dd3c2f472d
+vendor/firmware/evass-lt-21.b01|be041d64bdc1cc3c51bbdd7c4ac0971bc69c9b67
+vendor/firmware/evass-lt-21.b02|e5333c5239d065ce6559a12f623076508b065c73
+vendor/firmware/evass-lt-21.b03|25748b0438ade17189720aca4221b4b1d02243aa
+vendor/firmware/evass-lt-21.b04|0705b480fcf58907eb11e9da2554c03d1d89ba0a
+vendor/firmware/evass-lt-21.b05|a00b943325c896f44c500d044322d7ae17e6f314
+vendor/firmware/evass-lt-21.b06|0b403b94f400e8f76ac5f5f18f6957318ec2a582
+vendor/firmware/evass-lt-21.b07|25748b0438ade17189720aca4221b4b1d02243aa
+vendor/firmware/evass-lt-21.b08|3ec259425685c0771603362d53271f2bb617d1de
+vendor/firmware/evass-lt-21.b09|41c791e2373e9510114f0dc2b6702c4b62d7e009
+vendor/firmware/evass-lt-21.b10|da39a3ee5e6b4b0d3255bfef95601890afd80709
+vendor/firmware/evass-lt-21.b11|da39a3ee5e6b4b0d3255bfef95601890afd80709
+vendor/firmware/evass-lt-21.b12|da39a3ee5e6b4b0d3255bfef95601890afd80709
+vendor/firmware/evass-lt-21.b13|da39a3ee5e6b4b0d3255bfef95601890afd80709
+vendor/firmware/evass-lt-21.b14|da39a3ee5e6b4b0d3255bfef95601890afd80709
+vendor/firmware/evass-lt-21.b15|da39a3ee5e6b4b0d3255bfef95601890afd80709
+vendor/firmware/evass-lt-21.b16|da39a3ee5e6b4b0d3255bfef95601890afd80709
+vendor/firmware/evass-lt-21.b17|da39a3ee5e6b4b0d3255bfef95601890afd80709
+vendor/firmware/evass-lt-21.b18|1ceaf73df40e531df3bfb26b4fb7cd95fb7bff1d
+vendor/firmware/evass-lt-21.b19|47b653b45c2fcb21c56e3213f47200055e810f52
+vendor/firmware/evass-lt-21.mbn|bf529be21a2a2eadcc6ce321555a076e9ce421d5
+vendor/firmware/evass-lt-21.mdt|91f9ae94af303576e9edf076c321ab5261e03bf9
+vendor/firmware/evass.b00|03957862b810970999c9d79805e59d3a3a9a6102
+vendor/firmware/evass.b01|645d5dbe59dc1a15b53daf3adf2116ee9e4edde1
+vendor/firmware/evass.b02|5bea0d06c51aebecdc22a1dd77fbde1df80d5be2
+vendor/firmware/evass.b03|86a5ed4d22759036806d9321f8e509628f64c5b6
+vendor/firmware/evass.b04|04698586915ddb2b62737b2637e3182f47478234
+vendor/firmware/evass.b05|e19854e03b52cc67d7db620f54609b66d1b85f54
+vendor/firmware/evass.b06|0b403b94f400e8f76ac5f5f18f6957318ec2a582
+vendor/firmware/evass.b07|86a5ed4d22759036806d9321f8e509628f64c5b6
+vendor/firmware/evass.b08|7da6f578b2717829a72ab971b1e03521e7b0eab0
+vendor/firmware/evass.b09|ed05e811bdcce0bd81cd35c8dde278f74ccc2d09
+vendor/firmware/evass.b10|da39a3ee5e6b4b0d3255bfef95601890afd80709
+vendor/firmware/evass.b11|da39a3ee5e6b4b0d3255bfef95601890afd80709
+vendor/firmware/evass.b12|da39a3ee5e6b4b0d3255bfef95601890afd80709
+vendor/firmware/evass.b13|da39a3ee5e6b4b0d3255bfef95601890afd80709
+vendor/firmware/evass.b14|da39a3ee5e6b4b0d3255bfef95601890afd80709
+vendor/firmware/evass.b15|da39a3ee5e6b4b0d3255bfef95601890afd80709
+vendor/firmware/evass.b16|da39a3ee5e6b4b0d3255bfef95601890afd80709
+vendor/firmware/evass.b17|da39a3ee5e6b4b0d3255bfef95601890afd80709
+vendor/firmware/evass.b18|1ceaf73df40e531df3bfb26b4fb7cd95fb7bff1d
+vendor/firmware/evass.b19|76690e7f7f04caf057842c0fe83f9fa01e9d895b
+vendor/firmware/evass.mbn|f2dbea85165ee970716f53b41cc9c239e969bb3c
+vendor/firmware/evass.mdt|be0567956fa209fcc67b410b8257b806c940edc8
+vendor/firmware/evautil64.b00|0f41aa95d6a8e2d7a03288831ac8c61283f792ed
+vendor/firmware/evautil64.b01|cbb33455c6b6f147f711e07682a9a58fb93d9482
+vendor/firmware/evautil64.b02|3dc8148dd469fba30fea6b0e0fbbcc934d9465b0
+vendor/firmware/evautil64.b03|edf89a6a4970b83f0f4a97196e2babd9fe132dca
+vendor/firmware/evautil64.b04|8c9eeef2a652937fb858ff125f42d7041c905fee
+vendor/firmware/evautil64.b05|916c92922919c603ab3a52b8469fc475d484ac44
+vendor/firmware/evautil64.b06|dcf050d7e5276db9dd50334b4f77c2e47c6ec6c4
+vendor/firmware/evautil64.b07|aa851a1d6503c6d0d6e47419aa880b71be0734ae
+vendor/firmware/evautil64.mdt|ae4fd86c79ca599c9c4d24ea55c87229638c9dac
 
 # Configstore
 vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.0-service
@@ -1358,10 +1358,10 @@ vendor/etc/vintf/manifest/vendor.qti.diag.hal.service.xml
 vendor/lib/vendor.qti.diaghal@1.0.so
 vendor/lib64/vendor.qti.diaghal@1.0.so
 
-# Display - from diting user-14-UKQ1.230804.001-23.9.28
+# Display - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
 vendor/bin/feature_enabler_client|3b4807aaf477aed253a8c04fb6205363c619f67b
 vendor/bin/hw/vendor.qti.hardware.display.allocator-service|610a86a37a4a6372fcee1fd87cbc0a5b56a4b84e
-vendor/bin/init.qti.display_boot.sh|dcba5e58f42b35e30f619df2485bff2a9ffe7d18
+vendor/bin/init.qti.display_boot.sh|6d225894081c697765e66dcc11247d8a429ae106
 vendor/etc/init.panel_info.sh|5225231bf05cbce7ad8ca5c369c1a7a33730b4c8
 vendor/etc/init/feature_enabler_client.rc|7c8e7cf20093d1a6d94d7de2debd53a7e51f8c29
 vendor/etc/init/init.qti.display_boot.rc|d70c76f6f9c612be32d60f218421c5566b6e5401
@@ -1371,50 +1371,50 @@ vendor/etc/vintf/manifest/android.hardware.graphics.mapper-impl-qti-display.xml|
 vendor/etc/vintf/manifest/vendor.qti.hardware.display.allocator-service.xml|f9e9966dca44a4598da015b9f54b992cbb71bd35
 vendor/etc/vintf/manifest/vendor.qti.hardware.display.composer-service.xml|f4144ccba7d6e5642662b0e54b5c4469913c242d
 vendor/lib/libdisplayconfig.qti.so|20036bdf975995b65f07810f4896b924cd7e45d8
-vendor/lib/libdisplaydebug.so|399e94bd5f57ff8a75b5db2fabdfca50af0fbe2a
+vendor/lib/libdisplaydebug.so|46e72a50e8e5dcf7cd295884baf209d2283701fc
 vendor/lib/libgpu_tonemapper.so|0f51f1bf94f6ffef11fb09a2cb4e530470c760d9
 vendor/lib/libgralloccore.so|f83c9550f9ff25eb5d7327b1c4d1b5f576cdf29a
 vendor/lib/libgrallocutils.so|b3f525348723d2f82cc325a308513fe23e23e864
-vendor/lib/libqservice.so|82a3fcb93a7ae018b23104d77ec64c982142da91
+vendor/lib/libqservice.so|c77c0c06ddaaae0eaeb961ba5648cd39170e46f5
 vendor/lib64/libdisplayconfig.qti.so|76ecc3ded36e9e97a8b6bf2a55e76f057ff36c77
-vendor/lib64/libdisplaydebug.so|f87e20ecdb5470634060b36edf0771a8964d983e
+vendor/lib64/libdisplaydebug.so|479eeb535742f75466466281e87c2043b91d53ca
 vendor/lib64/libgpu_tonemapper.so|53584c3a54691f302b902110cbbdb2a1bc31eb69
 vendor/lib64/libgralloccore.so|fa1d2d9128816dc7eb5932ea1c2aad060bf7e691
 vendor/lib64/libgrallocutils.so|459872fdb793b061dfc350dae9feaeab1114dda1
-vendor/lib64/libqservice.so|7c5b28846d154188a03eb425e068dafb5828a6fa
+vendor/lib64/libqservice.so|d0c5ba8b3165c2ba2ff794c374eb22177d888343
 
 # Display configs
 product/etc/displayconfig/display_id_4630946545580055170.xml:vendor/etc/displayconfig/display_id_4630946545580055170.xml
 product/etc/displayconfig/display_id_4630946480857061762.xml:vendor/etc/displayconfig/display_id_4630946480857061762.xml
 
-# Displayfeature 
-vendor/etc/miLutInfo.txt
-vendor/etc/mi_gc_0.txt
-vendor/etc/mi_gc_1.txt
-vendor/etc/mi_gc_2.txt
-vendor/etc/miLut_0.txt
-vendor/etc/miLut_10.txt
-vendor/etc/miLut_11.txt
-vendor/etc/miLut_12.txt
-vendor/etc/miLut_13.txt
-vendor/etc/miLut_14.txt
-vendor/etc/miLut_15.txt
-vendor/etc/miLut_16.txt
-vendor/etc/miLut_17.txt
-vendor/etc/miLut_18.txt
-vendor/etc/miLut_19.txt
-vendor/etc/miLut_1.txt
-vendor/etc/miLut_20.txt
-vendor/etc/miLut_2.txt
-vendor/etc/miLut_3.txt
-vendor/etc/miLut_4.txt
-vendor/etc/miLut_5.txt
-vendor/etc/miLut_6.txt
-vendor/etc/miLut_7.txt
-vendor/etc/miLut_8.txt
-vendor/etc/miLut_9.txt
+# Displayfeature - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+vendor/etc/miLutInfo.txt|8eecbb71d418ef8c7d583dd506a994b1bc1c3f7b
+vendor/etc/mi_gc_0.txt|ecfd1d3181230e85b82351ccaa300ce859c8a904
+vendor/etc/mi_gc_1.txt|e6846b2aefc4394cd36ad1e2893720e85cca19f2
+vendor/etc/mi_gc_2.txt|e169c7e4716a823312b900d735dbe376c5f708df
+vendor/etc/miLut_0.txt|b3a8e896030686eafba87d4c9807ea14a48dc8b0
+vendor/etc/miLut_10.txt|413011df358e3f179bfc45ad7988539b77385ecf
+vendor/etc/miLut_11.txt|98de2ad8de204b39c02fc2cf9b54fe165af30305
+vendor/etc/miLut_12.txt|166eaf1aa6a1e6dc90964506fe3cdfc2be715948
+vendor/etc/miLut_13.txt|6d59c3838e84784239fb983f4094fbd370a08f8e
+vendor/etc/miLut_14.txt|68c85f0a05286e1917d2761c0bdb265790817285
+vendor/etc/miLut_15.txt|70a234051ab514ae733cefcb8e59e59c49cb7fc2
+vendor/etc/miLut_16.txt|a2eccda8f03427c321caf730b66989b91fce7921
+vendor/etc/miLut_17.txt|7de3cf8620356d788fbb61973e99e78804d0279f
+vendor/etc/miLut_18.txt|7b7cf55b33d93f1946041d1b816a0e3cc3ca76ed
+vendor/etc/miLut_19.txt|85c6693a6995bdf456594547e45887225d7560e7
+vendor/etc/miLut_1.txt|5aee6b5083ea076a15c2767c5f85af6543f943b0
+vendor/etc/miLut_20.txt|787bb88aad360386625f612fd92a3e6448c465f5
+vendor/etc/miLut_2.txt|18f01ec1a028ec7e03c277a025884c8a5469d07b
+vendor/etc/miLut_3.txt|3c5aae7376cc75659ec67b9ef1168c5a9eb8957f
+vendor/etc/miLut_4.txt|2a435a568af7fff3f9b322bda90f78cea03d9a22
+vendor/etc/miLut_5.txt|cf14ac5a8f786eaa46638e00a0912a2511f3dd3c
+vendor/etc/miLut_6.txt|76c4b84e44c40a9a08412c8c699a7d9528d5b8a3
+vendor/etc/miLut_7.txt|259478f7ef8ff7ba61ca9ff0a2f1411444d8c5e6
+vendor/etc/miLut_8.txt|90495b0f76df065b2c020fa22ba039f8f0e0b36a
+vendor/etc/miLut_9.txt|43108d2837cd76d701a1145c2adb22dc44ccdcd2
 
-# Displayfeature - from diting user-14-UKQ1.230804.001-23.9.28
+# Displayfeature - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
 vendor/bin/displayfeature|171b8d26d9c82c107686de95e23a86c9a8570fb1
 vendor/bin/hw/vendor.xiaomi.hardware.displayfeature@1.0-service|b2861ec39a2935419eecf106c4ee7ffde0e6e4dd
 vendor/etc/df_default.xml|26992007293359a6ffc9112da6836d6cd143a48a
@@ -1468,7 +1468,7 @@ vendor/lib64/libvideomode.so|f6ec6b66335b5ff10827c00593d4166f85487f56
 vendor/lib64/libwfddisplayconfig_vendor.so|6696bdbd68babcf15e2f0a8d997df1462cbab84f
 vendor/lib64/vendor.xiaomi.hardware.displayfeature@1.0.so|5f8bab4f92695146cce69b0851e318e4ebbda30b
 
-# Display HDR - from diting user-14-UKQ1.230804.001-23.9.28
+# Display HDR - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
 vendor/lib/libhdr_backlight_adapter.so|27a76877b0ef7c090c469b3784bce9d2ecc857d8
 vendor/lib/libhdr_tm.so|26f4e9235982e677383510572cd0d3fb6e146da2
 vendor/lib64/libhdr_backlight_adapter.so|57036c19938fe40e73e9b9e3d4c6a6073d7aa858
@@ -1476,8 +1476,8 @@ vendor/lib64/libhdr_tm.so|b5bc48b34450b9031e7b667b9b97991b3aafa5fd
 vendor/lib64/libhdrdynamic.so|48b912d98089807b49d451163651dcb658008475
 vendor/lib64/libhdrdynamicootf.so|857a8d1908524590f0de56bf2e1ba1e287272e6c
 
-# Display HWC - from diting user-14-UKQ1.230804.001-23.9.28
-vendor/bin/hw/vendor.qti.hardware.display.composer-service|42689a96ca096d1174671685d53c68b7fadc56a2
+# Display HWC - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+vendor/bin/hw/vendor.qti.hardware.display.composer-service|ca9948b2f8b3ee39859658b7c09777840862272c
 vendor/bin/qdcmss|801d4429210c1a4f8c01f6d91f172ff063c5c307
 vendor/etc/init/qdcmss.rc|53d78d686678c4f923a9ec4ace7d4d3575b13788
 vendor/etc/snapdragon_color_libs_config.xml|67f436622d560ad58a4c3fa44d5c8499a902f917
@@ -1489,8 +1489,8 @@ vendor/lib/libqdcm-algo.so|0bccf8766e46323619f77a0c61d53472db37c3f4
 vendor/lib/libqdcm-json-mode-parser.so|4d721fabb056bf8fa5b51cf6996c3c9225e874e8
 vendor/lib/libqdcm-mode-parser.so|76c5cd6eacdd9c6a01663d6e61fb0fe2bf30e897
 vendor/lib/libqdutils.so|9d2d36c6907f28077c9a06f809c56ae98b54194b
-vendor/lib/libsdmcore.so|2cabfe554e3ba6aa4738030ec5cc6704d0b89674
-vendor/lib/libsdmutils.so|7a849368264e8b7943c34874b1a92bcbd9c8698e
+vendor/lib/libsdmcore.so|833c18e1578a14f467b700882181b2d54124d8fa
+vendor/lib/libsdmutils.so|631a2a17708baa3ca61b75089e5c038f74c9b470
 vendor/lib/libsnapdragoncolor-manager.so|3a19b7ed96d88305725c9ffd122fa5f9834cde1f
 vendor/lib/libsnapdragoncolor-qdcm.so|b8acc6e72014c053b866af6292bdd3fa1b4f31d4
 vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so|65543dfd0f7c8c889353a9931fcf2f0f8fdd07b8
@@ -1505,56 +1505,56 @@ vendor/lib64/libqdcm-algo.so|4ab77288626ca1978ed2a7c15b945af6c223db9b
 vendor/lib64/libqdcm-json-mode-parser.so|decc0d77e1aec8bafc8c0e43f54dd6a14c018466
 vendor/lib64/libqdcm-mode-parser.so|e63dc113ab3728d8b2d3034c7a2027c4c4117ec2
 vendor/lib64/libqdutils.so|4398447b41850171e80ddcfee9dc4fa8235d4a68
-vendor/lib64/libsdmcore.so|067026e4f903c7b79b87935d18d5f935a22b1394
-vendor/lib64/libsdmutils.so|ffef8e9a919dbc79ee0ac26833fca40269a7439e
+vendor/lib64/libsdmcore.so|ef504fb20f33e7fb971013cc1c77d8e7628ec761
+vendor/lib64/libsdmutils.so|7c3f7121edb23fb26586fe4e2f6a00d539baa661
 vendor/lib64/libsnapdragoncolor-manager.so|e37f6be68fdd7e7bc2d06f86a11ff68d8c791f01
 vendor/lib64/libsnapdragoncolor-qdcm.so|130db1fbb70f14d05f129bd3e26d471354af100b
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so|76f3733620784c1a3809efa63ff63a39d51d371d
 
-# Display postprocessing
-vendor/bin/hw/vendor.display.color@1.0-service
-vendor/bin/ppd
-vendor/etc/init/vendor.display.color@1.0-service.rc
-vendor/lib/libdisp-aba.so
-vendor/lib/vendor.display.color@1.0.so
-vendor/lib/vendor.display.color@1.1.so
-vendor/lib/vendor.display.color@1.2.so
-vendor/lib/vendor.display.color@1.3.so
-vendor/lib/vendor.display.color@1.4.so
-vendor/lib/vendor.display.color@1.5.so
-vendor/lib/vendor.display.color@1.6.so
-vendor/lib/vendor.display.color@1.7.so
-vendor/lib/vendor.display.postproc@1.0.so
-vendor/lib64/libdisp-aba.so
-vendor/lib64/vendor.display.color@1.0.so
-vendor/lib64/vendor.display.color@1.1.so
-vendor/lib64/vendor.display.color@1.2.so
-vendor/lib64/vendor.display.color@1.3.so
-vendor/lib64/vendor.display.color@1.4.so
-vendor/lib64/vendor.display.color@1.5.so
-vendor/lib64/vendor.display.color@1.6.so
-vendor/lib64/vendor.display.color@1.7.so
-vendor/lib64/vendor.display.postproc@1.0.so
+# Display postprocessing - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+vendor/bin/hw/vendor.display.color@1.0-service|9f37be517ad778857bfe94b78ba3fbf2e90e3967
+vendor/bin/ppd|869719b1cc54073be25edd0d157cbfbfbde07215
+vendor/etc/init/vendor.display.color@1.0-service.rc|fc58968025ec9f09b4fedee0b9daecc6a56c8373
+vendor/lib/libdisp-aba.so|071a627a11dc2285ee3f4efd84424159c96c29d4
+vendor/lib/vendor.display.color@1.0.so|49118fa1ddfd14adf0390bf376e977bf9c645ff3
+vendor/lib/vendor.display.color@1.1.so|6270ae559801a82172f9fea71786f27f801bdd4c
+vendor/lib/vendor.display.color@1.2.so|c9a704e223468164ab612d54ca09fe38fd0de004
+vendor/lib/vendor.display.color@1.3.so|e647579db01f497ec8eb8fca5b258249901968e1
+vendor/lib/vendor.display.color@1.4.so|d6ee9e8b80d5a8d59127ff041fcc69f15bf4103f
+vendor/lib/vendor.display.color@1.5.so|efb8c2ab1e11c1e4c8dc37b09e23640acf4d4dad
+vendor/lib/vendor.display.color@1.6.so|44267d36230bc77fe741b4fc483a76fe1838bd08
+vendor/lib/vendor.display.color@1.7.so|c3a4bff68604172169c782b045d2efcf88f26169
+vendor/lib/vendor.display.postproc@1.0.so|75750b6af8b261b3ae941a38ef73ca0c14ded4df
+vendor/lib64/libdisp-aba.so|a0f0d57b3a2823cf50181af38a8a33555b63d67c
+vendor/lib64/vendor.display.color@1.0.so|0000b663df9c63f9b9a44fb89bd1b93ba0564e10
+vendor/lib64/vendor.display.color@1.1.so|fce587e9c5843d753c4c6fceed33e7f53687cc6c
+vendor/lib64/vendor.display.color@1.2.so|5b3509929a86acc37ea02b84b930f977fc442729
+vendor/lib64/vendor.display.color@1.3.so|1bd8488cee1f0758163cc27cb76e006345919e3a
+vendor/lib64/vendor.display.color@1.4.so|e355ebd94fdc1069b097716992bc623f349930a3
+vendor/lib64/vendor.display.color@1.5.so|8dbef6b348182d958d15d369b03b7bd82db544b6
+vendor/lib64/vendor.display.color@1.6.so|7ce5a9115be5a75ff31bc1b58ab7146c0ec1eda9
+vendor/lib64/vendor.display.color@1.7.so|dfe7e088fb0875bb0acacfca3756692937d50d2f
+vendor/lib64/vendor.display.postproc@1.0.so|619fe2b330912ff4ad0972338a2aa26cb6c4f4d1
 
-# Display SDM
-vendor/etc/display/DPU660.xml
-vendor/etc/display/DPU670.xml
-vendor/etc/display/DPU720.xml
-vendor/etc/display/DPU7__.xml
-vendor/etc/display/DPU820.xml
-vendor/etc/display/DPU8__.xml
-vendor/etc/display/qdcm_calib_data_nt36672e_lcd_video_mode_dsi_novatek_panel_with_DSC.json
-vendor/etc/display/qdcm_calib_data_nt36672e_lcd_video_mode_dsi_novatek_panel_without_DSC.json
-vendor/etc/display/qdcm_calib_data_r66451_amoled_cmd_mode_dsi_visionox_panel_without_DSC.json
-vendor/etc/display/qdcm_calib_data_r66451_amoled_video_mode_dsi_visionox_panel_with_DSC.json
-vendor/etc/display/qdcm_calib_data_r66451_amoled_video_mode_dsi_visionox_panel_without_DSC.json
-vendor/etc/display/qdcm_calib_data_xiaomi_36_02_0b_mp_cmd_mode_dsc_dsi_panel.json
-vendor/etc/display/qdcm_calib_data_xiaomi_42_02_0a_mp_cmd_mode_dsc_dsi_panel.json
-vendor/etc/display/thermallevel_to_fps.xml
-vendor/etc/mdss_dsi_l12_36_02_0b_dsc_cmd_mi.xml
-vendor/etc/mdss_dsi_l12_42_02_0a_dsc_cmd_mi.xml
+# Display SDM - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+vendor/etc/display/DPU660.xml|b26dd73e361546d89bf3d7082a471703dc6ac2cb
+vendor/etc/display/DPU670.xml|e5131a60ceff29ca5eb561eec7eddadef1d0486f
+vendor/etc/display/DPU720.xml|4e54e8712d65773eb87867bf64a4cb98ea9bb8c3
+vendor/etc/display/DPU7__.xml|c056f3cb9fa123ca3de5b2a9775c184dddf25b9d
+vendor/etc/display/DPU820.xml|35afcb7834d13eacc8f14d2ff4ac5132bb01a563
+vendor/etc/display/DPU8__.xml|2360038d60e9dff36d7f14a59a25da74bac1abe4
+vendor/etc/display/qdcm_calib_data_nt36672e_lcd_video_mode_dsi_novatek_panel_with_DSC.json|64f2451ac81435457fcad487595a682ccabfc148
+vendor/etc/display/qdcm_calib_data_nt36672e_lcd_video_mode_dsi_novatek_panel_without_DSC.json|9883b1de9c9b3738bc5a532bb02534562a28acfc
+vendor/etc/display/qdcm_calib_data_r66451_amoled_cmd_mode_dsi_visionox_panel_without_DSC.json|297b0e916dd78260e2a320f9e47cd791d0d7f7c7
+vendor/etc/display/qdcm_calib_data_r66451_amoled_video_mode_dsi_visionox_panel_with_DSC.json|ea2261888a2902ff1af4096c1826700406593141
+vendor/etc/display/qdcm_calib_data_r66451_amoled_video_mode_dsi_visionox_panel_without_DSC.json|9019b554260061da43793fc8803d7d040fae4549
+vendor/etc/display/qdcm_calib_data_xiaomi_36_02_0b_mp_cmd_mode_dsc_dsi_panel.json|37b6497ba9beddf79689f770146ea55822597145
+vendor/etc/display/qdcm_calib_data_xiaomi_42_02_0a_mp_cmd_mode_dsc_dsi_panel.json|0c0f0df0268e4c65a1a96e67d5cc85dc764d0df4
+vendor/etc/display/thermallevel_to_fps.xml|bc38035c8f41308fc25cc30969fbbf16ab86c43f
+vendor/etc/mdss_dsi_l12_36_02_0b_dsc_cmd_mi.xml|c2df065ea55148fb702d6f9349a7fd32cd1598cf
+vendor/etc/mdss_dsi_l12_42_02_0a_dsc_cmd_mi.xml|c2df065ea55148fb702d6f9349a7fd32cd1598cf
 
-# Display SDM - from diting user-14-UKQ1.230804.001-23.9.28
+# Display SDM - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
 vendor/lib/libdisplayqos.so|f03a2af80b2684fe5a4e5c68de6c8b8111841c4d
 vendor/lib/libdisplayskuutils.so|a04bec22fd5e3702842ebeb2f8415afa7f99227f
 vendor/lib/libqseed3.so|c744e765a9473a50d857782004daf55a39b536ba
@@ -1578,43 +1578,43 @@ vendor/lib64/libsdmextension.so|ce39075c4eccb30e8d75ccec16e752823a438a17
 vendor/lib64/libtestutils.so|61b98f252afde4eb7c674de870e7afb590c9bb2a
 vendor/lib64/libtinyxml2_1.so|ae0c9190fd54c18a6c28dfccdfd29655abcb08de
 
-# Dolby music
-vendor/bin/hw/dolbycodec2
-vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service
-vendor/etc/dolby/dax-default.xml
-vendor/etc/dolby_vision.cfg
-vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc
-vendor/etc/init/vendor.dolby.media.c2@1.0-service.rc
-vendor/etc/media_codecs_dolby_audio.xml
-vendor/etc/vintf/manifest/manifest_vendor.dolby.hardware.dms.xml
-vendor/lib/libdeccfg.so
-vendor/lib/libdapparamstorage.so
-vendor/lib/libstagefrightdolby.so
-vendor/lib/libstagefright_soft_ac4dec.so
-vendor/lib/libstagefright_soft_ddpdec.so
-vendor/lib/soundfx/libhwdap.so
-vendor/lib/soundfx/libswdap.so
-vendor/lib/soundfx/libswgamedap.so
-vendor/lib/soundfx/libswvqe.so
-vendor/lib/vendor.dolby.hardware.dms@2.0.so
-vendor/lib64/c2.dolby.avc.enc.so
-vendor/lib64/c2.dolby.client.so
-vendor/lib64/c2.dolby.decoder.secure.so
-vendor/lib64/c2.dolby.decoder.so
-vendor/lib64/c2.dolby.egl.so
-vendor/lib64/c2.dolby.hevc.enc.so
-vendor/lib64/c2.dolby.store.so
-vendor/lib64/libdapparamstorage.so
-vendor/lib64/libdlbdsservice.so
-vendor/lib64/libdolbyottcameracontrol.so
-vendor/lib64/libdolbyvision.so
-vendor/lib64/libstagefrightdolby.so
-vendor/lib64/soundfx/libhwdap.so
-vendor/lib64/soundfx/libswdap.so
-vendor/lib64/soundfx/libswgamedap.so
-vendor/lib64/soundfx/libswvqe.so
-vendor/lib64/vendor.dolby.hardware.dms@2.0-impl.so
-vendor/lib64/vendor.dolby.hardware.dms@2.0.so
+# Dolby music - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+vendor/bin/hw/dolbycodec2|16db1742257fd7d41c7d20105d980672e2d85807
+vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service|eb3dfe12845201eec35d3ceb0c18e8eb8e877a0f
+vendor/etc/dolby/dax-default.xml|6081c6470f337f900e01526e0ea5150910c04f90
+vendor/etc/dolby_vision.cfg|2b54d3cbbb77bd9db4a8f0aeaf967b1be70bfa2a
+vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc|29296ebfe89b2697fec573be73cc3757fd97bed6
+vendor/etc/init/vendor.dolby.media.c2@1.0-service.rc|1ea8b363e94fd4f5410cadceb30de8229fb38045
+vendor/etc/media_codecs_dolby_audio.xml|a794eb15fc198d0285510260025cd99b53fa174f
+vendor/etc/vintf/manifest/manifest_vendor.dolby.hardware.dms.xml|e14caab9b769e58a993583c0486d58b30249ca92
+vendor/lib/libdeccfg.so|ddda752fe04aeb90c94ccc950b1c0cd07f7be804
+vendor/lib/libdapparamstorage.so|e9f21d9ca0bd28b705e91772041e706508131c72
+vendor/lib/libstagefrightdolby.so|ad2d4ff0aa06ab9642311ab469b50b4a79bf8afa
+vendor/lib/libstagefright_soft_ac4dec.so|c3e2fffd52b3263fbc155ecec6f59be28d2689f0
+vendor/lib/libstagefright_soft_ddpdec.so|9eb8298b52e7435075edf0b4b44fe5a4a4ecf5f0
+vendor/lib/soundfx/libhwdap.so|1eb53dc54f31b151a6fa6c6256be84a55f38b4d8
+vendor/lib/soundfx/libswdap.so|e99c53949d65bc74f7dfb05def433d0d25447ff1
+vendor/lib/soundfx/libswgamedap.so|4f19d912050dce5ddb45ad5e848764bda4d80498
+vendor/lib/soundfx/libswvqe.so|e3418164eb56d98f2cb8929731933a6203e8cb98
+vendor/lib/vendor.dolby.hardware.dms@2.0.so|3cf1aa84144609b8b1e050f2dbb6e6e69141f993
+vendor/lib64/c2.dolby.avc.enc.so|8c15639fdb91183374a09f761bb8ed0bd032abb8
+vendor/lib64/c2.dolby.client.so|88bf13140ff1cd767e86a221b579c17c662d9c48
+vendor/lib64/c2.dolby.decoder.secure.so|f9df1c87dfe665745e5431dab91042da43913e75
+vendor/lib64/c2.dolby.decoder.so|1827dd8f7f7aac232548033599bee3e1e577c27e
+vendor/lib64/c2.dolby.egl.so|8acc4f5f81efc2d4d590a6f7b8584cd993ffd74a
+vendor/lib64/c2.dolby.hevc.enc.so|e148e4c26d9185b2ebb00be93ae849ec8116be0a
+vendor/lib64/c2.dolby.store.so|7a6964871f5c6ac19025f5fc7682219bc37c4357
+vendor/lib64/libdapparamstorage.so|738bb86eaf9cf93a10c5a3352a6e6c6572a8566b
+vendor/lib64/libdlbdsservice.so|2db3896c230631ff0d0a77042c4137bf1069978d
+vendor/lib64/libdolbyottcameracontrol.so|60cf0e7e42ad4b6b3e5a64f2098b99d5d55d1b51
+vendor/lib64/libdolbyvision.so|22c517e552288fb1482201f731ef183f917c69da
+vendor/lib64/libstagefrightdolby.so|6736c39633d64a8e285f5c1f478af97c4f22cb5d
+vendor/lib64/soundfx/libhwdap.so|c9a022b299c744d832136c9125a9372cb226ee8a
+vendor/lib64/soundfx/libswdap.so|a8d588772c7e1b3ceb14b0490e59b0ee17418723
+vendor/lib64/soundfx/libswgamedap.so|5d20994e801f11c098af4cd646b96574dba40e71
+vendor/lib64/soundfx/libswvqe.so|0f56d1adfab8ee3961b1af2b55f5d717099b3ef6
+vendor/lib64/vendor.dolby.hardware.dms@2.0-impl.so|48bf9299172f0626a74c5a3c21b7b598c4d2a185
+vendor/lib64/vendor.dolby.hardware.dms@2.0.so|975fee7ab5d90b6e66984d9f67f198c3a4ea358f
 
 # DPM
 system_ext/bin/dpmd
@@ -1890,7 +1890,7 @@ vendor/lib64/vendor.qti.gnss-service.so
 # Graphics (Adreno)
 vendor/app/com.qualcomm.qti.gpudrivers.taro.api31/com.qualcomm.qti.gpudrivers.taro.api31.apk;PRESIGNED
 
-# Graphics (Adreno) - from diting user-14-UKQ1.230804.001-23.9.28
+# Graphics (Adreno) - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
 vendor/gpu/kbc/sequence_manifest.bin|17e1f9149826ef478502c750bcf9352274097c80
 vendor/gpu/kbc/unified_kbcs_32.bin|aa7b4e916fb3fab8df7700deb458d0726a549482
 vendor/gpu/kbc/unified_kbcs_64.bin|bdfadc6b8e03d7da5b8d31b4f7688e7dba4b07ce
@@ -1932,32 +1932,32 @@ vendor/lib64/libllvm-glnext.so|bac28fff6e00178d78ccca040dc76e87841c8aa4
 vendor/lib64/libllvm-qcom.so|210fdef3513ca2dc022e54b50779c0024a6c6730
 vendor/lib64/libllvm-qgl.so|e8d6d5b26bd02c351f3a8d892306982b7b44fed9
 
-# Graphics (Adreno firmware) - from diting user-14-UKQ1.230804.001-23.9.28
+# Graphics (Adreno firmware) - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
 vendor/firmware/a660_sqe.fw|6957cb1081948943d894b7420f96b5e7e0d0768c
 vendor/firmware/a662_gmu.bin|250d057d3fc382a6ef944b52e784e0c586387171
 vendor/firmware/a662_zap.b00|22b622195c7b4d3791ed7b59cabd7b49fb8c1702
 vendor/firmware/a662_zap.b01|bcbdf56fca034c66a9e44242587ed25a1ffe2abe
-vendor/firmware/a662_zap.b02|06429e6cf97ee9575cc6d5d6b96b4f2424039b4d
+vendor/firmware/a662_zap.b02|44f197773169ad43830662e2e3fca67a084d40b0
 vendor/firmware/a662_zap.elf|52fe2aec28ebe9cf02bfbf365298e3a7a4713352
-vendor/firmware/a662_zap.mbn|dbc70f60594849510a4b6e3128b271ddac769d29
-vendor/firmware/a662_zap.mdt|9acff4ed536aecb085d41b41f0a5261f79e2ba90
+vendor/firmware/a662_zap.mbn|756d39d37ac1b7bfed85d8c5229c003ee9da2a84
+vendor/firmware/a662_zap.mdt|50d1cf2c9c68347f19af484e9285ec8fa4a62ef8
 vendor/firmware/a710_sqe.fw|645eeea30de2a80fa5996748d6da0a88e465c903
 vendor/firmware/a710_zap.b00|692d2885bfb45ce27f1dbbcb3e58563a171a1167
 vendor/firmware/a710_zap.b01|4048b36116b9f21eeb3a67c5cbcc3afb1988a437
-vendor/firmware/a710_zap.b02|a721a104ab9f0dfb2c0849cfe677a12d7d15cdb3
+vendor/firmware/a710_zap.b02|0edbca9b8ce0638045053203cf7edd210909efd5
 vendor/firmware/a710_zap.elf|44867290f27afc97a04aa5201bf255f734c4b7b5
-vendor/firmware/a710_zap.mbn|7b8c834179ea7631cc0ee850782b084620254332
-vendor/firmware/a710_zap.mdt|3a22023969dcb18db0196a39be9e2c11c1e67192
+vendor/firmware/a710_zap.mbn|960ea704e4444906b4b3b82ddd3eb958ce7b09cf
+vendor/firmware/a710_zap.mdt|633b16ee2d59411779836231a7f1fa0fb4087226
 vendor/firmware/a730_sqe.fw|8302565a0e61eec583ef25dfc5f42aff11b6be21
 vendor/firmware/a730_zap.b00|28f16046445905a96e7115f5aa8f49748658c437
 vendor/firmware/a730_zap.b01|1234230fde1dfa01822a7c64b200e58fd34dfd86
-vendor/firmware/a730_zap.b02|be016c9ff2c8e1dca53601a172b1f41cfd77b3eb
+vendor/firmware/a730_zap.b02|38ba9121d8bb4c789ae096dfa195fb1d02a02817
 vendor/firmware/a730_zap.elf|6b8f09631f7aab41c154e697975dc739a150276a
-vendor/firmware/a730_zap.mbn|f2f2ad6fb0095c95c4dffda9e3d7e82690be009d
-vendor/firmware/a730_zap.mdt|620d44f5abaa155c97208248c926fb6863d4bffe
+vendor/firmware/a730_zap.mbn|7dc4a0edf3d71b3e3829b697f20ef62622f5718a
+vendor/firmware/a730_zap.mdt|145728c8dc6648647a9ff15a7297e33d6f85d52f
 vendor/firmware/gmu_gen70000.bin|1ac8d9dd3d405f84c915a4562ff72d244e10bcbd
 
-# Graphics (Vulkan) - from diting user-14-UKQ1.230804.001-23.9.28
+# Graphics (Vulkan) - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
 vendor/lib/hw/vulkan.adreno.so|d689916a992d2c61b04faf96d4b3a916fca9fab8
 vendor/lib64/hw/vulkan.adreno.so|689bbd9328d3083efcc894481552c8f94ddc83b3
 
@@ -2033,95 +2033,95 @@ vendor/lib64/liblistensoundmodel2vendor.so
 vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0.so
 
-# Media
-vendor/bin/hw/vendor.qti.media.c2@1.0-service
-vendor/bin/hw/vendor.qti.media.c2audio@1.0-service
-vendor/etc/init/vendor.qti.media.c2@1.0-service.rc
-vendor/etc/init/vendor.qti.media.c2audio@1.0-service.rc
-vendor/etc/media_codecs_performance_cape.xml
-vendor/etc/media_codecs_performance_taro.xml
-vendor/etc/media_codecs_cape.xml
-vendor/etc/media_codecs_taro.xml
-vendor/etc/media_codecs_with_dolby_taro.xml
-vendor/etc/media_profiles_cape.xml
-vendor/etc/media_profiles_taro.xml
-vendor/etc/media_cape/video_system_specs.json
-vendor/etc/media_taro/video_system_specs.json
-vendor/etc/seccomp_policy/c2audio.vendor.base-arm.policy
-vendor/etc/seccomp_policy/c2audio.vendor.base-arm64.policy
-vendor/etc/seccomp_policy/c2audio.vendor.ext-arm.policy
-vendor/etc/seccomp_policy/c2audio.vendor.ext-arm64.policy
-vendor/etc/seccomp_policy/codec2.vendor.base-arm64.policy
-vendor/etc/seccomp_policy/codec2.vendor.ext-arm64.policy
-vendor/etc/vintf/manifest/c2_manifest_vendor.xml
-vendor/etc/vintf/manifest/c2_manifest_vendor_audio.xml
-vendor/lib/libEvrcSwCodec.so
-vendor/lib/libOmxCore.so
-vendor/lib/libQcelp13SwCodec.so
-vendor/lib/libdeccfg.so
-vendor/lib/libmm-omxcore.so
-vendor/lib/libplatformconfig.so
-vendor/lib/libqc2audio_base.so
-vendor/lib/libqc2audio_basecodec.so
-vendor/lib/libqc2audio_core.so
-vendor/lib/libqc2audio_hooks.so
-vendor/lib/libqc2audio_hwaudiocodec.so
-vendor/lib/libqc2audio_platform.so
-vendor/lib/libqc2audio_swaudiocodec.so
-vendor/lib/libqc2audio_utils.so
-vendor/lib/libqc2colorconvertfilter.so
-vendor/lib/libqc2filter.so
-vendor/lib/libqc2vppfilter.so
-vendor/lib/libqcodec2_base.so
-vendor/lib/libqcodec2_basecodec.so
-vendor/lib/libqcodec2_core.so
-vendor/lib/libqcodec2_filterbase.so
-vendor/lib/libqcodec2_hooks.so
-vendor/lib/libqcodec2_mockfilter.so
-vendor/lib/libqcodec2_mockqc2filter.so
-vendor/lib/libqcodec2_platform.so
-vendor/lib/libqcodec2_utils.so
-vendor/lib/libqcodec2_v4l2codec.so
-vendor/lib/libstagefright_soft_ac4dec.so
-vendor/lib/libstagefright_soft_ddpdec.so
-vendor/lib/libstagefright_softomx.so
-vendor/lib/libstagefrighthw.so
-vendor/lib/libvideotxr.so
-vendor/lib/qti.video.utils.videobufferlayout.so
-vendor/lib64/libEvrcSwCodec.so
-vendor/lib64/libOmxCore.so
-vendor/lib64/libQcelp13SwCodec.so
-vendor/lib64/libavservices_minijail_vendor.so
-vendor/lib64/libdeccfg.so
-vendor/lib64/libmm-omxcore.so
-vendor/lib64/libplatformconfig.so
-vendor/lib64/libqc2audio_base.so
-vendor/lib64/libqc2audio_basecodec.so
-vendor/lib64/libqc2audio_core.so
-vendor/lib64/libqc2audio_hooks.so
-vendor/lib64/libqc2audio_hwaudiocodec.so
-vendor/lib64/libqc2audio_platform.so
-vendor/lib64/libqc2audio_swaudiocodec.so
-vendor/lib64/libqc2audio_utils.so
-vendor/lib64/libqc2colorconvertfilter.so
-vendor/lib64/libqc2filter.so
-vendor/lib64/libqc2vppfilter.so
-vendor/lib64/libqcodec2_base.so
-vendor/lib64/libqcodec2_basecodec.so
-vendor/lib64/libqcodec2_core.so
-vendor/lib64/libqcodec2_filterbase.so
-vendor/lib64/libqcodec2_hooks.so
-vendor/lib64/libqcodec2_mockfilter.so
-vendor/lib64/libqcodec2_mockqc2filter.so
-vendor/lib64/libqcodec2_platform.so
-vendor/lib64/libqcodec2_utils.so
-vendor/lib64/libqcodec2_v4l2codec.so
-vendor/lib64/libstagefright_soft_ac4dec.so
-vendor/lib64/libstagefright_soft_ddpdec.so
-vendor/lib64/libstagefright_softomx.so
-vendor/lib64/libstagefrighthw.so
-vendor/lib64/libvideotxr.so
-vendor/lib64/qti.video.utils.videobufferlayout.so
+# Media - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+vendor/bin/hw/vendor.qti.media.c2@1.0-service|a3a103902ba4d0d2a41f7e6d61798cf846cbcc0d
+vendor/bin/hw/vendor.qti.media.c2audio@1.0-service|a395d05f3004f2a5150dfd4510eed0c50d671974
+vendor/etc/init/vendor.qti.media.c2@1.0-service.rc|542d2ae2a92ee21dbb63716ff49392e8e6e433f4
+vendor/etc/init/vendor.qti.media.c2audio@1.0-service.rc|51841b9c67dd26b7fe82e24109f1e0a663a3e04a
+vendor/etc/media_codecs_performance_cape.xml|b917d0d698b8ae13610401f70aa9dc6e68fcd8dd
+vendor/etc/media_codecs_performance_taro.xml|57eb507b345bce4033d1e97cc931221b8f404ccc
+vendor/etc/media_codecs_cape.xml|28d0ebafd9b4cd8db5a62fe12a0d86aad143d2e3
+vendor/etc/media_codecs_taro.xml|36c6d1dcef28b420f4b9f31e0e2b2cb4959ee637
+vendor/etc/media_codecs_with_dolby_taro.xml|60a46849fbb65206faf0ea5f431c09b5a3d0a4ee
+vendor/etc/media_profiles_cape.xml|70259562b3254bfdbcc6cecefc68560a3835c915
+vendor/etc/media_profiles_taro.xml|31628aa6d3092927c25bfa6ee097402c69ac6445
+vendor/etc/media_cape/video_system_specs.json|1ea2e238194ca044b8c61680366f3661a5edda2c
+vendor/etc/media_taro/video_system_specs.json|5a46c5ae404dd5e429954a9a1f48b7199e24f4a1
+vendor/etc/seccomp_policy/c2audio.vendor.base-arm.policy|2887b6fed220462b413322547603ccf064175ba2
+vendor/etc/seccomp_policy/c2audio.vendor.base-arm64.policy|e708b49cbf3879a0b4ccd8d941a46c68b9408d82
+vendor/etc/seccomp_policy/c2audio.vendor.ext-arm.policy|bb5454a7265bb9a17349c7e254412916b774ea7a
+vendor/etc/seccomp_policy/c2audio.vendor.ext-arm64.policy|bb5454a7265bb9a17349c7e254412916b774ea7a
+vendor/etc/seccomp_policy/codec2.vendor.base-arm64.policy|1bd2621778d771207bdb1ad5ae902966fe3de683
+vendor/etc/seccomp_policy/codec2.vendor.ext-arm64.policy|a134d3d5d74294ca8164056b42389b1c7dbb2b65
+vendor/etc/vintf/manifest/c2_manifest_vendor.xml|dfaad7360e85bf2d1a8293bb878a4f0edc70b1db
+vendor/etc/vintf/manifest/c2_manifest_vendor_audio.xml|7801d5fb9104883e33e874011caa25c28b7bec71
+vendor/lib/libEvrcSwCodec.so|dd601079c92a07ceb9c7b1a765243970a6f492d1
+vendor/lib/libOmxCore.so|87db9abefc37f54227d6e8959532384cccbfe3b3
+vendor/lib/libQcelp13SwCodec.so|00aa05019834d9635adf66d2dfd3579d9e837836
+vendor/lib/libdeccfg.so|ddda752fe04aeb90c94ccc950b1c0cd07f7be804
+vendor/lib/libmm-omxcore.so|bd63a2c50df7b85cb563d7699ba17ad4ba90d43e
+vendor/lib/libplatformconfig.so|fe7480c60a3ceee1e4555aa80e97d336bce437e0
+vendor/lib/libqc2audio_base.so|cdff0ac2f0cac750815202e6b1c29bf25ee61ac5
+vendor/lib/libqc2audio_basecodec.so|1e10c408dde4aeebd8f1eb0d68d03ede819f54aa
+vendor/lib/libqc2audio_core.so|69868d7a9565fdbdfddd625c953ea9b9027a6644
+vendor/lib/libqc2audio_hooks.so|babb50fc7336d16fbcd7ebea5f055f2d0ea2ab4e
+vendor/lib/libqc2audio_hwaudiocodec.so|0f7244dae1ccdf65d90c15ac3cd0556dafbbe871
+vendor/lib/libqc2audio_platform.so|d4f5523c29540652e4fdf77388eaf8e1957a5b09
+vendor/lib/libqc2audio_swaudiocodec.so|3f02f9ca545402a1f13d8d3abcd4ca6ba02b727d
+vendor/lib/libqc2audio_utils.so|6bc5fb87c81e106e9066a7699b346b3a169d02df
+vendor/lib/libqc2colorconvertfilter.so|411b8455b74593255aa85274e072a0b4637cae93
+vendor/lib/libqc2filter.so|fdde8247683b671242a430162accd0a8aca06e0e
+vendor/lib/libqc2vppfilter.so|6ffe4de6670842815ebdd830a1ffb6bf7844188a
+vendor/lib/libqcodec2_base.so|71f972223b1a15e6561e35a72ffdfe36887a46bb
+vendor/lib/libqcodec2_basecodec.so|87d486fc6e31309908c6b0551f6a13d714e456b5
+vendor/lib/libqcodec2_core.so|8b7d8cc20c11a8bf7ac6a370be8d168fbf63f286
+vendor/lib/libqcodec2_filterbase.so|f8137a8a584ccf1a000e326d9a4c71b6c706acc1
+vendor/lib/libqcodec2_hooks.so|d0fc50c75ea190edf4592111aa61bde4fbf20f3e
+vendor/lib/libqcodec2_mockfilter.so|7baf1b63dd52ea1b0fc636aead708d6a4acf36d3
+vendor/lib/libqcodec2_mockqc2filter.so|7f34530724eb18a2ab1568dfeff10c33d4cd5366
+vendor/lib/libqcodec2_platform.so|26646fac830979bbbf471883ed120f2537a1ab5a
+vendor/lib/libqcodec2_utils.so|7bdf1745b284d00c550baf9a76c81bcd85e8cdf0
+vendor/lib/libqcodec2_v4l2codec.so|b484bda923475f55b8a78bf39440ea1e7c5ff94e
+vendor/lib/libstagefright_soft_ac4dec.so|c3e2fffd52b3263fbc155ecec6f59be28d2689f0
+vendor/lib/libstagefright_soft_ddpdec.so|9eb8298b52e7435075edf0b4b44fe5a4a4ecf5f0
+vendor/lib/libstagefright_softomx.so|226c28ee30ecf7be0ff05c855c1b9f1b72e3767f
+vendor/lib/libstagefrighthw.so|f01ea8e969f164e569e86d2260e04e71d641782d
+vendor/lib/libvideotxr.so|177377be58cf523f9da897d08fa182f46701f3f9
+vendor/lib/qti.video.utils.videobufferlayout.so|c43a8367ace45e28094728bff94f837081802643
+vendor/lib64/libEvrcSwCodec.so|73ddf515180f583a807fe809d999988738fd109e
+vendor/lib64/libOmxCore.so|da7aa3c72310cf596124f1a5bae453c19b1963a8
+vendor/lib64/libQcelp13SwCodec.so|61069cee238d8d9cde0ececd9516b1995c6a93ec
+vendor/lib64/libavservices_minijail.so|82318115d71928995567f26040a8ab1bdf3b44ca
+vendor/lib64/libdeccfg.so|1720f4998f666c1b08fe3116d45ca76d48b0a610
+vendor/lib64/libmm-omxcore.so|019996e0d6008340e6e649380d825d715d7ce417
+vendor/lib64/libplatformconfig.so|d15fd0e9884df27c90c1060860c4970bbe9f6f4a
+vendor/lib64/libqc2audio_base.so|8eda523c893863e360c9683135a01f27a8270fb1
+vendor/lib64/libqc2audio_basecodec.so|b3885ed642e34ea6ac7bf69b108cfea42a242d18
+vendor/lib64/libqc2audio_core.so|5d36387cc2c92abbbc61a584fd2c9d87ff836135
+vendor/lib64/libqc2audio_hooks.so|af60f201787cb06ce2ded96ae72dafe8eb604198
+vendor/lib64/libqc2audio_hwaudiocodec.so|e810ee6e48fd32b6a9eb9e25ccbb8f4873e3e994
+vendor/lib64/libqc2audio_platform.so|c5ee9c04f5b813a4cf2d9d1a14606fcc3e50658a
+vendor/lib64/libqc2audio_swaudiocodec.so|9e2a26c7d99d98dac14be5066caef55028ecfcba
+vendor/lib64/libqc2audio_utils.so|7f1e09a9a2ae176d3c2f5ae19681f90b38d6bf67
+vendor/lib64/libqc2colorconvertfilter.so|f26e96abab3ae4dfd28b82383247a4ed73e4a8b2
+vendor/lib64/libqc2filter.so|12af3a364407433b39000363faf55d0b3577744f
+vendor/lib64/libqc2vppfilter.so|9320c7244ec09d32d863dfb80dd703f40df42ee7
+vendor/lib64/libqcodec2_base.so|a3e6d13e5907e844b75e60bb0b9c23e2f56750c7
+vendor/lib64/libqcodec2_basecodec.so|14fc753c4cf1d9d28abd60174bc7929015e9f2cf
+vendor/lib64/libqcodec2_core.so|58da17fee42bc210a8c00fe553cd827ba873902f
+vendor/lib64/libqcodec2_filterbase.so|c8abbe8a8e9f1f8803d6f5e2ae886570d4434532
+vendor/lib64/libqcodec2_hooks.so|94da878f1c495e6592fc8e8bab2ff1166411207d
+vendor/lib64/libqcodec2_mockfilter.so|ff0d9c977b5cbb2892bf59f4ec3309cb9dcbda68
+vendor/lib64/libqcodec2_mockqc2filter.so|222ddeb3aba697e0c2ed1f403a41e19ac647f9bd
+vendor/lib64/libqcodec2_platform.so|cdbdbe135bfec5ef542026370e2fcac2ed520658
+vendor/lib64/libqcodec2_utils.so|53aed339f5293d27a431c05775a31e69485192f9
+vendor/lib64/libqcodec2_v4l2codec.so|1c18ff9ae0d11cd1613f9a00898da03e15fa431e
+vendor/lib64/libstagefright_soft_ac4dec.so|e8cf70b7c84fc35f3dd615384b67225019b7e7fd
+vendor/lib64/libstagefright_soft_ddpdec.so|99cef1c2ff617e2f4a9006c7bae9326804a59e63
+vendor/lib64/libstagefright_softomx.so|959a3bd5b94b223fbe6314f1499c1f23aae2a885
+vendor/lib64/libstagefrighthw.so|a6390b3b607922fcd8d9da02f95b75943b57545a
+vendor/lib64/libvideotxr.so|80de9b1e6c9d937f5f692b587c7100e4fec847a3
+vendor/lib64/qti.video.utils.videobufferlayout.so|72bfcd0c434048d06b9bc5555226cbe83098a8e2
 
 # MiCharge
 vendor/bin/hw/vendor.xiaomi.hardware.micharge@1.0-service
@@ -2242,49 +2242,49 @@ vendor/lib64/libsn220u_fw.so
 vendor/lib64/nfc_nci.nqx.default.hw.v1.so
 vendor/lib64/vendor.nxp.hardware.nfc@2.0.so
 
-# OMX
-vendor/lib/libAlacSwDec.so
-vendor/lib/libApeSwDec.so
-vendor/lib/libFlacSwDec.so
-vendor/lib/libdsd2pcm.so
-vendor/lib64/libAlacSwDec.so
-vendor/lib64/libApeSwDec.so
-vendor/lib64/libFlacSwDec.so
-vendor/lib64/libdsd2pcm.so
+# OMX - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+vendor/lib/libAlacSwDec.so|e7df1179bebdb201bbc0a3661e536fe2cb8f8ef2
+vendor/lib/libApeSwDec.so|51e263ac45273eaac261b1d4a539f33c695de1c2
+vendor/lib/libFlacSwDec.so|b3c03a13631e56e2390fdbfa407fa0de96912c88
+vendor/lib/libdsd2pcm.so|80ed7be77538b17e910026d49a80c1274c73dbc3
+vendor/lib64/libAlacSwDec.so|be266dfd610b68ed140bfef8e559c7d9dcc2e2a6
+vendor/lib64/libApeSwDec.so|1bd5b693b0b21e9f24b4a8bb23596f4a7308b23f
+vendor/lib64/libFlacSwDec.so|314e8265451e8bb07c7eb041cbfe1045afce8c3c
+vendor/lib64/libdsd2pcm.so|2807550499b78f5d332c3f1ac12aac0c274e0209
 
-# Perf
-vendor/bin/hw/vendor.qti.hardware.perf-hal-service
-vendor/etc/init/vendor.qti.hardware.perf-hal-service.rc
-vendor/etc/perf/avcsysnodesconfigs.xml
-vendor/etc/perf/commonresourceconfigs.xml
-vendor/etc/perf/commonsysnodesconfigs.xml
-vendor/etc/perf/perfboostsconfig.xml
-vendor/etc/perf/perfboostselection.xml
-vendor/etc/perf/perfconfigstore.xml
-vendor/etc/perf/targetconfig.xml
-vendor/etc/perf/targetresourceconfigs.xml
-vendor/etc/perf/targetsysnodesconfigs.xml
-vendor/etc/perf/thermal-boost.conf
-vendor/etc/seccomp_policy/qapeservice.policy
-vendor/etc/vintf/manifest/vendor.qti.hardware.perf.xml
-vendor/lib/libperfconfig.so
-vendor/lib/libperfgluelayer.so
-vendor/lib/libperfioctl.so
-vendor/lib/libqti-perfd-client.so
-vendor/lib/libqti-perfd.so
-vendor/lib/libqti-util.so
-vendor/lib/libqti-utils.so
-vendor/lib/libskewknob.so
-vendor/lib64/liblearningmodule.so
-vendor/lib64/libmeters.so
-vendor/lib64/libperfconfig.so
-vendor/lib64/libperfgluelayer.so
-vendor/lib64/libperfioctl.so
-vendor/lib64/libqti-perfd-client.so
-vendor/lib64/libqti-perfd.so
-vendor/lib64/libqti-util.so
-vendor/lib64/libqti-utils.so
-vendor/lib64/libskewknob.so
+# Perf - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+vendor/bin/hw/vendor.qti.hardware.perf-hal-service|a7de0c554f750af6fa4fe9dadf7404d327697b92
+vendor/etc/init/vendor.qti.hardware.perf-hal-service.rc|3a399b83162e776f9737cb14a6ef4020c63a0204
+vendor/etc/perf/avcsysnodesconfigs.xml|086837aca168c81ace587d612ba0787c1d4e7dac
+vendor/etc/perf/commonresourceconfigs.xml|73d730597e56234a75f47942e02f8cc2f0801548
+vendor/etc/perf/commonsysnodesconfigs.xml|31e331d17ce07f265c36c085fc10b640343ab34c
+vendor/etc/perf/perfboostsconfig.xml|1e068388a9321210adf3a4f6ae64e17ec4306773
+vendor/etc/perf/perfboostselection.xml|56bf854c9208040bac54850c2c6701042aea2687
+vendor/etc/perf/perfconfigstore.xml|9f993820880535ad6226c47b8ff103471771daa9
+vendor/etc/perf/targetconfig.xml|4593af0355cb75b8d2d22470519a8d3f0ec08d35
+vendor/etc/perf/targetresourceconfigs.xml|a4af23c017066bd6ce5537ae811d752fe9d13bf2
+vendor/etc/perf/targetsysnodesconfigs.xml|b9f5e7ba51efa170adb0ddfebd6eecc6b90b5b56
+vendor/etc/perf/thermal-boost.conf|4f9066063cca8dc086a2a5cbeb6da242507ee848
+vendor/etc/seccomp_policy/qapeservice.policy|86c021645d8d1606564ad3498077b4666823ebb4
+vendor/etc/vintf/manifest/vendor.qti.hardware.perf.xml|3cf294c1718f2c4e2ae99345043027b6279b3de1
+vendor/lib/libperfconfig.so|3ce991d8e7b3796e6b069266245de1552d3b1416
+vendor/lib/libperfgluelayer.so|d6bba0db18ba08d700a8afead9252044ffe85941
+vendor/lib/libperfioctl.so|109fb7aba0d7a0bb03b86d1312f662033afae95d
+vendor/lib/libqti-perfd-client.so|268ed125d85492c341d253db4063ecb4d38af29d
+vendor/lib/libqti-perfd.so|c61024a1620fb6750604baa43f8368de8e98d7bd
+vendor/lib/libqti-util.so|9dd3174e43b2eff94c7a122a79ffa8df5dc3d10f
+vendor/lib/libqti-utils.so|bb0e821b976242ebf972b864ac5b8b04d881ad1b
+vendor/lib/libskewknob.so|895b105dd78cc20ea415a361038724cdff22a179
+vendor/lib64/liblearningmodule.so|44ee607e602ab2381f4a775ada37e75e51e417b5
+vendor/lib64/libmeters.so|4625f93a3c32ec02e49186505c82d5e86bbb09f2
+vendor/lib64/libperfconfig.so|7fa09b3eab7861d5bb8c0db600d5c5a914b83f8c
+vendor/lib64/libperfgluelayer.so|d68422f4f0b3367d306a46f4b5c990843130cc52
+vendor/lib64/libperfioctl.so|eb915e8f6ed4440123773fe8bd6f2f15c3900543
+vendor/lib64/libqti-perfd-client.so|4304023356cef60bcda574a57563ca44be195108
+vendor/lib64/libqti-perfd.so|d5c4fe913b1f7d15cb9639e0f8973d3fc92c242b
+vendor/lib64/libqti-util.so|eed43efbe545b4a240b764edcdc82864f469dfd8
+vendor/lib64/libqti-utils.so|58e279d32e1dc9909f66e17491545ead172b3110
+vendor/lib64/libskewknob.so|823e16e7281f0afc334c323124fc0edcdf328e02
 
 # Perf LM - from pong
 vendor/etc/lm/AdaptLaunchFeature.xml|627af55314c1a3d458d4683b343ede013bb638cf
@@ -2293,48 +2293,48 @@ vendor/etc/lm/QGPE.xml|c0b9b5ef8244fbc65c9e9f2d8d16630ebf9e4503
 vendor/etc/lm/QGPEActionMap.xml|a815282965c9f9912f62406e8772dca40ef8b5b3
 vendor/etc/lm/sPLHFeature.xml|20e523f4086178c45c4226c590799b110d6480c0
 
-# Perf LM
-vendor/bin/hw/vendor.qti.hardware.iop@2.0-service
-vendor/bin/perf_qesdk_client
-vendor/etc/init/qapeservice.rc
-vendor/etc/init/vendor.qti.hardware.iop@2.0-service.rc
-vendor/etc/lm/AppClassifierFeature.xml
-vendor/etc/lm/PreKillFeature.xml
-vendor/etc/lm/ProCompFeature.xml
-vendor/etc/lm/QAPE.xml
-vendor/etc/lm/SilkyScrollsFeature.xml
-vendor/etc/lm/prekill/prekill_2GB.data
-vendor/etc/lm/prekill/prekill_4GB.data
-vendor/etc/lm/prekill/prekill_6GB.data
-vendor/lib/libpasrutils.so
-vendor/lib/libqti-iopd-client.so
-vendor/lib/libqti-iopd.so
-vendor/lib/vendor.qti.hardware.iop@1.0.so
-vendor/lib/vendor.qti.hardware.iop@2.0.so
-vendor/lib/vendor.qti.memory.pasrmanager@1.0.so
-vendor/lib/vendor.qti.memory.pasrmanager@1.1.so
-vendor/lib/vendor.qti.power.pasrmanager@1.0.so
-vendor/lib64/libadaptlaunch.so
-vendor/lib64/libapengine.so
-vendor/lib64/libappclassifier.so
-vendor/lib64/liblightninglaunches.so
-vendor/lib64/liblmthermallistner.so
-vendor/lib64/liblmutils-ns.so
-vendor/lib64/libmemperfd.so
-vendor/lib64/libmeters-ns.so
-vendor/lib64/libpasrutils.so
-vendor/lib64/libprekill.so
-vendor/lib64/libprocomp.so
-vendor/lib64/libqapesdk.so
-vendor/lib64/libqti-iopd-client.so
-vendor/lib64/libqti-iopd.so
-vendor/lib64/libsilkyscrolls.so
-vendor/lib64/libsplh.so
-vendor/lib64/vendor.qti.hardware.iop@1.0.so
-vendor/lib64/vendor.qti.hardware.iop@2.0.so
-vendor/lib64/vendor.qti.memory.pasrmanager@1.0.so
-vendor/lib64/vendor.qti.memory.pasrmanager@1.1.so
-vendor/lib64/vendor.qti.power.pasrmanager@1.0.so
+# Perf LM - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+vendor/bin/hw/vendor.qti.hardware.iop@2.0-service|d513c78f90e15763822f19f03c26b7951221466a
+vendor/bin/perf_qesdk_client|096861380d9fb3d134b582a483bf55f51058608d
+vendor/etc/init/qapeservice.rc|2fe7bee3295da27c89d523229c4b8b361e39c056
+vendor/etc/init/vendor.qti.hardware.iop@2.0-service.rc|fd11367b2585702190ef2577ce2ce6fc68f3a2f8
+vendor/etc/lm/AppClassifierFeature.xml|e80c26447d5df942a0e90d5c6c39577472a21546
+vendor/etc/lm/PreKillFeature.xml|6e6e7bc843c3632e8ddedf6299bd9f7d2e0878ef
+vendor/etc/lm/ProCompFeature.xml|3c2b0d620491187ed3b242248890d9ab6fccf4a9
+vendor/etc/lm/QAPE.xml|660b27200d882feec145a86c4665cfa4cc5f3927
+vendor/etc/lm/SilkyScrollsFeature.xml|8b50ef8025ac9cd3b5326da130ec5b7a7df1a2a8
+vendor/etc/lm/prekill/prekill_2GB.data|c731aed560f7a8f0ac077ec989cc9c6e106e4cc5
+vendor/etc/lm/prekill/prekill_4GB.data|d44007e12419b7e433ab26d3534d104fa4a88b72
+vendor/etc/lm/prekill/prekill_6GB.data|dbf72257628f2da4979726b046377673cb33d6e8
+vendor/lib/libpasrutils.so|4aeef0ffbbce2790adeac70d51cb797ce7d10f4c
+vendor/lib/libqti-iopd-client.so|6d18af53674cdc80dc68edaabdde32d61719bb0e
+vendor/lib/libqti-iopd.so|204c035b7b39563f969b3d59fcf25957442f13d1
+vendor/lib/vendor.qti.hardware.iop@1.0.so|b72b11c5c340211399f3daabc79c390503ff7529
+vendor/lib/vendor.qti.hardware.iop@2.0.so|e33fd2a563bf0b1690990cef5c15562d8a3fc25d
+vendor/lib/vendor.qti.memory.pasrmanager@1.0.so|76e5c13b604ca94b4208fb7e3dfcfb028d6192c4
+vendor/lib/vendor.qti.memory.pasrmanager@1.1.so|4cdfc8095a486a90bd14f9fc913a439c6eedfdf2
+vendor/lib/vendor.qti.power.pasrmanager@1.0.so|e412ad381db7476924971a46ff22839704aff950
+vendor/lib64/libadaptlaunch.so|543ddd9435d8cf9dce1c44cfed6773d22bf3c937
+vendor/lib64/libapengine.so|f35dd9f89b06c64193926fd1f359a471863b7336
+vendor/lib64/libappclassifier.so|8881bdf80e4e4ed384e5352741b60399711a621d
+vendor/lib64/liblightninglaunches.so|d2eddb33815ca7abd4f64dce7a34052160ee95a2
+vendor/lib64/liblmthermallistner.so|ee69dd2cb06fe66b8f45bb25c21cc3eb1cab33f6
+vendor/lib64/liblmutils-ns.so|6f14252446ba30487557e2248a27c2f352fc3a3b
+vendor/lib64/libmemperfd.so|e8eae81b6370eacf70695b416e9d64369eea45bb
+vendor/lib64/libmeters-ns.so|22fc74b4ad030a8d4e3fa5ff8d37709cab0de9e5
+vendor/lib64/libpasrutils.so|493af7694219496300db911d8524a34f86d51ad2
+vendor/lib64/libprekill.so|95085ae97d33120117dd73724814ceb3bfb7f6ce
+vendor/lib64/libprocomp.so|5162c7a8c859223582a432a5d3b3988bdfd0987d
+vendor/lib64/libqapesdk.so|32275c9f889a22d8c7921905c95f36606f7d601e
+vendor/lib64/libqti-iopd-client.so|2e5af41c2883c419bc3d27b333c9c1f33fcec991
+vendor/lib64/libqti-iopd.so|eacf3aec4762cc1ea7bc0c6e7eab0e1ca8f10dd3
+vendor/lib64/libsilkyscrolls.so|537db396224b647187149d77c0eb8cbdadd8d97b
+vendor/lib64/libsplh.so|d5dae09e8505221255b0c83c13d874047313ef38
+vendor/lib64/vendor.qti.hardware.iop@1.0.so|49e06b722d1c24dfd376d8c9c4ae33ead503d1e5
+vendor/lib64/vendor.qti.hardware.iop@2.0.so|2ad2f1d489e961cf7270d470e97b888c1b6ca5d8
+vendor/lib64/vendor.qti.memory.pasrmanager@1.0.so|1d5d97dd4702f1e5c0acbdbba78a793d9fe14298
+vendor/lib64/vendor.qti.memory.pasrmanager@1.1.so|e467944218f4334ab977b6480fd8df7d07acc4a3
+vendor/lib64/vendor.qti.power.pasrmanager@1.0.so|1578d44cf90ca923718ee5567ccc0f0e44cecd24
 
 # Peripheral manager
 vendor/bin/pm-proxy
@@ -2344,23 +2344,23 @@ vendor/lib/libspcom.so
 vendor/lib64/libperipheral_client.so
 vendor/lib64/libspcom.so
 
-# Power
-vendor/app/powermodule_java/powermodule_java.apk
-vendor/etc/pwr/PSMPowerOptFeature.xml
-vendor/etc/pwr/PowerFeatureConfig.xml
-vendor/etc/pwr/StandbyFeature.xml
-vendor/etc/pwr/VendorScenarioPowerOptFeature.xml
-vendor/etc/pwr/VideoPowerOptFeature.xml
-vendor/etc/vintf/manifest/vendor.qti.hardware.power.powermodule.xml
-vendor/lib/libpsmoptfeature.so
-vendor/lib/libvendorscenariopoweroptfeature.so
-vendor/lib/libvideooptfeature.so
-vendor/lib/vendor.qti.hardware.power.powermodule@1.0.so
-vendor/lib64/libpsmoptfeature.so
-vendor/lib64/libstandbyfeature.so
-vendor/lib64/libvendorscenariopoweroptfeature.so
-vendor/lib64/libvideooptfeature.so
-vendor/lib64/vendor.qti.hardware.power.powermodule@1.0.so
+# Power - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+vendor/app/powermodule_java/powermodule_java.apk|75c8db0902a77ad9eb30a969c44430e41e1f16d4
+vendor/etc/pwr/PSMPowerOptFeature.xml|32a75e7a5ac93f057423c78d2791722d8b5f63c0
+vendor/etc/pwr/PowerFeatureConfig.xml|4a8ea6e3f029904d6cfc84b51040f905a951d0e5
+vendor/etc/pwr/StandbyFeature.xml|ddfbae0ec8ad2a19b2e93690eaa297e0144648d3
+vendor/etc/pwr/VendorScenarioPowerOptFeature.xml|30bb5a0ea225e05d80ae68ec15b6103635e62dc6
+vendor/etc/pwr/VideoPowerOptFeature.xml|0b58b46172f851f419e2020f047231ef5db24aef
+vendor/etc/vintf/manifest/vendor.qti.hardware.power.powermodule.xml|cf96bda7e3dd82abb1f1e77facdd9d91ca031d8d
+vendor/lib/libpsmoptfeature.so|f6f66a9c5417176f5effde1c74fbec7717c030c3
+vendor/lib/libvendorscenariopoweroptfeature.so|059573ffb9fd72ea8fba50630710731991c5bfe3
+vendor/lib/libvideooptfeature.so|618b5b24d5e66c06090718c25c1e86c641ae04d4
+vendor/lib/vendor.qti.hardware.power.powermodule@1.0.so|bd32a3746e84105a091457884ed4ed250ff63c58
+vendor/lib64/libpsmoptfeature.so|43fe7d9315aedda06fa8172cf07a441528008da5
+vendor/lib64/libstandbyfeature.so|acd321e85cf0f3822b191121cee6daf570b30a6f
+vendor/lib64/libvendorscenariopoweroptfeature.so|b4c19126887b54655c191c229b3aa96d8fcedc0e
+vendor/lib64/libvideooptfeature.so|49231bc375429d087f6d985d6ca07a173054b4e8
+vendor/lib64/vendor.qti.hardware.power.powermodule@1.0.so|c26cec73a1d239ac6cc4f18b6056564487251ee5
 
 # Power-off alarm
 product/app/PowerOffAlarm/PowerOffAlarm.apk
@@ -2373,19 +2373,19 @@ vendor/lib/vendor.qti.hardware.alarm@1.0.so
 vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
-# Poweropt
-vendor/bin/poweropt-service
-vendor/etc/init/poweropt-service.rc
-vendor/lib/libpowercallback.so
-vendor/lib/libpowercore.so
-vendor/lib64/libpowercallback.so
-vendor/lib64/libpowercore.so
+# Poweropt - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+vendor/bin/poweropt-service|3ff43bde790493a33e16795c86e59a00597957fb
+vendor/etc/init/poweropt-service.rc|ab71ab0828fb67e9950b51220b61c3aad10985d0
+vendor/lib/libpowercallback.so|0d7401167ddd361a330878f3a3150b5cbb9a0a91
+vendor/lib/libpowercore.so|2cee55eeb51b064846b985fd87c40a563155c903
+vendor/lib64/libpowercallback.so|8fc394e39c763a54cfe75264d0e624a0fc5d13dc
+vendor/lib64/libpowercore.so|bedae88ee4d3e54a62075549fb61e7f5b6f703fd
 
-# Psiclient
-vendor/bin/hw/vendor.qti.psiclient@1.0-service
-vendor/etc/init/vendor.qti.psiclient@1.0-service.rc
-vendor/lib/libpsi.so
-vendor/lib64/libpsi.so
+# Psiclient - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+vendor/bin/hw/vendor.qti.psiclient@1.0-service|24f6d27d52c47a9120aafda2e8467536bd7b8d4e
+vendor/etc/init/vendor.qti.psiclient@1.0-service.rc|6e4bd469a214151e3aca36ecdcb542099f9c534f
+vendor/lib/libpsi.so|0e1f33f5b4bc52576729f3b7eec17040947331b8
+vendor/lib64/libpsi.so|ba45d9f66e20651805ace6787fad87eac71e5778
 
 # QCC
 vendor/lib/hw/vendor.qti.hardware.qccvndhal@1.0-impl.so
