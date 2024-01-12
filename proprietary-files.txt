@@ -1038,34 +1038,34 @@ vendor/lib64/com.qti.feature2.statsregeneration.so
 vendor/lib64/com.qti.feature2.stub.so
 vendor/lib64/com.qti.feature2.swmf.so
 
-# Camera firmware
-vendor/firmware/CAMERA_ICP.b00
-vendor/firmware/CAMERA_ICP.b01
-vendor/firmware/CAMERA_ICP.b02
-vendor/firmware/CAMERA_ICP.b03
-vendor/firmware/CAMERA_ICP.b04
-vendor/firmware/CAMERA_ICP.b05
-vendor/firmware/CAMERA_ICP.b06
-vendor/firmware/CAMERA_ICP.b07
-vendor/firmware/CAMERA_ICP.b08
-vendor/firmware/CAMERA_ICP.b09
-vendor/firmware/CAMERA_ICP.b10
-vendor/firmware/CAMERA_ICP.b11
-vendor/firmware/CAMERA_ICP.b12
-vendor/firmware/CAMERA_ICP.b13
-vendor/firmware/CAMERA_ICP.b14
-vendor/firmware/CAMERA_ICP.b15
-vendor/firmware/CAMERA_ICP.b16
-vendor/firmware/CAMERA_ICP.b17
-vendor/firmware/CAMERA_ICP.b18
-vendor/firmware/CAMERA_ICP.b19
-vendor/firmware/CAMERA_ICP.b20
-vendor/firmware/CAMERA_ICP.b21
-vendor/firmware/CAMERA_ICP.elf
-vendor/firmware/CAMERA_ICP.mbn
-vendor/firmware/CAMERA_ICP.mdt
-vendor/firmware/CAMERA_ICP_170.elf
-vendor/firmware/CAMERA_ICP_480.elf
+# Camera firmware - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+vendor/firmware/CAMERA_ICP.b00|5962d49cd63e432356826ac8bbd34b3ae66bab81
+vendor/firmware/CAMERA_ICP.b01|45f4c48f2d484d518c30cc772dfb39ee59b02853
+vendor/firmware/CAMERA_ICP.b02|49cb748466814e7f2c3a9c4ae559f9d5ca9634ea
+vendor/firmware/CAMERA_ICP.b03|c692debd7bd29deab46e2f221d658b7fe1692134
+vendor/firmware/CAMERA_ICP.b04|f726e7fa233485e02ef6172833d51353627aa81d
+vendor/firmware/CAMERA_ICP.b05|e19854e03b52cc67d7db620f54609b66d1b85f54
+vendor/firmware/CAMERA_ICP.b06|0b403b94f400e8f76ac5f5f18f6957318ec2a582
+vendor/firmware/CAMERA_ICP.b07|86a5ed4d22759036806d9321f8e509628f64c5b6
+vendor/firmware/CAMERA_ICP.b08|cbbff783ec243576426123679fc582ad5cd4b012
+vendor/firmware/CAMERA_ICP.b09|8f9405ade0ef1c6743f5ef15bf1075d0cd4dcce6
+vendor/firmware/CAMERA_ICP.b10|da39a3ee5e6b4b0d3255bfef95601890afd80709
+vendor/firmware/CAMERA_ICP.b11|da39a3ee5e6b4b0d3255bfef95601890afd80709
+vendor/firmware/CAMERA_ICP.b12|da39a3ee5e6b4b0d3255bfef95601890afd80709
+vendor/firmware/CAMERA_ICP.b13|da39a3ee5e6b4b0d3255bfef95601890afd80709
+vendor/firmware/CAMERA_ICP.b14|da39a3ee5e6b4b0d3255bfef95601890afd80709
+vendor/firmware/CAMERA_ICP.b15|da39a3ee5e6b4b0d3255bfef95601890afd80709
+vendor/firmware/CAMERA_ICP.b16|b1f79c3368f07feb8db2a47bd949bbee6eec0200
+vendor/firmware/CAMERA_ICP.b17|983168c541e2a7ae31a6ab51b29bbdce8098a9eb
+vendor/firmware/CAMERA_ICP.b18|4aeeff383c273c2a75c861e473adf25b38a2b919
+vendor/firmware/CAMERA_ICP.b19|da39a3ee5e6b4b0d3255bfef95601890afd80709
+vendor/firmware/CAMERA_ICP.b20|35befba7e298d16dd5adeab9d808895f4670845a
+vendor/firmware/CAMERA_ICP.b21|d226ed50b314253d1d2b88cd7a7fa64fdb090684
+vendor/firmware/CAMERA_ICP.elf|a7179d8c801a3af78f61c23ac588a34292f28460
+vendor/firmware/CAMERA_ICP.mbn|a464af3522d585100ca3e4e7846466af8f235eda
+vendor/firmware/CAMERA_ICP.mdt|749a8a6e265e9297d4f9d926a37fecd0f216d6d3
+vendor/firmware/CAMERA_ICP_170.elf|0b6df17f2bb9c9651e4b97e7f219459761547e26
+vendor/firmware/CAMERA_ICP_480.elf|b89365cc175b9c041e496e9176b61a2d6337640f
 
 # Camera plugins
 vendor/lib64/camera/plugins/com.xiaomi.plugin.anchor.so
