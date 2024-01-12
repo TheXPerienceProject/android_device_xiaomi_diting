@@ -1579,6 +1579,14 @@ vendor/lib64/libtestutils.so|61b98f252afde4eb7c674de870e7afb590c9bb2a
 vendor/lib64/libtinyxml2_1.so|ae0c9190fd54c18a6c28dfccdfd29655abcb08de
 
 # Dolby music - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+system_ext/lib/libdovi_omx.so|35fa73649f422df0b20bcbf5a5dcf68a68f242fc
+system_ext/lib/libdolbyottcontrol.so|57e233616430a0de17c02d1dc93d8fcce42ae87d
+system_ext/lib/libdolbyeffect.so|de49e9383e5db74f2476212392257d0ab9baf4c8
+system_ext/lib/libmpeg4pro.so|c955b9b84208a022c19e52aef8f04579873fddcc
+system_ext/lib64/libdovi_omx.so|e8e6ad517ccece54cb4da3ef156e8b22797c39cd
+system_ext/lib64/libdolbyottcontrol.so|67e48459696d06cc325ef0433eb076543f67e1f4
+system_ext/lib64/libdolbyeffect.so|8065fd8a60cb56c6b5bc3b4aaf3d83f4c991ab35
+system_ext/lib64/libmpeg4pro.so|9045492a672b30e0e420909f552f2828d6b5dde7
 vendor/bin/hw/dolbycodec2|16db1742257fd7d41c7d20105d980672e2d85807
 vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service|eb3dfe12845201eec35d3ceb0c18e8eb8e877a0f
 vendor/etc/dolby/dax-default.xml|6081c6470f337f900e01526e0ea5150910c04f90
@@ -1587,8 +1595,18 @@ vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc|29296ebfe89b2697fec573b
 vendor/etc/init/vendor.dolby.media.c2@1.0-service.rc|1ea8b363e94fd4f5410cadceb30de8229fb38045
 vendor/etc/media_codecs_dolby_audio.xml|a794eb15fc198d0285510260025cd99b53fa174f
 vendor/etc/vintf/manifest/manifest_vendor.dolby.hardware.dms.xml|e14caab9b769e58a993583c0486d58b30249ca92
+vendor/lib/c2.dolby.avc.dec.so|1af361913381ac98523b78cc879385f031d28ebc
+vendor/lib/c2.dolby.avc.sec.dec.so|d3e579a3a4d92a92d5d833c99eea3d504fd54cfc
+vendor/lib/c2.dolby.client.so|65422bf140be30d8f71a84e45dbd522d2f0bf1ca
+vendor/lib/c2.dolby.egl.so|b6ba40013e45514cdaf94cab9a3a23c9a3b6f98f
+vendor/lib/c2.dolby.hevc.dec.so|da728b13f3e5a2890395df773ab2b0174209f1a6
+vendor/lib/c2.dolby.hevc.enc.so|7e2d292742a08e9d703d02ea1a6619b3c228eae7
+vendor/lib/c2.dolby.hevc.sec.dec.so|8977974ee470a4618e3868d63caef18477af9f49
+vendor/lib/c2.dolby.store.so|a262a67d5264731651f98a2353f95361684d8995
 vendor/lib/libdeccfg.so|ddda752fe04aeb90c94ccc950b1c0cd07f7be804
 vendor/lib/libdapparamstorage.so|e9f21d9ca0bd28b705e91772041e706508131c72
+vendor/lib/libdolbyottcameracontrol.so|b0e2b145c2714c523d5f765f0691b9dffed906f8
+vendor/lib/libdolbyvision.so|052effa6e1c2c34079fc28c463c1639ca63b9e40
 vendor/lib/libstagefrightdolby.so|ad2d4ff0aa06ab9642311ab469b50b4a79bf8afa
 vendor/lib/libstagefright_soft_ac4dec.so|c3e2fffd52b3263fbc155ecec6f59be28d2689f0
 vendor/lib/libstagefright_soft_ddpdec.so|9eb8298b52e7435075edf0b4b44fe5a4a4ecf5f0
@@ -1597,12 +1615,13 @@ vendor/lib/soundfx/libswdap.so|e99c53949d65bc74f7dfb05def433d0d25447ff1
 vendor/lib/soundfx/libswgamedap.so|4f19d912050dce5ddb45ad5e848764bda4d80498
 vendor/lib/soundfx/libswvqe.so|e3418164eb56d98f2cb8929731933a6203e8cb98
 vendor/lib/vendor.dolby.hardware.dms@2.0.so|3cf1aa84144609b8b1e050f2dbb6e6e69141f993
-vendor/lib64/c2.dolby.avc.enc.so|8c15639fdb91183374a09f761bb8ed0bd032abb8
+vendor/lib64/c2.dolby.avc.dec.so|439a00c49d07e4fa2451162f75ad1ec6dc5b1ede
+vendor/lib64/c2.dolby.avc.sec.dec.so|9dfdde23db39260bcba3a1d417dd07a5b521f411
 vendor/lib64/c2.dolby.client.so|88bf13140ff1cd767e86a221b579c17c662d9c48
-vendor/lib64/c2.dolby.decoder.secure.so|f9df1c87dfe665745e5431dab91042da43913e75
-vendor/lib64/c2.dolby.decoder.so|1827dd8f7f7aac232548033599bee3e1e577c27e
 vendor/lib64/c2.dolby.egl.so|8acc4f5f81efc2d4d590a6f7b8584cd993ffd74a
+vendor/lib64/c2.dolby.hevc.dec.so|1bbf42f25506585e782bd26590c47d952dafe2a0
 vendor/lib64/c2.dolby.hevc.enc.so|e148e4c26d9185b2ebb00be93ae849ec8116be0a
+vendor/lib64/c2.dolby.hevc.sec.dec.so|eb4b421de11c209f2270d5bea5f80a1d8380907a
 vendor/lib64/c2.dolby.store.so|7a6964871f5c6ac19025f5fc7682219bc37c4357
 vendor/lib64/libdapparamstorage.so|738bb86eaf9cf93a10c5a3352a6e6c6572a8566b
 vendor/lib64/libdlbdsservice.so|2db3896c230631ff0d0a77042c4137bf1069978d
@@ -2042,7 +2061,7 @@ vendor/etc/media_codecs_performance_cape.xml|b917d0d698b8ae13610401f70aa9dc6e68f
 vendor/etc/media_codecs_performance_taro.xml|57eb507b345bce4033d1e97cc931221b8f404ccc
 vendor/etc/media_codecs_cape.xml|28d0ebafd9b4cd8db5a62fe12a0d86aad143d2e3
 vendor/etc/media_codecs_taro.xml|36c6d1dcef28b420f4b9f31e0e2b2cb4959ee637
-vendor/etc/media_codecs_with_dolby_taro.xml|60a46849fbb65206faf0ea5f431c09b5a3d0a4ee
+vendor/etc/media_codecs_with_dolby_taro.xml|a7940a8d7dc4e093728da1092092255016f4e156
 vendor/etc/media_profiles_cape.xml|70259562b3254bfdbcc6cecefc68560a3835c915
 vendor/etc/media_profiles_taro.xml|31628aa6d3092927c25bfa6ee097402c69ac6445
 vendor/etc/media_cape/video_system_specs.json|1ea2e238194ca044b8c61680366f3661a5edda2c
