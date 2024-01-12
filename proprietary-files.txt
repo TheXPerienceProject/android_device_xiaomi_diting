@@ -3372,6 +3372,12 @@ vendor/firmware/96_nfcCard_P_RTP.bin
 vendor/firmware/98_nfcCardSlow_P_RTP.bin
 vendor/firmware/99_POCO_P_RTP.bin
 vendor/firmware/9_seqbinwav_P_RTP.bin
+vendor/firmware/0_seqbinwav_P_RTP.bin:vendor/etc/vibrator/effect_0.bin
+vendor/firmware/1_seqbinwav_P_RTP.bin:vendor/etc/vibrator/effect_1.bin
+vendor/firmware/2_seqbinwav_P_RTP.bin:vendor/etc/vibrator/effect_2.bin
+vendor/firmware/3_seqbinwav_P_RTP.bin:vendor/etc/vibrator/effect_3.bin
+vendor/firmware/4_seqbinwav_P_RTP.bin:vendor/etc/vibrator/effect_4.bin
+vendor/firmware/5_seqbinwav_P_RTP.bin:vendor/etc/vibrator/effect_5.bin
 
 # Video
 vendor/lib64/libfastcrc.so
