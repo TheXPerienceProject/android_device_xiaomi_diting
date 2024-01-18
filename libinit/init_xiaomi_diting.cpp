@@ -10,7 +10,7 @@
 
 #include "vendor_init.h"
 
-#define FINGERPRINT_GL "Xiaomi/diting/diting:13/SKQ1.220303.001/V14.0.5.0.TLFMIXM:user/release-keys"
+#define FINGERPRINT_GL "Xiaomi/diting/diting:13/SKQ1.220303.001/V14.0.2.0.TLFMIXM:user/release-keys"
 #define FINGERPRINT_CN "Xiaomi/diting/diting:13/SKQ1.220303.001/V14.0.10.0.TLFCNXM:user/release-keys"
 #define FINGERPRINT_JP "Xiaomi/ditingp_jp/diting:12/SKQ1.220303.001/V13.0.2.0.SLFJPXM:user/release-keys"
 #define FINGERPRINT_RU "Xiaomi/ditingp_ru/diting:13/SKQ1.220303.001/V14.0.4.0.TLFRUXM:user/release-keys"
@@ -34,7 +34,7 @@ static const variant_info_t diting_info = {
     .brand = "Xiaomi",
     .device = "diting",
     .marketname = "Redmi K50 Ultra",
-    .model = "22081212G",
+    .model = "22081212C",
     .mod_device = "diting",
     .build_fingerprint = FINGERPRINT_CN,
 };
