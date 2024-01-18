@@ -291,4 +291,6 @@
     <!-- Device model (Build.MODEL) to spoof for netflix, if not empty -->
     <string name="config_netflixSpoofModel" translatable="false">23013PC75G</string>
 
+    <!-- Build fingerprint from the stock ROM -->
+    <string name="config_stockFingerprint" translatable="false">Xiaomi/diting/diting:13/SKQ1.220303.001/V14.0.5.0.TLFMIXM:user/release-keys</string>
 </resources>
