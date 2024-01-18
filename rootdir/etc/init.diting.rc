@@ -185,7 +185,7 @@ service vendor.fps_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.
     # /data is mounted.
     class late_start
     user system
-    group system input uhid
+    group system drmrpc diag input uhid
 
 service mfp-daemon /vendor/bin/hw/mfp-daemon
     class late_start
