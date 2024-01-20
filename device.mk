@@ -697,7 +697,9 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/xiaomi
+    hardware/xiaomi \
+    kernel/xiaomi/sm8450 \
+    kernel/xiaomi/sm8450-modules
 
 # Target platform
 TARGET_BOARD_PLATFORM := taro
