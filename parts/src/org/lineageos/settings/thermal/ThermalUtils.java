@@ -34,7 +34,7 @@ public final class ThermalUtils {
 
     private static final String THERMAL_CONTROL = "thermal_control";
 
-    protected static final int STATE_DEFAULT = 0;
+    protected static final int STATE_DEFAULT = 20; // original value was 0 but use 20 is good and balanced
     protected static final int STATE_BENCHMARK = 1;
     protected static final int STATE_BROWSER = 2;
     protected static final int STATE_CAMERA = 3;
@@ -49,7 +49,7 @@ public final class ThermalUtils {
     private static final String THERMAL_STATE_BROWSER = "11";
     private static final String THERMAL_STATE_CAMERA = "12";
     private static final String THERMAL_STATE_DIALER = "8";
-    private static final String THERMAL_STATE_GAMING = "13";
+    private static final String THERMAL_STATE_GAMING = "9"; // from hyperOS
     private static final String THERMAL_STATE_NAVIGATION = "19";
     private static final String THERMAL_STATE_STREAMING = "14";
     private static final String THERMAL_STATE_VIDEO = "21";

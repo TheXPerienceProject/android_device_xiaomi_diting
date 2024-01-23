@@ -291,6 +291,8 @@ on init && property:ro.boot.mode=charger
     write /sys/kernel/boot_adsp/boot 1
 
 on charger
+    # Disable thermal on charger to allow fast charging
+    write /sys/devices/virtual/thermal/thermal_message/sconfig -1
     start vendor.power_off_alarm
     setprop sys.usb.controller a600000.dwc3
     wait /sys/class/udc/${sys.usb.controller}
@@ -483,6 +485,7 @@ service vendor.sniffer.circular /vendor/bin/tcpdump -i wlan0 -W 3 -C 300 -w /dat
     oneshot
 
 on property:sys.boot_completed=1
+    # Balanced mode
     write /sys/devices/virtual/thermal/thermal_message/sconfig 20
     enable vendor.qvirtmgr
     start  vendor.qvirtmgr
