@@ -655,8 +655,8 @@ vendor/etc/camera/deblur_sd_opencl_binary.bin|f7dbfc6fee5b89b93a108dca89f207ac47
 vendor/etc/camera/deblur_sd_opencl_params.bin|5d69fcf94ec17efc745d21a54089c9dbff0c84c6
 vendor/etc/camera/deblur_txt_dsp.dlc|296b7f8f13c8f5b590bdf9dd1e5fa06adc67ab69
 vendor/etc/camera/deblur_txt_gpu.dlc|7de70e3e2aca1f3c77472110e45b773ca86d6135
-vendor/etc/camera/diting_enhance_motiontuning.xml|977e0088e8906fc5f04f23573c3fee1d437cca25
-vendor/etc/camera/diting_motiontuning.xml|18c172cc3c7b143ceaeaa7f9fc198ad844f31b47
+vendor/etc/camera/diting_enhance_motiontuning.xml|d6afbc342349061b8bd603bd61bf566184e3d05b
+vendor/etc/camera/diting_motiontuning.xml|48a5b3cd0005a2709862ebe3e774f68ba043a4ad
 vendor/etc/camera/eisoverridesettings.txt|163e39addda3ee4651419e3ba96e11aee2675227
 vendor/etc/camera/ellc.bin|7c386f4ae14d844c654fc91a0718447afc345ea6
 vendor/etc/camera/ellc_params.json|d01bbc3b6c4e693f4e29417c0e1206291b40d93e
@@ -689,7 +689,7 @@ vendor/etc/camera/model_back.dlc|f2387895bd604b4b8a26f9c40bc0915f3a9365f0
 vendor/etc/camera/model_front.dlc|45a34d74ac5f07615e143b37a1d4eb89c645a1b4
 vendor/etc/camera/model_front_mibokeh_video.dlc|edf980f0757cfa571c850bb5785ef0076ba90005
 vendor/etc/camera/model_glass.dlc|16e86979ea1031cb5a9980d0c1026fb96206ae42
-vendor/etc/camera/pureView_parameter.xml|baa77a04eeaa537501c1758f7969f74e57bda505
+vendor/etc/camera/pureView_parameter.xml|5cee86dbbc6fbe528c01fa79cbcea1c4b1b67860
 vendor/etc/camera/qianzhi_27_snpe.dlc|5059bb19730508749c6790fddbcfa5b2317a8911
 vendor/etc/camera/resources/default_param.json|b9ae1ed8f527316c3a5933fb36c7a7e9bfb5059e
 vendor/etc/camera/resources/kernel/1720888_32.bin|358e1b64e79e5298847a36c519b36850922eeed2
@@ -1671,41 +1671,41 @@ vendor/lib64/vendor.libmwqemiptablemgr.so
 vendor/lib64/vendor.qti.hardware.dpmservice@1.0.so
 vendor/lib64/vendor.qti.hardware.dpmservice@1.1.so
 
-# DRM
-vendor/bin/hw/vendor.qti.hardware.qseecom@1.0-service
-vendor/bin/qseecom_sample_client
-vendor/bin/qseecomd
-vendor/etc/gpfspath_oem_config.xml
-vendor/etc/init/qseecomd.rc
-vendor/etc/init/vendor.qti.hardware.qseecom@1.0-service.rc
-vendor/lib/hw/vendor.qti.hardware.qseecom@1.0-impl.so
-vendor/lib/libGPreqcancel.so
-vendor/lib/libGPreqcancel_svc.so
-vendor/lib/libQSEEComAPI.so
-vendor/lib/libcpion.so
-vendor/lib/libdrmfs.so
-vendor/lib/libdrmtime.so
-vendor/lib/libdrmutils.so
-vendor/lib/libops.so
-vendor/lib/libqisl.so
-vendor/lib/librpmb.so
-vendor/lib/libspl.so
-vendor/lib/libssd.so
-vendor/lib/vendor.qti.hardware.qseecom@1.0.so
-vendor/lib64/hw/vendor.qti.hardware.qseecom@1.0-impl.so
-vendor/lib64/libGPreqcancel.so
-vendor/lib64/libGPreqcancel_svc.so
-vendor/lib64/libQSEEComAPI.so
-vendor/lib64/libcpion.so
-vendor/lib64/libdrmfs.so
-vendor/lib64/libdrmtime.so
-vendor/lib64/libdrmutils.so
-vendor/lib64/libops.so
-vendor/lib64/libqisl.so
-vendor/lib64/librpmb.so
-vendor/lib64/libspl.so
-vendor/lib64/libssd.so
-vendor/lib64/vendor.qti.hardware.qseecom@1.0.so
+# DRM - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
+vendor/bin/hw/vendor.qti.hardware.qseecom@1.0-service|63325cdb65717518b2b4bda547bf56ecaa35cfee
+vendor/bin/qseecom_sample_client|3073688d22b78a7b0af30072660bd288db2c5298
+vendor/bin/qseecomd|189e33498b13458768218973dbfc0d99dab1fb45
+vendor/etc/gpfspath_oem_config.xml|7aeade35b0bbe27530f6aca8c1ed5192a7acf59d
+vendor/etc/init/qseecomd.rc|2e9881d40839e6ec2e355a807b2a9b07b4c44793
+vendor/etc/init/vendor.qti.hardware.qseecom@1.0-service.rc|0f43244d70d5efc1e4f089b926a9dc4f59e53db1
+vendor/lib/hw/vendor.qti.hardware.qseecom@1.0-impl.so|a225a3a12ee2504cf21b4c41736d32f0e755c8ce
+vendor/lib/libGPreqcancel.so|8a5716d9d190ebba7c9caec464e99923b2e46e02
+vendor/lib/libGPreqcancel_svc.so|e90eed8b6072a46131ff7a0d141fcda72a7784ed
+vendor/lib/libQSEEComAPI.so|37baa10bdcda0351f6129c27f20bf166a78b063f
+vendor/lib/libcpion.so|e748924f98b6c755e2ef7b1e86f062bbc0532c2f
+vendor/lib/libdrmfs.so|4db38406233329a19091cee51766e7aba882acdd
+vendor/lib/libdrmtime.so|bd23476ad31627737c50b0f9370ce4c2f97219dd
+vendor/lib/libdrmutils.so|c8871344a87322d4c060632b625ae615ec2e4e92
+vendor/lib/libops.so|51696ba9c4bf873d0836755eee44f99b664953de
+vendor/lib/libqisl.so|a691329923c497737d8126ddadc9a11874c8c559
+vendor/lib/librpmb.so|cb6152a26812f5c91f40c4c224e9fb053eecb4a4
+vendor/lib/libspl.so|475c6f4a21e4822b2cbacb38be42e176172393a2
+vendor/lib/libssd.so|561f2c77548fa54a5b813e9397b806ee03139879
+vendor/lib/vendor.qti.hardware.qseecom@1.0.so|b75010ba8d016e504d58704a12dfcedef8fa53d5
+vendor/lib64/hw/vendor.qti.hardware.qseecom@1.0-impl.so|4e688454aceaeb35f246331cb2c2eb0460d0f6e1
+vendor/lib64/libGPreqcancel.so|ff8d27102325db5460ea1adead78326088f118fe
+vendor/lib64/libGPreqcancel_svc.so|c0e53778f17e1fc833acf1a7ddad6ae63e343131
+vendor/lib64/libQSEEComAPI.so|87b57df5fbc34db2769cb3db00c24c773b894018
+vendor/lib64/libcpion.so|eceaed6e7b9c5800e0ec7d7bba43e14272191903
+vendor/lib64/libdrmfs.so|4f435dc20452ee26a401172b6b24c2f6f22e8383
+vendor/lib64/libdrmtime.so|68baf3b4dc94f6fb1914bfa1933bf7d477c845f2
+vendor/lib64/libdrmutils.so|ee5076a71187d8af56ee2e44a4794ef21c75c3e4
+vendor/lib64/libops.so|d00d9643ee8c0ffa1e2ccb089304a04d692c7319
+vendor/lib64/libqisl.so|d20b5921da6940085e1a81094db079b199ab9d67
+vendor/lib64/librpmb.so|461fd9045025f8b30aaefbbe90accd8c2d506755
+vendor/lib64/libspl.so|ea975dcabe9896a1827f0db2969ed9a257572849
+vendor/lib64/libssd.so|931512da26fdca5674975a250c6c5d2b7f1d1be8
+vendor/lib64/vendor.qti.hardware.qseecom@1.0.so|c8ea02b00e97627924cd27f6338390319d269136
 
 # DSP
 vendor/bin/dspservice
@@ -2006,29 +2006,29 @@ vendor/bin/init.qti.kernel.sh
 vendor/bin/vendor_modprobe.sh
 vendor/etc/init/hw/init.qti.kernel.rc
 
-# Keymaster
-vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
-vendor/bin/hw/android.hardware.keymaster@4.0-strongbox-service-qti
-vendor/bin/hw/android.hardware.keymaster@4.1-service-qti
-vendor/etc/init/android.hardware.keymaster@4.1-service-qti.rc
-vendor/lib/libkeymasterdeviceutils.so
-vendor/lib/libkeymasterprovision.so
-vendor/lib/libkeymasterutils.so
-vendor/lib/libqtikeymaster4.so
-vendor/lib64/libkeymasterdeviceutils.so
-vendor/lib64/libkeymasterprovision.so
-vendor/lib64/libkeymasterutils.so
-vendor/lib64/libqtikeymaster4.so
+# Keymaster - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
+vendor/bin/hw/android.hardware.keymaster@4.0-service-qti|7b7aa611dc6a7e2a45aed940037256ef34f3a5b7
+vendor/bin/hw/android.hardware.keymaster@4.0-strongbox-service-qti|6c72815c5a88ff31089337c986f5e59c17989eab
+vendor/bin/hw/android.hardware.keymaster@4.1-service-qti|078af72b56954b7bbe4fc5b86e51b5a57f8bf255
+vendor/etc/init/android.hardware.keymaster@4.1-service-qti.rc|f6907552961ba772c1ad5b493913a60d65abedb4
+vendor/lib/libkeymasterdeviceutils.so|603696e91ba8f0814dc56cdb17a6df6b5fd90567
+vendor/lib/libkeymasterprovision.so|4619e09579cb3599b113f750642469da374d9c1d
+vendor/lib/libkeymasterutils.so|71c522a2fbae4a427b17cbe34e0bea18a48f1c80
+vendor/lib/libqtikeymaster4.so|128a4bce13b46ce6647cd7b1570e9f71fb09ec8b
+vendor/lib64/libkeymasterdeviceutils.so|046cc20a4b8ca8fc28ac7fcf0d173ee1d039f0e1
+vendor/lib64/libkeymasterprovision.so|fbbf0c9a632d3d97804a5fc400ccddc568d36f4c
+vendor/lib64/libkeymasterutils.so|f52fadbe7101601521c8813edcc36ca750c6c70f
+vendor/lib64/libqtikeymaster4.so|7a9182465290147772068060ed6a4ae6048ec00e
 
-# Keymint
-vendor/bin/hw/android.hardware.security.keymint-service-qti
-vendor/etc/init/android.hardware.security.keymint-service-qti.rc
-vendor/etc/permissions/android.hardware.hardware_keystore.xml
-vendor/etc/vintf/manifest/android.hardware.security.keymint-service-qti.xml
-vendor/lib/libqcbor.so
-vendor/lib/libqtikeymint.so
-vendor/lib64/libqcbor.so
-vendor/lib64/libqtikeymint.so
+# Keymint - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
+vendor/bin/hw/android.hardware.security.keymint-service-qti|a7c7b499299d23e7db36803046c30786caaac089
+vendor/etc/init/android.hardware.security.keymint-service-qti.rc|28d39a691127b567b7745b1ae6da87b7a282325e
+vendor/etc/permissions/android.hardware.hardware_keystore.xml|672d9b78a504fbd1eef56853e710e7986a3cd2f8
+vendor/etc/vintf/manifest/android.hardware.security.keymint-service-qti.xml|f78fe6f4b5b01884b2425950dd8fa23e185ab309
+vendor/lib/libqcbor.so|7c7c75b10a862b43966429b2c4b2c7e94097e40d
+vendor/lib/libqtikeymint.so|820d50c5d02b9d4d94913c33e2b4b4795e7468f0
+vendor/lib64/libqcbor.so|3408c29a37fa5e806af02f5bf63e345454c62675
+vendor/lib64/libqtikeymint.so|84512f2c4afc17938b079416a57afbe994ee8100
 
 # Listen
 vendor/etc/vintf/manifest/manifest_non_qmaa.xml
@@ -3148,78 +3148,78 @@ vendor/etc/init/init.time_daemon.rc
 vendor/lib/libtime_genoff.so
 vendor/lib64/libtime_genoff.so
 
-# Touchscreen firmware
-vendor/firmware/goodix_cfg_group_l12.bin
-vendor/firmware/goodix_cfg_group_l12_new.bin
-vendor/firmware/goodix_firmware_l12.bin
-vendor/firmware/goodix_firmware_l12_new.bin
-vendor/firmware/goodix_test_limits_1_255.csv
-vendor/firmware/goodix_test_limits_255.csv
-vendor/firmware/novatek_spi_fw.bin
-vendor/firmware/st_fts_l12.ftb
-vendor/firmware/stm_fts_production_limits.csv
+# Touchscreen firmware - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
+vendor/firmware/goodix_cfg_group_l12.bin|311aa4ab3328c2484304c8134ad65f19bdc5b270
+vendor/firmware/goodix_cfg_group_l12_new.bin|b2f7c642571e74a1afc8585c4be2f4504a69c9e1
+vendor/firmware/goodix_firmware_l12.bin|04718d368a0040845485ff11e73e4c96a8eae555
+vendor/firmware/goodix_firmware_l12_new.bin|bc218025c2a22187e94558f47d817bfc62403bf7
+vendor/firmware/goodix_test_limits_1_255.csv|b18ceb1c88804493846e3d4c2634145ad49dd6d7
+vendor/firmware/goodix_test_limits_255.csv|6bf24119a2d8164cfa2b09f1fac2b6c29a1d6cce
+vendor/firmware/novatek_spi_fw.bin|b80181e4b6fc81954ca904e54ef2da500dc76e81
+vendor/firmware/st_fts_l12.ftb|7a5adbde68b1117ad42d9579ba34c83f1b3fddc3
+vendor/firmware/stm_fts_production_limits.csv|701d0cf5fd9561bdee6071cfbae90336002996a7
 
-# TouchFeature
-#vendor/bin/hw/vendor.xiaomi.hw.touchfeature@1.0-service
-vendor/etc/init/vendor.xiaomi.hw.touchfeature@1.0-service.rc
-#vendor/etc/vintf/manifest/vendor.xiaomi.hw.touchfeature@1.0-service.xml
-#vendor/lib64/hw/vendor.xiaomi.hw.touchfeature@1.0-impl.so
-#vendor/lib64/vendor.xiaomi.hw.touchfeature@1.0.so
+# TouchFeature - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
+vendor/bin/hw/vendor.xiaomi.hw.touchfeature@1.0-service|5a06ed9618fc73188701b6e842d9864f74f29a06
+vendor/etc/init/vendor.xiaomi.hw.touchfeature@1.0-service.rc|07e74f30d232f2767d0f86a6df5efd7b4a592e03
+vendor/etc/vintf/manifest/vendor.xiaomi.hw.touchfeature@1.0-service.xml|96cd6606fc97c995d808ba1f83fa148fe6f37784
+vendor/lib64/hw/vendor.xiaomi.hw.touchfeature@1.0-impl.so|500e60fafa7bf2600ca298fb01dfc6651124d2c6
+vendor/lib64/vendor.xiaomi.hw.touchfeature@1.0.so|e2fbb35d402f8b0ec10974a1a1eae16786bc5c80
 
-# Trusted Execution Environment connector
-vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service
-vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc
-vendor/lib/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
-vendor/lib/libGPQTEEC_vendor.so
-vendor/lib/libGPTEE_vendor.so
-vendor/lib/libQTEEConnector_listener.so
-vendor/lib/libQTEEConnector_vendor.so
-vendor/lib/vendor.qti.hardware.qteeconnector@1.0.so
-vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
-vendor/lib64/libGPQTEEC_vendor.so
-vendor/lib64/libGPTEE_vendor.so
-vendor/lib64/libQTEEConnector_listener.so
-vendor/lib64/libQTEEConnector_vendor.so
-vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
+# Trusted Execution Environment connector - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
+vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service|aca4bb9f1348c1e01f2e2e286cb2b5052d64da54
+vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc|55c2f0c1e93fccb49ef9919cd56e5903ac14d517
+vendor/lib/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so|a7a086fc4be341d1d5c42e5fadf36396bc486834
+vendor/lib/libGPQTEEC_vendor.so|3dddf0293781e0b96917658d26731a14b2ddd73a
+vendor/lib/libGPTEE_vendor.so|56638bd1545ce988eca146f17b3b37a12e3c8ef4
+vendor/lib/libQTEEConnector_listener.so|9dea807471c602cf5c352fcd5f6786ebc9424a67
+vendor/lib/libQTEEConnector_vendor.so|1dd9ff4d3f8dc0de290c72f264edb09e22cf00a3
+vendor/lib/vendor.qti.hardware.qteeconnector@1.0.so|f9d44e9e385b05edb6271ce8d83cec81272c95d2
+vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so|d9f9c448a350d49c8ff3b2607fbb967a17b3b020
+vendor/lib64/libGPQTEEC_vendor.so|861641d9e09bec05684f35388bb31a6ea7914efa
+vendor/lib64/libGPTEE_vendor.so|9ade589391fee23c33c0f563b5fb843a11ad1cac
+vendor/lib64/libQTEEConnector_listener.so|ef774515ccf148732cfdc85d8558d9a6ec64d976
+vendor/lib64/libQTEEConnector_vendor.so|b6eb0ca5244de7e9abb0a44f334ee293c3627d5f
+vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so|56ef9cdf17aad71a8d666ffdf66ac4dcdaf61e3a
 
-# Trusted User Interface
-vendor/bin/hw/vendor.qti.hardware.trustedui@1.0-service-qti
-vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
-vendor/bin/trusteduilistener
-vendor/etc/init/trusteduilistener.rc
-vendor/etc/init/vendor.qti.hardware.trustedui@1.0-service-qti.rc
-vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
-vendor/lib/libTouchInputVM.so
-vendor/lib/libTrustedInput.so
-vendor/lib/libTrustedInputTZ.so
-vendor/lib/libTrustedInputUtils.so
-vendor/lib/libTrustedUI.so
-vendor/lib/libTrustedUITZ.so
-vendor/lib/libTrustedUIVM.so
-vendor/lib/libminksocket_vendor.so
-vendor/lib/libsi.so
-vendor/lib/libsecureui_svcsock.so
-vendor/lib/vendor.qti.hardware.trustedui@1.0.so
-vendor/lib/vendor.qti.hardware.trustedui@1.1.so
-vendor/lib/vendor.qti.hardware.trustedui@1.2.so
-vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
-vendor/lib64/libTouchInputVM.so
-vendor/lib64/libTrustedInput.so
-vendor/lib64/libTrustedInputTZ.so
-vendor/lib64/libTrustedInputUtils.so
-vendor/lib64/libTrustedUI.so
-vendor/lib64/libTrustedUITZ.so
-vendor/lib64/libTrustedUIVM.so
-vendor/lib64/libminksocket_vendor.so
-vendor/lib64/libsecureui_svcsock.so
-vendor/lib64/libsi.so
-vendor/lib64/vendor.qti.hardware.trustedui@1.0.so
-vendor/lib64/vendor.qti.hardware.trustedui@1.1.so
-vendor/lib64/vendor.qti.hardware.trustedui@1.2.so
-vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
+# Trusted User Interface - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
+vendor/bin/hw/vendor.qti.hardware.trustedui@1.0-service-qti|91b4186eb0c290339f7d3e2bbc856351c62803b9
+vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|6fd789f737e022fe3bcc6396f231b4737a5a29c7
+vendor/bin/trusteduilistener|b45d9e0af3b563bd43be7ab772f766d90ea82594
+vendor/etc/init/trusteduilistener.rc|1c350bd3272c728c2c28352d52d61f1ca43c2917
+vendor/etc/init/vendor.qti.hardware.trustedui@1.0-service-qti.rc|5e28453fdf335cb6d99e77f61b214527923897a3
+vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e1579374f001c94588fae7835a12ffc
+vendor/lib/libTouchInputVM.so|be45019e02aa73673e8d2e0b2daa5abe1dc2dccb
+vendor/lib/libTrustedInput.so|92f54eb9dc3e85d1734d94560a9bb9cd06b613ba
+vendor/lib/libTrustedInputTZ.so|2a5ffe2dd86fc75eb67a4b8d893d981103e907a0
+vendor/lib/libTrustedInputUtils.so|904cb44f876e0f34e9fd9b1e792bf0300cc58d28
+vendor/lib/libTrustedUI.so|453265fcf63b85ed4b2c1b783a3dd3f55ed1c963
+vendor/lib/libTrustedUITZ.so|1f3e3bbb4da03080dd0569d7dfb1e8c78c46a8f5
+vendor/lib/libTrustedUIVM.so|f0b5273c1f6a995ba61088b50640109fee6436a1
+vendor/lib/libminksocket_vendor.so|03ec1d1ac89a50f25401449777ed2f0d123515d1
+vendor/lib/libsi.so|dc7c9b06268d074cdc51dcdb4d753738b42efa75
+vendor/lib/libsecureui_svcsock.so|44e5090cee27293c4352fd2ad676e99c90372e63
+vendor/lib/vendor.qti.hardware.trustedui@1.0.so|b62a833104e9d911d8e27c20f26dd10672073cd8
+vendor/lib/vendor.qti.hardware.trustedui@1.1.so|f816b4a2e48d6ca6c3ecd75780b199c2ee85987f
+vendor/lib/vendor.qti.hardware.trustedui@1.2.so|33c12c2969e0dcc3565c09aacb4372231e39a52d
+vendor/lib/vendor.qti.hardware.tui_comm@1.0.so|d65fb6febca31c4323772c918492441b35642350
+vendor/lib64/libTouchInputVM.so|858ff2da840e304fb9e49793ce81bacd0bbb3b86
+vendor/lib64/libTrustedInput.so|7b8efab34c2c54d17cbca3a22f11baa64612c41e
+vendor/lib64/libTrustedInputTZ.so|71c0530ae8121a76a002e0c4322f0ddec7bc528d
+vendor/lib64/libTrustedInputUtils.so|89da74ef1be5d971a649cdeb6dfaf4bb6b9c5d87
+vendor/lib64/libTrustedUI.so|92f32beb81b5c94129819062c2a381db33f45c10
+vendor/lib64/libTrustedUITZ.so|4d21a91ecade60684ab678a7991e5d99f4c7d75a
+vendor/lib64/libTrustedUIVM.so|f7b17823bf08d1a9be923fb0cc621f40a9026335
+vendor/lib64/libminksocket_vendor.so|beaa96c8d4e569abc7b31edf94c8b63566a3576e
+vendor/lib64/libsecureui_svcsock.so|1a25a658d7e5cb9e1129643abb958004d1392b78
+vendor/lib64/libsi.so|2a511e00042243e6d8d654442c593eb37ddd8511
+vendor/lib64/vendor.qti.hardware.trustedui@1.0.so|32607b4f5c18e53392d732a3d821eef87b90bb71
+vendor/lib64/vendor.qti.hardware.trustedui@1.1.so|2b9a8234c1b08277df5507f099388b50e1abc365
+vendor/lib64/vendor.qti.hardware.trustedui@1.2.so|d3684162ba49f49f4ec88ff18a6e12189887e715
+vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|2bea3ad6b46aa484467aa8362293f6afb12e625e
 
-# Trustzone
-vendor/app/TrustZoneAccessService/TrustZoneAccessService.apk
+# Trustzone - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
+vendor/app/TrustZoneAccessService/TrustZoneAccessService.apk|8a6400d6e47232e918331650079084f0d8603bb6
 
 # USB
 vendor/bin/init.qcom.usb.sh
@@ -3391,108 +3391,108 @@ vendor/firmware/3_seqbinwav_P_RTP.bin:vendor/etc/vibrator/effect_3.bin
 vendor/firmware/4_seqbinwav_P_RTP.bin:vendor/etc/vibrator/effect_4.bin
 vendor/firmware/5_seqbinwav_P_RTP.bin:vendor/etc/vibrator/effect_5.bin
 
-# Video
-vendor/lib64/libfastcrc.so
-vendor/lib64/libvideooptfeature.so
-vendor/lib64/libvideotxr.so
-vendor/lib64/libvideoutils.so
+# Video - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
+vendor/lib64/libfastcrc.so|ab0a2648d275d1768c5dc18d170f5ff75a9aad4b
+vendor/lib64/libvideooptfeature.so|49231bc375429d087f6d985d6ca07a173054b4e8
+vendor/lib64/libvideotxr.so|80de9b1e6c9d937f5f692b587c7100e4fec847a3
+vendor/lib64/libvideoutils.so|8d2d3f35ddd3eebdbdc3e7b359898ba65f6b1971
 
-# VM mem
-vendor/lib/libvmmem.so
-vendor/lib64/libvmmem.so
+# VM mem - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
+vendor/lib/libvmmem.so|9eb500e56890ab2cca97371450e2a7775dd80c27
+vendor/lib64/libvmmem.so|cd1b80963d107b0a9ddfb0a08de266621b5a7154
 
 # VM mgr
 vendor/bin/vmmgr
 vendor/etc/init/vmmgr.rc
 vendor/etc/vmmgr.conf
 
-# VPP
-vendor/bin/hw/qconfigservice
-vendor/bin/vppservice
-vendor/etc/configstore/vpp.configstore.xml
-vendor/etc/init/qconfig.rc
-vendor/etc/init/vppservice.rc
-vendor/etc/tunings.txt
-vendor/etc/vintf/manifest/vendor.qti.hardware.qconfig@1.0-service.xml
-vendor/etc/vintf/manifest/vendor.qti.hardware.vpp@2.0-service.xml
-vendor/lib/libqconfigclient.so
-vendor/lib/libvppclient.so
-vendor/lib/libvppcommon.so
-vendor/lib/libvpphcp.so
-vendor/lib/libvpphvx.so
-vendor/lib/libvppimmotion.so
-vendor/lib/libvpplibrary.so
-vendor/lib/libvpptestutils.so
-vendor/lib/vendor.qti.hardware.qconfig@1.0.so
-vendor/lib/vendor.qti.hardware.vpp@1.1.so
-vendor/lib/vendor.qti.hardware.vpp@1.2.so
-vendor/lib/vendor.qti.hardware.vpp@1.3.so
-vendor/lib/vendor.qti.hardware.vpp@2.0.so
-vendor/lib64/libqconfigclient.so
-vendor/lib64/libvppclient.so
-vendor/lib64/libvppcommon.so
-vendor/lib64/libvpphcp.so
-vendor/lib64/libvpphvx.so
-vendor/lib64/libvppimmotion.so
-vendor/lib64/libvpplibrary.so
-vendor/lib64/libvpptestutils.so
-vendor/lib64/vendor.qti.hardware.qconfig@1.0.so
-vendor/lib64/vendor.qti.hardware.vpp@1.1.so
-vendor/lib64/vendor.qti.hardware.vpp@1.2.so
-vendor/lib64/vendor.qti.hardware.vpp@1.3.so
-vendor/lib64/vendor.qti.hardware.vpp@2.0.so
+# VPP  - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
+vendor/bin/hw/qconfigservice|4971374c14068304d06f27a2d50ba7b414433d1e
+vendor/bin/vppservice|1300c91f158d721ef93f35de6766f41870a1cfff
+vendor/etc/configstore/vpp.configstore.xml|ed961545186c66fd9523f25866c74f2e11ee63d7
+vendor/etc/init/qconfig.rc|11ede82c36699801db420aca7db74a4972cee8b1
+vendor/etc/init/vppservice.rc|005de95a8f7aa351a8a4e9c7ee765233b5d1f937
+vendor/etc/tunings.txt|196b4cc4410dd4c521ace955a225b4c8b47268a4
+vendor/etc/vintf/manifest/vendor.qti.hardware.qconfig@1.0-service.xml|50f506a13977a4afcf1e7ffc90df711d9d7b3562
+vendor/etc/vintf/manifest/vendor.qti.hardware.vpp@2.0-service.xml|452ab0d9d785202072aa39c875527aabe3eeed60
+vendor/lib/libqconfigclient.so|35427cbd597da9392c2cfe5bc40eb48005c313de
+vendor/lib/libvppclient.so|7a2f1b830b2723e0c9dc2f8198f01051187b65d8
+vendor/lib/libvppcommon.so|c404b0bb168afda2c77891224b36288db8d62f1e
+vendor/lib/libvpphcp.so|a8f171f4b124d53471205709a80bfa38d0eccec7
+vendor/lib/libvpphvx.so|d6bb894ed3bfd022c3dc45ba45fd510fe7cbce99
+vendor/lib/libvppimmotion.so|42939bc99ece8ec56d376698db558570e2a74ed0
+vendor/lib/libvpplibrary.so|561ea5031555c1a155665f7ba73d3027628bd1cd
+vendor/lib/libvpptestutils.so|c010060c01c330e9677dc00e36901b33e6ca75b4
+vendor/lib/vendor.qti.hardware.qconfig@1.0.so|8a8271506fa51937a7e8a25cad6c37cead87d9f4
+vendor/lib/vendor.qti.hardware.vpp@1.1.so|7564ef10fd66c405ef66324e834de029ee4e0b22
+vendor/lib/vendor.qti.hardware.vpp@1.2.so|538103759032718512d66601c57e71784dc57e40
+vendor/lib/vendor.qti.hardware.vpp@1.3.so|2713169b79076c4c8ebbb7a7e6a0bfe62f0049dd
+vendor/lib/vendor.qti.hardware.vpp@2.0.so|f547fa47778f185553446866a84be2669433774f
+vendor/lib64/libqconfigclient.so|21a10e7bc72b0cb59e559d650f320671971c44ba
+vendor/lib64/libvppclient.so|9e0ebdc476b069ade46e99a617d25d534db5f2d3
+vendor/lib64/libvppcommon.so|718c4ec523fd3e5809c084216ffe3d3bf479e813
+vendor/lib64/libvpphcp.so|a4747625708f43d0ccbbbc749ba4a762b1d48d4c
+vendor/lib64/libvpphvx.so|0d5bba4b1ff7f38f771261f0e6b167790ff79591
+vendor/lib64/libvppimmotion.so|e222cc16edeee0aab3285ec32f8a730b8c38da8a
+vendor/lib64/libvpplibrary.so|b7115aba3bdbf19c20f23304fd7bd71d38cadd94
+vendor/lib64/libvpptestutils.so|3cea58cf1185b4ae87e70132d5a3583485367a50
+vendor/lib64/vendor.qti.hardware.qconfig@1.0.so|395c469c39616759555167aea7bd1ef03a1e63f4
+vendor/lib64/vendor.qti.hardware.vpp@1.1.so|0fc7f8ddf40b7d2efc5169147c5a6e6ea5135b30
+vendor/lib64/vendor.qti.hardware.vpp@1.2.so|f3784d796ac2ae266f27c8b94d91e8d9b99c0f3b
+vendor/lib64/vendor.qti.hardware.vpp@1.3.so|3d9d2a529a16543bf6f1c71fc16f0bd00c9e3255
+vendor/lib64/vendor.qti.hardware.vpp@2.0.so|f62c291630c618dba143f8bda3f5193e25458de8
 
-# VPU firmware
-vendor/firmware/vpu20_4v.b00
-vendor/firmware/vpu20_4v.b01
-vendor/firmware/vpu20_4v.b02
-vendor/firmware/vpu20_4v.b03
-vendor/firmware/vpu20_4v.b04
-vendor/firmware/vpu20_4v.b05
-vendor/firmware/vpu20_4v.b06
-vendor/firmware/vpu20_4v.b07
-vendor/firmware/vpu20_4v.b08
-vendor/firmware/vpu20_4v.b09
-vendor/firmware/vpu20_4v.b18
-vendor/firmware/vpu20_4v.b19
-vendor/firmware/vpu20_4v.mbn
-vendor/firmware/vpu20_4v.mdt
+# VPU firmware - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
+vendor/firmware/vpu20_4v.b00|fae93671bdc3053000c6124795c2fb79de00f1aa
+vendor/firmware/vpu20_4v.b01|cadd5f8be8d5c6a431ec22152c7cbe1bf080be5e
+vendor/firmware/vpu20_4v.b02|7772b18b16e520641e8051fd6284384e9b0e1939
+vendor/firmware/vpu20_4v.b03|9dfd50e85d8c65101f765b23d37701db482c0996
+vendor/firmware/vpu20_4v.b04|f726e7fa233485e02ef6172833d51353627aa81d
+vendor/firmware/vpu20_4v.b05|e19854e03b52cc67d7db620f54609b66d1b85f54
+vendor/firmware/vpu20_4v.b06|0b403b94f400e8f76ac5f5f18f6957318ec2a582
+vendor/firmware/vpu20_4v.b07|86a5ed4d22759036806d9321f8e509628f64c5b6
+vendor/firmware/vpu20_4v.b08|70cf9a04574907ce3a63f83d2f2829f0446d181b
+vendor/firmware/vpu20_4v.b09|344b2d2adef0ec794df750015477c2f7feefdcee
+vendor/firmware/vpu20_4v.b18|c1756e0567d10a1173f481cd367ff4637b2dd77f
+vendor/firmware/vpu20_4v.b19|2f27cdf49efeffcdfa0f65684f8faa0d847edca9
+vendor/firmware/vpu20_4v.mbn|70994bdb534f86551d3e37039eb9a39bacaa80c1
+vendor/firmware/vpu20_4v.mdt|748ddee57afee91b848618dd51c769ccb4c52fee
 
-# Widevine DRM
-vendor/bin/hw/android.hardware.drm@1.4-service.widevine
-vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc
-vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml
-vendor/lib/liboemcrypto.so
-vendor/lib/libtrustedapploader.so
-vendor/lib/libwvkeybox.so
-vendor/lib/mediadrm/libwvdrmengine.so
-vendor/lib64/liboemcrypto.so
-vendor/lib64/libtrustedapploader.so
-vendor/lib64/libwvhidl.so
-vendor/lib64/libwvkeybox.so
-vendor/lib64/mediadrm/libwvdrmengine.so
+# Widevine DRM - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
+vendor/bin/hw/android.hardware.drm@1.4-service.widevine|f86e5d09432ab0b7958cf4b7a345d1b339bf06b3
+vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc|992f63e9700da29099e0590858a6becaaadb2976
+vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.4-service.widevine.xml|91d7c0996133556cb7f7c5d1b7e5d9e7f07b78b2
+vendor/lib/liboemcrypto.so|4544e6eb6db269d1c83490dbd3d6bb9813293169
+vendor/lib/libtrustedapploader.so|eb463cf7a2848a0a412d6f6b4b18001202279219
+vendor/lib/libwvkeybox.so|21426a5ef77c876b0913c3fa31924d6e01da053f
+vendor/lib/mediadrm/libwvdrmengine.so|36a2b5e60fb69ffe7ed8d6cabfe543bff2f2b469
+vendor/lib64/liboemcrypto.so|b12f1afb55acfaf3e884227aa725e8d4ac7eb92c
+vendor/lib64/libtrustedapploader.so|4642c29a1bbc2b4468ed6d5d97bde8a58f859ebd
+vendor/lib64/libwvhidl.so|1f2e190ec196e0027c254866de26dc4a36fef8a9
+vendor/lib64/libwvkeybox.so|bdc770cf525e0c166c1a1728b15d1fa1a1f6c425
+vendor/lib64/mediadrm/libwvdrmengine.so|8f30147864e1c937a8337d868bef67189e55f43d
 
-# WiFi
-vendor/bin/cnss-daemon
-vendor/bin/athdiag
-vendor/bin/cnss-daemon
-vendor/bin/cnss_diag
-vendor/bin/hal_proxy_daemon
-vendor/bin/pktlogconf
-vendor/bin/spectraltool
-vendor/bin/vendor_cmd_tool
-vendor/bin/wificfrtool
-vendor/bin/wifilearner
-vendor/etc/init/vendor.qti.hardware.wifi.wificfr@1.0-service.rc
-vendor/etc/init/vendor.qti.hardware.wifi.wifilearner@1.0-service.rc
-vendor/etc/init/init.vendor.wlan.rc
-vendor/etc/vintf/manifest/vendor.qti.hardware.wifi.wificfr@1.0-service.xml
-vendor/etc/wifi/p2p_supplicant_overlay.conf
-vendor/etc/wifi/vendor_cmd.xml
-vendor/etc/wifi/wpa_supplicant_overlay.conf
-vendor/lib64/libspectre.so
-vendor/lib64/vendor.qti.hardware.wifi.wificfr@1.0.so
-vendor/lib64/vendor.qti.hardware.wifi.wifilearner@1.0.so
+# WiFi - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
+vendor/bin/cnss-daemon|1d266903d1d04dc60c7bd87dd8228b5769d34a15
+vendor/bin/athdiag|4480ba854ddd01b97757a6373fe78b8bffbc5633
+vendor/bin/cnss-daemon|1d266903d1d04dc60c7bd87dd8228b5769d34a15
+vendor/bin/cnss_diag|bf1f7c248c7f19f088c3cc069554f1ba3caecb8b
+vendor/bin/hal_proxy_daemon|9541b442fd12d527688955764c7f24f9d962a9d8
+vendor/bin/pktlogconf|05c237c677c12cec2fdd37dc2f62c335ded3482c
+vendor/bin/spectraltool|ec9272c2826417ea60c3e87b9c42627787a22fef
+vendor/bin/vendor_cmd_tool|7f08bd3a66b9ce9a9e59d4aedc7c6f17d08498b8
+vendor/bin/wificfrtool|325c155d07d0e4a8202096ff1ab9e60af5ee2a74
+vendor/bin/wifilearner|6048cf0a9d6afb26cba5904a43629ab8aeb8450a
+vendor/etc/init/vendor.qti.hardware.wifi.wificfr@1.0-service.rc|08b6ed473663feca673c396dcda809558dd5d664
+vendor/etc/init/vendor.qti.hardware.wifi.wifilearner@1.0-service.rc|aacefc44da5e64760bc12779a83b905ca6b78f01
+vendor/etc/init/init.vendor.wlan.rc|a4d45be8c1e12d4690adbb9a79e882b2f094b2da
+vendor/etc/vintf/manifest/vendor.qti.hardware.wifi.wificfr@1.0-service.xml|a2edc2c22ed12f393b9e64505565f45624ace1ff
+vendor/etc/wifi/p2p_supplicant_overlay.conf|ab99ffdd6ec54ca47b33c10862e69a9a8ac5c1d0
+vendor/etc/wifi/vendor_cmd.xml|b984ecbb79d2ca0b789274fce3fde793b41d3dc6
+vendor/etc/wifi/wpa_supplicant_overlay.conf|c2b028c454942c2c5fe7306e0e65c5bece5a0f64
+vendor/lib64/libspectre.so|255c793f6278c123471646b6f8df434b95f949bb
+vendor/lib64/vendor.qti.hardware.wifi.wificfr@1.0.so|fa92902e22c771025c53ce1842bb708e5d98acb4
+vendor/lib64/vendor.qti.hardware.wifi.wifilearner@1.0.so|46ef7a8bbbcaf2a29012c10cacb746253ba04051
 
 # WiFi Display
 -system/framework/WfdCommon.jar
@@ -3576,5 +3576,5 @@ vendor/lib64/libwfdutils_proprietary.so
 vendor/lib64/vendor.qti.hardware.wifidisplaysession@1.0.so
 vendor/lib64/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
 
-# Xiaomi MAC address
-vendor/bin/nv_mac
+# Xiaomi MAC address - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
+vendor/bin/nv_mac|d314d052714f41d4f24384b54aa7cf9b680c4a8c

@@ -141,4 +141,8 @@ public class ColorModeService extends Service {
         }
         DfWrapper.setDisplayFeature(params);
     }
+
+    private static void dlog(String msg) {
+        if (DEBUG) Log.d(TAG, msg);
+    }
 }
