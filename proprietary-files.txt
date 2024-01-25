@@ -2135,14 +2135,14 @@ vendor/lib64/libstagefrighthw.so|a6390b3b607922fcd8d9da02f95b75943b57545a
 vendor/lib64/libvideotxr.so|80de9b1e6c9d937f5f692b587c7100e4fec847a3
 vendor/lib64/qti.video.utils.videobufferlayout.so|72bfcd0c434048d06b9bc5555226cbe83098a8e2
 
-# MiCharge
-vendor/bin/hw/vendor.xiaomi.hardware.micharge@1.0-service
-vendor/etc/init/vendor.xiaomi.hardware.micharge@1.0-service.rc
-vendor/etc/vintf/manifest/vendor.xiaomi.hardware.micharge@1.0.xml
-vendor/lib/hw/vendor.xiaomi.hardware.micharge@1.0-impl.so
-vendor/lib/vendor.xiaomi.hardware.micharge@1.0.so
-vendor/lib64/hw/vendor.xiaomi.hardware.micharge@1.0-impl.so
-vendor/lib64/vendor.xiaomi.hardware.micharge@1.0.so
+# MiCharge - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
+vendor/bin/hw/vendor.xiaomi.hardware.micharge@1.0-service|2503e78469695397d420219f8e63dfa9a524cd18
+vendor/etc/init/vendor.xiaomi.hardware.micharge@1.0-service.rc|242977cb5d6017c32399c799ece45d899b8485ce
+vendor/etc/vintf/manifest/vendor.xiaomi.hardware.micharge@1.0.xml|44d32cc6da975596fd407670d9e016340b60a9d1
+vendor/lib/hw/vendor.xiaomi.hardware.micharge@1.0-impl.so|b6c474b3ed049da15c456d2b278407d49b706bec
+vendor/lib/vendor.xiaomi.hardware.micharge@1.0.so|13f934781db73b5cef03c45f4f94f10263171c1d
+vendor/lib64/hw/vendor.xiaomi.hardware.micharge@1.0-impl.so|a65d9578e188e28732798eb31b24460510e94fbd
+vendor/lib64/vendor.xiaomi.hardware.micharge@1.0.so|90e6ae11d33cc055dbfbc24e91c247607a47cc82
 
 # Mlipay
 vendor/bin/fidoca
