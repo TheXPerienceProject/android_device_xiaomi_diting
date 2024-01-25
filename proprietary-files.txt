@@ -266,7 +266,7 @@ vendor/lib64/soundfx/libvisualizer.so
 vendor/lib64/vendor.qti.hardware.pal@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.pal@1.0.so
 
-# Batterysecret  - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# Batterysecret  - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/bin/batterysecret|c43ff25b0dde6ac7890426ca220503f0ee78f8f5
 vendor/etc/init/hw/init.batterysecret.rc|f43a2c265b79442fb8e82244caefdd2d3cdce48a
 
@@ -292,7 +292,7 @@ vendor/lib64/libbtnv.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
 
-# Camera - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# Camera - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/bin/hw/vendor.qti.camera.provider@2.7-service_64|4f42b351033dd8c009881e9db250f8e7e9233652
 vendor/bin/hw/vendor.xiaomi.hardware.quickcamera@1.0-service|d50f2ed2bb09b8068d0ea8de3b9aede22bfbf87f
 vendor/etc/init/vendor.qti.camera.provider@2.7-service_64.rc|6bb6b66aa718104ededfac666e8fc7a1f2d33923
@@ -329,12 +329,12 @@ vendor/lib64/com.qti.settings.sm8450.so|8eba7f5d3a630b494cfe618386d9145d3d1b3d30
 vendor/lib64/com.qti.stats.common.so|7acf44f99040205eccefc1f2b5051dcca8c18321
 vendor/lib64/com.qualcomm.mcx.distortionmapper.so|be849d686ca46950941e8fd48b113804e396efe9
 vendor/lib64/com.qualcomm.mcx.linearmapper.so|19ea7d1f01ec8163af6f32b121a155c33a4fa869
-vendor/lib64/com.qualcomm.mcx.policy.mfl.so|5da9cafe0a5386040daf235c3d80e063cd27e59d
-vendor/lib64/com.qualcomm.mcx.policy.xr.so|6fd41ba896d37476990122377901f8ce67ed8139
-vendor/lib64/com.qualcomm.qti.mcx.usecase.extension.so|df9d68364d92388909f35426ce227ae4b6f7def3
-vendor/lib64/hw/camera.qcom.so|f9a79fa8743b54e25fc294b81714969ef553403c
+vendor/lib64/com.qualcomm.mcx.policy.mfl.so|83f1872c0f83b085adbc7d7dd73b05e60f08aeb2
+vendor/lib64/com.qualcomm.mcx.policy.xr.so|4dc39f5b9a8c25dcecdd15aa016d45cec10879b5
+vendor/lib64/com.qualcomm.qti.mcx.usecase.extension.so|c41b4b3208923debf327c28d908308d085bcac5a
+vendor/lib64/hw/camera.qcom.so|0e4ab92eee06a2ca3f4ad5a7ff66a0f3ae8e1714
 vendor/lib64/hw/camera.xiaomi.so|ad34a576b5567a7b48d2599b050564edbf5d842a
-vendor/lib64/hw/com.qti.chi.override.so|ccdbeeda868808b9f6bf06f0f4e1569012a00c49
+vendor/lib64/hw/com.qti.chi.override.so|a055b65365b4c182fe6b416d49a4e217eb62fa58
 vendor/lib64/hw/vendor.xiaomi.hardware.quickcamera@1.0-impl.so|773eee24ce19b53a03c3b8b3754881e157693e0f
 vendor/lib64/libAF.so|5f87df9883a003fbb198e106f862dd4247f9ac24
 vendor/lib64/libalAILDC.so|85b50349edb64f75496e6be9ad9442dfaf56ec16
@@ -382,7 +382,7 @@ vendor/lib64/libcalculator.so|17a36782a79461a4c70f02a04b11a862cffaf5f7
 vendor/lib64/libcalculator_htp.so|2b27e46aca0e206144de4ef6718cc83af5b77f29
 vendor/lib64/libcamera_nn_stub.so|a2ef07937a0f89c7205c0cc11ef55470142af35c
 vendor/lib64/libcamera_scene.so|6219dfb7f9bd68701c896ebc6541e453f5dce737
-vendor/lib64/libcamerapostproc.so|6ac914686fcf76afe8d57cd901e3d0883beaf49b
+vendor/lib64/libcamerapostproc.so|b6d671d7481e467f3629462fcc00ae3e173eb192
 vendor/lib64/libcamlog.so|580579a575ff3a7470db6af31b721369bd59bad6
 vendor/lib64/libcamxcommonutils.so|b89db6c9b742623188093503128e7907b78bd17e
 vendor/lib64/libcamxexternalformatutils.so|6909de80edd306035c63b2011431d063c64bbd10
@@ -426,7 +426,7 @@ vendor/lib64/libmiai_portraitsupernight.so|762add49a0e63a8031c6239b2fb1a183a3403
 vendor/lib64/libmialgo_ai_vision.so|01d96d0ca042450993424c2353979452ea003214
 vendor/lib64/libmialgo_basic.so|f9dec35cf368faad12d32a99efcb20c8e12da3d7
 vendor/lib64/libmialgo_ellc.so|969a777b8e902437d32cea640b120325d50590b4
-vendor/lib64/libmialgoengine.so|270e019122a4830f0d7cf8914d64774b39c02ab8
+vendor/lib64/libmialgoengine.so|c3695c837f5f9a1ad24d6bd9dfd5065b78fa6614
 vendor/lib64/libmialgo_globalsaliency.so|85e95c2fb6075690d8eb649cacdf5f365bba43d2
 vendor/lib64/libmialgo_ie_capture.so|03dde532d1fd0c4ba4802d0838fd91a541438d40
 vendor/lib64/libmialgo_ie_preview.so|689f9cba4d8948a2a3da5c0b0a547eb63f4179dc
@@ -501,9 +501,9 @@ vendor/lib64/vendor.xiaomi.hardware.campostproc@1.0-service-impl.so|80e616c4093d
 vendor/lib64/vendor.xiaomi.hardware.campostproc@1.0.so|231f2bbe03fd3037e695cfff6e5e0e162453f99f
 vendor/lib64/vendor.xiaomi.hardware.quickcamera@1.0.so|0148802fbd817e930608fdd095bfab3c07d30a12
 
-# Camera components - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# Camera components - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/lib64/camera/components/com.bots.node.vendortagwrite.so|7c33a77dc82c8866f36dffd179725e607b798af6
-vendor/lib64/camera/components/com.mi.node.aiasd.so|29301d061e33dae75450dac57fcac9dbe12237a2
+vendor/lib64/camera/components/com.mi.node.aiasd.so|8ad49a17446161baf541e6cb1d54ba447cf26296
 vendor/lib64/camera/components/com.mi.node.AIIE.so|4322577fcffbec918ae9c1f0b4cf29c651ac0bde
 vendor/lib64/camera/components/com.mi.node.eisv2.so|df49eaeb5b4a724074271197d67f1b6ed739eb98
 vendor/lib64/camera/components/com.mi.node.facealign.so|781532e13687908ff7047f6d0058b3647f2d7ce0
@@ -595,7 +595,7 @@ vendor/lib64/camera/components/com.xiaomi.node.misv3.so|b8ba42f439d780955f1c694f
 vendor/lib64/camera/components/com.xiaomi.node.smooth_transition.so|185d6560bf2936dbbcd29f1a51792fdb0d817e32
 vendor/lib64/camera/components/libdepthmapwrapper_secure.so|0dd4d9b0aad2935e2bf62b2dae1e0785f2f876a2
 
-# Camera configs - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# Camera configs - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/etc/camera/102_SummerDay.png|854075e4570bbf561063a096dae0fe9d2151809d
 vendor/etc/camera/103_Fantasy.png|0eb52c60f767c4a9b26b22f4ee35ec646545a123
 vendor/etc/camera/104_Meet.png|f72dbf0c125237acb41a115dab40233e275fcf92
@@ -995,43 +995,43 @@ vendor/etc/camera/xiaomi/thirdpartyrawsupernightjpeg.json|f70a1e206882a3e1bbb8ca
 vendor/etc/camera/xiaomi/thirdpartyrawsupernightyuv.json|103245a5c53a63155f0c0dbca219c5b0d7ef00c1
 vendor/etc/camera/xiaomi/thirdpartysnapshot.json|94be00a0a2f283819a300fba7e5708d0003eecd6
 
-# Camera features - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
-vendor/lib64/com.qti.feature2.anchorsync.so|3ed9961ed64aa0cfa979f77e32c3373fb36d261c
-vendor/lib64/com.qti.feature2.demux.so|07c3e99a0e8dccf8925427734065ed3fa074fd06
-vendor/lib64/com.qti.feature2.derivedoffline.so|4712f1f340a00f2a7b035f3d9bc3618cf735839a
-vendor/lib64/com.qti.feature2.ellcprocess.so|23807f958e7e8540604b9fc29c36f1e55619ba77
-vendor/lib64/com.qti.feature2.ellcsupernight.so|4a132e133c3350d416121b6082df0884ff5dd56c
-vendor/lib64/com.qti.feature2.frameselect.so|d05ca1f5e537c082f62262756a109e41ce4a0fd7
-vendor/lib64/com.qti.feature2.fusion.so|5001996f3d0e8463044ad2667032ddb13c91b50b
-vendor/lib64/com.qti.feature2.generic.so|fe47fad4b5c6d9fb3fa46d7dcadf578c87cf8312
-vendor/lib64/com.qti.feature2.gs.fillmore.so|4f8aa995d92af569ef75a7e1afc81a53e6d1e8d5
-vendor/lib64/com.qti.feature2.gs.sm8450.so|65b9453e0c3054d8eddaf81b8da0a4062feed3ed
-vendor/lib64/com.qti.feature2.hdr.so|50bea9c1555b7871aa5c442b1cbfd461a7522ccf
-vendor/lib64/com.qti.feature2.mcreprocrt.so|9999ccfa3f8144153a382ebf6b3adfb0649aaf97
-vendor/lib64/com.qti.feature2.memcpy.so|e2601a421a26e25376a41afb4cc87a9b772d1d7a
-vendor/lib64/com.qti.feature2.mfsr.netrani.so|c1908d5e81670e16c47a7c55e4f1654240741c91
-vendor/lib64/com.qti.feature2.mfsr.sm8450.so|5a1bd7fe1de600429e5fe1c2e2178c3cad6b2f81
-vendor/lib64/com.qti.feature2.mfsr.so|8dfb37007a927bc1ef1db5eb7adaf7568aa02de2
-vendor/lib64/com.qti.feature2.ml.fillmore.so|1c5806092446b6ba2b2cf189ab1c403fa969fad8
-vendor/lib64/com.qti.feature2.ml.so|f7581fab594da39e60a4dc4d9416985589bd058a
-vendor/lib64/com.qti.feature2.multirawproc.so|1d95a0e1119d9ed65109a119f1ecd9dd97d4fa35
-vendor/lib64/com.qti.feature2.mux.so|239a7b9bc12a69b27bf63631a758d16a495c405a
-vendor/lib64/com.qti.feature2.offlinestatsregeneration.so|aecf880b82463935253599da5bc13604cac73727
-vendor/lib64/com.qti.feature2.parallelVTCam.so|c9c75c6985492efe73c1610493e24f798912e8b0
-vendor/lib64/com.qti.feature2.qcfa.so|e542766d434a3c0b206851af06ff5103567ef652
-vendor/lib64/com.qti.feature2.qllimagedump.so|a36d9bfa8b29ea50a45785350e4d82828a5c1f23
-vendor/lib64/com.qti.feature2.rawhdr.so|97969b31431b0bbba88e0ee06d4f9b606ce60cc2
-vendor/lib64/com.qti.feature2.rawsuperiq.so|92193b5dee6077a9fb7ef0cef10e891284a7f171
-vendor/lib64/com.qti.feature2.rawsupernight.so|6236cba1ad9c8dd05a4ae51475bc277501c6b6d4
-vendor/lib64/com.qti.feature2.realtimeserializer.so|6e23d2eae7fb84613993a3002980e932fd2ed663
-vendor/lib64/com.qti.feature2.rtmcx.so|d1516d6b8788502590cb0ec65ddeee29a89a68c4
-vendor/lib64/com.qti.feature2.rt.so|d2824ca25044bf09ae644049d37371e5760da308
-vendor/lib64/com.qti.feature2.serializer.so|6ed107ed2e26f77d03a870a71a77e682236c2d55
-vendor/lib64/com.qti.feature2.statsregeneration.so|a454bb37d55ccfcc90e3362ab9c9462a8df7aa8d
-vendor/lib64/com.qti.feature2.stub.so|d900fa92b1ac8c61c3958d07788ba1c3a5e80b59
-vendor/lib64/com.qti.feature2.swmf.so|10f66b1b33064c13bfcaee516178201415b3cb2a
+# Camera features - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
+vendor/lib64/com.qti.feature2.anchorsync.so|e924c6233e193d2f7f9e579921d287fa194ea2ee
+vendor/lib64/com.qti.feature2.demux.so|d34f276de7c975fe83cbf0e6e3563cc9f6f6a685
+vendor/lib64/com.qti.feature2.derivedoffline.so|4d133fe7f6f75b37af0ece2621b9085c443011d3
+vendor/lib64/com.qti.feature2.ellcprocess.so|092badf03df1459fe10e4a66972977880ff4a913
+vendor/lib64/com.qti.feature2.ellcsupernight.so|f3bdc9142392fc4fa20fdf22dbe91a0d41422a89
+vendor/lib64/com.qti.feature2.frameselect.so|35066ab8466b153adc528e2b33f6da658b001507
+vendor/lib64/com.qti.feature2.fusion.so|87b356275f65a46d4f4cd4d72129a3d4ec20de0d
+vendor/lib64/com.qti.feature2.generic.so|3ebd63f27615e02d5449c974f97fdd4fd26b887d
+vendor/lib64/com.qti.feature2.gs.fillmore.so|1772ef9367469f709ea071a7e9b684ac21b53242
+vendor/lib64/com.qti.feature2.gs.sm8450.so|a13d9933bebdc053d341dfce880580490d3ada78
+vendor/lib64/com.qti.feature2.hdr.so|bc841ea308866241ad5ab02cb177904c6a536465
+vendor/lib64/com.qti.feature2.mcreprocrt.so|98207e8980b28c3febecabb85e2e948097c60366
+vendor/lib64/com.qti.feature2.memcpy.so|a3113ef061e2e848d2b9c253a13c39308f992c2b
+vendor/lib64/com.qti.feature2.mfsr.netrani.so|db3436ecbb05a628672c3ed5a414fb6c462e2ebd
+vendor/lib64/com.qti.feature2.mfsr.sm8450.so|88ba05bba4c53b6bf7454d32e3e3d69cb7cb5f2f
+vendor/lib64/com.qti.feature2.mfsr.so|50914efc3c767b7eadb2e09de4833e7e96df55c2
+vendor/lib64/com.qti.feature2.ml.fillmore.so|265654f246b80eb478d3769587379eb5e900d4f1
+vendor/lib64/com.qti.feature2.ml.so|efb4af35afe847682fc87c7eb6af95ea65bff1e3
+vendor/lib64/com.qti.feature2.multirawproc.so|41373a298f58ed8685d609f43bdbc24e6d8fcc3f
+vendor/lib64/com.qti.feature2.mux.so|efe641ef70f8ef8003c8b7842a7a30ef21033030
+vendor/lib64/com.qti.feature2.offlinestatsregeneration.so|7fc68f3327a345510a72eda9d1120b93c6006094
+vendor/lib64/com.qti.feature2.parallelVTCam.so|a153626c3596352d11b05cb0ed75993d84b812cf
+vendor/lib64/com.qti.feature2.qcfa.so|63beb55306254c48ae5dd6cc70b56f57802abe09
+vendor/lib64/com.qti.feature2.qllimagedump.so|6d911e7a83f971c8d6fface253f645059206c5da
+vendor/lib64/com.qti.feature2.rawhdr.so|10555b4239ba979df2e071b1a133f8db175a476c
+vendor/lib64/com.qti.feature2.rawsuperiq.so|7c14b57d0d0906ccadab4219b15a1c2178d215d8
+vendor/lib64/com.qti.feature2.rawsupernight.so|de6fda44263deb7303d7a248187091411f31fad8
+vendor/lib64/com.qti.feature2.realtimeserializer.so|f73778e78a3b989d01ab908369c4c29b58fb1bb6
+vendor/lib64/com.qti.feature2.rtmcx.so|217060e4ea016d48d606f3432f7285872cead94b
+vendor/lib64/com.qti.feature2.rt.so|d172f3662fcb8204b84f0d9edd164de716c1d0ef
+vendor/lib64/com.qti.feature2.serializer.so|13e7d848e6f6b6fc3e63f205e4ea1c52e038c3d7
+vendor/lib64/com.qti.feature2.statsregeneration.so|4b9ee23d5e3613928ed5efaf4d7c315935e3fc44
+vendor/lib64/com.qti.feature2.stub.so|bbc3978881c3498f8e273a7e29d915e08fd96887
+vendor/lib64/com.qti.feature2.swmf.so|01f1bfc79a0bba84eb7a72fe5b6f4e0e60d79550
 
-# Camera firmware - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# Camera firmware - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/firmware/CAMERA_ICP.b00|5962d49cd63e432356826ac8bbd34b3ae66bab81
 vendor/firmware/CAMERA_ICP.b01|45f4c48f2d484d518c30cc772dfb39ee59b02853
 vendor/firmware/CAMERA_ICP.b02|49cb748466814e7f2c3a9c4ae559f9d5ca9634ea
@@ -1052,15 +1052,15 @@ vendor/firmware/CAMERA_ICP.b16|b1f79c3368f07feb8db2a47bd949bbee6eec0200
 vendor/firmware/CAMERA_ICP.b17|983168c541e2a7ae31a6ab51b29bbdce8098a9eb
 vendor/firmware/CAMERA_ICP.b18|4aeeff383c273c2a75c861e473adf25b38a2b919
 vendor/firmware/CAMERA_ICP.b19|da39a3ee5e6b4b0d3255bfef95601890afd80709
-vendor/firmware/CAMERA_ICP.b20|35befba7e298d16dd5adeab9d808895f4670845a
+vendor/firmware/CAMERA_ICP.b20|1e05d8094a3baa414602e34617cae5daa4fc6cd2
 vendor/firmware/CAMERA_ICP.b21|d226ed50b314253d1d2b88cd7a7fa64fdb090684
 vendor/firmware/CAMERA_ICP.elf|a7179d8c801a3af78f61c23ac588a34292f28460
-vendor/firmware/CAMERA_ICP.mbn|a464af3522d585100ca3e4e7846466af8f235eda
-vendor/firmware/CAMERA_ICP.mdt|749a8a6e265e9297d4f9d926a37fecd0f216d6d3
+vendor/firmware/CAMERA_ICP.mbn|6c30f595a34f7ce802d3c015938caac2a8657064
+vendor/firmware/CAMERA_ICP.mdt|6e8ad25d9db3c169c2232b8bdd69df5569c79ac6
 vendor/firmware/CAMERA_ICP_170.elf|0b6df17f2bb9c9651e4b97e7f219459761547e26
 vendor/firmware/CAMERA_ICP_480.elf|b89365cc175b9c041e496e9176b61a2d6337640f
 
-# Camera plugins - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# Camera plugins - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/lib64/camera/plugins/com.xiaomi.plugin.anchor.so|da622dd822bc8ce40d313448e10c87faadff426b
 vendor/lib64/camera/plugins/com.xiaomi.plugin.arcsoftsll.so|e95f1a25874140693f79f3c8b09137c13c84466d
 vendor/lib64/camera/plugins/com.xiaomi.plugin.capbokeh.so|2b2d90bf47868527fc93257b2978f04e285458ba
@@ -1085,7 +1085,7 @@ vendor/lib64/camera/plugins/com.xiaomi.plugin.supermoon.so|b1700537e08e62339a9ea
 vendor/lib64/camera/plugins/com.xiaomi.plugin.swjpegencode.so|7b383087b0186f9ff26f72e59aa81ac595cb9129
 vendor/lib64/camera/plugins/com.xiaomi.plugin.tsskinbeautifier.so|60e9623a217d57ad31df1a5f0f5d81e81aa3fc6d
 
-# Camera sensors - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# Camera sensors - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/lib64/camera/com.qti.eeprom.diting_ofilm_gc02m1_bl24sa64_macro_eeprom.so|be5ccc93edacf16adfdcf834895f284a7b6e3924
 vendor/lib64/camera/com.qti.eeprom.diting_sunny_imx596_gt24p64e_front_eeprom.so|ef1231ece115bfa1f36f9aa6f2aaf62c1d628602
 vendor/lib64/camera/com.qti.eeprom.diting_sunny_s5k4h7_gt24p64e_ultra_eeprom.so|985fdebe82f7739f2b6d3d5cdcfb5a003ae32046
@@ -1096,7 +1096,7 @@ vendor/lib64/camera/com.qti.sensor.diting_sunny_imx596_front.so|c179543dd12690b2
 vendor/lib64/camera/com.qti.sensor.diting_sunny_s5k4h7_ultra.so|90b9896365bbc11fe0780e9fb6356cec31800e1c
 vendor/lib64/camera/com.qti.sensor.diting_sunny_s5khm6_wide.so|9fb8b31b6ec8740f8e5bdbf9da5ee2d9f59418cc
 vendor/lib64/camera/com.qti.sensormodule.diting_ofilm_gc02m1_macro.bin|226d124144d56bc16ed0b666f28acdad61523544
-vendor/lib64/camera/com.qti.sensormodule.diting_semco_s5khp1_wide.bin|1e3c79622dcd60901bbb60938bedfdf688ae5cb5
+vendor/lib64/camera/com.qti.sensormodule.diting_semco_s5khp1_wide.bin|c74a17d0de78907e8ae27c965302b115711414c4
 vendor/lib64/camera/com.qti.sensormodule.diting_sunny_imx596_front.bin|6f2e9ccb9e3c3f7cfd3742a23ce2b44ac5ae2f4a
 vendor/lib64/camera/com.qti.sensormodule.diting_sunny_s5k4h7_ultra.bin|ec9169cc4e1691dcae0256a813a345507eac9a04
 vendor/lib64/camera/com.qti.sensormodule.diting_sunny_s5khm6_wide.bin|83132d46c26cbd520005539693f2e8f7095f7409
@@ -1242,7 +1242,7 @@ vendor/lib64/vendor.qti.hardware.slmadapter@1.0.so
 vendor/lib64/vendor.qti.latency@2.0.so
 vendor/lib64/vendor.qti.latency@2.1.so
 
-# Computer vision - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# Computer vision - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/etc/eva/facedetection/model3.dat|f5a84a7df043e2a77a9e344a1c94dee164f141cc
 vendor/etc/face3d/qcnn_concat_file_model-0324_2_encrypted|502912d220281d07cf87604a5a85c69fe3ea5034
 vendor/lib/libFace3DTA.so|19193ea7faa83ee40243a2eb55971f58537130d2
@@ -1281,7 +1281,7 @@ vendor/lib64/libscveObjectTracker.so|0b83ce848f7085105bb6a3b294fbcb76237d57aa
 vendor/lib64/libscveObjectTracker_stub.so|12d54ab6959833d01f56e11873d1c349aedbf7f7
 vendor/lib64/libvideoutils.so|8d2d3f35ddd3eebdbdc3e7b359898ba65f6b1971
 
-# Computer vision firmware - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# Computer vision firmware - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/firmware/evass-lt-21.b00|45ff5328135846c91c6f04b37fd660dd3c2f472d
 vendor/firmware/evass-lt-21.b01|be041d64bdc1cc3c51bbdd7c4ac0971bc69c9b67
 vendor/firmware/evass-lt-21.b02|e5333c5239d065ce6559a12f623076508b065c73
@@ -1301,9 +1301,9 @@ vendor/firmware/evass-lt-21.b15|da39a3ee5e6b4b0d3255bfef95601890afd80709
 vendor/firmware/evass-lt-21.b16|da39a3ee5e6b4b0d3255bfef95601890afd80709
 vendor/firmware/evass-lt-21.b17|da39a3ee5e6b4b0d3255bfef95601890afd80709
 vendor/firmware/evass-lt-21.b18|1ceaf73df40e531df3bfb26b4fb7cd95fb7bff1d
-vendor/firmware/evass-lt-21.b19|47b653b45c2fcb21c56e3213f47200055e810f52
-vendor/firmware/evass-lt-21.mbn|bf529be21a2a2eadcc6ce321555a076e9ce421d5
-vendor/firmware/evass-lt-21.mdt|91f9ae94af303576e9edf076c321ab5261e03bf9
+vendor/firmware/evass-lt-21.b19|6e568d99a0b4e5383b9b6e5387b3f5cbb3fbfbd5
+vendor/firmware/evass-lt-21.mbn|ba3850c4bcc72dadfb8a6a68834872c00feffac7
+vendor/firmware/evass-lt-21.mdt|3162682e3a632806ed5e4e46950d06e41755c91b
 vendor/firmware/evass.b00|03957862b810970999c9d79805e59d3a3a9a6102
 vendor/firmware/evass.b01|645d5dbe59dc1a15b53daf3adf2116ee9e4edde1
 vendor/firmware/evass.b02|5bea0d06c51aebecdc22a1dd77fbde1df80d5be2
@@ -1323,9 +1323,9 @@ vendor/firmware/evass.b15|da39a3ee5e6b4b0d3255bfef95601890afd80709
 vendor/firmware/evass.b16|da39a3ee5e6b4b0d3255bfef95601890afd80709
 vendor/firmware/evass.b17|da39a3ee5e6b4b0d3255bfef95601890afd80709
 vendor/firmware/evass.b18|1ceaf73df40e531df3bfb26b4fb7cd95fb7bff1d
-vendor/firmware/evass.b19|76690e7f7f04caf057842c0fe83f9fa01e9d895b
-vendor/firmware/evass.mbn|f2dbea85165ee970716f53b41cc9c239e969bb3c
-vendor/firmware/evass.mdt|be0567956fa209fcc67b410b8257b806c940edc8
+vendor/firmware/evass.b19|be40d1600d5db5c035721d7395cc4c9547fd8993
+vendor/firmware/evass.mbn|157b87082cc7bfaa9e31edb90335c56167e5b63f
+vendor/firmware/evass.mdt|25c195e44ce15d29cb968ab0a11bca9779398432
 vendor/firmware/evautil64.b00|0f41aa95d6a8e2d7a03288831ac8c61283f792ed
 vendor/firmware/evautil64.b01|cbb33455c6b6f147f711e07682a9a58fb93d9482
 vendor/firmware/evautil64.b02|3dc8148dd469fba30fea6b0e0fbbcc934d9465b0
@@ -1351,7 +1351,7 @@ vendor/etc/vintf/manifest/vendor.qti.diag.hal.service.xml
 vendor/lib/vendor.qti.diaghal@1.0.so
 vendor/lib64/vendor.qti.diaghal@1.0.so
 
-# Display - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# Display - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/bin/feature_enabler_client|3b4807aaf477aed253a8c04fb6205363c619f67b
 vendor/bin/hw/vendor.qti.hardware.display.allocator-service|610a86a37a4a6372fcee1fd87cbc0a5b56a4b84e
 vendor/bin/init.qti.display_boot.sh|6d225894081c697765e66dcc11247d8a429ae106
@@ -1380,7 +1380,7 @@ vendor/lib64/libqservice.so|d0c5ba8b3165c2ba2ff794c374eb22177d888343
 product/etc/displayconfig/display_id_4630946545580055170.xml:vendor/etc/displayconfig/display_id_4630946545580055170.xml
 product/etc/displayconfig/display_id_4630946480857061762.xml:vendor/etc/displayconfig/display_id_4630946480857061762.xml
 
-# Displayfeature - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# Displayfeature - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/etc/miLutInfo.txt|8eecbb71d418ef8c7d583dd506a994b1bc1c3f7b
 vendor/etc/mi_gc_0.txt|ecfd1d3181230e85b82351ccaa300ce859c8a904
 vendor/etc/mi_gc_1.txt|e6846b2aefc4394cd36ad1e2893720e85cca19f2
@@ -1407,7 +1407,7 @@ vendor/etc/miLut_7.txt|259478f7ef8ff7ba61ca9ff0a2f1411444d8c5e6
 vendor/etc/miLut_8.txt|90495b0f76df065b2c020fa22ba039f8f0e0b36a
 vendor/etc/miLut_9.txt|43108d2837cd76d701a1145c2adb22dc44ccdcd2
 
-# Displayfeature - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# Displayfeature - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/bin/displayfeature|171b8d26d9c82c107686de95e23a86c9a8570fb1
 vendor/bin/hw/vendor.xiaomi.hardware.displayfeature@1.0-service|b2861ec39a2935419eecf106c4ee7ffde0e6e4dd
 vendor/etc/df_default.xml|26992007293359a6ffc9112da6836d6cd143a48a
@@ -1461,7 +1461,7 @@ vendor/lib64/libvideomode.so|f6ec6b66335b5ff10827c00593d4166f85487f56
 vendor/lib64/libwfddisplayconfig_vendor.so|6696bdbd68babcf15e2f0a8d997df1462cbab84f
 vendor/lib64/vendor.xiaomi.hardware.displayfeature@1.0.so|5f8bab4f92695146cce69b0851e318e4ebbda30b
 
-# Display HDR - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# Display HDR - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/lib/libhdr_backlight_adapter.so|27a76877b0ef7c090c469b3784bce9d2ecc857d8
 vendor/lib/libhdr_tm.so|26f4e9235982e677383510572cd0d3fb6e146da2
 vendor/lib64/libhdr_backlight_adapter.so|57036c19938fe40e73e9b9e3d4c6a6073d7aa858
@@ -1469,7 +1469,7 @@ vendor/lib64/libhdr_tm.so|b5bc48b34450b9031e7b667b9b97991b3aafa5fd
 vendor/lib64/libhdrdynamic.so|48b912d98089807b49d451163651dcb658008475
 vendor/lib64/libhdrdynamicootf.so|857a8d1908524590f0de56bf2e1ba1e287272e6c
 
-# Display HWC - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# Display HWC - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/bin/hw/vendor.qti.hardware.display.composer-service|ca9948b2f8b3ee39859658b7c09777840862272c
 vendor/bin/qdcmss|801d4429210c1a4f8c01f6d91f172ff063c5c307
 vendor/etc/init/qdcmss.rc|53d78d686678c4f923a9ec4ace7d4d3575b13788
@@ -1504,7 +1504,7 @@ vendor/lib64/libsnapdragoncolor-manager.so|e37f6be68fdd7e7bc2d06f86a11ff68d8c791
 vendor/lib64/libsnapdragoncolor-qdcm.so|130db1fbb70f14d05f129bd3e26d471354af100b
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so|76f3733620784c1a3809efa63ff63a39d51d371d
 
-# Display postprocessing - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# Display postprocessing - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/bin/hw/vendor.display.color@1.0-service|9f37be517ad778857bfe94b78ba3fbf2e90e3967
 vendor/bin/ppd|869719b1cc54073be25edd0d157cbfbfbde07215
 vendor/etc/init/vendor.display.color@1.0-service.rc|fc58968025ec9f09b4fedee0b9daecc6a56c8373
@@ -1529,7 +1529,7 @@ vendor/lib64/vendor.display.color@1.6.so|7ce5a9115be5a75ff31bc1b58ab7146c0ec1eda
 vendor/lib64/vendor.display.color@1.7.so|dfe7e088fb0875bb0acacfca3756692937d50d2f
 vendor/lib64/vendor.display.postproc@1.0.so|619fe2b330912ff4ad0972338a2aa26cb6c4f4d1
 
-# Display SDM - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# Display SDM - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/etc/display/DPU660.xml|b26dd73e361546d89bf3d7082a471703dc6ac2cb
 vendor/etc/display/DPU670.xml|e5131a60ceff29ca5eb561eec7eddadef1d0486f
 vendor/etc/display/DPU720.xml|4e54e8712d65773eb87867bf64a4cb98ea9bb8c3
@@ -1547,7 +1547,7 @@ vendor/etc/display/thermallevel_to_fps.xml|bc38035c8f41308fc25cc30969fbbf16ab86c
 vendor/etc/mdss_dsi_l12_36_02_0b_dsc_cmd_mi.xml|c2df065ea55148fb702d6f9349a7fd32cd1598cf
 vendor/etc/mdss_dsi_l12_42_02_0a_dsc_cmd_mi.xml|c2df065ea55148fb702d6f9349a7fd32cd1598cf
 
-# Display SDM - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# Display SDM - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/lib/libdisplayqos.so|f03a2af80b2684fe5a4e5c68de6c8b8111841c4d
 vendor/lib/libdisplayskuutils.so|a04bec22fd5e3702842ebeb2f8415afa7f99227f
 vendor/lib/libqseed3.so|c744e765a9473a50d857782004daf55a39b536ba
@@ -1571,7 +1571,7 @@ vendor/lib64/libsdmextension.so|ce39075c4eccb30e8d75ccec16e752823a438a17
 vendor/lib64/libtestutils.so|61b98f252afde4eb7c674de870e7afb590c9bb2a
 vendor/lib64/libtinyxml2_1.so|ae0c9190fd54c18a6c28dfccdfd29655abcb08de
 
-# Dolby music - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# Dolby music - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 system_ext/lib/libdovi_omx.so|35fa73649f422df0b20bcbf5a5dcf68a68f242fc
 system_ext/lib/libdolbyottcontrol.so|57e233616430a0de17c02d1dc93d8fcce42ae87d
 system_ext/lib/libdolbyeffect.so|de49e9383e5db74f2476212392257d0ab9baf4c8
@@ -1583,7 +1583,7 @@ system_ext/lib64/libmpeg4pro.so|9045492a672b30e0e420909f552f2828d6b5dde7
 vendor/bin/hw/dolbycodec2|16db1742257fd7d41c7d20105d980672e2d85807
 vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service|eb3dfe12845201eec35d3ceb0c18e8eb8e877a0f
 vendor/etc/dolby/dax-default.xml|6081c6470f337f900e01526e0ea5150910c04f90
-vendor/etc/dolby_vision.cfg|2b54d3cbbb77bd9db4a8f0aeaf967b1be70bfa2a
+vendor/etc/dolby_vision.cfg|abca2cc759c13415afc5f88932a04818886e55a4
 vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc|29296ebfe89b2697fec573be73cc3757fd97bed6
 vendor/etc/init/vendor.dolby.media.c2@1.0-service.rc|1ea8b363e94fd4f5410cadceb30de8229fb38045
 vendor/etc/media_codecs_dolby_audio.xml|a794eb15fc198d0285510260025cd99b53fa174f
@@ -1902,7 +1902,7 @@ vendor/lib64/vendor.qti.gnss-service.so
 # Graphics (Adreno)
 vendor/app/com.qualcomm.qti.gpudrivers.taro.api31/com.qualcomm.qti.gpudrivers.taro.api31.apk;PRESIGNED
 
-# Graphics (Adreno) - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# Graphics (Adreno) - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/gpu/kbc/sequence_manifest.bin|17e1f9149826ef478502c750bcf9352274097c80
 vendor/gpu/kbc/unified_kbcs_32.bin|aa7b4e916fb3fab8df7700deb458d0726a549482
 vendor/gpu/kbc/unified_kbcs_64.bin|bdfadc6b8e03d7da5b8d31b4f7688e7dba4b07ce
@@ -1944,32 +1944,32 @@ vendor/lib64/libllvm-glnext.so|bac28fff6e00178d78ccca040dc76e87841c8aa4
 vendor/lib64/libllvm-qcom.so|210fdef3513ca2dc022e54b50779c0024a6c6730
 vendor/lib64/libllvm-qgl.so|e8d6d5b26bd02c351f3a8d892306982b7b44fed9
 
-# Graphics (Adreno firmware) - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# Graphics (Adreno firmware) - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/firmware/a660_sqe.fw|6957cb1081948943d894b7420f96b5e7e0d0768c
 vendor/firmware/a662_gmu.bin|250d057d3fc382a6ef944b52e784e0c586387171
 vendor/firmware/a662_zap.b00|22b622195c7b4d3791ed7b59cabd7b49fb8c1702
 vendor/firmware/a662_zap.b01|bcbdf56fca034c66a9e44242587ed25a1ffe2abe
-vendor/firmware/a662_zap.b02|44f197773169ad43830662e2e3fca67a084d40b0
+vendor/firmware/a662_zap.b02|ac4103f21eb58cbc1628075ae79e958d0de4bad4
 vendor/firmware/a662_zap.elf|52fe2aec28ebe9cf02bfbf365298e3a7a4713352
-vendor/firmware/a662_zap.mbn|756d39d37ac1b7bfed85d8c5229c003ee9da2a84
-vendor/firmware/a662_zap.mdt|50d1cf2c9c68347f19af484e9285ec8fa4a62ef8
+vendor/firmware/a662_zap.mbn|242d45ac4f5aa432bb519f28cea5d0390210fc73
+vendor/firmware/a662_zap.mdt|e5eeefe57d3e14ca46679f369d4042efa44b916e
 vendor/firmware/a710_sqe.fw|645eeea30de2a80fa5996748d6da0a88e465c903
 vendor/firmware/a710_zap.b00|692d2885bfb45ce27f1dbbcb3e58563a171a1167
 vendor/firmware/a710_zap.b01|4048b36116b9f21eeb3a67c5cbcc3afb1988a437
-vendor/firmware/a710_zap.b02|0edbca9b8ce0638045053203cf7edd210909efd5
+vendor/firmware/a710_zap.b02|5b1cf56a8adab5a335b62dae3d5034c7daa82e4b
 vendor/firmware/a710_zap.elf|44867290f27afc97a04aa5201bf255f734c4b7b5
-vendor/firmware/a710_zap.mbn|960ea704e4444906b4b3b82ddd3eb958ce7b09cf
-vendor/firmware/a710_zap.mdt|633b16ee2d59411779836231a7f1fa0fb4087226
+vendor/firmware/a710_zap.mbn|f768a75796859b261b37ccdd1879ea6d565bc3dd
+vendor/firmware/a710_zap.mdt|4fd638a2189e55dcab0728bd28c52327f1fa2b84
 vendor/firmware/a730_sqe.fw|8302565a0e61eec583ef25dfc5f42aff11b6be21
 vendor/firmware/a730_zap.b00|28f16046445905a96e7115f5aa8f49748658c437
 vendor/firmware/a730_zap.b01|1234230fde1dfa01822a7c64b200e58fd34dfd86
-vendor/firmware/a730_zap.b02|38ba9121d8bb4c789ae096dfa195fb1d02a02817
+vendor/firmware/a730_zap.b02|55fe4ba9cc466e4129dc2c07a5cadfcb63789f40
 vendor/firmware/a730_zap.elf|6b8f09631f7aab41c154e697975dc739a150276a
-vendor/firmware/a730_zap.mbn|7dc4a0edf3d71b3e3829b697f20ef62622f5718a
-vendor/firmware/a730_zap.mdt|145728c8dc6648647a9ff15a7297e33d6f85d52f
+vendor/firmware/a730_zap.mbn|0e5abb953c71c91ae35fb1634940154edd1d002d
+vendor/firmware/a730_zap.mdt|abba49ce3671018990252a820763719131bfb66f
 vendor/firmware/gmu_gen70000.bin|1ac8d9dd3d405f84c915a4562ff72d244e10bcbd
 
-# Graphics (Vulkan) - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# Graphics (Vulkan) - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/lib/hw/vulkan.adreno.so|d689916a992d2c61b04faf96d4b3a916fca9fab8
 vendor/lib64/hw/vulkan.adreno.so|689bbd9328d3083efcc894481552c8f94ddc83b3
 
@@ -2045,7 +2045,7 @@ vendor/lib64/liblistensoundmodel2vendor.so
 vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0.so
 
-# Media - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# Media - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/bin/hw/vendor.qti.media.c2@1.0-service|a3a103902ba4d0d2a41f7e6d61798cf846cbcc0d
 vendor/bin/hw/vendor.qti.media.c2audio@1.0-service|a395d05f3004f2a5150dfd4510eed0c50d671974
 vendor/etc/init/vendor.qti.media.c2@1.0-service.rc|542d2ae2a92ee21dbb63716ff49392e8e6e433f4
@@ -2254,7 +2254,7 @@ vendor/lib64/libsn220u_fw.so
 vendor/lib64/nfc_nci.nqx.default.hw.v1.so
 vendor/lib64/vendor.nxp.hardware.nfc@2.0.so
 
-# OMX - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# OMX - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/lib/libAlacSwDec.so|e7df1179bebdb201bbc0a3661e536fe2cb8f8ef2
 vendor/lib/libApeSwDec.so|51e263ac45273eaac261b1d4a539f33c695de1c2
 vendor/lib/libFlacSwDec.so|b3c03a13631e56e2390fdbfa407fa0de96912c88
@@ -2264,7 +2264,7 @@ vendor/lib64/libApeSwDec.so|1bd5b693b0b21e9f24b4a8bb23596f4a7308b23f
 vendor/lib64/libFlacSwDec.so|314e8265451e8bb07c7eb041cbfe1045afce8c3c
 vendor/lib64/libdsd2pcm.so|2807550499b78f5d332c3f1ac12aac0c274e0209
 
-# Perf - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# Perf - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/bin/hw/vendor.qti.hardware.perf-hal-service|a7de0c554f750af6fa4fe9dadf7404d327697b92
 vendor/etc/init/vendor.qti.hardware.perf-hal-service.rc|3a399b83162e776f9737cb14a6ef4020c63a0204
 vendor/etc/perf/avcsysnodesconfigs.xml|086837aca168c81ace587d612ba0787c1d4e7dac
@@ -2305,7 +2305,7 @@ vendor/etc/lm/QGPE.xml|c0b9b5ef8244fbc65c9e9f2d8d16630ebf9e4503
 vendor/etc/lm/QGPEActionMap.xml|a815282965c9f9912f62406e8772dca40ef8b5b3
 vendor/etc/lm/sPLHFeature.xml|20e523f4086178c45c4226c590799b110d6480c0
 
-# Perf LM - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# Perf LM - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/bin/hw/vendor.qti.hardware.iop@2.0-service|d513c78f90e15763822f19f03c26b7951221466a
 vendor/bin/perf_qesdk_client|096861380d9fb3d134b582a483bf55f51058608d
 vendor/etc/init/qapeservice.rc|2fe7bee3295da27c89d523229c4b8b361e39c056
@@ -2356,7 +2356,7 @@ vendor/lib/libspcom.so
 vendor/lib64/libperipheral_client.so
 vendor/lib64/libspcom.so
 
-# Power - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# Power - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/app/powermodule_java/powermodule_java.apk|75c8db0902a77ad9eb30a969c44430e41e1f16d4
 vendor/etc/pwr/PSMPowerOptFeature.xml|32a75e7a5ac93f057423c78d2791722d8b5f63c0
 vendor/etc/pwr/PowerFeatureConfig.xml|4a8ea6e3f029904d6cfc84b51040f905a951d0e5
@@ -2385,7 +2385,7 @@ vendor/lib/vendor.qti.hardware.alarm@1.0.so
 vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
-# Poweropt - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# Poweropt - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/bin/poweropt-service|3ff43bde790493a33e16795c86e59a00597957fb
 vendor/etc/init/poweropt-service.rc|ab71ab0828fb67e9950b51220b61c3aad10985d0
 vendor/lib/libpowercallback.so|0d7401167ddd361a330878f3a3150b5cbb9a0a91
@@ -2393,54 +2393,54 @@ vendor/lib/libpowercore.so|2cee55eeb51b064846b985fd87c40a563155c903
 vendor/lib64/libpowercallback.so|8fc394e39c763a54cfe75264d0e624a0fc5d13dc
 vendor/lib64/libpowercore.so|bedae88ee4d3e54a62075549fb61e7f5b6f703fd
 
-# Psiclient - from 14 UKQ1.230917.001 V816.0.23.12.11.DEV
+# Psiclient - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/bin/hw/vendor.qti.psiclient@1.0-service|24f6d27d52c47a9120aafda2e8467536bd7b8d4e
 vendor/etc/init/vendor.qti.psiclient@1.0-service.rc|6e4bd469a214151e3aca36ecdcb542099f9c534f
 vendor/lib/libpsi.so|0e1f33f5b4bc52576729f3b7eec17040947331b8
 vendor/lib64/libpsi.so|ba45d9f66e20651805ace6787fad87eac71e5778
 
-# QCC
-vendor/lib/hw/vendor.qti.hardware.qccvndhal@1.0-impl.so
-vendor/lib/vendor.qti.hardware.qccsyshal@1.0.so
-vendor/lib/vendor.qti.hardware.qccsyshal@1.1.so
-vendor/lib/vendor.qti.hardware.qccvndhal@1.0-halimpl.so
-vendor/lib/vendor.qti.hardware.qccvndhal@1.0.so
-vendor/lib64/hw/vendor.qti.hardware.qccvndhal@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so
-vendor/lib64/vendor.qti.hardware.qccsyshal@1.1.so
-vendor/lib64/vendor.qti.hardware.qccvndhal@1.0-halimpl.so
-vendor/lib64/vendor.qti.hardware.qccvndhal@1.0.so
+# QCC - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
+vendor/lib/hw/vendor.qti.hardware.qccvndhal@1.0-impl.so|9ea1d644a75ce5adc105e96ab0c4e7447f798909
+vendor/lib/vendor.qti.hardware.qccsyshal@1.0.so|85eac46d2148e9c0e6ab98413af67f7cff88405d
+vendor/lib/vendor.qti.hardware.qccsyshal@1.1.so|7aee35addf200e9bca849cb03027950db56285ce
+vendor/lib/vendor.qti.hardware.qccvndhal@1.0-halimpl.so|d33bd680a58fc09ba713ba5ab603ac0eadd6be38
+vendor/lib/vendor.qti.hardware.qccvndhal@1.0.so|f4da1f260d83881b5712beb262691f69f7d258b1
+vendor/lib64/hw/vendor.qti.hardware.qccvndhal@1.0-impl.so|459d506b20124520f5d650a7b30c9a490514a878
+vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so|ef866bab2186db1b2c09477e36fef20945fa671e
+vendor/lib64/vendor.qti.hardware.qccsyshal@1.1.so|0677ebfe099cdaa6c3776d0bd5318044a4220918
+vendor/lib64/vendor.qti.hardware.qccvndhal@1.0-halimpl.so|304ce0a1571f218ba16d0812221e4b2fae52a6d9
+vendor/lib64/vendor.qti.hardware.qccvndhal@1.0.so|bfddf0a295b391bc1ed7961d547e9b56e3aa1b9c
 
-# QCOM system daemon
-vendor/bin/qcom-system-daemon
-vendor/lib/libsubsystem_control.so
-vendor/lib64/libsubsystem_control.so
+# QCOM system daemon - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
+vendor/bin/qcom-system-daemon|a4c809595f4172737eab6c1b37dee7a1b1ff84d6
+vendor/lib/libsubsystem_control.so|7349ed5a7a71e07319499b891590b80298720a0e
+vendor/lib64/libsubsystem_control.so|f6e9a4f42d5ec0cda62a922b98e2711b7aeb6615
 
-# QCV
-vendor/bin/init.qti.qcv.sh
-vendor/etc/init/init.qti.qcv.rc
+# QCV - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
+vendor/bin/init.qti.qcv.sh|0f94fafd530f4767aa15142438ee8d8476da8cf6
+vendor/etc/init/init.qti.qcv.rc|4c793bb2c95a0ee0b7972b3427972afda3953070
 
-# QESDK
-vendor/bin/qesdk-manager
-vendor/bin/sensors-qesdk
-vendor/etc/init/qesdk-manager.rc
-vendor/etc/init/vendor.sensors.qesdk.rc
-vendor/etc/seccomp_policy/qesdk.policy
-vendor/etc/seccomp_policy/sensors-qesdk.policy
-vendor/lib/libqesdk.so
-vendor/lib/libqesdk_manager.so
-vendor/lib/vendor.qti.qesdsys-V1-ndk_platform.so
-vendor/lib64/libqesdk.so
-vendor/lib64/libqesdk_manager.so
-vendor/lib64/vendor.qti.qesdhal@1.0.so
-vendor/lib64/vendor.qti.qesdhal@1.1-impl.so
-vendor/lib64/vendor.qti.qesdhal@1.1.so
-vendor/lib64/vendor.qti.qesdsys-V1-ndk_platform.so
+# QESDK - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
+vendor/bin/qesdk-manager|771810b43b9a0ba26cb64f36a5ef22ed30750e6e
+vendor/bin/sensors-qesdk|cc34d6b5df6c041a96b478bdae73be90df01d847
+vendor/etc/init/qesdk-manager.rc|51ff0da0b7d0f0d3a7a4db79c98b0686c3ab88ab
+vendor/etc/init/vendor.sensors.qesdk.rc|fdcf0074812b9d0193cf5e84860d3be39dfff0d3
+vendor/etc/seccomp_policy/qesdk.policy|432df0c96153c854dddec3fc68416a4ec0e3ea50
+vendor/etc/seccomp_policy/sensors-qesdk.policy|3b848c2d5c7b5210dceb3c5493d981c0c59f9ac6
+vendor/lib/libqesdk.so|5665c2ab38b2c4414d5ee6e9899466b5f8cc11b4
+vendor/lib/libqesdk_manager.so|f6db190d025ad4becfacd2a9ea188764f31ad998
+vendor/lib/vendor.qti.qesdsys-V1-ndk_platform.so|16d7814787a249a6ed4c74f9aae5f10e49f18b9c
+vendor/lib64/libqesdk.so|872161dcb056ce6aadbdacf7c1be5dcb044e0dfa
+vendor/lib64/libqesdk_manager.so|f9c3e571aa84f8c7ee192250eb71419bf1da51b5
+vendor/lib64/vendor.qti.qesdhal@1.0.so|9e1d384fbad320a866c05ae121b1a4c50597f7ab
+vendor/lib64/vendor.qti.qesdhal@1.1-impl.so|48324cf11be7ffa3bf0349cc42cf5df0f26a2e08
+vendor/lib64/vendor.qti.qesdhal@1.1.so|e5f3757ba5a70b5f7fdad0e4d8565d2d6c889d28
+vendor/lib64/vendor.qti.qesdsys-V1-ndk_platform.so|7af563abf175123ccf3f9fdb4cc1d553eaa19c17
 
-# QGuard
-vendor/bin/qguard
-vendor/etc/init/qguard.rc
-vendor/etc/qguard.json
+# QGuard - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
+vendor/bin/qguard|b9624e6ce40ac29ef873304b81a67cd8f48ce567
+vendor/etc/init/qguard.rc|245d7a6c19f61cb99a84f961e7a230a84f80879a
+vendor/etc/qguard.json|71e484509d1370e825c1ce85bdb4067f3ce4915a
 
 # QMI
 system/etc/sysconfig/qti_whitelist.xml
@@ -3401,10 +3401,10 @@ vendor/lib64/libvideoutils.so|8d2d3f35ddd3eebdbdc3e7b359898ba65f6b1971
 vendor/lib/libvmmem.so|9eb500e56890ab2cca97371450e2a7775dd80c27
 vendor/lib64/libvmmem.so|cd1b80963d107b0a9ddfb0a08de266621b5a7154
 
-# VM mgr
-vendor/bin/vmmgr
-vendor/etc/init/vmmgr.rc
-vendor/etc/vmmgr.conf
+# VM mgr - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
+vendor/bin/vmmgr|2b1f2218867142d6013d1a39db040f011ce6213e
+vendor/etc/init/vmmgr.rc|538c80735fb78cfe7aac244e06a7fef2e853bb24
+vendor/etc/vmmgr.conf|012585558b38264f1924e4d2a4e05441b7c09b18
 
 # VPP  - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/bin/hw/qconfigservice|4971374c14068304d06f27a2d50ba7b414433d1e
