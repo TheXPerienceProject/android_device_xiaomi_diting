@@ -70,6 +70,12 @@ function blob_fixup() {
     vendor/bin/hw/android.hardware.security.keymint-service-qti)
         "${PATCHELF}" --add-needed "android.hardware.security.rkp-V3-ndk.so" "${2}"
         ;;
+    vendor/lib64/hw/displayfeature.default.so) # vendor/bin/hw/vendor.xiaomi.hardware.displayfeature@1.0-service)
+        "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
+        ;;
+    vendor/bin/hw/mfp-daemon)
+        "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
+        ;;
     esac
 }
 
