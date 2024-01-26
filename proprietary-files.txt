@@ -1753,6 +1753,7 @@ vendor/lib64/hw/fingerprint.goodix_fod.so:vendor/lib64/hw/fingerprint.goodix_fod
 vendor/lib64/hw/fingerprint.goodix_fod.so
 vendor/lib64/com.fingerprints.extension@3.0.so
 vendor/lib64/libgf_hal.so
+vendor/lib64/libmisight.so
 vendor/lib64/vendor.xiaomi.hardware.dtool@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.fx.tunnel@1.0.so
 # Test FP on k50u
@@ -1760,6 +1761,23 @@ vendor/bin/hw/mfp-daemon
 vendor/etc/init/init.mfp-daemon.rc
 vendor/etc/vintf/manifest/AHBF@2.1-service.xml
 vendor/lib64/vendor.xiaomi.hardware.fingerprintextension@1.0.so
+
+# misight
+system/lib/vendor.xiaomi.hardware.misight-V1-ndk_platform.so
+system/lib64/vendor.xiaomi.hardware.misight-V1-ndk_platform.so
+system_ext/bin/misight
+system_ext/etc/init/init.misight.rc
+system_ext/etc/misight/bsp_log_config.json
+system_ext/etc/misight/plugin_config
+system_ext/lib/libmisight.so
+system_ext/lib/libmisight_jni.so
+system_ext/lib64/libmisight.so
+system_ext/lib64/libmisight_jni.so
+vendor/bin/hw/vendor.xiaomi.hardware.misight.service
+vendor/etc/init/mi-misight.rc
+vendor/etc/vintf/manifest/mi-misight.xml
+vendor/lib/libmisight.so
+vendor/lib64/vendor.xiaomi.hardware.misight-V1-ndk_platform.so
 
 # FM
 vendor/etc/init.qti.fm.sh
