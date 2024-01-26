@@ -61,11 +61,11 @@
     </string-array>
 
     <!-- The properties of a UDFPS sensor in pixels, in the order listed below: -->
-    <integer-array name="config_udfps_sensor_props" translatable="false">
+    <!--<integer-array name="config_udfps_sensor_props" translatable="false">
         <item>610</item>
         <item>2444</item>
         <item>114</item>
-    </integer-array>
+    </integer-array>-->
 
     <!-- The display uses different gamma curves for different refresh rates. It's hard for panel
          vendors to tune the curves to have exact same brightness for different refresh rate. So
