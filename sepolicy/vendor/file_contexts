@@ -107,7 +107,10 @@ vendor/bin/mutualex                                                       u:obje
 /vendor/bin/hw/vendor\.dolby\.hardware\.dms@2\.0-service                  u:object_r:hal_dms_default_exec:s0
 
 # Micharge
-/(vendor|system/vendor)/bin/hw/vendor.xiaomi.hardware.micharge@1.0-service  u:object_r:vendor_hal_micharge_xiaomi_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hardware\.micharge@1\.0-service  u:object_r:vendor_hal_micharge_xiaomi_default_exec:s0
+
+# MiSight
+/(vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hardware\.misight\.service  u:object_r:vendor_hal_misight_xiaomi_default_exec:s0
 
 # Mlipay
 /(vendor|system/vendor)/bin/fidoca                                        u:object_r:hal_mfidoca_default_exec:s0
