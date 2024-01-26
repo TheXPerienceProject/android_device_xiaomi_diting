@@ -48,26 +48,4 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.xiaomi.hardware.misight</name>
-        <interface>
-            <name>ILogMgr</name>
-            <instance>default</instance>
-        </interface>
-        <interface>
-            <name>IMiSight</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.xiaomi.hardware.misight</name>
-        <interface>
-            <name>ILogMgr</name>
-            <instance>default</instance>
-        </interface>
-        <interface>
-            <name>IMiSight</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
 </manifest>
