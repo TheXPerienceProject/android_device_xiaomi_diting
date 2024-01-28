@@ -114,5 +114,5 @@ LOCAL_MODULE       := init.diting.rc
 LOCAL_MODULE_TAGS  := optional
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := etc/init.diting.rc
-LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/
+LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/hw/
 include $(BUILD_PREBUILT)

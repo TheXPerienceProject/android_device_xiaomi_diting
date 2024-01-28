@@ -50,8 +50,6 @@
          non-zero. -->
     <integer name="config_defaultPeakRefreshRate">120</integer>
 
-    <integer name="config_udfps_illumination_transition_ms">0</integer>
-
     <!-- List of biometric sensors on the device, in decreasing strength. Consumed by AuthService
          when registering authenticators with BiometricService. Format must be ID:Modality:Strength,
          where: IDs are unique per device, Modality as defined in BiometricAuthenticator.java,
@@ -66,6 +64,9 @@
         <item>2444</item>
         <item>114</item>
     </integer-array>
+
+    <!-- How long it takes for the HW to start illuminating after the illumination is requested. -->
+    <integer name="config_udfps_illumination_transition_ms">0</integer>
 
     <!-- The display uses different gamma curves for different refresh rates. It's hard for panel
          vendors to tune the curves to have exact same brightness for different refresh rate. So
