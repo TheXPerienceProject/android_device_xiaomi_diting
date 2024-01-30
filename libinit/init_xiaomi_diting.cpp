@@ -23,7 +23,7 @@ static const variant_info_t diting_global_info = {
     .device = "diting",
     .marketname = "Xiaomi 12T Pro",
     .model = "22081212G",
-    .mod_device = "diting_global",
+    .mod_device = "ditingp_global",
     .build_fingerprint = FINGERPRINT_GL,
 };
 
@@ -35,7 +35,7 @@ static const variant_info_t diting_info = {
     .device = "diting",
     .marketname = "Redmi K50 Ultra",
     .model = "22081212C",
-    .mod_device = "diting",
+    .mod_device = "diting_global",
     .build_fingerprint = FINGERPRINT_CN,
 };
 
@@ -47,7 +47,7 @@ static const variant_info_t ditingp_info = {
     .device = "diting",
     .marketname = "Xiaomi 12T Pro",
     .model = "22081212R",
-    .mod_device = "ditingp_jp",
+    .mod_device = "diting_global",
     .build_fingerprint = FINGERPRINT_JP,
 };
 
@@ -59,7 +59,7 @@ static const variant_info_t diting_ru_info = {
     .device = "diting",
     .marketname = "Xiaomi 12T Pro",
     .model = "22081212UG",
-    .mod_device = "ditingp_ru",
+    .mod_device = "diting_global",
     .build_fingerprint = FINGERPRINT_RU,
 };
 
