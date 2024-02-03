@@ -6,4 +6,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Udfps vendor code -->
     <integer name="config_udfpsVendorCode">22</integer>
+    <!-- Should we vibrate on an icon animation of the shelf. This should only be active if the
+ vibrator is capable of subtle vibrations -->
+    <bool name="config_vibrateOnIconAnimation">true</bool>
 </resources>
