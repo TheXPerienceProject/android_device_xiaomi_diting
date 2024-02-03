@@ -13,12 +13,11 @@
         <item>Boosted</item>
         <item>Saturated</item>
         <item>Adaptive</item>
-        <item>Vivid</item>
-        <item>Saturated</item>
-        <item>Standard</item>
+        <item>Xiaomi Saturated</item>
         <item>Original</item>
+        <item>Vivid</item>
+        <item>Srgb</item>
         <item>P3</item>
-        <item>sRGB</item>
     </string-array>
 
     <!-- Display settings screen, Color mode options. Must be the same length and order as
@@ -29,12 +28,11 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
-        <item>258</item>
         <item>256</item>
         <item>257</item>
-        <item>269</item>
-        <item>268</item>
+        <item>258</item>
         <item>267</item>
+        <item>268</item>
     </integer-array>
 
     <!-- The radius of the enrollment progress bar, in dp -->
