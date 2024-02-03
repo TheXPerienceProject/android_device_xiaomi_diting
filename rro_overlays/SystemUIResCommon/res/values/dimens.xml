@@ -19,5 +19,4 @@
 
     <!-- Udfps animation -->
     <dimen name="udfps_animation_size">240dp</dimen>
-    <dimen name="udfps_animation_offset">31dp</dimen>
 </resources>
