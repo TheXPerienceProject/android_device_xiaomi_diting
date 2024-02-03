@@ -292,4 +292,7 @@
 
     <!-- Build fingerprint from the stock ROM -->
     <string name="config_stockFingerprint" translatable="false">Xiaomi/diting/diting:13/SKQ1.220303.001/V14.0.5.0.TLFMIXM:user/release-keys</string>
+
+    <!-- Boost Framework -->
+    <bool name="config_supportsBoostFramework">true</bool>
 </resources>
