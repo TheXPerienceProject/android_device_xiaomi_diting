@@ -10,10 +10,10 @@
 
 #include "vendor_init.h"
 
-#define FINGERPRINT_GL "Xiaomi/diting/diting:13/SKQ1.220303.001/V14.0.2.0.TLFMIXM:user/release-keys"
-#define FINGERPRINT_CN "Xiaomi/diting/diting:13/SKQ1.220303.001/V14.0.10.0.TLFCNXM:user/release-keys"
-#define FINGERPRINT_JP "Xiaomi/ditingp_jp/diting:12/SKQ1.220303.001/V13.0.2.0.SLFJPXM:user/release-keys"
-#define FINGERPRINT_RU "Xiaomi/ditingp_ru/diting:13/SKQ1.220303.001/V14.0.4.0.TLFRUXM:user/release-keys"
+#define FINGERPRINT_GL "Xiaomi/diting/diting:12/SKQ1.230401.001/V816.0.2.0.ULFMIXM:user/release-keys"
+#define FINGERPRINT_CN "Xiaomi/diting/diting:12/SKQ1.230401.001/V816.0.2.0.ULFCNXM_:user/release-keys"
+#define FINGERPRINT_JP "Xiaomi/ditingp_jp/diting:12/SKQ1.220303.001/V14.0.4.0.TLFJPXM:user/release-keys"
+#define FINGERPRINT_RU "Xiaomi/ditingp_ru/diting:13/SKQ1.220303.001/V14.0.6.0.TLFRUXM:user/release-keys"
 
 static const variant_info_t diting_global_info = {
     .hwc_value = "GL",
