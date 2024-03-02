@@ -5,7 +5,7 @@
 #
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common Lineage stuff.
@@ -38,4 +38,4 @@ BUILD_GOOGLE_DIALER := true
 BUILD_GOOGLE_CONTACTS := true
 BUILD_GOOGLE_MESSAGE := true
 TARGET_HAS_UDFPS := true
-PRODUCT_USE_SCUDO := true
+#PRODUCT_USE_SCUDO := true
