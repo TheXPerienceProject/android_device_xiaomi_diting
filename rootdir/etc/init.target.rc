@@ -635,3 +635,5 @@ service vendor.sensors-hal-2-1-multihal /vendor/bin/hw/android.hardware.sensors@
 on property:vendor.post_boot.parsed=1
     # Setup foreground cpuset for display composer.
     write /dev/cpuset/foreground/cpus 0-6
+    setprop dalvik.vm.dex2oat-cpu-set 0,1,2,3,4,5,6
+    setprop dalvik.vm.dex2oat-threads 6
