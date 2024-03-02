@@ -1935,7 +1935,11 @@ vendor/lib64/vendor.qti.gnss-service.so
 # Graphics (Adreno)
 vendor/app/com.qualcomm.qti.gpudrivers.taro.api31/com.qualcomm.qti.gpudrivers.taro.api31.apk;PRESIGNED
 
-# Graphics (Adreno) - from Redmagic 9 pro
+# Graphics (Adreno)
+vendor/gpu/kbc/sequence_manifest.bin|17e1f9149826ef478502c750bcf9352274097c80
+vendor/gpu/kbc/unified_kbcs_32.bin|aa7b4e916fb3fab8df7700deb458d0726a549482
+vendor/gpu/kbc/unified_kbcs_64.bin|bdfadc6b8e03d7da5b8d31b4f7688e7dba4b07ce
+vendor/gpu/kbc/unified_ksqs.bin|e3470ad9fc644aea9c02dee948bb210149408dda
 vendor/lib/egl/eglSubDriverAndroid.so|6b9a66497c1d1787fa7116abe0089229f5bfff1e
 vendor/lib/egl/libEGL_adreno.so|99264c4bcc4e04795e598e3530535fea7cad88ac
 vendor/lib/egl/libGLESv1_CM_adreno.so|eb02bf0adfe2c71a3f58c486e243b64ce7044f0c
@@ -1943,16 +1947,17 @@ vendor/lib/egl/libGLESv2_adreno.so|9a7c59169243a4a11983df7566415417a321d1a3
 vendor/lib/egl/libVkLayer_ADRENO_qprofiler.so|9e968c949b290f2fb8985bd1105a07ce3e59a806
 vendor/lib/egl/libq3dtools_adreno.so|dc7f42f038a8568b0168bb7c3483629f0b4b57f8
 vendor/lib/egl/libq3dtools_esx.so|ab39613ee4b46eeb330af5da0963888940853105
+vendor/lib/libCB.so|2fd04241592a91c61f29e992e7381201d877415a
+vendor/lib/libOpenCL.so|3f44a42a0a3c279daade55d13087a4df51bc11bc
 vendor/lib/libadreno_app_profiles.so|79a1afabd3c384de3a734c4fcfc683e8abf810e0
 vendor/lib/libadreno_utils.so|243b296107a7eb8642d233d0534593f1590f1aa3
-vendor/lib/libCB.so|2fd04241592a91c61f29e992e7381201d877415a
-vendor/lib/libdmabufheap.so
+vendor/lib/libgpudataproducer.so|c1295562a6d418e5e9a8849ac2de15e0e57b8ba7
 vendor/lib/libgsl.so|0684d693f1f113bd42f80dd10e8c8e7178ea8c75
+vendor/lib/libkcl.so|7d83d6b4441bafd6bae52f48d293620b7545c2a6
+vendor/lib/libkernelmanager.so|11a35979d90d1305837d2292b9997b37af207b1e
 vendor/lib/libllvm-glnext.so|41f579644e9640992371c6d801cc33622a996c86
 vendor/lib/libllvm-qcom.so|c399e5b43613ce79cb066e91f7f2451726a09ae4
 vendor/lib/libllvm-qgl.so|fb02e69782528d3c849a9d8a773498acf45b74e5
-vendor/lib/libOpenCL_adreno.so
-vendor/lib/libOpenCL.so|3f44a42a0a3c279daade55d13087a4df51bc11bc
 vendor/lib64/egl/eglSubDriverAndroid.so|d9469d1e07dd1155528778f0a453ad791ceadbbc
 vendor/lib64/egl/libEGL_adreno.so|69f98ba347b32d5f80f9423a3983c6ff8048b062
 vendor/lib64/egl/libGLESv1_CM_adreno.so|29a64765d2b5d35261ec98ed68031d5699954307
@@ -1960,28 +1965,17 @@ vendor/lib64/egl/libGLESv2_adreno.so|300f1a0ff06d52bcac806cc58f630b684f96e8ce
 vendor/lib64/egl/libVkLayer_ADRENO_qprofiler.so|9ae629f1791b48f2d1648741250c7a372ea97a99
 vendor/lib64/egl/libq3dtools_adreno.so|e28e5b07def2a8ecbad79484d739befb8ea8df61
 vendor/lib64/egl/libq3dtools_esx.so|b528a3b3c49e17a938dbe954c7c842bb96be3ae5
+vendor/lib64/libCB.so|81a801f9f2c16926773382357a166e34d69c6f32
+vendor/lib64/libOpenCL.so|878ae2d905f7990c8ce870ed4b67c26d0530969f
 vendor/lib64/libadreno_app_profiles.so|fa6c66c5f96e1f999e46c2c4231f991c35d5d1bc
 vendor/lib64/libadreno_utils.so|e0ddfe61012d54e4a767d0a3fa14e1bee0a7ddf2
-vendor/lib64/libCB.so|81a801f9f2c16926773382357a166e34d69c6f32
-vendor/lib64/libdmabufheap.so
+vendor/lib64/libgpudataproducer.so|f36337bd15614525b532c89f7f3594fb6c7a8d34
 vendor/lib64/libgsl.so|67d46ba5d6f4c73bab2e89cbe6af2874a81dd29e
+vendor/lib64/libkcl.so|d3d64441d7389cbb774412ad40d9d9f42e95c06a
+vendor/lib64/libkernelmanager.so|19a4bd54a3c9fe56d4d3c773ae6713787e042f09
 vendor/lib64/libllvm-glnext.so|bac28fff6e00178d78ccca040dc76e87841c8aa4
 vendor/lib64/libllvm-qcom.so|210fdef3513ca2dc022e54b50779c0024a6c6730
 vendor/lib64/libllvm-qgl.so|e8d6d5b26bd02c351f3a8d892306982b7b44fed9
-vendor/lib64/libOpenCL.so|878ae2d905f7990c8ce870ed4b67c26d0530969f
-vendor/lib64/libOpenCL_adreno.so
-vendor/lib64/libgpudataproducer.so|f36337bd15614525b532c89f7f3594fb6c7a8d34
-vendor/lib64/libkcl.so|d3d64441d7389cbb774412ad40d9d9f42e95c06a
-vendor/lib64/libkernelmanager.so|19a4bd54a3c9fe56d4d3c773ae6713787e042f09
-
-# Graphics (Adreno)
-vendor/gpu/kbc/sequence_manifest.bin|17e1f9149826ef478502c750bcf9352274097c80
-vendor/gpu/kbc/unified_kbcs_32.bin|aa7b4e916fb3fab8df7700deb458d0726a549482
-vendor/gpu/kbc/unified_kbcs_64.bin|bdfadc6b8e03d7da5b8d31b4f7688e7dba4b07ce
-vendor/gpu/kbc/unified_ksqs.bin|e3470ad9fc644aea9c02dee948bb210149408dda
-vendor/lib/libgpudataproducer.so|c1295562a6d418e5e9a8849ac2de15e0e57b8ba7
-vendor/lib/libkcl.so|7d83d6b4441bafd6bae52f48d293620b7545c2a6
-vendor/lib/libkernelmanager.so|11a35979d90d1305837d2292b9997b37af207b1e
 
 # Graphics (Adreno firmware)
 vendor/firmware/a660_sqe.fw|6957cb1081948943d894b7420f96b5e7e0d0768c
@@ -2008,7 +2002,7 @@ vendor/firmware/a730_zap.mbn|0e5abb953c71c91ae35fb1634940154edd1d002d
 vendor/firmware/a730_zap.mdt|abba49ce3671018990252a820763719131bfb66f
 vendor/firmware/gmu_gen70000.bin|1ac8d9dd3d405f84c915a4562ff72d244e10bcbd
 
-# Graphics (Vulkan) - from redmagic 9 pro
+# Graphics (Vulkan)
 vendor/lib/hw/vulkan.adreno.so|d689916a992d2c61b04faf96d4b3a916fca9fab8
 vendor/lib64/hw/vulkan.adreno.so|689bbd9328d3083efcc894481552c8f94ddc83b3
 
