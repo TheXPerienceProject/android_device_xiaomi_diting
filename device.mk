@@ -51,6 +51,10 @@ PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
 
+# Adreno
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/adreno/android.hardware.vulkan.version-1_3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.version-1_3.xml
+
 # AIDL NDK backend vendor
 PRODUCT_PACKAGES += \
     android.hardware.common-V2-ndk_platform.vendor \
