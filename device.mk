@@ -380,23 +380,17 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/codecs/media_profiles_cape.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_cape.xml \
     $(LOCAL_PATH)/configs/media/codecs/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 
-# Media
 PRODUCT_PACKAGES += \
+    android.hardware.media.c2@1.0.vendor \
+    libavservices_minijail \
     libavservices_minijail_vendor \
+    libavservices_minijail.vendor \
+    libcodec2_hidl@1.0.vendor \
     libcodec2_hidl@1.2.vendor \
     libcodec2_soft_common.vendor \
-    libsfplugin_ccodec_utils.vendor \
-    libstagefright_softomx.vendor \
-    libstagefrighthw \
-    libpalclient
-
-# OMX Packages
-PRODUCT_PACKAGES += \
-    libOmxAacEnc \
-    libOmxAmrEnc \
-    libOmxEvrcEnc \
-    libOmxG711Enc \
-    libOmxQcelp13Enc
+    libcodec2_vndk.vendor \
+    libpalclient \
+    libsfplugin_ccodec_utils.vendor
 
 PRODUCT_PACKAGES += \
     init.qti.media.rc \
