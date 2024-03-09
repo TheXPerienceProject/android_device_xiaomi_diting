@@ -539,6 +539,7 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.recovery.qcom.rc \
     init.target.rc \
+    init.yuki-perf.rc \
     ueventd.qcom.rc \
     ueventd-odm.rc
 
