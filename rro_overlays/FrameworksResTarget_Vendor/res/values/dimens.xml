@@ -9,4 +9,7 @@
 
     <!-- Default paddings for content around the corners. -->
     <dimen name="rounded_corner_content_padding">0.0dip</dimen>
+
+    <!--Brightness Ramp Rate Fast -->
+    <item type="dimen" name="config_brightnessRampRateFast">0.41585198</item>
 </resources>

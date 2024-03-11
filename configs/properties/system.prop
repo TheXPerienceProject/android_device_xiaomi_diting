@@ -49,7 +49,7 @@ ro.sf.force_handle_idle_timeout=1
 
 # Dalvik
 pm.dexopt.ab-ota=speed-profile
-pm.dexopt.first-boot=quicken
+#pm.dexopt.first-boot=quicken
 pm.dexopt.bg-dexopt=everything
 pm.dexopt.boot=verify
 pm.dexopt.install=speed-profile
