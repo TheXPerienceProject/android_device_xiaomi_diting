@@ -381,6 +381,7 @@ ro.surface_flinger.supports_background_blur=1
 ro.vendor.all_modes.colorpick_adjust=true
 vendor.gralloc.disable_ubwc=0
 debug.sf.latch_unsignaled=1
+debug.sf.defer_refresh_rate_when_off=1
 
 # Refresh Rate
 ro.surface_flinger.set_display_power_timer_ms=1000
