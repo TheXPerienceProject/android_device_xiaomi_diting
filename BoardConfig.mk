@@ -117,6 +117,10 @@ TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config/config.fs
 # Firmware
 -include vendor/xiaomi/diting-firmware/BoardConfigVendor.mk
 
+# GPS
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
+$(call soong_config_set, qtilocation, feature_nhz, false)
+
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_diting
 TARGET_RECOVERY_DEVICE_MODULES ?= init_xiaomi_diting
