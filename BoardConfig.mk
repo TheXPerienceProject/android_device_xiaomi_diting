@@ -311,3 +311,5 @@ PRODUCT_VENDOR_MOVE_ENABLED := true
 -include vendor/xiaomi/diting/BoardConfigVendor.mk
 
 SELINUX_IGNORE_NEVERALLOWS := true
+
+BOARD_BOOTCONFIG += androidboot.selinux=permissive
