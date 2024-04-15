@@ -163,7 +163,7 @@ RECOVERY_MODULES := $(addprefix $(KERNEL_PATH)/modules/ramdisk/, $(BOARD_VENDOR_
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(sort $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES) $(RECOVERY_MODULES))
 
 # Vendor modules (installed to vendor_dlkm)
-BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules/vendor/modules.load))
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(sort $(strip $(shell cat $(KERNEL_PATH)/modules/vendor/modules.load)))
 BOARD_VENDOR_KERNEL_MODULES := $(addprefix $(KERNEL_PATH)/modules/vendor/, $(BOARD_VENDOR_KERNEL_MODULES_LOAD))
 BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE :=  $(KERNEL_PATH)/modules/vendor/modules.blocklist
 
