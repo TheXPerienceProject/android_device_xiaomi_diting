@@ -14,6 +14,8 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Inherit from diting device.
 $(call inherit-product, device/xiaomi/diting/device.mk)
 
+$(call inherit-product, vendor/gapps/common/common-vendor.mk)
+
 ## Device identifier
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := diting
