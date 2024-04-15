@@ -152,6 +152,7 @@ PRODUCT_PACKAGES_DEBUG += \
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.7.vendor \
+    android.hardware.graphics.common-V4-ndk \
     android.hardware.camera.device-V1-ndk.vendor \
     android.hardware.camera.metadata-V1-ndk.vendor \
     android.hardware.camera.provider-V1-ndk.vendor \
