@@ -136,7 +136,7 @@ public class DozeSettingsFragment extends PreferenceFragment implements
     }
 
     @Override
-    public void onSwitchChanged(CompoundButton buttonView, boolean isChecked) {
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         DozeUtils.enableDoze(getActivity(), isChecked);
         DozeUtils.checkDozeService(getActivity());
 

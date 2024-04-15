@@ -31,7 +31,6 @@ import android.view.Display;
 import android.view.Display.HdrCapabilities;
 import org.lineageos.settings.display.ColorModeService;
 
-import org.lineageos.settings.dirac.DiracUtils;
 import org.lineageos.settings.dolby.DolbyUtils;
 import org.lineageos.settings.doze.AodBrightnessService;
 import org.lineageos.settings.doze.PocketService;
