@@ -532,6 +532,7 @@ vendor.usb.qdss.inst.name=qdss_sw
 vendor.usb.diag.func.name=ffs
 vendor.usb.use_ffs_mtp=1
 sys.usb.mtp.batchcancel=1
+ro.usb.uvc.enabled=true
 
 # VCB
 persist.vendor.vcb.ability=true
