@@ -89,10 +89,10 @@ vendor/lib/rfsa/adsp/libmobilenet_dsp_frc_networks.so
 vendor/lib/rfsa/adsp/libmobilenet_dsp_frc.so
 vendor/lib/rfsa/adsp/libQ6MSFR_manager_skel.so
 vendor/lib/rfsa/adsp/libQnnHtpAltPrepV69Skel.so
-vendor/lib/rfsa/adsp/libQnnHtpV69Skel.so
+vendor/lib/rfsa/adsp/libQnnHtpV69Skel.so|393e442b843d37bd6d2d9681a0fb923a067e98a2
 vendor/lib/rfsa/adsp/libqvr_cam_dsp_driver_skel.so
 vendor/lib/rfsa/adsp/libqvr_dsp_driver_skel.so
-vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
+vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so|396429c72bae75fcdf40e623d19e83b2c1e4969a
 vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/rfsa/adsp/libsnpe_dsp_v65_domains_v2_skel.so
 vendor/lib/rfsa/adsp/libsnpe_dsp_v66_domains_v2_skel.so
@@ -618,8 +618,8 @@ vendor/etc/camera/127_Creamy.png
 vendor/etc/camera/128_Sepia.png
 vendor/etc/camera/129_Vivid.png
 vendor/etc/camera/130_Natural.png
-vendor/etc/camera/131_Monochrom.png
-vendor/etc/camera/132_MonochromHighContrast.png
+vendor/etc/camera/131_Monochrom.png|141ee0d5c0055b2c898ed77fb21049354ac249e5
+vendor/etc/camera/132_MonochromHighContrast.png|c64779acd7a9af04fcab82d44d1721cee04dae1a
 vendor/etc/camera/af_class_all.dlc
 vendor/etc/camera/af_class_human.dlc
 vendor/etc/camera/af_classify.dlc
@@ -1096,7 +1096,7 @@ vendor/lib64/camera/com.qti.sensor.diting_sunny_imx596_front.so
 vendor/lib64/camera/com.qti.sensor.diting_sunny_s5k4h7_ultra.so
 vendor/lib64/camera/com.qti.sensor.diting_sunny_s5khm6_wide.so
 vendor/lib64/camera/com.qti.sensormodule.diting_ofilm_gc02m1_macro.bin
-vendor/lib64/camera/com.qti.sensormodule.diting_semco_s5khp1_wide.bin
+vendor/lib64/camera/com.qti.sensormodule.diting_semco_s5khp1_wide.bin|c74a17d0de78907e8ae27c965302b115711414c4
 vendor/lib64/camera/com.qti.sensormodule.diting_sunny_imx596_front.bin
 vendor/lib64/camera/com.qti.sensormodule.diting_sunny_s5k4h7_ultra.bin
 vendor/lib64/camera/com.qti.sensormodule.diting_sunny_s5khm6_wide.bin
@@ -1134,7 +1134,7 @@ vendor/lib64/vendor.xiaomi.sensor.citsensorservice@2.0.so
 # CNE
 vendor/app/CneApp/CneApp.apk
 vendor/bin/cnd
-vendor/bin/mutualex
+vendor/bin/mutualex|5042545dce571c9c4024b0210ad5c9fc330fe85f
 vendor/etc/cne/mwqem.conf
 vendor/etc/cne/profileMwqem.xml
 vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml
@@ -1168,7 +1168,7 @@ vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml
 vendor/etc/cne/wqeclient/VZW/VZW_profile7.xml
 vendor/etc/default-permissions/com.qualcomm.qti.cne.xml
 vendor/etc/init/cnd.rc
-vendor/etc/init/mutualex.rc
+vendor/etc/init/mutualex.rc|d6d6673e59abfdb53232d502842285bae8f323f1
 vendor/lib/libcne.so
 vendor/lib/libcneapiclient.so
 vendor/lib/libcneoplookup.so
@@ -1731,9 +1731,9 @@ vendor/lib64/vendor.qti.hardware.eid@1.0.so
 vendor/bin/embmsslServer
 vendor/etc/init/init.embmssl_server.rc
 vendor/lib64/libembmsservice.so
-vendor/lib64/vendor.qti.hardware.embmssl@1.0-adapter-helper.so
+vendor/lib64/vendor.qti.hardware.embmssl@1.0-adapter-helper.so|891edd8fa108ba8cab13a015c8f001366e6ef680
 vendor/lib64/vendor.qti.hardware.embmssl@1.0.so
-vendor/lib64/vendor.qti.hardware.embmssl@1.1-adapter-helper.so
+vendor/lib64/vendor.qti.hardware.embmssl@1.1-adapter-helper.so|cfd93a0a278bf343209fb35a4cc6edbeab40b96e
 vendor/lib64/vendor.qti.hardware.embmssl@1.1.so
 
 # ESE powermanager
@@ -1760,7 +1760,7 @@ vendor/lib64/com.fingerprints.extension@3.0.so
 vendor/lib64/libgf_hal.so
 vendor/lib64/libmisight.so
 vendor/lib64/vendor.xiaomi.hardware.dtool@1.0.so
-vendor/lib64/vendor.xiaomi.hardware.fx.tunnel@1.0.so
+vendor/lib64/vendor.xiaomi.hardware.fx.tunnel@1.0.so|7a32dc0e74318ed2156306287f68ee7cd304b0e5
 # Test FP on k50u
 vendor/lib64/vendor.xiaomi.hardware.fingerprintextension@1.0.so
 
@@ -2010,10 +2010,10 @@ vendor/lib/hw/vulkan.adreno.so|c5d5129eefc7a70d9cc1080b4fe2d6a20c439273
 vendor/lib64/hw/vulkan.adreno.so|9b58366f25290dbc9e9898895d5629e9f081f40e
 
 # HotwordEnrollment
--product/priv-app/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND.apk
--product/priv-app/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND.apk
-system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
-system_ext/framework/com.android.hotwordenrollment.common.util.jar
+-product/priv-app/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND.apk|cf8c9894a7fc488cf046e77f3b26d3972410c7d1
+-product/priv-app/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND.apk|5fb2b8661d994ceed732975929555fea481c92ed
+system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml|99cfd80965c170f4885a7dd62c0eaad1a0c7840f
+system_ext/framework/com.android.hotwordenrollment.common.util.jar|a418f5697951468fb93788b6e92d2912e7ae7149
 
 # Identity service
 vendor/bin/hw/android.hardware.identity-service-qti
@@ -2233,18 +2233,18 @@ vendor/etc/seccomp_policy/modemManager.policy
 vendor/etc/public.libraries.txt
 
 # Neural networks
-vendor/bin/hw/android.hardware.neuralnetworks-shim-service-qti
-vendor/etc/init/android.hardware.neuralnetworks-shim-service-qti.rc
-vendor/etc/vintf/manifest/android.hardware.neuralnetworks-shim-service-qti.xml
-vendor/lib64/libQnnGpu.so
-vendor/lib64/libQnnHtp.so
+vendor/bin/hw/android.hardware.neuralnetworks-shim-service-qti|239f533f133646063a5c470af06d370cce7a96bf
+vendor/etc/init/android.hardware.neuralnetworks-shim-service-qti.rc|562000ac9e8d21242d61a8dd70d26de9a1f20a79
+vendor/etc/vintf/manifest/android.hardware.neuralnetworks-shim-service-qti.xml|f9802c3d1d11334a97384ee4445d1beb535e42f5
+vendor/lib64/libQnnGpu.so|784672fe61a16167274e199c1fab83c093d2d345
+vendor/lib64/libQnnHtp.so|6ad16dd94a2ffa35ceb1f723c3b497331840898d
 vendor/lib64/libQnnHtpAltPrepV69Stub.so
-vendor/lib64/libQnnHtpPrepare.so
-vendor/lib64/libQnnHtpV69Stub.so
-vendor/lib64/libUnnhalAccCommon.so
-vendor/lib64/libUnnhalAccGpu.so
-vendor/lib64/libUnnhalAccHtp.so
-vendor/lib64/libnnapi_sl_driver.so
+vendor/lib64/libQnnHtpPrepare.so|76f2a939e4806bd9f8356a41f9b85593f060488a
+vendor/lib64/libQnnHtpV69Stub.so|e1afccebeadc40fe213273d748833cfb5f487992
+vendor/lib64/libUnnhalAccCommon.so|0b4ab404bfbcf9f0b3c55e5bd6e440d8645b41a7
+vendor/lib64/libUnnhalAccGpu.so|43cd6675c1c42758fdfc0d4aafdf7455c99286ed
+vendor/lib64/libUnnhalAccHtp.so|078adf1e2805e2a013d483ab77a34ad5875cc08a
+vendor/lib64/libnnapi_sl_driver.so|bb2cb470013c9ad8e7cef8f6401259b67e5cf1fe
 
 # NFC
 vendor/bin/hw/vendor.nxp.hardware.nfc@2.0-service
@@ -2383,8 +2383,8 @@ vendor/etc/perf/targetsysnodesconfigs.xml|b9f5e7ba51efa170adb0ddfebd6eecc6b90b5b
 vendor/etc/perf/thermal-boost.conf|4f9066063cca8dc086a2a5cbeb6da242507ee848
 vendor/etc/seccomp_policy/qapeservice.policy|86c021645d8d1606564ad3498077b4666823ebb4
 vendor/etc/vintf/manifest/vendor.qti.hardware.perf.xml|3cf294c1718f2c4e2ae99345043027b6279b3de1
-vendor/etc/vintf/manifest/vendor.qti.qspmhal-service.xml
-vendor/etc/vintf/manifest/vendor.qti.memory.pasrmanager-service.xml
+vendor/etc/vintf/manifest/vendor.qti.qspmhal-service.xml|b070cf5f9bbebe6d00ec7d845d7d60922656ac45
+vendor/etc/vintf/manifest/vendor.qti.memory.pasrmanager-service.xml|09a830b050d7f957d19ed3f022018777f0bcd61c
 vendor/lib/libperfconfig.so|3ce991d8e7b3796e6b069266245de1552d3b1416
 vendor/lib/libperfgluelayer.so|d6bba0db18ba08d700a8afead9252044ffe85941
 vendor/lib/libperfioctl.so|109fb7aba0d7a0bb03b86d1312f662033afae95d
@@ -2481,7 +2481,7 @@ vendor/lib64/libvideooptfeature.so|49231bc375429d087f6d985d6ca07a173054b4e8
 vendor/lib64/vendor.qti.hardware.power.powermodule@1.0.so|c26cec73a1d239ac6cc4f18b6056564487251ee5
 
 # Power-off alarm
-product/app/PowerOffAlarm/PowerOffAlarm.apk
+product/app/PowerOffAlarm/PowerOffAlarm.apk|8d5f01ef9cc8c67ccb68b6c620d3019f26cf70f7
 system_ext/framework/vendor.qti.hardware.alarm-V1.0-java.jar
 vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service
 vendor/bin/power_off_alarm
@@ -2658,9 +2658,9 @@ vendor/lib/libStereoRectifyWrapper.so
 vendor/lib/libhalide_hexagon_host.so
 vendor/lib/libqvrcamera_client.qti.so
 vendor/lib/libqvrservice_client.qti.so
-vendor/lib/libqvrservice_ov7251_hvx_tuning.so
-vendor/lib/libqvrservice_ov9282_hvx_tuning.so
-vendor/lib/libqvrservice_v4l_ov7251_hvx_tuning.so
+vendor/lib/libqvrservice_ov7251_hvx_tuning.so|cc49dbb77fb1e2471e8600b3e6ba96b6ea3ac6cd
+vendor/lib/libqvrservice_ov9282_hvx_tuning.so|ca323d2c81030ff90ef2e27a5757dc9238c07d62
+vendor/lib/libqvrservice_v4l_ov7251_hvx_tuning.so|dbc345a46a25d9cfcae383c06f432e576c96818a
 vendor/lib64/libDspIOProxy_stub.so
 vendor/lib64/libMapService.so
 vendor/lib64/libScenescape.so
@@ -2674,9 +2674,9 @@ vendor/lib64/libqvr_hostcontroller_plugin.so
 vendor/lib64/libqvrcamera_client.qti.so
 vendor/lib64/libqvrservice.so
 vendor/lib64/libqvrservice_client.qti.so
-vendor/lib64/libqvrservice_ov7251_hvx_tuning.so
-vendor/lib64/libqvrservice_ov9282_hvx_tuning.so
-vendor/lib64/libqvrservice_v4l_ov7251_hvx_tuning.so
+vendor/lib64/libqvrservice_ov7251_hvx_tuning.so|a0bec4c346ef86926746c05fe59c6afe068483f4
+vendor/lib64/libqvrservice_ov9282_hvx_tuning.so|f8f44e9b7536b183664906ca3cabe1987fb0e0e2
+vendor/lib64/libqvrservice_v4l_ov7251_hvx_tuning.so|7bdb2f88f105ee61a274a24f627d67c5bb38c86b
 vendor/lib64/libtracker_6dof_impl.so
 
 # QXR
@@ -3203,12 +3203,12 @@ vendor/lib/sensors.ssc.so
 vendor/lib/sensors.touch.detect.so
 vendor/lib/vendor.qti.hardware.sensorscalibrate@1.0.so
 vendor/lib64/hw/vendor.qti.hardware.sensorscalibrate@1.0-impl.so
-vendor/lib64/libnanopb.so
+vendor/lib64/libnanopb.so|8775c22fd8ee1071819b730fac42992025ee328f
 vendor/lib64/libsensor_cal@2.0.so
 vendor/lib64/libsensor_calibration.so
 vendor/lib64/libsensorcal.so
 vendor/lib64/libsensorslog.so
-vendor/lib64/libsns_api.so
+vendor/lib64/libsns_api.so|25637bfcc55707fb6b25d9051a8036ed2759d6cb
 vendor/lib64/libsns_device_mode_stub.so
 vendor/lib64/libsns_direct_channel_stub.so
 vendor/lib64/libsns_registry_skel.so
