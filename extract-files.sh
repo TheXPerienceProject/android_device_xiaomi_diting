@@ -67,8 +67,11 @@ function blob_fixup() {
         "${PATCHELF}" --replace-needed "ls_nq_client-v1.so" "ls_nq_client.so" "${2}"
         "${PATCHELF}" --replace-needed "se_nq_extn_client-v1.so" "se_nq_extn_client.so" "${2}"
         ;;
-    vendor/bin/hw/android.hardware.security.keymint-service-qti)
+    vendor/bin/hw/android.hardware.security.keymint-service-qti|vendor/lib/libqtikeymint.so|vendor/lib64/libqtikeymint.so)
         "${PATCHELF}" --add-needed "android.hardware.security.rkp-V3-ndk.so" "${2}"
+        ;;
+    vendor/lib/c2.dolby.client.so|vendor/lib64/c2.dolby.client.so)
+        "${PATCHELF}" --add-needed "dolbycodec_shim.so" "${2}"
         ;;
     vendor/lib64/hw/displayfeature.default.so) # vendor/bin/hw/vendor.xiaomi.hardware.displayfeature@1.0-service)
         "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
