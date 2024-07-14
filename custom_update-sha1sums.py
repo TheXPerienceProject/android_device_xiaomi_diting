@@ -42,15 +42,10 @@ def cleanup():
 def update():
     for index, line in enumerate(lines):
         # Skip empty lines
-        if len(line) == 0:
+        if len(line) == 0 or line.startswith('#'):
             continue
 
-        # Check if we need to set SHA1 hash for the next files
-        if line[0] == '#':
-            needSHA1 = (' - from' in line)
-            continue
-
-        if needSHA1:
+        if line.endswith('|'):
             # Remove existing SHA1 hash
             line = line.split('|')[0]
 
