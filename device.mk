@@ -481,9 +481,9 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.qspa-V1-ndk
 
 # Boot Jars
-PRODUCT_BOOT_JARS += \
-    QPerformance \
-    UxPerformance
+#PRODUCT_BOOT_JARS += \
+#    QPerformance \
+#    UxPerformance
 
 # Power
 PRODUCT_PACKAGES += \
