@@ -22,9 +22,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 # Call the proprietary setup.
 $(call inherit-product, vendor/xiaomi/diting/diting-vendor.mk)
 
-# Test
-PRODUCT_TARGET_VNDK_VERSION := 32
-PRODUCT_EXTRA_VNDK_VERSIONS := 30 31 32 33
+-include vendor/lineage-priv/keys/keys.mk
 
 PRODUCT_SHIPPING_API_LEVEL := 31
 BOARD_SHIPPING_API_LEVEL := 31
