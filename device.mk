@@ -760,34 +760,3 @@ PRODUCT_SYSTEM_PROPERTIES += \
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v33/arm64/arch-arm64-armv8-a/shared/vndk-core/libstagefright_foundation.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libstagefright_foundation-v33.so \
     prebuilts/vndk/v33/arm/arch-arm-armv7-a-neon/shared/vndk-core/libstagefright_foundation.so:$(TARGET_COPY_OUT_VENDOR)/lib/libstagefright_foundation-v33.so
-
-# debug
-PRODUCT_PACKAGES += \
-    strace \
-    libstdc++ \
-    libstdc++_vendor
-
-ifneq ($(TARGET_BUILD_VARIANT),eng)
-PRODUCT_PRODUCT_PROPERTIES := dalvik.vm.image-dex2oat-filter=speed
-endif
-
-# Dex preopt
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    SystemUI \
-    Settings
-
-# Optimize everything for preopt
-PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
-
-# Compile SystemUI on device with `speed`.
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.systemuicompilerfilter=speed
-
-# Strip the local variable table and the local variable type table to reduce
-# the size of the system image. This has no bearing on stack traces, but will
-# leave less information available via JDWP.
-PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
-
-# Enable whole-program R8 Java optimizations for SystemUI and system_server
-SYSTEM_OPTIMIZE_JAVA := true
-SYSTEMUI_OPTIMIZE_JAVA := true
