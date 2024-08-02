@@ -744,14 +744,6 @@ PRODUCT_PACKAGES += \
     libnl.vendor \
     libwfdaac_vendor
 
-# Vendor API
-BOARD_API_LEVEL := 31
-BOARD_SHIPPING_API_LEVEL := 31
-
-# Partition source order for Product/Build properties pickup.
-PRODUCT_SYSTEM_PROPERTIES += \
-    ro.product.property_source_order=odm,vendor,product,system_ext,system
-
 # VNDK
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v33/arm64/arch-arm64-armv8-a/shared/vndk-core/libstagefright_foundation.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libstagefright_foundation-v33.so \
