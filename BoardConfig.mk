@@ -314,3 +314,5 @@ PRODUCT_VENDOR_MOVE_ENABLED := true
 # Inherit from the proprietary version
 -include vendor/xiaomi/diting/BoardConfigVendor.mk
 
+# Inherit from proprietary files for miuicamera
+-include device/xiaomi/miuicamera-diting/BoardConfig.mk
