@@ -392,7 +392,8 @@ PRODUCT_PACKAGES += \
     libcodec2_soft_common.vendor \
     libcodec2_vndk.vendor \
     libpalclient \
-    libsfplugin_ccodec_utils.vendor
+    libsfplugin_ccodec_utils.vendor \
+    dolbycodec_shim
 
 PRODUCT_PACKAGES += \
     init.qti.media.rc \
