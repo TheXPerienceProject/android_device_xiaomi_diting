@@ -7,6 +7,8 @@
 DEVICE_PATH := device/xiaomi/diting
 KERNEL_PATH := device/xiaomi/diting-kernel
 
+INLINE_KERNEL_BUILDING := true
+
 #Test
 #BOARD_VNDK_VERSION := current
 
@@ -116,15 +118,19 @@ TARGET_RECOVERY_DEVICE_MODULES ?= init_xiaomi_diting
 # Kernel
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_BASE := 0x00000000
+BOARD_KERNEL_IMAGE_NAME := Image
+
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+BOARD_RAMDISK_USE_LZ4 := true
+BOARD_USES_GENERIC_KERNEL_IMAGE := true
+
+TARGET_FORCE_PREBUILT_KERNEL := true
 
 BOARD_KERNEL_CMDLINE := \
     video=vfb:640x400,bpp=32,memsize=3072000 \
     disable_dma32=on \
     swinfo.fingerprint=$(LINEAGE_VERSION) \
-    mtdoops.fingerprint=$(LINEAGE_VERSION) \
-    allow_file_spec_access \
-    irqaffinity=0-3 \
-    pelt=8
+    mtdoops.fingerprint=$(LINEAGE_VERSION)
 
 BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
@@ -135,24 +141,16 @@ BOARD_BOOTCONFIG := \
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 
-BOARD_KERNEL_IMAGE_NAME := Image
-
-BOARD_INCLUDE_DTB_IN_BOOTIMG := true
-BOARD_RAMDISK_USE_LZ4 := true
-BOARD_USES_GENERIC_KERNEL_IMAGE := true
-
-TARGET_FORCE_PREBUILT_KERNEL := true
-
-# Kill lineage kernel build task while preserving kernel
+# Kill kernel build task while preserving kernel
 TARGET_NO_KERNEL_OVERRIDE := true
 
-# Workaround to make lineage's soong generator work
+# Workaround to make soong generator work
 TARGET_KERNEL_SOURCE := $(KERNEL_PATH)/kernel-headers
 
 # Kernel
 TARGET_PREBUILT_KERNEL := $(KERNEL_PATH)/kernel
 PRODUCT_COPY_FILES += \
-	$(TARGET_PREBUILT_KERNEL):kernel
+    $(TARGET_PREBUILT_KERNEL):kernel
 
 # Kernel modules
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules/ramdisk/modules.load))
