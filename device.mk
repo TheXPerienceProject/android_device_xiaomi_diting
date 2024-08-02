@@ -82,7 +82,8 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@7.1-impl \
     android.hardware.audio.effect@7.0-impl \
     android.hardware.audio.service \
-    android.hardware.soundtrigger@2.3-impl
+    android.hardware.soundtrigger@2.3-impl \
+    libaudioroute.vendor
 
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
@@ -159,7 +160,13 @@ PRODUCT_PACKAGES += \
     camera.device@1.0-impl \
     libcamera2ndk_vendor \
     vendor.qti.hardware.camera.aon@1.0.vendor \
-    vendor.qti.hardware.camera.postproc@1.0.vendor
+    vendor.qti.hardware.camera.postproc@1.0.vendor \
+    libutilscallstack.vendor \
+    libjpeg.vendor \
+    libexif.vendor \
+    libpiex_shim \
+	libcamera_metadata.vendor \
+    libyuv.vendor
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -330,7 +337,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libjson \
     libjsoncpp \
-    libjsoncpp_ndk
+    libjsoncpp_ndk \
+    libjsoncpp.vendor
 
 # Keymaster
 PRODUCT_PACKAGES += \
@@ -393,11 +401,28 @@ PRODUCT_PACKAGES += \
     libcodec2_vndk.vendor \
     libpalclient \
     libsfplugin_ccodec_utils.vendor \
-    dolbycodec_shim
+    dolbycodec_shim \
+    libopus.vendor \
+    libstagefright_amrnb_common.vendor \
+    libstagefright_enc_common.vendor \
+    libstagefright_softomx_plugin.vendor \
+    libstagefright_softomx.vendor \
+    libstagefrighthw \
+    libvorbisidec.vendor \
+    libvpx.vendor
 
 PRODUCT_PACKAGES += \
     init.qti.media.rc \
     init.qti.media.sh
+
+# Misc
+PRODUCT_PACKAGES += \
+	libnetutils.vendor \
+    libpng.vendor \
+    libssl.vendor \
+    libcurl.vendor \
+    libsqlite.vendor \
+    liblz4.vendor
 
 # Network
 PRODUCT_PACKAGES += \
@@ -626,6 +651,7 @@ PRODUCT_PACKAGES += \
     qti_telephony_utils.xml \
     qti_telephony_utils_prd.xml \
     telephony-ext \
+	libsysutils.vendor \
     XiaomiEuicc
 
 PRODUCT_BOOT_JARS += \
@@ -654,7 +680,8 @@ PRODUCT_PACKAGES += \
 # USB
 PRODUCT_HAS_GADGET_HAL := true
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.3-service-qti
+    android.hardware.usb@1.3-service-qti \
+    libusbhost.vendor
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.accessory.xml \
@@ -694,7 +721,8 @@ PRODUCT_PACKAGES += \
     libwifi-hal-qcom \
     wpa_cli \
     wpa_supplicant \
-    wpa_supplicant.conf
+    wpa_supplicant.conf \
+    libwifi-system-iface.vendor
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.aware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.aware.xml \
@@ -716,6 +744,7 @@ PRODUCT_COPY_FILES += \
 
 # WiFi Display
 PRODUCT_PACKAGES += \
+	libprocessgroup.vendor \
     libnl \
     libnl.vendor \
     libwfdaac_vendor
