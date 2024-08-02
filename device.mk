@@ -478,10 +478,6 @@ PRODUCT_PACKAGES += \
     WifiResTarget \
     WifiResTarget_spf
 
-# Overlay ota
-PRODUCT_PACKAGES += \
-   matrixx_updater
-
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
 
