@@ -95,6 +95,15 @@ function set_density_by_fb() {
             "mondrian")
             setprop vendor.display.lcd_density 560
             ;;
+            "marble")
+            setprop vendor.display.lcd_density 440
+            ;;
+            "yudi")
+            setprop vendor.display.lcd_density 360
+            ;;
+            "liuqin")
+            setprop vendor.display.lcd_density 400
+            ;;
             *)
             setprop vendor.display.lcd_density 480
             ;;
@@ -137,6 +146,15 @@ function set_density_by_fb() {
             ;;
             "ziyi")
             setprop vendor.display.lcd_density 440
+            ;;
+            "marble")
+            setprop vendor.display.lcd_density 440
+            ;;
+            "yudi")
+            setprop vendor.display.lcd_density 360
+            ;;
+            "liuqin")
+            setprop vendor.display.lcd_density 400
             ;;
         esac
     fi
@@ -507,6 +525,22 @@ case "$product" in
         *)
         ;;
 esac
+
+case "$product" in
+        "yudi")
+         setprop vendor.display.lcd_density 360
+         ;;
+        *)
+        ;;
+esac
+case "$product" in
+        "liuqin")
+         setprop vendor.display.lcd_density 400
+         ;;
+        *)
+        ;;
+esac
+
 # Setup display nodes & permissions
 # HDMI can be fb1 or fb2
 # Loop through the sysfs nodes and determine

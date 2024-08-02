@@ -2034,13 +2034,13 @@ vendor/bin/msm_irqbalance
 vendor/etc/msm_irqbalance.conf
 
 # Kernel
-vendor/bin/init.kernel.post_boot-cape.sh
-vendor/bin/init.kernel.post_boot-diwali.sh
-vendor/bin/init.kernel.post_boot-taro.sh
-vendor/bin/init.kernel.post_boot.sh
-vendor/bin/init.qti.kernel.sh
-vendor/bin/vendor_modprobe.sh
-vendor/etc/init/hw/init.qti.kernel.rc
+#vendor/bin/init.kernel.post_boot-cape.sh
+#vendor/bin/init.kernel.post_boot-diwali.sh
+#vendor/bin/init.kernel.post_boot-taro.sh
+#vendor/bin/init.kernel.post_boot.sh
+#vendor/bin/init.qti.kernel.sh
+#vendor/bin/vendor_modprobe.sh
+#vendor/etc/init/hw/init.qti.kernel.rc
 
 # Keymaster - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/bin/hw/android.hardware.keymaster@4.0-service-qti|7b7aa611dc6a7e2a45aed940037256ef34f3a5b7
@@ -2605,7 +2605,7 @@ vendor/lib64/vendor.qti.qspmhal@1.0-impl.so
 vendor/lib64/vendor.qti.qspmhal@1.0.so
 
 # QTI
-vendor/bin/init.qti.write.sh
+#vendor/bin/init.qti.write.sh
 vendor/bin/qtigetprop
 vendor/bin/qtisetprop
 vendor/lib/libsoc_helper.so
