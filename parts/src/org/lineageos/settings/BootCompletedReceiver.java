@@ -31,7 +31,6 @@ import android.view.Display;
 import android.view.Display.HdrCapabilities;
 import org.lineageos.settings.display.ColorModeService;
 
-import org.lineageos.settings.dolby.DolbyUtils;
 import org.lineageos.settings.doze.AodBrightnessService;
 import org.lineageos.settings.doze.PocketService;
 import org.lineageos.settings.refreshrate.RefreshUtils;
@@ -67,9 +66,6 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         } catch (Exception e) {
             Log.d(TAG, "Dirac is not present in system");
         }*/
-
-        // Dolby Atmos
-        DolbyUtils.getInstance(context).onBootCompleted();
 
         // Pocket
         PocketService.startService(context);
