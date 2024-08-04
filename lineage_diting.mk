@@ -24,12 +24,12 @@ PRODUCT_NAME := lineage_diting
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="diting_global-user 14 UKQ1.230917.001 V816.0.4.0.ULFMIXM release-keys" \
+    PRIVATE_BUILD_DESC="diting_global-user 14 UKQ1.230917.001 V816.0.5.0.ULFMIXM release-keys" \
     TARGET_DEVICE=$(PRODUCT_SYSTEM_DEVICE) \
     TARGET_PRODUCT=$(PRODUCT_SYSTEM_NAME)
     PRODUCT_NAME=diting_global
 
-BUILD_FINGERPRINT := Xiaomi/diting_global/diting:14/UKQ1.230917.001/V816.0.4.0.ULFMIXM:user/release-keys
+BUILD_FINGERPRINT := Xiaomi/diting_global/diting:14/UKQ1.230917.001/V816.0.5.0.ULFMIXM:user/release-keys
 
 # RisingOS flags
 PRODUCT_NO_CAMERA := false
