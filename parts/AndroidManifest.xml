@@ -55,11 +55,6 @@
         </receiver>
 
         <provider
-            android:name=".SummaryProvider"
-            android:authorities="org.lineageos.settings.device.summary">
-        </provider>
-
-        <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="${applicationId}.androidx-startup"
             tools:replace="android:authorities"/>
