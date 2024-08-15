@@ -2321,7 +2321,7 @@ vendor/lib/libstagefright_flacdec.so
 
 # Perf sys
 system_ext/etc/overscrolleroptimization/config.json
-system_ext/app/PowerSaveMode/PowerSaveMode.apk
+#system_ext/app/PowerSaveMode/PowerSaveMode.apk
 system_ext/bin/perfservice
 system_ext/bin/qspmsvc
 system_ext/etc/init/perfservice.rc
