@@ -2616,8 +2616,10 @@ vendor/lib64/libqmiservices.so
 vendor/bin/vendor.qti.qspmhal@1.0-service
 vendor/etc/init/vendor.qti.qspmhal@1.0-service.rc
 vendor/etc/seccomp_policy/qspm.policy
+vendor/lib/vendor.qti.qspmhal-V1-ndk.so
 vendor/lib/vendor.qti.qspmhal@1.0-impl.so
 vendor/lib/vendor.qti.qspmhal@1.0.so
+vendor/lib64/vendor.qti.qspmhal-V1-ndk.so
 vendor/lib64/vendor.qti.qspmhal@1.0-impl.so
 vendor/lib64/vendor.qti.qspmhal@1.0.so
 
