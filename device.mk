@@ -407,6 +407,7 @@ PRODUCT_PACKAGES += \
     libstagefright_enc_common.vendor \
     libstagefright_softomx_plugin.vendor \
     libstagefright_softomx.vendor \
+    libstagefright_omx.vendor \
     libstagefrighthw \
     libvorbisidec.vendor \
     libvpx.vendor
