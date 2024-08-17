@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2022 The LineageOS Project
+ * Copyright (C) 2024 The XPerience Project
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -15,17 +16,20 @@
 #include <fstream>
 #include <thread>
 
-#include "mi_disp.h"
 #include "UdfpsHandler.h"
 #include "xiaomi_touch.h"
 
 #define COMMAND_NIT 10
 #define PARAM_NIT_FOD 1
+#define PARAM_NIT_FOD6 6
 #define PARAM_NIT_NONE 0
 
 #define COMMAND_FOD_PRESS_STATUS 1
 #define PARAM_FOD_PRESSED 1
 #define PARAM_FOD_RELEASED 0
+
+#define COMMAND_FOD_PRESS_X 2
+#define COMMAND_FOD_PRESS_Y 3
 
 #define FOD_STATUS_OFF 0
 #define FOD_STATUS_ON 1
@@ -38,9 +42,39 @@
 
 #define DISP_FEATURE_PATH "/dev/mi_display/disp_feature"
 
+#define MI_DISP_EVENT_FOD 2
+#define MI_DISP_EVENT_BRIGHTNESS_CLONE 5
+
+#define MI_DISP_IOCTL_REGISTER_EVENT _IOW('D', 0x07, struct disp_event_req)
+#define MI_DISP_IOCTL_SET_LOCAL_HBM _IOW('D', 0x0E, struct disp_local_hbm_req)
+
 #define FOD_PRESS_STATUS_PATH "/sys/class/touch/touch_dev/fod_press_status"
 
+/* 
+ * Mi display params
+ */
+struct disp_base {
+	__u32 flag;
+	__u32 disp_id;
+};
+
+struct disp_event_req {
+    struct disp_base base;
+    __u32 type;
+};
+
+struct disp_local_hbm_req {
+	struct disp_base base;
+	__u32 local_hbm_value;
+};
+
 namespace {
+
+template <typename T>
+static void set(const std::string& path, const T& value) {
+    std::ofstream file(path);
+    file << value;
+}
 
 static bool readBool(int fd) {
     char c;
@@ -61,6 +95,17 @@ static bool readBool(int fd) {
     return c != '0';
 }
 
+static ssize_t readBuffer(int fd, char *buffer, int size) {
+    ssize_t rc;
+    rc = read(fd, buffer, size);
+    if (rc == -1) {
+        LOG(ERROR) << "failed to read buffer from fd, err: " << rc;
+        return -1;
+    }
+
+    return rc;
+}
+
 }  // anonymous namespace
 
 class XiaomiSm8450UdfpsHander : public UdfpsHandler {
@@ -68,12 +113,55 @@ class XiaomiSm8450UdfpsHander : public UdfpsHandler {
     void init(xiaomi_fingerprint_device_t* device) {
         mDevice = device;
         touch_fd_ = android::base::unique_fd(open(TOUCH_DEV_PATH, O_RDWR));
+        //enable fod
+        setFodStatus(FOD_STATUS_ON);
+
         disp_fd_ = android::base::unique_fd(open(DISP_FEATURE_PATH, O_RDWR));
-        std::string fpVendorN = android::base::GetProperty("persist.vendor.sys.fp.vendor", "none");
-        //Show the debug info to recognize wich vendor we have
-        LOG(INFO) << __func__ << "fingerprint vendor is: " << fpVendorN;
-        //define as fpc
-        isFpc = fpVendorN == "fpc_fod";
+        capEnable = false;
+        fpPressed = false;
+
+        fodX = 0;
+        fodY = 0;
+
+        std::thread([this]() {
+            int fd = open(DISP_FEATURE_PATH, O_RDWR | O_CLOEXEC);
+            if (fd < 0) {
+                LOG(ERROR) << "failed to open fd, err: " << fd;
+                return;
+            }
+
+            // Fod
+            registerDisplayEvent(fd, 0, MI_DISP_EVENT_FOD);
+            registerDisplayEvent(fd, 1, MI_DISP_EVENT_FOD);
+
+            // clone the brightness as per ximi does
+            registerDisplayEvent(fd, 0, MI_DISP_EVENT_BRIGHTNESS_CLONE);
+            registerDisplayEvent(fd, 1, MI_DISP_EVENT_BRIGHTNESS_CLONE);
+
+            struct pollfd dispEventPoll = {
+                    .fd = fd,
+                    .events = POLLIN | POLLRDNORM,
+                    .revents = 0,
+            };
+
+            while (true) {
+                int rc = poll(&dispEventPoll, 1, -1);
+                if (rc < 0) {
+                    LOG(ERROR) << "failed to poll fd, err: " << rc;
+                    continue;
+                }
+
+                char buffer[0x400];
+                memset(buffer, 0, sizeof(buffer));
+                ssize_t bufferSize = readBuffer(fd, buffer, sizeof(buffer));
+                if (bufferSize < 0) {
+                    LOG(ERROR) << "read Display event failed, err: " << rc;
+                    continue;
+                }
+
+                handleDisplayEvent(buffer, bufferSize);
+            }
+        }).detach();
 
         std::thread([this]() {
             int fd = open(FOD_PRESS_STATUS_PATH, O_RDONLY);
@@ -95,99 +183,162 @@ class XiaomiSm8450UdfpsHander : public UdfpsHandler {
                     continue;
                 }
 
-                mDevice->extCmd(mDevice, COMMAND_FOD_PRESS_STATUS,
-                                readBool(fd) ? PARAM_FOD_PRESSED : PARAM_FOD_RELEASED);
+                bool pressed = readBool(fd);
+                LOG(DEBUG) << __func__ << " extCmd: COMMAND_FOD_PRESS_STATUS " << pressed;
+
+                extCmd(COMMAND_FOD_PRESS_STATUS,
+                                pressed ? PARAM_FOD_PRESSED : PARAM_FOD_RELEASED);
             }
         }).detach();
     }
 
-    void onFingerDown(uint32_t /*x*/, uint32_t /*y*/, float /*minor*/, float /*major*/) {
-        LOG(INFO) << __func__;
-        /* fpc fp + goodix touch devices returns vendor code 22 when waiting for fp
-           but also seems fpc is not working in proper form, is delayed
-           so enable fod_status
-        */
-        if (isFpc) {
-            setFodStatus(FOD_STATUS_ON);
-        }
+    void extCmd(int32_t cmd, int32_t param) {
+        mDevice->extCmd(mDevice, COMMAND_FOD_PRESS_X, fodX);
+        mDevice->extCmd(mDevice, COMMAND_FOD_PRESS_Y, fodY);
+        mDevice->extCmd(mDevice, cmd, param);
+    }
 
-        setFingerDown(true);
+    void onFingerDown(uint32_t /*x*/, uint32_t /*y*/, float /*minor*/, float /*major*/) {
+        // fodX = x;
+        // fodY = y;
+        LOG(INFO) << __func__;
+        setFingerDown();
     }
 
     void onFingerUp() {
         LOG(INFO) << __func__;
-        setFingerDown(false);
+        setFingerUp();
     }
 
     void onAcquired(int32_t result, int32_t vendorCode) {
         LOG(INFO) << __func__ << " result: " << result << " vendorCode: " << vendorCode;
-        if (result == FINGERPRINT_ACQUIRED_GOOD) {
-            setFingerDown(false);
-            if (!enrolling) {
-                setFodStatus(FOD_STATUS_OFF);
-            }
-         } else if (isFpc && vendorCode == 22) {
-            /* if the fod is fpc we wait for vendorcode 22*/
-            setFodStatus(FOD_STATUS_ON);
-         } else if (vendorCode >= 21 && vendorCode <= 23) {
-            /*
-             * vendorCode = 21 waiting for fingerprint authentication
-             * vendorCode = 23 waiting for fingerprint enroll
-             */
-            setFodStatus(FOD_STATUS_ON);
+        if (result == FINGERPRINT_ACQUIRED_GOOD && fpPressed) {
+            setFingerUp();
+        }
+    }
+
+    void onEnrollResult(uint32_t fingerId, uint32_t groupId, uint32_t remaining) {
+        LOG(INFO) << __func__ << " fingerId: " << fingerId << " remaining: " << remaining;
+        if (remaining == 0 && fpPressed) {
+            setFingerUp();
         }
     }
 
     void cancel() {
         LOG(INFO) << __func__;
-        enrolling = false;
-
-        setFingerDown(false);
-        setFodStatus(FOD_STATUS_OFF);
+        setFingerUp();
     }
 
     void preEnroll() {
-        LOG(INFO) << __func__;
-        enrolling = true;
+        LOG(DEBUG) << __func__;
     }
 
     void enroll() {
-        LOG(INFO) << __func__;
-        enrolling = true;
+        LOG(DEBUG) << __func__;
     }
 
     void postEnroll() {
-        LOG(INFO) << __func__;
-        enrolling = false;
-
-        setFodStatus(FOD_STATUS_OFF);
-   }
+        LOG(DEBUG) << __func__;
+    }
 
   private:
     xiaomi_fingerprint_device_t* mDevice;
     android::base::unique_fd touch_fd_;
     android::base::unique_fd disp_fd_;
-    bool enrolling = false;
-    bool isFpc;
+    int brightnessValue;
+    bool capEnable;
+    bool fpPressed;
+    uint32_t fodX;
+    uint32_t fodY;
+
+    void registerDisplayEvent(int fd, int id, int type) {
+        disp_event_req req;
+        req.base.flag = 0;
+        req.base.disp_id = id;
+        req.type = type;
+        ioctl(fd, MI_DISP_IOCTL_REGISTER_EVENT, &req);
+    }
+
+    void setDisplayLocalHBM(int id, int value) {
+        disp_local_hbm_req req;
+        req.base.flag = 0;
+        req.base.disp_id = id;
+        req.local_hbm_value = value;
+        ioctl(disp_fd_.get(), MI_DISP_IOCTL_SET_LOCAL_HBM, &req);
+    }
 
     void setFodStatus(int value) {
         int buf[MAX_BUF_SIZE] = {TOUCH_ID, Touch_Fod_Enable, value};
         ioctl(touch_fd_.get(), TOUCH_IOC_SET_CUR_VALUE, &buf);
     }
 
-    void setFingerDown(bool pressed) {
-        mDevice->extCmd(mDevice, COMMAND_NIT, pressed ? PARAM_NIT_FOD : PARAM_NIT_NONE);
-
-        int buf[MAX_BUF_SIZE] = {TOUCH_ID, THP_FOD_DOWNUP_CTL, pressed ? 1 : 0};
+    void setFingerUp() {
+        fpPressed = false;
+        setDisplayLocalHBM(0, 0);
+        int buf[MAX_BUF_SIZE] = {TOUCH_ID, THP_FOD_DOWNUP_CTL, 0};
         ioctl(touch_fd_.get(), TOUCH_IOC_SET_CUR_VALUE, &buf);
+    }
 
-        // Request HBM
-        disp_local_hbm_req req;
-        req.base.flag = 0;
-        req.base.disp_id = MI_DISP_PRIMARY;
-        req.local_hbm_value = pressed ? LHBM_TARGET_BRIGHTNESS_WHITE_1000NIT
-                                      : LHBM_TARGET_BRIGHTNESS_OFF_FINGER_UP;
-        ioctl(disp_fd_.get(), MI_DISP_IOCTL_SET_LOCAL_HBM, &req);
+    void setFingerDown() {
+        fpPressed = true;
+        setDisplayLocalHBM(0, 2);
+        int buf[MAX_BUF_SIZE] = {TOUCH_ID, THP_FOD_DOWNUP_CTL, 1};
+        ioctl(touch_fd_.get(), TOUCH_IOC_SET_CUR_VALUE, &buf);
+    }
+
+    void handleDisplayEvent(const char* buffer, size_t bufferSize) {
+        if (bufferSize < 0xC) {
+            LOG(ERROR) << "Invalid event size " << bufferSize << " expect 0xC";
+            return;
+        } else if (bufferSize > 0xF) {
+            int pos = 0;
+            int handledSize = 0;
+            int dataSize = bufferSize - 15;
+            do {
+                const char *p = &buffer[pos];
+                uint32_t type = *(uint32_t*)&buffer[pos + 4];
+
+                if (type == MI_DISP_EVENT_BRIGHTNESS_CLONE) {
+                    // Handle brightness clone event
+                    if ((*((uint32_t*)p + 2) & 0xFFFFFFFE) == 12) {
+                        LOG(ERROR) << "Invalid Backlight value";
+                    } else {
+                        brightnessValue = *((int *)p + 3);
+                    }
+                } else if (type == MI_DISP_EVENT_FOD) {
+                    // Handle FOD event
+                    uint32_t value = *((uint32_t *)p + 3);
+                    handleFodEvent(value);
+                }
+                handledSize += *((uint32_t*)p + 2);
+                pos = handledSize;
+            } while (dataSize > handledSize);
+        }
+    }
+
+    void handleFodEvent(uint32_t value) {
+        if ((~value & 3) != 0) {
+            if ((value & 8) != 0) {
+                if ((value & 4) != 0) {
+                    LOG(DEBUG) << "fod low brightness capture start";
+                    // Adjusting sharpness for low light conditions
+                    extCmd(COMMAND_NIT, PARAM_NIT_FOD6); // Keep this call for future devices
+                } else {
+                    // Adjusting sharpness for low light conditions
+                    LOG(DEBUG) << "fod high brightness capture start";
+                    extCmd(COMMAND_NIT, PARAM_NIT_FOD);
+                }
+                capEnable = true;
+            } else {
+                if (capEnable) {
+                    LOG(DEBUG) << "fod capture stop";
+                    capEnable = false;
+                    extCmd(COMMAND_NIT, PARAM_NIT_NONE);
+                }
+            }
+        } else {
+            // Handle other FOD events (if needed)
+        }
     }
 };
 
