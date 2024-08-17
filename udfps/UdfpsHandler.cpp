@@ -7,6 +7,7 @@
 #define LOG_TAG "UdfpsHandler.diting"
 
 #include <android-base/logging.h>
+#include <android-base/properties.h>
 #include <android-base/unique_fd.h>
 
 #include <poll.h>
@@ -68,6 +69,11 @@ class XiaomiSm8450UdfpsHander : public UdfpsHandler {
         mDevice = device;
         touch_fd_ = android::base::unique_fd(open(TOUCH_DEV_PATH, O_RDWR));
         disp_fd_ = android::base::unique_fd(open(DISP_FEATURE_PATH, O_RDWR));
+        std::string fpVendorN = android::base::GetProperty("persist.vendor.sys.fp.vendor", "none");
+        //Show the debug info to recognize wich vendor we have
+        LOG(INFO) << __func__ << "fingerprint vendor is: " << fpVendorN;
+        //define as fpc
+        isFpc = fpVendorN == "fpc_fod";
 
         std::thread([this]() {
             int fd = open(FOD_PRESS_STATUS_PATH, O_RDONLY);
@@ -97,6 +103,14 @@ class XiaomiSm8450UdfpsHander : public UdfpsHandler {
 
     void onFingerDown(uint32_t /*x*/, uint32_t /*y*/, float /*minor*/, float /*major*/) {
         LOG(INFO) << __func__;
+        /* fpc fp + goodix touch devices returns vendor code 22 when waiting for fp
+           but also seems fpc is not working in proper form, is delayed
+           so enable fod_status
+        */
+        if (isFpc) {
+            setFodStatus(FOD_STATUS_ON);
+        }
+
         setFingerDown(true);
     }
 
@@ -112,7 +126,10 @@ class XiaomiSm8450UdfpsHander : public UdfpsHandler {
             if (!enrolling) {
                 setFodStatus(FOD_STATUS_OFF);
             }
-         } else if (vendorCode == 21 && vendorCode == 23) {
+         } else if (isFpc && vendorCode == 22) {
+            /* if the fod is fpc we wait for vendorcode 22*/
+            setFodStatus(FOD_STATUS_ON);
+         } else if (vendorCode >= 21 && vendorCode <= 23) {
             /*
              * vendorCode = 21 waiting for fingerprint authentication
              * vendorCode = 23 waiting for fingerprint enroll
@@ -151,6 +168,7 @@ class XiaomiSm8450UdfpsHander : public UdfpsHandler {
     android::base::unique_fd touch_fd_;
     android::base::unique_fd disp_fd_;
     bool enrolling = false;
+    bool isFpc;
 
     void setFodStatus(int value) {
         int buf[MAX_BUF_SIZE] = {TOUCH_ID, Touch_Fod_Enable, value};
