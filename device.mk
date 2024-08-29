@@ -662,7 +662,7 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors-service.xiaomi-multihal \
 
 PRODUCT_PACKAGES += \
-    sensor-notifier
+    sensors.xiaomi.v2:64
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/sensors/hals.conf:$(TARGET_COPY_OUT_ODM)/etc/sensors/hals.conf
