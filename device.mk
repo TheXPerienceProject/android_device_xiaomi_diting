@@ -22,6 +22,8 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 # Call the proprietary setup.
 $(call inherit-product, vendor/xiaomi/diting/diting-vendor.mk)
 
+# -include vendor/lineage-priv/keys/keys.mk
+
 PRODUCT_SHIPPING_API_LEVEL := 31
 BOARD_SHIPPING_API_LEVEL := 31
 
@@ -131,9 +133,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml
 
-# Boot animation
-TARGET_BOOT_ANIMATION_RES := 1440
-
 # Boot control
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-impl-qti \
@@ -202,9 +201,9 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.xiaomi \
-    libudfpshandler \
-    sensors.xiaomi
+    android.hardware.biometrics.fingerprint@2.3.vendor \
+    android.hardware.biometrics.fingerprint-service.xiaomi \
+    libudfpshandler
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
@@ -245,6 +244,8 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator-V1-ndk.vendor \
     android.hardware.graphics.common-V3-ndk \
     android.hardware.graphics.common-V3-ndk.vendor \
+    android.hardware.graphics.common-V4-ndk \
+    android.hardware.graphics.common-V4-ndk.vendor \
     libgralloc.qti \
     libgui_vendor \
     libqdMetaData \
@@ -302,6 +303,7 @@ PRODUCT_PACKAGES += \
     android.hidl.allocator@1.0.vendor \
     libhidltransport \
     libhidltransport.vendor \
+    libhidlbase_shim \
     libhwbinder \
     libhwbinder.vendor
 
@@ -584,6 +586,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.recovery.qcom.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.qcom.rc \
     $(LOCAL_PATH)/rootdir/etc/init.sm8475.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.sm8475.rc \
     $(LOCAL_PATH)/rootdir/etc/init.target.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.target.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.xiaomi.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.xiaomi.rc \
     $(LOCAL_PATH)/rootdir/etc/init.touch_report.rc:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/etc/init/init.touch_report.rc \
     $(LOCAL_PATH)/rootdir/etc/init.touch_report.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.touch_report.rc \
     $(LOCAL_PATH)/rootdir/etc/ueventd-odm.rc:$(TARGET_COPY_OUT_ODM)/etc/ueventd.rc \
@@ -771,4 +774,4 @@ PRODUCT_COPY_FILES += \
     prebuilts/vndk/v33/arm/arch-arm-armv7-a-neon/shared/vndk-core/libstagefright_foundation.so:$(TARGET_COPY_OUT_VENDOR)/lib/libstagefright_foundation-v33.so
 
 # Call the MiuiCamera setup
-$(call inherit-product-if-exists, vendor/xiaomi/camera/miuicamera.mk)
+$(call inherit-product-if-exists, device/xiaomi/miuicamera-diting/device.mk)

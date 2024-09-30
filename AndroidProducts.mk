@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_diting.mk
+    $(LOCAL_DIR)/voltage_diting.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_diting-eng \
-    lineage_diting-userdebug \
-    lineage_diting-user
+    voltage_diting-eng \
+    voltage_diting-userdebug \
+    voltage_diting-user

@@ -110,7 +110,7 @@ static ssize_t readBuffer(int fd, char *buffer, int size) {
 
 class XiaomiSm8450UdfpsHander : public UdfpsHandler {
   public:
-    void init(xiaomi_fingerprint_device_t* device) {
+    void init(fingerprint_device_t* device) {
         mDevice = device;
         touch_fd_ = android::base::unique_fd(open(TOUCH_DEV_PATH, O_RDWR));
         //enable fod
@@ -242,7 +242,7 @@ class XiaomiSm8450UdfpsHander : public UdfpsHandler {
     }
 
   private:
-    xiaomi_fingerprint_device_t* mDevice;
+    fingerprint_device_t* mDevice;
     android::base::unique_fd touch_fd_;
     android::base::unique_fd disp_fd_;
     int brightnessValue;

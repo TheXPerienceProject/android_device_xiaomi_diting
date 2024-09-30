@@ -42,7 +42,7 @@
 /data/vendor/fpdump/(/.*)?	                                              u:object_r:vendor_fingerprint_data_file:s0
 /data/vendor/misc/mi_fp(/.*)?                                             u:object_r:vendor_fingerprint_data_file:s0
 /mnt/vendor/persist/goodix(/.*)?                                          u:object_r:vendor_fingerprint_data_file:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.xiaomi    u:object_r:hal_fingerprint_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint-service\.xiaomi    u:object_r:hal_fingerprint_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hardware\.dtool@1\.0-service   u:object_r:hal_fingerprint_default_exec:s0
 # Stock Fp Daemon to test if causes or not issues Dx
 /(vendor|system/vendor)/bin/hw/mfp-daemon                                 u:object_r:hal_fingerprint_default_exec:s0
@@ -154,6 +154,7 @@
 
 # Vibrator
 /vendor/bin/hw/vendor\.qti\.hardware\.vibrator\.service\.xiaomi_taro           u:object_r:hal_vibrator_default_exec:s0
+/vendor/bin/hw/vendor\.qti\.hardware\.vibrator\.service\.xiaomi           u:object_r:hal_vibrator_default_exec:s0
 
 # Wakeup nodes
 /sys/devices/platform/soc/soc:qcom,msm-audio-apr/soc:qcom,msm-audio-apr:qcom,q6core-audio/soc:qcom,msm-audio-apr:qcom,q6core-audio:sound/Listen\s[0-9]+\sAudio\sService/wakeup/wakeup[0-9]+(/.*)? u:object_r:sysfs_wakeup:s0

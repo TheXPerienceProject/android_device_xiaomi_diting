@@ -33,7 +33,7 @@ TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv9-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := cortex-a510
+TARGET_CPU_VARIANT := kryo385
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-2a
@@ -76,7 +76,7 @@ TARGET_BUILD_APERTURE_CAMERA := false
 TARGET_INCLUDES_MIUI_CAMERA := true
 TARGET_USES_MIUI_CAMERA := true
 
-TARGET_CAMERA_PACKAGE_NAME := com.android.camera
+#TARGET_CAMERA_PACKAGE_NAME := com.android.camera
 $(call soong_config_set, qtidisplay, use_ycrcb_camera_encode, true)
 
 # Display
@@ -277,7 +277,7 @@ DEVICE_MANIFEST_CAPE_FILES := \
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(DEVICE_PATH)/configs/vintf/vendor_framework_compatibility_matrix.xml \
     $(DEVICE_PATH)/configs/vintf/xiaomi_framework_compatibility_matrix.xml \
-    vendor/lineage/config/device_framework_matrix.xml
+    $(DEVICE_PATH)/configs/vintf/device_framework_matrix.xml
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
@@ -317,3 +317,14 @@ PRODUCT_VENDOR_MOVE_ENABLED := true
 
 # Inherit from proprietary files for miuicamera
 -include device/xiaomi/miuicamera-diting/BoardConfig.mk
+
+SOONG_CONFIG_NAMESPACES += BIOMETRIC_XIAOMI
+SOONG_CONFIG_BIOMETRIC_XIAOMI += USES_UDFPS_SENSOR
+SOONG_CONFIG_BIOMETRIC_XIAOMI_USES_UDFPS_SENSOR := true
+SOONG_CONFIG_BIOMETRIC_XIAOMI += UDFPS_LOCATION_X
+SOONG_CONFIG_BIOMETRIC_XIAOMI_UDFPS_LOCATION_X := 610
+SOONG_CONFIG_BIOMETRIC_XIAOMI += UDFPS_LOCATION_Y
+SOONG_CONFIG_BIOMETRIC_XIAOMI_UDFPS_LOCATION_Y := 2444
+SOONG_CONFIG_BIOMETRIC_XIAOMI += UDFPS_RADIUS
+SOONG_CONFIG_BIOMETRIC_XIAOMI_UDFPS_RADIUS := 114
+

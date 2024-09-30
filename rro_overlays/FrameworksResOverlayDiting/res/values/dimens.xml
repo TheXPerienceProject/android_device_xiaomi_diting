@@ -26,4 +26,5 @@
     <dimen name="system_app_widget_background_radius">16.73dp</dimen>
     <dimen name="system_app_widget_inner_radius">8.73dp</dimen>
     <dimen name="notification_min_height">106dp</dimen>
+    <dimen name="pixel_pitch" format="float">2.242152</dimen>
 </resources>
