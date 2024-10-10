@@ -107,6 +107,7 @@ vendor.dolbyv.                                        u:object_r:vendor_dolbyv_p
 
 # Fingerprint
 persist.vendor.fingerprint.                           u:object_r:vendor_fp_prop:s0
+ro.vendor.fingerprint.                                u:object_r:vendor_fp_prop:s0
 persist.vendor.sys.fp.                                u:object_r:vendor_fp_prop:s0
 persist.vendor.sys.fp.info                            u:object_r:vendor_fp_info_prop:s0
 persist.vendor.sys.fp.uid                             u:object_r:vendor_fp_info_prop:s0
