@@ -32,4 +32,5 @@
     <!-- Preferred max refresh rate at keyguard, if supported by the display. -->
     <integer name="config_keyguardMaxRefreshRate">60</integer>
 
+    <dimen name="pixel_pitch" format="float" type="dimen">55.9</dimen>
 </resources>
