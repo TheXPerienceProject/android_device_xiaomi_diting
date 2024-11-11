@@ -139,7 +139,8 @@ BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
     androidboot.memcg=1 \
     androidboot.usbcontroller=a600000.dwc3 \
-    androidboot.init_fatal_reboot_target=recovery
+    androidboot.init_fatal_reboot_target=recovery \
+    androidboot.selinux=permissive
 
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
@@ -213,8 +214,6 @@ BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE := 1887436800
 BOARD_SYSTEM_EXTIMAGE_EXTFS_INODE_COUNT := -1
 BOARD_SYSTEM_EXTIMAGE_PARTITION_RESERVED_SIZE := 104857600
 endif
-
--include vendor/lineage/config/BoardConfigReservedSize.mk
 
 # Disable sparse on all filesystem images
 TARGET_USERIMAGES_SPARSE_EROFS_DISABLED := true
@@ -316,6 +315,3 @@ PRODUCT_VENDOR_MOVE_ENABLED := true
 
 # Inherit from the proprietary version
 -include vendor/xiaomi/diting/BoardConfigVendor.mk
-
-# Inherit from proprietary files for miuicamera
--include device/xiaomi/miuicamera-diting/BoardConfig.mk

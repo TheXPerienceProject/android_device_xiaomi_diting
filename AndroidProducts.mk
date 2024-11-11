@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/voltage_diting.mk
+    $(LOCAL_DIR)/xperiencee_diting.mk
 
 COMMON_LUNCH_CHOICES := \
-    voltage_diting-eng \
-    voltage_diting-userdebug \
-    voltage_diting-user
+    xperiencee_diting-eng \
+    xperiencee_diting-userdebug \
+    xperiencee_diting-user
