@@ -29,7 +29,6 @@
         <item>/system/lib/libhwui.so</item>
         <item>/system/lib64/libhwui.so</item>
         <item>/system/lib64/libEGL.so</item>
-        <item>/system/lib64/libllvm-qgl.so</item>
         <item>/vendor/lib64/egl/libGLESv2_adreno.so</item>
         <item>/vendor/lib64/libllvm-qgl.so</item>
     </string-array>

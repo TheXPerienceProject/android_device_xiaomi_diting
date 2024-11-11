@@ -636,6 +636,9 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/xiaomi
 
+# Target platform
+TARGET_BOARD_PLATFORM := taro
+
 # Telephony
 PRODUCT_PACKAGES += \
     extphonelib \
@@ -672,10 +675,6 @@ PRODUCT_PACKAGES += \
 # Touchscreen
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
-
-# Touch sample rate
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.diting
 
 # USB
 PRODUCT_HAS_GADGET_HAL := true
