@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/xperiencee_diting.mk
+    $(LOCAL_DIR)/xperience_diting.mk
 
 COMMON_LUNCH_CHOICES := \
-    xperiencee_diting-eng \
-    xperiencee_diting-userdebug \
-    xperiencee_diting-user
+    xperience_diting-eng \
+    xperience_diting-userdebug \
+    xperience_diting-user

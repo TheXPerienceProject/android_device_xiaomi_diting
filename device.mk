@@ -22,8 +22,6 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 # Call the proprietary setup.
 $(call inherit-product, vendor/xiaomi/diting/diting-vendor.mk)
 
-# -include vendor/lineage-priv/keys/keys.mk
-
 PRODUCT_SHIPPING_API_LEVEL := 31
 BOARD_SHIPPING_API_LEVEL := 31
 
@@ -157,7 +155,7 @@ PRODUCT_PACKAGES += \
     libjpeg.vendor \
     libexif.vendor \
     libpiex_shim \
-	libcamera_metadata.vendor \
+    libcamera_metadata.vendor \
     libyuv.vendor
 
 PRODUCT_COPY_FILES += \
@@ -364,15 +362,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.keystore.app_attest_key.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.keystore.app_attest_key.xml \
     frameworks/native/data/etc/android.software.device_id_attestation.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.device_id_attestation.xml
 
-# Launcher3
-PRODUCT_ODM_PROPERTIES += \
-    persist.sys.default_launcher=0 \
-    persist.sys.quickswitch_pixel_shipped=0
-
-# Lineage Health
-PRODUCT_PACKAGES += \
-    vendor.lineage.health-service.default
-
 # Media
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
@@ -425,7 +414,7 @@ PRODUCT_PACKAGES += \
 
 # Misc
 PRODUCT_PACKAGES += \
-	libnetutils.vendor \
+    libnetutils.vendor \
     libpng.vendor \
     libssl.vendor \
     libcurl.vendor \
@@ -515,11 +504,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.perf@2.3 \
     vendor.qti.hardware.perf@2.3.vendor \
     vendor.qti.hardware.qspa-V1-ndk
-
-# Boot Jars
-#PRODUCT_BOOT_JARS += \
-#    QPerformance \
-#    UxPerformance
 
 # Power
 PRODUCT_PACKAGES += \
@@ -669,11 +653,8 @@ PRODUCT_PACKAGES += \
     qti_telephony_utils.xml \
     qti_telephony_utils_prd.xml \
     telephony-ext \
-	libsysutils.vendor \
+    libsysutils.vendor \
     XiaomiEuicc
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.cdma.xml \
@@ -764,7 +745,7 @@ PRODUCT_COPY_FILES += \
 
 # WiFi Display
 PRODUCT_PACKAGES += \
-	libprocessgroup.vendor \
+    libprocessgroup.vendor \
     libnl \
     libnl.vendor \
     libwfdaac_vendor
@@ -773,6 +754,3 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v33/arm64/arch-arm64-armv8-a/shared/vndk-core/libstagefright_foundation.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libstagefright_foundation-v33.so \
     prebuilts/vndk/v33/arm/arch-arm-armv7-a-neon/shared/vndk-core/libstagefright_foundation.so:$(TARGET_COPY_OUT_VENDOR)/lib/libstagefright_foundation-v33.so
-
-# Call the MiuiCamera setup
-$(call inherit-product-if-exists, device/xiaomi/miuicamera-diting/device.mk)
