@@ -700,6 +700,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_HAS_GADGET_HAL := true
 PRODUCT_PACKAGES += \
     android.hardware.usb-service.qti \
+    android.hardware.usb.gadget-service.qti \
     libusbhost.vendor
 
 PRODUCT_COPY_FILES += \
