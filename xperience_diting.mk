@@ -25,6 +25,6 @@ PRODUCT_MODEL := diting
 # GMS
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-BUILD_FINGERPRINT := Xiaomi/diting_global/diting:14/UKQ1.230917.001/V816.0.5.0.ULFMIXM:user/release-keys
+BUILD_FINGERPRINT := Xiaomi/diting/diting:12/SKQ1.230401.001/V816.0.7.0.ULFMIXM:user/release-keys
 TARGET_HAS_UDFPS := true
 
