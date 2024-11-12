@@ -1942,7 +1942,7 @@ vendor/lib64/vendor.qti.gnss-service.so
 # Graphics (Adreno)
 vendor/app/com.qualcomm.qti.gpudrivers.taro.api31/com.qualcomm.qti.gpudrivers.taro.api31.apk;PRESIGNED
 
-# Graphics (Adreno) - from oneplus12
+# Graphics (Adreno) - from oneplus12 qssi_64-user-15-AP3A.240617.008-1729273403218-release-keys
 vendor/gpu/kbc/sequence_manifest.bin
 vendor/gpu/kbc/unified_kbcs_32.bin
 vendor/gpu/kbc/unified_kbcs_64.bin
@@ -1986,7 +1986,7 @@ vendor/lib64/libllvm-glnext.so
 vendor/lib64/libllvm-qcom.so
 vendor/lib64/libllvm-qgl.so
 
-# Graphics (Vulkan) - from oneplus12
+# Graphics (Vulkan) - from oneplus12 qssi_64-user-15-AP3A.240617.008-1729273403218-release-keys
 vendor/lib/hw/vulkan.adreno.so
 vendor/lib64/hw/vulkan.adreno.so
 
