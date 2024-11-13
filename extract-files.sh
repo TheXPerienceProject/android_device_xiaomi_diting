@@ -85,6 +85,9 @@ function blob_fixup() {
     vendor/lib64/hw/audio.primary.taro.so | vendor/lib64/hw/audio.primary.taro.so)
         "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
         ;;
+    vendor/lib64/vendor.libdpmframework.so)
+        grep -q libhidlbase_shim.so "$2" || "$PATCHELF" --add-needed libhidlbase_shim.so "$2"
+        ;;
     esac
 }
 
