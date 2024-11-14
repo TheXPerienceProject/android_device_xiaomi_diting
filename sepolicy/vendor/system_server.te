@@ -11,3 +11,5 @@ binder_call(system_server, vendor_hal_citsensorservice_xiaomi_default)
 
 # mfp-daemon
 binder_call(system_server, hal_touchfeature_xiaomi_default)
+
+allow system_server vendor_file:file r_file_perms;
