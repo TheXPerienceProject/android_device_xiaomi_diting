@@ -67,3 +67,5 @@ ro.vendor.radio.fastdormancy=true
 
 # Temp
 persist.sys.enable_templimit=true
+
+ro.xpe.chipset=Snapdragon® 8+ Gen 1
