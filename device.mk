@@ -395,6 +395,7 @@ PRODUCT_PACKAGES += \
     libavservices_minijail_vendor \
     libavservices_minijail.vendor \
     libcodec2_hidl@1.0.vendor \
+    libcodec2_hidl@1.1.vendor \
     libcodec2_hidl@1.2.vendor \
     libcodec2_soft_common.vendor \
     libcodec2_vndk.vendor \
@@ -633,6 +634,11 @@ PRODUCT_PACKAGES += \
 
 # Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 31
+
+# Shims
+PRODUCT_PACKAGES += \
+    libui_shim \
+    libui_shim.vendor
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
