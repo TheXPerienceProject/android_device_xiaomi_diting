@@ -112,7 +112,9 @@ vendor/lib64/vendor\.xiaomi\.hardware\.misight-V1-ndk_platform\.so         u:obj
 /dev/socket/slad                                                          u:object_r:slad_socket:s0
 
 # Sameprocess hal
-/vendor/lib64/libqmi_encdec\.so                                           u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libqmi_encdec\.so                                           u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/vendor\.qti\.qspmhal-V1-ndk\.so                             u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/libui\.so                                                   u:object_r:same_process_hal_file:s0
 
 # Thermal
 /(vendor|system/vendor)/bin/mi_thermald                                   u:object_r:mi_thermald_exec:s0

@@ -1,0 +1,2 @@
+####### system_ext file ###############
+/(system_ext|system/system_ext)/lib(64)?/vendor\.qti\.qspmhal-V1-ndk\.so                                            u:object_r:same_process_hal_file:s0

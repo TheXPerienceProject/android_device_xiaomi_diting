@@ -133,15 +133,15 @@ TARGET_FORCE_PREBUILT_KERNEL := true
 BOARD_KERNEL_CMDLINE := \
     video=vfb:640x400,bpp=32,memsize=3072000 \
     disable_dma32=on \
-    swinfo.fingerprint=$(LINEAGE_VERSION) \
-    mtdoops.fingerprint=$(LINEAGE_VERSION)
+    swinfo.fingerprint=$(XPE_VERSION) \
+    mtdoops.fingerprint=$(XPE_VERSION)
 
 BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
     androidboot.memcg=1 \
     androidboot.usbcontroller=a600000.dwc3 \
-    androidboot.init_fatal_reboot_target=recovery \
-    androidboot.selinux=permissive
+    androidboot.init_fatal_reboot_target=recovery
+#    androidboot.selinux=permissive
 
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
