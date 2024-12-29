@@ -30,4 +30,4 @@ allow platform_app vendor_hal_fingerprint_hwservice_xiaomi:hwservice_manager { f
 binder_call(platform_app, hal_touchfeature_xiaomi_default)
 
 # Meme cam
-allow platform_app vendor_file:file { getattr };
+#allow platform_app vendor_file:file { getattr };

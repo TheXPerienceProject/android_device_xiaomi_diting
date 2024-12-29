@@ -1,2 +1,6 @@
 ####### system_ext file ###############
-/(system_ext|system/system_ext)/lib(64)?/vendor\.qti\.qspmhal-V1-ndk\.so                                            u:object_r:same_process_hal_file:s0
+#The following types on /product/ /system/ /system_ext/ must be associated with the "system_file_type" attribute.
+#Violator types and corresponding paths:
+#('same_process_hal_file', '/(system_ext|system/system_ext)/lib(64)?/vendor\\.qti\\.qspmhal-V1-ndk\\.so')
+#/(system_ext|system/system_ext)/lib(64)?/vendor.qti.qspmhal-V1-ndk.so                                            u:object_r:same_process_hal_file:s0
+#/(system_ext|system/system_ext)/lib(64)?/vendor.qti.qspmhal-V1-ndk.so  u:object_r:system_file_type:s0

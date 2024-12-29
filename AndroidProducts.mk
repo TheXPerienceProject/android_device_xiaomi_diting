@@ -5,9 +5,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/xperience_diting.mk
-
-COMMON_LUNCH_CHOICES := \
-    xperience_diting-eng \
-    xperience_diting-userdebug \
-    xperience_diting-user
+    $(LOCAL_DIR)/lineage_diting.mk

@@ -8,8 +8,8 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common XPerience stuff.
-$(call inherit-product, vendor/xperience/config/common.mk)
+# Inherit some common Lineage stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit from diting device.
 $(call inherit-product, device/xiaomi/diting/device.mk)
@@ -19,15 +19,10 @@ $(call inherit-product, device/xiaomi/diting/device.mk)
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := diting
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_NAME := xperience_diting
+PRODUCT_NAME := lineage_diting
 PRODUCT_MODEL := diting
 
 # GMS
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 BUILD_FINGERPRINT := Xiaomi/diting/diting:12/SKQ1.230401.001/V816.0.8.0.ULFMIXM:user/release-keys
-TARGET_HAS_UDFPS := true
-XPERIENCE_MAINTAINER := Kισżż
-#XPERIENCE_CHIPSET := "Snapdragon® 8+ Gen 1 Mobile Platform"
-XPERIENCE_BATTERY := 5000mah (TYP)
-XPERIENCE_DISPLAY := 1220*2712
