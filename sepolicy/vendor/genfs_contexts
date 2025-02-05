@@ -4,6 +4,10 @@ genfscon sysfs /class/qcom-battery u:object_r:vendor_sysfs_battery_supply:s0
 # Display Feature HAL
 genfscon sysfs /class/display/backlight_clone/brightness_clone u:object_r:vendor_sysfs_displayfeature:s0
 
+# FEAS
+genfscon sysfs /module/perfmgr                                                                                                      u:object_r:sysfs_perfmgr:s0
+genfscon proc /perfmgr                                                                                                              u:object_r:proc_perfmgr:s0
+
 # Fingerprint
 genfscon sysfs /devices/platform/soc/soc:fpc1020 u:object_r:vendor_sysfs_fingerprint:s0
 genfscon sysfs /devices/platform/soc/soc:goodix_fp u:object_r:vendor_sysfs_fingerprint:s0
