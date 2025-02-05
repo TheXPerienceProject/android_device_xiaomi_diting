@@ -113,7 +113,7 @@ PRODUCT_COPY_FILES += \
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config/config.fs
 
 # Firmware
-#-include vendor/xiaomi/diting-firmware/BoardConfigVendor.mk
+-include vendor/xiaomi/diting-firmware/BoardConfigVendor.mk
 
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_diting
