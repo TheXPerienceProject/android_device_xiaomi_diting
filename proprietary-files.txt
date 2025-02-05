@@ -1,4 +1,4 @@
-# Unpinned blobs from diting-user 14 UKQ1.230917.001 V816.0.5.0.ULFMIXM release-keys
+# Unpinned blobs from diting-user 14 UKQ1.230917.001 V816.0.10.0.ULFMIXM release-keys
 # ACDB
 vendor/etc/acdbdata/diwali_idp/IDP_diwali_acdb_cal.acdb
 vendor/etc/acdbdata/diwali_idp/IDP_diwali_workspaceFileXml.qwsp
@@ -1719,7 +1719,7 @@ vendor/lib64/libqisl.so
 vendor/lib64/librpmb.so
 vendor/lib64/libspl.so
 vendor/lib64/libssd.so
-vendor/lib64/vendor.qti.hardware.qseecom@1.0.so|
+vendor/lib64/vendor.qti.hardware.qseecom@1.0.so
 
 # DRM - from miui 14
 vendor/lib64/libops.so|9b33ca1cf66aaf879dc6e9386fcc35f08324b234
