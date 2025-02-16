@@ -18,7 +18,7 @@ genfscon sysfs /devices/virtual/touch/touch_dev/gesture_single_tap_enabled u:obj
 genfscon sysfs /devices/virtual/touch/touch_dev/gesture_single_tap_state u:object_r:vendor_sysfs_sensors:s0
 
 # touch hal
-genfscon sysfs /class/backlight/panel0-backlight/bl_power                      u:object_r:hal_xperience_touch_default_sysfs:s0
+genfscon sysfs /class/backlight/panel0-backlight/bl_power                      u:object_r:hal_lineage_touch_default_sysfs:s0
 
 # Wakeup nodes
 genfscon sysfs /devices/platform/goodix_ts.0/wakeup u:object_r:sysfs_wakeup:s0
