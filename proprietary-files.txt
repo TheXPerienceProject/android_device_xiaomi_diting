@@ -116,7 +116,9 @@ vendor/lib/rfsa/adsp/weak_refs.so
 
 # ANT+
 vendor/lib/hw/com.dsi.ant@1.0-impl.so
+vendor/lib/com.dsi.ant@1.0.so
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so
+vendor/lib64/com.dsi.ant@1.0.so
 
 # Audio configs
 vendor/etc/audio/sku_cape/audio_effects.conf
@@ -205,7 +207,6 @@ vendor/lib/libbatterylistener.so
 vendor/lib/libcapiv2svacnnvendor.so
 vendor/lib/libcapiv2svarnnvendor.so
 vendor/lib/libcapiv2uvvendor.so
-vendor/lib/libdapparamstorage.so
 vendor/lib/libfmpal.so
 vendor/lib/libkaraokepal.so
 vendor/lib/liblx-ar_util.so
@@ -232,7 +233,6 @@ vendor/lib64/libaudiocloudctrl.so
 vendor/lib64/libaudioroute_ext.so
 vendor/lib64/libbatterylistener.so
 vendor/lib64/libcapiv2svacnnvendor.so
-vendor/lib64/libcapiv2svarnnvendor.so
 vendor/lib64/libcapiv2uvvendor.so
 vendor/lib64/libcrussp.so
 vendor/lib64/libfmpal.so
@@ -1617,7 +1617,7 @@ vendor/lib64/vendor.dolby.hardware.dms@2.0.so|975fee7ab5d90b6e66984d9f67f198c3a4
 # Dolby Vision - from diting
 vendor/bin/hw/dolbycodec2
 vendor/etc/dolby_vision.cfg
-vendor/etc/init/dolbycodec2.rc
+#vendor/etc/init/dolbycodec2.rc
 vendor/lib/c2.dolby.avc.dec.so
 vendor/lib/c2.dolby.avc.sec.dec.so
 vendor/lib/c2.dolby.client.so
@@ -3593,6 +3593,17 @@ vendor/firmware/2_seqbinwav_P_RTP.bin:vendor/etc/vibrator/effect_2.bin
 vendor/firmware/3_seqbinwav_P_RTP.bin:vendor/etc/vibrator/effect_3.bin
 vendor/firmware/4_seqbinwav_P_RTP.bin:vendor/etc/vibrator/effect_4.bin
 vendor/firmware/5_seqbinwav_P_RTP.bin:vendor/etc/vibrator/effect_5.bin
+vendor/firmware/0_seqbinwav_P_RTP.bin:vendor/etc/vibrator/primitive_effect_0.bin
+vendor/firmware/1_seqbinwav_P_RTP.bin:vendor/etc/vibrator/primitive_effect_1.bin
+vendor/firmware/2_seqbinwav_P_RTP.bin:vendor/etc/vibrator/primitive_effect_2.bin
+vendor/firmware/3_seqbinwav_P_RTP.bin:vendor/etc/vibrator/primitive_effect_3.bin
+vendor/firmware/4_seqbinwav_P_RTP.bin:vendor/etc/vibrator/primitive_effect_4.bin
+vendor/firmware/5_seqbinwav_P_RTP.bin:vendor/etc/vibrator/primitive_effect_5.bin
+vendor/firmware/6_seqbinwav_P_RTP.bin:vendor/etc/vibrator/primitive_effect_6.bin
+vendor/firmware/7_seqbinwav_P_RTP.bin:vendor/etc/vibrator/primitive_effect_7.bin
+vendor/firmware/8_seqbinwav_P_RTP.bin:vendor/etc/vibrator/primitive_effect_8.bin
+vendor/firmware/9_seqbinwav_P_RTP.bin:vendor/etc/vibrator/primitive_effect_9.bin
+
 
 # Video
 vendor/lib64/libfastcrc.so|ab0a2648d275d1768c5dc18d170f5ff75a9aad4b
