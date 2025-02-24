@@ -1,1 +1,2 @@
 allow crash_dump init:process ptrace;
+allow crash_dump selinuxfs:file r_file_perms;
