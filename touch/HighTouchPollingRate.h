@@ -8,6 +8,8 @@
 #pragma once
 
 #include <vendor/xperience/touch/1.0/IHighTouchPollingRate.h>
+#include <string>
+#include <thread>
 
 namespace vendor {
 namespace xperience {
@@ -18,14 +20,19 @@ namespace implementation {
 using ::android::hardware::Return;
 
 class HighTouchPollingRate : public IHighTouchPollingRate {
-  public:
+public:
     HighTouchPollingRate();
-    // Methods from ::vendor::xperience::touch::V1_0::IHighTouchPollingRate follow.
+    // Métodos de ::vendor::xperience::touch::V1_0::IHighTouchPollingRate.
     Return<bool> isEnabled() override;
     Return<bool> setEnabled(bool enabled) override;
 
-  private:
-    std::string FindSysfsPath(const std::string& attribute_name);  // Declaration here!
+private:
+    //std::string FindSysfsPath(const std::string& attribute_name);
+    void monitorPollingRate();
+    int getCurrentPollingRate();
+    std::vector<std::string> getTouchEvents();
+    std::thread monitoringThread;
+    bool isScreenOn(); // Display status detection function
 };
 
 }  // namespace implementation

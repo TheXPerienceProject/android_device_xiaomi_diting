@@ -16,6 +16,12 @@
 #include <unistd.h>
 #include <fstream>
 #include <string>  // Include for std::string
+#include <thread>
+#include <chrono>
+#include <sstream> // Para std::stringstream
+#include <dirent.h>
+#include <vector>
+#include <iostream>
 
 // Constants for ioctl
 #define SET_CUR_VALUE 0
@@ -35,13 +41,15 @@ const std::string kHighTouchPollingPath = "TOUCH_DEV_PATH";
 
 // Class constructor
 HighTouchPollingRate::HighTouchPollingRate() {
+    monitoringThread = std::thread(&HighTouchPollingRate::monitorPollingRate, this);   
 }
 
 // Implementation of isEnabled()
 Return<bool> HighTouchPollingRate::isEnabled() {
 
    // Read the value directly from sysfs (or device node)
-   std::string path = this->FindSysfsPath("touch_thp_cmd");  // Get file path
+    // std::string path = this->FindSysfsPath("touch_thp_cmd"); // remove later
+    std::string path = "/sys/devices/virtual/touch/touch_dev/touch_thp_cmd";
    if (path.empty()) {
        LOG(ERROR) << "Failed to find touch_thp_cmd in sysfs";
        return false; // Return false if path not found
@@ -83,7 +91,9 @@ Return<bool> HighTouchPollingRate::setEnabled(bool enabled) {
     close(fd);// Close file descriptor
 
     // Optionally update sysfs as well (if needed)
-    std::string path = this->FindSysfsPath("touch_thp_cmd"); 
+    // std::string path = this->FindSysfsPath("touch_thp_cmd"); // Eliminar esta línea
+    std::string path = "/sys/devices/virtual/touch/touch_dev/touch_thp_cmd";
+
     if (!path.empty()) {
         std::ofstream file(path);
         if (file.is_open()) {
@@ -115,7 +125,7 @@ Return<bool> HighTouchPollingRate::setEnabled(bool enabled) {
      * multiple devices with the same name, you might need to add more sophisticated
      * logic to identify the correct one.
      */
-std::string HighTouchPollingRate::FindSysfsPath(const std::string& attribute_name) {
+/*std::string HighTouchPollingRate::FindSysfsPath(const std::string& attribute_name) {
     std::string base_path = "/sys/devices";// Base path to devices
     std::string device_name = "xiaomi-touch"; // Device name (adjust if needed)
 
@@ -142,6 +152,112 @@ std::string HighTouchPollingRate::FindSysfsPath(const std::string& attribute_nam
         perror("could not open directory");// Print error message if directory cannot be opened
     }
     return "";// Return an empty string if attribute is not found
+}*/
+
+    /* Monitors touch events and automatically disables
+     * the high polling rate after inactivity.
+    */
+void HighTouchPollingRate::monitorPollingRate() {
+    auto lastTouchTime = std::chrono::steady_clock::now();
+    const auto inactivityThreshold = std::chrono::minutes(10);
+    auto screenOffTime = std::chrono::time_point<std::chrono::steady_clock>::min();
+
+    std::vector<bool> screenStateHistory(3, true); // Historial de 3 estados inicializado a encendido
+
+    while (true) {
+        bool screenOn = isScreenOn();
+        std::vector<std::string> eventData = getTouchEvents();
+        bool touchDetected = false;
+
+        for (const std::string& line : eventData) {
+            std::stringstream ss(line);
+            int type, code, value;
+            if (ss >> std::hex >> type >> std::hex >> code >> std::hex >> value) {
+                if (type == 0x0000 && code == 0x0000) {
+                    touchDetected = true;
+                    break;
+                }
+            }
+        }
+
+        if (touchDetected) {
+            lastTouchTime = std::chrono::steady_clock::now();
+        } else {
+            auto currentTime = std::chrono::steady_clock::now();
+            if (isEnabled() && (currentTime - lastTouchTime) > inactivityThreshold) {
+                LOG(INFO) << "No touch activity for 10 minutes, deactivating high polling rate.";
+                setEnabled(false);
+            }
+        }
+
+        /*
+            check if the screen is on or not and if it is off, 
+            check if it has not been idle for more than 10 minutes
+            to deactivate or activate the polling rate.
+        */
+        if (!screenOn) {
+            if (screenOffTime == std::chrono::time_point<std::chrono::steady_clock>::min()) {
+                screenOffTime = std::chrono::steady_clock::now();
+            }
+        } else {
+            if (screenOffTime != std::chrono::time_point<std::chrono::steady_clock>::min()) {
+                auto timeSinceScreenOff = std::chrono::steady_clock::now() - screenOffTime;
+                if (timeSinceScreenOff < inactivityThreshold && isEnabled()) {
+                    LOG(INFO) << "Screen turned on before inactivity timeout, reenabling high polling rate.";
+                    setEnabled(true);
+                }
+                screenOffTime = std::chrono::time_point<std::chrono::steady_clock>::min();
+            }
+        }
+
+        // Actualizar el historial de estados
+        screenStateHistory.erase(screenStateHistory.begin());
+        screenStateHistory.push_back(screenOn);
+
+        // Detectar apagado-encendido rápido
+        if (!screenStateHistory[1] && screenStateHistory[2]) {
+            LOG(INFO) << "Quick screen off-on detected, reenabling high polling rate.";
+            setEnabled(true);
+        }
+
+        std::this_thread::sleep_for(std::chrono::seconds(3));//original was 1s try with 3s
+    }
+}
+
+    /*
+    * Get touch events from /dev/input/event7 using popen and getevent
+    */
+std::vector<std::string> HighTouchPollingRate::getTouchEvents() {
+    std::vector<std::string> events;
+    FILE* pipe = popen("getevent -lt /dev/input/event7", "r");
+    if (pipe) {
+        char buffer[128];
+        while (fgets(buffer, sizeof(buffer), pipe) != nullptr) {
+            events.emplace_back(buffer);
+        }
+        pclose(pipe);
+    }
+    return events;
+}
+
+    /*
+    // Implement logic to detect screen state
+    // Use sysfs or PowerManager as needed
+    // Return true if the screen is on, false if it's off
+    // */
+bool HighTouchPollingRate::isScreenOn() {
+
+    std::string path = "/sys/class/backlight/panel0-backlight/bl_power";
+    std::string value_str;
+    if (android::base::ReadFileToString(path, &value_str)) {
+        try {
+            int value = std::stoi(value_str);
+            return value == 0; // 0 indicates display on and 4 screen off on diting
+        } catch (...) {
+            LOG(ERROR) << "Error al leer el estado de la pantalla desde sysfs";
+        }
+    }
+    return true; // Devolver true por defecto si no se puede leer el estado de la pantalla
 }
 
 }  // namespace implementation
