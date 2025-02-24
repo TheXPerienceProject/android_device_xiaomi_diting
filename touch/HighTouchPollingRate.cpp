@@ -15,15 +15,16 @@
 #include <sys/ioctl.h>
 #include <unistd.h>
 #include <fstream>
-#include <string>  // Include for std::string
+#include <string>
 #include <thread>
 #include <chrono>
-#include <sstream> // Para std::stringstream
+#include <sstream>
 #include <dirent.h>
 #include <vector>
 #include <iostream>
 #include <algorithm>
 #include <cctype>
+#include <iostream>
 
 // Constants for ioctl
 #define SET_CUR_VALUE 0
@@ -59,31 +60,30 @@ Return<bool> HighTouchPollingRate::isEnabled() {
        return false; // Return false if path not found
    }
 
-   if (!android::base::ReadFileToString(path, &value_str)) { // Read value from file
-       LOG(ERROR) << "Failed to read touch_thp_cmd from sysfs";
-       return false; // Return false if file cannot be read
-   }
+    if (!android::base::ReadFileToString(path, &value_str)) { // Read value from file
+        LOG(ERROR) << "Failed to read touch_thp_cmd from sysfs";
+        return false; // Return false if file cannot be read
+    }
 
-    // Validate string before std::stoi()
-    if (!std::all_of(value_str.begin(), value_str.end(), ::isdigit)) {
-        LOG(ERROR) << "Invalid data in touch_thp_cmd: " << value_str;
+        /*use xxd /sys/devices/virtual/touch/touch_dev/touch_thp_cmd */
+    if (value_str.length() != 4) {
+        LOG(ERROR) << "Invalid data length in touch_thp_cmd: " << value_str.length();
         return false;
     }
 
-   try {
-       int enabled = std::stoi(value_str); // Try to convert value to integer
-       return enabled == 1;// Return true if value is 1, false if 0
-   } catch (const std::invalid_argument& e) {// Catch conversion errors
-       LOG(ERROR) << "Invalid touch device state: " << e.what();
-       return false;// Return false if value is invalid
-   } catch (const std::out_of_range& e) {// Catch range errors
-       LOG(ERROR) << "Touch device state out of range: " << e.what();
-       return false; // Return false if value is out of range
-   }
+    unsigned char byte_value = static_cast<unsigned char>(value_str[0]);
 
+    if (byte_value != 0x00 && byte_value != 0x01) {
+        LOG(ERROR) << "Invalid byte value in touch_thp_cmd: " << static_cast<int>(byte_value);
+        return false;
+    }
+
+    return byte_value == 0x01;
 }
 
 Return<bool> HighTouchPollingRate::setEnabled(bool enabled) {
+    auto start = std::chrono::high_resolution_clock::now();
+ 
     int fd = open(TOUCH_DEV_PATH, O_RDWR);// Open touch device
     if (fd < 0) {
         LOG(ERROR) << "Failed to open touch device: " << strerror(errno);
@@ -98,6 +98,11 @@ Return<bool> HighTouchPollingRate::setEnabled(bool enabled) {
     }
 
     close(fd);// Close file descriptor
+
+    auto end = std::chrono::high_resolution_clock::now(); // End of measurement
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start); // Calculate duration
+
+    LOG(INFO) << "ioctl took " << duration.count() << " microseconds"; // show duration remove later
 
     // Optionally update sysfs as well (if needed)
     // std::string path = this->FindSysfsPath("touch_thp_cmd"); // Eliminar esta línea
