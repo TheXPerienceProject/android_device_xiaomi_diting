@@ -22,6 +22,8 @@
 #include <dirent.h>
 #include <vector>
 #include <iostream>
+#include <algorithm>
+#include <cctype>
 
 // Constants for ioctl
 #define SET_CUR_VALUE 0
@@ -50,16 +52,23 @@ Return<bool> HighTouchPollingRate::isEnabled() {
    // Read the value directly from sysfs (or device node)
     // std::string path = this->FindSysfsPath("touch_thp_cmd"); // remove later
     std::string path = "/sys/devices/virtual/touch/touch_dev/touch_thp_cmd";
+    std::string value_str;
+
    if (path.empty()) {
        LOG(ERROR) << "Failed to find touch_thp_cmd in sysfs";
        return false; // Return false if path not found
    }
 
-   std::string value_str;
    if (!android::base::ReadFileToString(path, &value_str)) { // Read value from file
        LOG(ERROR) << "Failed to read touch_thp_cmd from sysfs";
        return false; // Return false if file cannot be read
    }
+
+    // Validate string before std::stoi()
+    if (!std::all_of(value_str.begin(), value_str.end(), ::isdigit)) {
+        LOG(ERROR) << "Invalid data in touch_thp_cmd: " << value_str;
+        return false;
+    }
 
    try {
        int enabled = std::stoi(value_str); // Try to convert value to integer
