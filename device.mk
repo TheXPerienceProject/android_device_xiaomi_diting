@@ -72,6 +72,9 @@ SOONG_CONFIG_android_hardware_audio += \
     run_64bit
 SOONG_CONFIG_android_hardware_audio_run_64bit := true
 
+TARGET_INCLUDES_PREBUILT_AGM := true
+TARGET_INCLUDES_PREBUILT_LIBAGM  := true
+TARGET_INCLUDES_PREBUILT_LIBARPAL := true
 PRODUCT_PACKAGES += \
     android.media.audio.common.types-V1-cpp.vendor \
     android.hardware.audio@7.1-impl \
@@ -515,6 +518,7 @@ PRODUCT_PACKAGES += \
 
 # Parts
 PRODUCT_PACKAGES += \
+    DSPVolumeSynchronizer \
     XiaomiDolby \
     XiaomiParts
 

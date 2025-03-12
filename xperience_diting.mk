@@ -27,6 +27,7 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 BUILD_FINGERPRINT := Xiaomi/diting/diting:12/SKQ1.230401.001/V816.0.8.0.ULFMIXM:user/release-keys
 TARGET_HAS_UDFPS := true
+EXTRA_UDFPS_ANIMATIONS := true
 XPERIENCE_MAINTAINER := Kισżż
 #XPERIENCE_CHIPSET := "Snapdragon® 8+ Gen 1 Mobile Platform"
 XPERIENCE_BATTERY := 5000mah (TYP)
