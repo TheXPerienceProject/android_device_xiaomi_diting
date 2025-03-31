@@ -50,6 +50,7 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.qti.qspmhal@1.0',
         'vendor.qti.qspmhal-V1-ndk',
         'vendor.xiaomi.hardware.misight-V1-ndk_platform',
+        'vendor.qti.hardware.display.composer-service.xml',
         'com.qualcomm.qti.dpm.api@1.0',
     ): lib_fixup_vendor_suffix,
     (

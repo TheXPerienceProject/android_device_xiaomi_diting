@@ -1370,7 +1370,7 @@ vendor/etc/init/vendor.qti.hardware.display.allocator-service.rc|6ffccda5bae0920
 vendor/etc/init/vendor.qti.hardware.display.composer-service.rc|51293828c5558a6129e98cd1f537f616a86b75c9
 vendor/etc/vintf/manifest/android.hardware.graphics.mapper-impl-qti-display.xml|f32053a374e42c5fd0b6f42e3c2414b9eb4f2ae5
 vendor/etc/vintf/manifest/vendor.qti.hardware.display.allocator-service.xml|f9e9966dca44a4598da015b9f54b992cbb71bd35
-vendor/etc/vintf/manifest/vendor.qti.hardware.display.composer-service.xml|f4144ccba7d6e5642662b0e54b5c4469913c242d
+vendor/etc/vintf/manifest/vendor.qti.hardware.display.composer-service.xml:vendor/etc/vintf/manifest/vendor.qti.hardware.display.composer-service_vendor.xml|f4144ccba7d6e5642662b0e54b5c4469913c242d
 vendor/lib/libdisplayconfig.qti.so|20036bdf975995b65f07810f4896b924cd7e45d8
 vendor/lib/libdisplaydebug.so|46e72a50e8e5dcf7cd295884baf209d2283701fc
 vendor/lib/libgpu_tonemapper.so|0f51f1bf94f6ffef11fb09a2cb4e530470c760d9
@@ -1792,6 +1792,30 @@ vendor/etc/init/mi-misight.rc
 vendor/etc/vintf/manifest/mi-misight.xml
 vendor/lib/libmisight.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.xiaomi.hardware.misight-V1-ndk_platform.so;MODULE_SUFFIX=_vendor
+
+# MiSys
+vendor/bin/hw/vendor.xiaomi.hardware.misys@1.0-service
+vendor/bin/hw/vendor.xiaomi.hardware.misys@2.0-service
+vendor/bin/hw/vendor.xiaomi.hardware.misys@3.0-service
+vendor/bin/hw/vendor.xiaomi.hardware.misys@4.0-service
+vendor/etc/init/vendor.xiaomi.hardware.misys@1.0-service.rc
+vendor/etc/init/vendor.xiaomi.hardware.misys@2.0-service.rc
+vendor/etc/init/vendor.xiaomi.hardware.misys@3.0-service.rc
+vendor/etc/init/vendor.xiaomi.hardware.misys@4.0-service.rc
+vendor/etc/vintf/manifest/vendor.xiaomi.hardware.misys@1.0.xml
+vendor/etc/vintf/manifest/vendor.xiaomi.hardware.misys@2.0.xml
+vendor/etc/vintf/manifest/vendor.xiaomi.hardware.misys@3.0.xml
+vendor/etc/vintf/manifest/vendor.xiaomi.hardware.misys@4.0.xml
+vendor/lib64/hw/vendor.xiaomi.hardware.misys@1.0-impl.so
+vendor/lib64/hw/vendor.xiaomi.hardware.misys@2.0-impl.so
+vendor/lib64/hw/vendor.xiaomi.hardware.misys@3.0-impl.so
+vendor/lib64/hw/vendor.xiaomi.hardware.misys@4.0-impl.so
+vendor/lib64/libcheckpid.so
+vendor/lib64/liblogwrap_vendor.so
+vendor/lib64/vendor.xiaomi.hardware.misys@1.0.so
+vendor/lib64/vendor.xiaomi.hardware.misys@2.0.so
+vendor/lib64/vendor.xiaomi.hardware.misys@3.0.so
+vendor/lib64/vendor.xiaomi.hardware.misys@4.0.so
 
 # FM
 vendor/etc/init.qti.fm.sh
@@ -3707,6 +3731,7 @@ system_ext/etc/init/wfdservice.rc
 system_ext/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml
 system_ext/etc/seccomp_policy/wfdservice.policy
 system_ext/etc/wfdconfigsink.xml
+system_ext/lib/libmmosal.so
 system_ext/lib/libmmrtpdecoder.so
 system_ext/lib/libmmrtpencoder.so
 system_ext/lib/libwfdavenhancements.so
@@ -3725,6 +3750,7 @@ system_ext/lib/libwfduibcsinkinterface.so
 system_ext/lib/libwfduibcsrc.so
 system_ext/lib/libwfduibcsrcinterface.so
 system_ext/lib/vendor.qti.hardware.wifidisplaysession@1.0.so
+system_ext/lib64/libmmosal.so
 system_ext/lib64/libmmrtpdecoder.so
 system_ext/lib64/libmmrtpencoder.so
 system_ext/lib64/libwfdclient.so
