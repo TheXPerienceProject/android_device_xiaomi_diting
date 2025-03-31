@@ -3708,7 +3708,7 @@ vendor/lib64/mediadrm/libwvdrmengine.so|8f30147864e1c937a8337d868bef67189e55f43d
 # WiFi
 vendor/bin/athdiag|4480ba854ddd01b97757a6373fe78b8bffbc5633
 vendor/bin/cnss-daemon|1d266903d1d04dc60c7bd87dd8228b5769d34a15
-vendor/bin/cnss_diag|bf1f7c248c7f19f088c3cc069554f1ba3caecb8b
+vendor/bin/cnss_diag;DISABLE_CHECKELF|bf1f7c248c7f19f088c3cc069554f1ba3caecb8b
 vendor/bin/hal_proxy_daemon|9541b442fd12d527688955764c7f24f9d962a9d8
 vendor/bin/pktlogconf|05c237c677c12cec2fdd37dc2f62c335ded3482c
 vendor/bin/spectraltool|ec9272c2826417ea60c3e87b9c42627787a22fef
