@@ -7,12 +7,12 @@
 
 #pragma once
 
-#include <vendor/xperience/touch/1.0/IHighTouchPollingRate.h>
+#include <vendor/lineage/touch/1.0/IHighTouchPollingRate.h>
 #include <string>
 #include <thread>
 
 namespace vendor {
-namespace xperience {
+namespace lineage {
 namespace touch {
 namespace V1_0 {
 namespace implementation {
@@ -22,7 +22,7 @@ using ::android::hardware::Return;
 class HighTouchPollingRate : public IHighTouchPollingRate {
 public:
     HighTouchPollingRate();
-    // Métodos de ::vendor::xperience::touch::V1_0::IHighTouchPollingRate.
+    // Métodos de ::vendor::lineage::touch::V1_0::IHighTouchPollingRate.
     Return<bool> isEnabled() override;
     Return<bool> setEnabled(bool enabled) override;
 
@@ -38,5 +38,5 @@ private:
 }  // namespace implementation
 }  // namespace V1_0
 }  // namespace touch
-}  // namespace xperience
+}  // namespace lineage
 }  // namespace vendor
