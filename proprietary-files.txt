@@ -1794,6 +1794,23 @@ vendor/lib/libmisight.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.xiaomi.hardware.misight-V1-ndk_platform.so;MODULE_SUFFIX=_vendor
 
 # MiSys
+system/framework/vendor.xiaomi.hardware.misys-V1.0-java.jar
+system/framework/vendor.xiaomi.hardware.misys-V2.0-java.jar
+system/framework/vendor.xiaomi.hardware.misys-V4.0-java.jar
+system/framework/vendor.xiaomi.hardware.misys.V3_0.jar
+system/lib/libmisys_jni.xiaomi.so
+system/lib/vendor.xiaomi.hardware.misys@1.0.so
+system/lib/vendor.xiaomi.hardware.misys@2.0.so
+system/lib/vendor.xiaomi.hardware.misys@3.0.so
+system/lib/vendor.xiaomi.hardware.misys@4.0.so
+system/lib64/libmisys_jni.xiaomi.so
+system/lib64/vendor.xiaomi.hardware.misys@1.0.so
+system/lib64/vendor.xiaomi.hardware.misys@2.0.so
+system/lib64/vendor.xiaomi.hardware.misys@3.0.so
+system/lib64/vendor.xiaomi.hardware.misys@4.0.so
+system_ext/framework/vendor.xiaomi.hardware.misys.common-V1-java.jar
+system_ext/lib/vendor.xiaomi.hardware.misys.common-V1-ndk.so
+system_ext/lib64/vendor.xiaomi.hardware.misys.common-V1-ndk.so
 vendor/bin/hw/vendor.xiaomi.hardware.misys@1.0-service
 vendor/bin/hw/vendor.xiaomi.hardware.misys@2.0-service
 vendor/bin/hw/vendor.xiaomi.hardware.misys@3.0-service
@@ -1812,10 +1829,10 @@ vendor/lib64/hw/vendor.xiaomi.hardware.misys@3.0-impl.so
 vendor/lib64/hw/vendor.xiaomi.hardware.misys@4.0-impl.so
 vendor/lib64/libcheckpid.so
 vendor/lib64/liblogwrap_vendor.so
-vendor/lib64/vendor.xiaomi.hardware.misys@1.0.so
-vendor/lib64/vendor.xiaomi.hardware.misys@2.0.so
-vendor/lib64/vendor.xiaomi.hardware.misys@3.0.so
-vendor/lib64/vendor.xiaomi.hardware.misys@4.0.so
+vendor/lib64/vendor.xiaomi.hardware.misys@1.0.so;MODULE_SUFFIX=_vendor
+vendor/lib64/vendor.xiaomi.hardware.misys@2.0.so;MODULE_SUFFIX=_vendor
+vendor/lib64/vendor.xiaomi.hardware.misys@3.0.so;MODULE_SUFFIX=_vendor
+vendor/lib64/vendor.xiaomi.hardware.misys@4.0.so;MODULE_SUFFIX=_vendor
 
 # FM
 vendor/etc/init.qti.fm.sh
