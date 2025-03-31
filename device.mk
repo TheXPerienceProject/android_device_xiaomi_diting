@@ -450,6 +450,11 @@ PRODUCT_PACKAGES += \
     libsqlite.vendor \
     liblz4.vendor
 
+# misc 
+PRODUCT_PACKAGES += \
+    vendor.xiaomi.hardware.mlipay@1.2.vendor \
+    vendor.xiaomi.hardware.mtdservice@1.2.vendor
+
 # Network
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.1.vendor

@@ -129,7 +129,6 @@ vendor/lib/rfsa/adsp/weak_refs.so
 
 # ANT+
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so
-vendor/lib64/com.dsi.ant@1.0.so;MODULE_SUFFIX=_vendor
 
 # Audio configs
 vendor/etc/audio/sku_cape/audio_effects.conf
@@ -2247,9 +2246,6 @@ vendor/lib/libmt.so|2a71ab75cb4757fdc56be27b52c05798a8c6e1d8
 vendor/lib/libteeclientjni.so|dcca89c776942cdd7ae75eca2cc0fead527deadc
 vendor/lib/libtida@1.2.so|fa8d360c00a8a03cf288425f483543161e33384b
 vendor/lib/vendor.xiaomi.hardware.mfidoca@1.0.so|0171dc12398b0e9302153d4ed412d2e60ec28a13
-vendor/lib/vendor.xiaomi.hardware.mlipay@1.0.so;MODULE_SUFFIX=_vendor|e5924d6eb19388cfa5a324301be62d7b4ebc4263
-vendor/lib/vendor.xiaomi.hardware.mlipay@1.1.so;MODULE_SUFFIX=_vendor|677d2349a6f96b840d1de44c856ff635dfebfa94
-vendor/lib/vendor.xiaomi.hardware.mtdservice@1.0.so;MODULE_SUFFIX=_vendor|0b12bd4c0e2821112fc373ff56b96df22be092f7
 vendor/lib/vendor.xiaomi.hardware.tidaservice@1.0.so|9589073b68ec5293173e96e51f25011f684d7d50
 vendor/lib/vendor.xiaomi.hardware.tidaservice@1.1.so|92e00de844479dd3a33142956b1ccc21f800da32
 vendor/lib/vendor.xiaomi.hardware.tidaservice@1.2.so|802b2a8e35870a8b58db4b1ff1d45282fedd783d
@@ -2261,11 +2257,6 @@ vendor/lib64/libmt@1.3.so|63fdc6970eb1f007c93b64446dbb94b0874b1f57
 vendor/lib64/libteeclientjni.so|11c33e519d832aa9bf0d541f85a3d4b694c5225a
 vendor/lib64/libtida@1.2.so|a3cd3997a9f74f173a35bd98fc08099f5450fdc2
 vendor/lib64/vendor.xiaomi.hardware.mfidoca@1.0.so|5c665f941fa7cca35336841236ce169ceaf4fbcd
-vendor/lib64/vendor.xiaomi.hardware.mlipay@1.0.so;MODULE_SUFFIX=_vendor|f9a24a796d452e706d29a3776e27953a35a7efe3
-vendor/lib64/vendor.xiaomi.hardware.mlipay@1.1.so;MODULE_SUFFIX=_vendor|cc9c93118383d9556727ed5cb61ccc23788f00da
-vendor/lib64/vendor.xiaomi.hardware.mtdservice@1.0.so;MODULE_SUFFIX=_vendor|9b2a80589f00f7fffa7aeb660574d06f09ce26aa
-vendor/lib64/vendor.xiaomi.hardware.mtdservice@1.1.so;MODULE_SUFFIX=_vendor|3b1facb9746257c37ab62f6c5740a70cbef98037
-vendor/lib64/vendor.xiaomi.hardware.mtdservice@1.2.so;MODULE_SUFFIX=_vendor|6ca528d648fa822e34324a5b3c115180854fb51f
 vendor/lib64/vendor.xiaomi.hardware.mtdservice@1.3.so|e48799ce7a0c66fd2290d7028f8fbb52c98339ab
 vendor/lib64/vendor.xiaomi.hardware.tidaservice@1.0.so|1a28052c4fe102493352ee44c0f547e0ee7954a9
 vendor/lib64/vendor.xiaomi.hardware.tidaservice@1.1.so|4edcfabcc2403b4e0136f2ba5637861d1f6c1471
@@ -2346,20 +2337,6 @@ vendor/lib64/libAlacSwDec.so
 vendor/lib64/libApeSwDec.so
 vendor/lib64/libFlacSwDec.so
 vendor/lib64/libdsd2pcm.so
-vendor/lib/libstagefright_soft_aacdec.so;MODULE_SUFFIX=_vendor
-vendor/lib/libstagefright_soft_amrdec.so;MODULE_SUFFIX=_vendor
-vendor/lib/libstagefright_soft_flacdec.so;MODULE_SUFFIX=_vendor
-vendor/lib/libstagefright_soft_g711dec.so;MODULE_SUFFIX=_vendor
-vendor/lib/libstagefright_soft_gsmdec.so;MODULE_SUFFIX=_vendor
-vendor/lib/libstagefright_soft_mp3dec.so;MODULE_SUFFIX=_vendor
-vendor/lib/libstagefright_soft_opusdec.so;MODULE_SUFFIX=_vendor
-vendor/lib/libstagefright_soft_rawdec.so;MODULE_SUFFIX=_vendor
-vendor/lib/libstagefright_soft_vorbisdec.so;MODULE_SUFFIX=_vendor
-vendor/lib/libstagefright_soft_aacenc.so;MODULE_SUFFIX=_vendor
-vendor/lib/libstagefright_soft_amrnbenc.so;MODULE_SUFFIX=_vendor
-vendor/lib/libstagefright_soft_amrwbenc.so;MODULE_SUFFIX=_vendor
-vendor/lib/libstagefright_soft_flacenc.so;MODULE_SUFFIX=_vendor
-vendor/lib/libstagefright_flacdec.so;MODULE_SUFFIX=_vendor
 
 # Perf sys
 system_ext/etc/overscrolleroptimization/config.json
