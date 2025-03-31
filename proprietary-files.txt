@@ -1796,11 +1796,6 @@ system/framework/vendor.xiaomi.hardware.misys-V1.0-java.jar
 system/framework/vendor.xiaomi.hardware.misys-V2.0-java.jar
 system/framework/vendor.xiaomi.hardware.misys-V4.0-java.jar
 system/framework/vendor.xiaomi.hardware.misys.V3_0.jar
-system/lib/libmisys_jni.xiaomi.so
-system/lib/vendor.xiaomi.hardware.misys@1.0.so
-system/lib/vendor.xiaomi.hardware.misys@2.0.so
-system/lib/vendor.xiaomi.hardware.misys@3.0.so
-system/lib/vendor.xiaomi.hardware.misys@4.0.so
 system/lib64/libmisys_jni.xiaomi.so
 system/lib64/vendor.xiaomi.hardware.misys@1.0.so
 system/lib64/vendor.xiaomi.hardware.misys@2.0.so
@@ -1827,6 +1822,9 @@ vendor/lib64/hw/vendor.xiaomi.hardware.misys@3.0-impl.so
 vendor/lib64/hw/vendor.xiaomi.hardware.misys@4.0-impl.so
 vendor/lib64/libcheckpid.so
 vendor/lib64/liblogwrap_vendor.so
+vendor/lib64/libmicuttlefish_fs.so
+vendor/lib64/libmicuttlefish_utils.so
+vendor/lib64/libmivsock_utils.so
 vendor/lib64/vendor.xiaomi.hardware.misys@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.xiaomi.hardware.misys@2.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.xiaomi.hardware.misys@3.0.so;MODULE_SUFFIX=_vendor
