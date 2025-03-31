@@ -1993,6 +1993,7 @@ vendor/lib/libadreno_app_profiles.so;DISABLE_CHECKELF
 vendor/lib/libadreno_utils.so
 vendor/lib/libgpudataproducer.so
 vendor/lib/libgsl.so
+vendor/lib/libqspm-mem-utils-vendor.so
 vendor/lib/libkcl.so
 vendor/lib/libkernelmanager.so
 vendor/lib/libllvm-glnext.so
@@ -2012,6 +2013,7 @@ vendor/lib64/libadreno_app_profiles.so;DISABLE_CHECKELF
 vendor/lib64/libadreno_utils.so
 vendor/lib64/libgpudataproducer.so
 vendor/lib64/libgsl.so
+vendor/lib64/libqspm-mem-utils-vendor.so
 vendor/lib64/libkcl.so
 vendor/lib64/libkernelmanager.so
 vendor/lib64/libllvm-glnext.so
