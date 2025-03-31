@@ -58,6 +58,7 @@ lib_fixups: lib_fixups_user_type = {
         'libagmclient',
         'libagmmixer',
         'vendor.qti.hardware.pal@1.0-impl',
+        'libadreno_app_profiles',
     ): lib_fixup_remove,
 }
 
