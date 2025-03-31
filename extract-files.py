@@ -131,6 +131,11 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/bin/hw/android.hardware.neuralnetworks-shim-service-qti': blob_fixup()
         .replace_needed('android.hardware.neuralnetworks-V1-ndk_platform.so', 'android.hardware.neuralnetworks-V1-ndk.so')
         .replace_needed('android.hardware.common-V2-ndk_platform.so', 'android.hardware.common-V2-ndk.so'),
+    'vendor/bin/hw/vendor.qti.hardware.display.composer-service': blob_fixup()
+        .replace_needed('vendor.qti.hardware.display.config-V5-ndk_platform', 'vendor.qti.hardware.display.config-V5-ndk',)
+        .replace_needed('android.hardware.common-V2-ndk_platform.so', 'android.hardware.common-V2-ndk.so'),
+    'vendor/lib64/libcamximageformatutils.so': blob_fixup()
+        .replace_needed('vendor.qti.hardware.display.config-V2-ndk_platform.so', 'vendor.qti.hardware.display.config-V2-ndk.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
