@@ -100,6 +100,9 @@ function blob_fixup() {
         "${PATCHELF}" --replace-needed "libcodec2_vndk.so" "libcodec2_vndk_vendor.so" "${2}"
         "${PATCHELF}" --replace-needed "libcodec2_hidl@1.0.so" "libcodec2_hidl@1.0_vendor.so" "${2}"
         ;;
+    vendor/etc/msm_irqbalance.conf)
+        sed -i "s/IGNORED_IRQ=27,23,38$/&,115,332/" "${2}"
+        ;;
     esac
 }
 

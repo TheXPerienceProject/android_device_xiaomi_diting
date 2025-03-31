@@ -1,19 +1,19 @@
 /*
  * Copyright (C) 2022 The LineageOS Project
- * Copyright (C) 2011-2023 The XPerience Project
+ * Copyright (C) 2011-2023-2025 The XPerience Project
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#define LOG_TAG "vendor.lineage.touch@1.0-service.diting"
+#define LOG_TAG "vendor.xperience.touch@1.0-service.diting"
 
 #include <android-base/logging.h>
 #include <hidl/HidlTransportSupport.h>
 
 #include "HighTouchPollingRate.h"
 
-using ::vendor::lineage::touch::V1_0::IHighTouchPollingRate;
-using ::vendor::lineage::touch::V1_0::implementation::HighTouchPollingRate;
+using ::vendor::xperience::touch::V1_0::IHighTouchPollingRate;
+using ::vendor::xperience::touch::V1_0::implementation::HighTouchPollingRate;
 
 int main() {
     android::sp<IHighTouchPollingRate> highTouchPollingRate = new HighTouchPollingRate();

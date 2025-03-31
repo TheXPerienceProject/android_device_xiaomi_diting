@@ -1,14 +1,15 @@
 //
 // Copyright (C) 2022 The LineageOS Project
-// Copyright (C) 2011-2023 The XPerience Project
+// Copyright (C) 2011-2023-2025 The XPerience Project
 //
 // SPDX-License-Identifier: Apache-2.0
 //
 cc_binary {
-    name: "vendor.lineage.touch@1.0-service.diting",
-    vintf_fragments: ["vendor.lineage.touch@1.0-service.diting.xml"],
-    init_rc: ["vendor.lineage.touch@1.0-service.diting.rc"],
+    name: "vendor.xperience.touch@1.0-service.diting",
+    vintf_fragments: ["vendor.xperience.touch@1.0-service.diting.xml"],
+    init_rc: ["vendor.xperience.touch@1.0-service.diting.rc"],
     defaults: ["hidl_defaults"],
+    cflags: ["-fexceptions"],  // Enable exceptions
     relative_install_path: "hw",
     proprietary: true,
     srcs: [
@@ -20,6 +21,6 @@ cc_binary {
         "libbinder",
         "libhidlbase",
         "libutils",
-        "vendor.lineage.touch@1.0",
+        "vendor.xperience.touch@1.0",
     ],
 }

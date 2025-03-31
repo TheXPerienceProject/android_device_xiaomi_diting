@@ -1,0 +1,12 @@
+#
+# Copyright (C) 2022 The LineageOS Project
+# Copyright (C) 2011-2023-2025 The XPerience Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+service vendor.touch-hal-1-0 /vendor/bin/hw/vendor.xperience.touch@1.0-service.diting
+    interface vendor.xperience.touch@1.0::IHighTouchPollingRate default
+    class hal
+    user system
+    group system

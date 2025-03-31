@@ -1,4 +1,4 @@
-# Unpinned blobs from diting-user 14 UKQ1.230917.001 V816.0.5.0.ULFMIXM release-keys
+# Unpinned blobs from diting-user 14 UKQ1.230917.001 V816.0.10.0.ULFMIXM release-keys
 # ACDB
 vendor/etc/acdbdata/diwali_idp/IDP_diwali_acdb_cal.acdb
 vendor/etc/acdbdata/diwali_idp/IDP_diwali_workspaceFileXml.qwsp
@@ -116,7 +116,9 @@ vendor/lib/rfsa/adsp/weak_refs.so
 
 # ANT+
 vendor/lib/hw/com.dsi.ant@1.0-impl.so
+vendor/lib/com.dsi.ant@1.0.so
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so
+vendor/lib64/com.dsi.ant@1.0.so
 
 # Audio configs
 vendor/etc/audio/sku_cape/audio_effects.conf
@@ -205,7 +207,6 @@ vendor/lib/libbatterylistener.so
 vendor/lib/libcapiv2svacnnvendor.so
 vendor/lib/libcapiv2svarnnvendor.so
 vendor/lib/libcapiv2uvvendor.so
-vendor/lib/libdapparamstorage.so
 vendor/lib/libfmpal.so
 vendor/lib/libkaraokepal.so
 vendor/lib/liblx-ar_util.so
@@ -232,7 +233,6 @@ vendor/lib64/libaudiocloudctrl.so
 vendor/lib64/libaudioroute_ext.so
 vendor/lib64/libbatterylistener.so
 vendor/lib64/libcapiv2svacnnvendor.so
-vendor/lib64/libcapiv2svarnnvendor.so
 vendor/lib64/libcapiv2uvvendor.so
 vendor/lib64/libcrussp.so
 vendor/lib64/libfmpal.so
@@ -1617,7 +1617,7 @@ vendor/lib64/vendor.dolby.hardware.dms@2.0.so|975fee7ab5d90b6e66984d9f67f198c3a4
 # Dolby Vision - from diting
 vendor/bin/hw/dolbycodec2
 vendor/etc/dolby_vision.cfg
-vendor/etc/init/dolbycodec2.rc
+#vendor/etc/init/dolbycodec2.rc
 vendor/lib/c2.dolby.avc.dec.so
 vendor/lib/c2.dolby.avc.sec.dec.so
 vendor/lib/c2.dolby.client.so
@@ -1719,7 +1719,7 @@ vendor/lib64/libqisl.so
 vendor/lib64/librpmb.so
 vendor/lib64/libspl.so
 vendor/lib64/libssd.so
-vendor/lib64/vendor.qti.hardware.qseecom@1.0.so|
+vendor/lib64/vendor.qti.hardware.qseecom@1.0.so
 
 # DRM - from miui 14
 vendor/lib64/libops.so|9b33ca1cf66aaf879dc6e9386fcc35f08324b234
@@ -3347,6 +3347,17 @@ vendor/firmware/novatek_spi_fw.bin|b80181e4b6fc81954ca904e54ef2da500dc76e81
 vendor/firmware/st_fts_l12.ftb|7a5adbde68b1117ad42d9579ba34c83f1b3fddc3
 vendor/firmware/stm_fts_production_limits.csv|701d0cf5fd9561bdee6071cfbae90336002996a7
 
+# Touchscreen firmware - copy this shit to the recovery to make that shit works
+vendor/firmware/goodix_cfg_group_l12.bin:recovery/root/vendor/firmware/goodix_cfg_group_l12.bin
+vendor/firmware/goodix_cfg_group_l12_new.bin:recovery/root/vendor/firmware/goodix_cfg_group_l12_new.bin
+vendor/firmware/goodix_firmware_l12.bin:recovery/root/vendor/firmware/goodix_firmware_l12.bin
+vendor/firmware/goodix_firmware_l12_new.bin:recovery/root/vendor/firmware/goodix_firmware_l12_new.bin
+vendor/firmware/goodix_test_limits_1_255.csv:recovery/root/vendor/firmware/goodix_test_limits_1_255.csv
+vendor/firmware/goodix_test_limits_255.csv:recovery/root/vendor/firmware/goodix_test_limits_255.csv
+vendor/firmware/novatek_spi_fw.bin:recovery/root/vendor/firmware/novatek_spi_fw.bin
+vendor/firmware/st_fts_l12.ftb:recovery/root/vendor/firmware/st_fts_l12.ftb
+vendor/firmware/stm_fts_production_limits.csv:recovery/root/vendor/firmware/stm_fts_production_limits.csv
+
 # TouchFeature
 vendor/bin/hw/vendor.xiaomi.hw.touchfeature@1.0-service|5a06ed9618fc73188701b6e842d9864f74f29a06
 vendor/etc/init/vendor.xiaomi.hw.touchfeature@1.0-service.rc|07e74f30d232f2767d0f86a6df5efd7b4a592e03
@@ -3582,6 +3593,17 @@ vendor/firmware/2_seqbinwav_P_RTP.bin:vendor/etc/vibrator/effect_2.bin
 vendor/firmware/3_seqbinwav_P_RTP.bin:vendor/etc/vibrator/effect_3.bin
 vendor/firmware/4_seqbinwav_P_RTP.bin:vendor/etc/vibrator/effect_4.bin
 vendor/firmware/5_seqbinwav_P_RTP.bin:vendor/etc/vibrator/effect_5.bin
+vendor/firmware/0_seqbinwav_P_RTP.bin:vendor/etc/vibrator/primitive_effect_0.bin
+vendor/firmware/1_seqbinwav_P_RTP.bin:vendor/etc/vibrator/primitive_effect_1.bin
+vendor/firmware/2_seqbinwav_P_RTP.bin:vendor/etc/vibrator/primitive_effect_2.bin
+vendor/firmware/3_seqbinwav_P_RTP.bin:vendor/etc/vibrator/primitive_effect_3.bin
+vendor/firmware/4_seqbinwav_P_RTP.bin:vendor/etc/vibrator/primitive_effect_4.bin
+vendor/firmware/5_seqbinwav_P_RTP.bin:vendor/etc/vibrator/primitive_effect_5.bin
+vendor/firmware/6_seqbinwav_P_RTP.bin:vendor/etc/vibrator/primitive_effect_6.bin
+vendor/firmware/7_seqbinwav_P_RTP.bin:vendor/etc/vibrator/primitive_effect_7.bin
+vendor/firmware/8_seqbinwav_P_RTP.bin:vendor/etc/vibrator/primitive_effect_8.bin
+vendor/firmware/9_seqbinwav_P_RTP.bin:vendor/etc/vibrator/primitive_effect_9.bin
+
 
 # Video
 vendor/lib64/libfastcrc.so|ab0a2648d275d1768c5dc18d170f5ff75a9aad4b

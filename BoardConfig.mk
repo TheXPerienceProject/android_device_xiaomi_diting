@@ -113,7 +113,7 @@ PRODUCT_COPY_FILES += \
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config/config.fs
 
 # Firmware
-#-include vendor/xiaomi/diting-firmware/BoardConfigVendor.mk
+-include vendor/xiaomi/diting-firmware/BoardConfigVendor.mk
 
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_diting
@@ -140,8 +140,8 @@ BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
     androidboot.memcg=1 \
     androidboot.usbcontroller=a600000.dwc3 \
-    androidboot.init_fatal_reboot_target=recovery
-#    androidboot.selinux=permissive
+    androidboot.init_fatal_reboot_target=recovery \
+    androidboot.selinux=permissive
 
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
@@ -247,7 +247,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 ENABLE_VENDOR_RIL_SERVICE := true
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2024-10-01
+VENDOR_SECURITY_PATCH := 2024-11-01
 
 # Sensors
 SOONG_CONFIG_NAMESPACES += SENSORS_XIAOMI
@@ -279,7 +279,8 @@ DEVICE_MANIFEST_CAPE_FILES := \
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(DEVICE_PATH)/configs/vintf/vendor_framework_compatibility_matrix.xml \
     $(DEVICE_PATH)/configs/vintf/xiaomi_framework_compatibility_matrix.xml \
-    $(DEVICE_PATH)/configs/vintf/device_framework_matrix.xml
+    $(DEVICE_PATH)/configs/vintf/device_framework_matrix.xml \
+    vendor/xperience/interfaces/vendor_framework_compatibility_matrix.xml
 
 # Verified Boot
 BOARD_AVB_ENABLE := true

@@ -36,6 +36,9 @@ ro.hwui.text_small_cache_height=1024
 ro.hwui.text_large_cache_width=2048
 ro.hwui.text_large_cache_height=1024
 
+# FEAS
+ro.feas.enable=true
+
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
 

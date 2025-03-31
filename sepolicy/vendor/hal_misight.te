@@ -1,0 +1,5 @@
+type data_log_misight_file, file_type;
+#typeattribute data_log_misight_file data_log_misight_file;
+
+#allow hal_misight_xiaomi_default_exec vendor_hal_misight_xiaomi_default_exec:file { execute execute_no_trans r_file_perms };
+#allow hal_misight_xiaomi_default_exec vendor_file:file r_file_perms;
