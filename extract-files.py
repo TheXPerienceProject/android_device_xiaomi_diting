@@ -36,7 +36,7 @@ lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     (
         'libavservices_minijail',
-        'libmemunreachable',
+        'libagmclient',
         'libmisight',
         'libQnnHtp',
         'libQnnHtpV69Stub',
@@ -54,7 +54,6 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.qti.hardware.wifidisplaysession@1.0',
         'vendor.qti.qspmhal@1.0',
         'vendor.qti.qspmhal-V1-ndk',
-        'vendor.xiaomi.hardware.mlipay@1.0',
         'vendor.xiaomi.hardware.misight-V1-ndk_platform',
         'vendor.xiaomi.hardware.misys@1.0.so',
         'vendor.xiaomi.hardware.misys@2.0.so',
@@ -63,7 +62,6 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.xiaomi.hardware.fingerprintextension@1.0',
         'vendor.xiaomi.hw.touchfeature@1.0',
         'vendor.xiaomi.hardware.displayfeature@1.0',
-        'vendor.xiaomi.hardware.mtdservice@1.0',
         'vendor.qti.hardware.display.composer-service.xml',
         'com.qualcomm.qti.dpm.api@1.0',
     ): lib_fixup_vendor_suffix,
@@ -74,7 +72,6 @@ lib_fixups: lib_fixups_user_type = {
         'libagmmixer',
         'vendor.qti.hardware.pal@1.0-impl',
         'libadreno_app_profiles',
-        'libmemunreachable',
     ): lib_fixup_remove,
 }
 
