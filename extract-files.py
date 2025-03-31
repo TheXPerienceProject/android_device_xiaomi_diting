@@ -62,6 +62,7 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.xiaomi.hardware.misys@4.0.so',
         'vendor.xiaomi.hardware.fingerprintextension@1.0',
         'vendor.xiaomi.hw.touchfeature@1.0',
+        'vendor.xiaomi.hardware.displayfeature@1.0',
         'vendor.xiaomi.hardware.mtdservice@1.0',
         'vendor.qti.hardware.display.composer-service.xml',
         'com.qualcomm.qti.dpm.api@1.0',
@@ -73,6 +74,7 @@ lib_fixups: lib_fixups_user_type = {
         'libagmmixer',
         'vendor.qti.hardware.pal@1.0-impl',
         'libadreno_app_profiles',
+        'libmemunreachable',
     ): lib_fixup_remove,
 }
 

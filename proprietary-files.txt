@@ -428,7 +428,6 @@ vendor/lib64/libipebpsstriping170.so
 vendor/lib64/libipebpsstriping480.so
 vendor/lib64/libjpege.so
 vendor/lib64/libmctfengine_stub.so
-vendor/lib64/libmemunreachable.so;MODULE_SUFFIX=_vendor
 vendor/lib64/libmfGhostDetection.so
 vendor/lib64/libmi_supernight_raw_checker.so
 vendor/lib64/libmiai_deblur.so
@@ -1440,7 +1439,7 @@ vendor/lib/libsdr2hdr.so|9f9e091c3cd488c5efc5d06894438ebce7a2afb9
 vendor/lib/libsre.so|99940fb0f0d691fc42990747bdcd9224944dba71
 vendor/lib/libtruetone.so|9b6074a818c5817c75c989ab0ea3fde7a0a0b444
 vendor/lib/libvideomode.so|682583c9073778d73d4028dd0a07ac8f567aa96a
-vendor/lib/vendor.xiaomi.hardware.displayfeature@1.0.so;MODULE_SUFFIX=_vendor|465dae833f39c7bd5198bc6c25f617f0c2873236
+vendor/lib/vendor.xiaomi.hardware.displayfeature@1.0.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF|465dae833f39c7bd5198bc6c25f617f0c2873236
 vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-qti-display.so|ba485a0a9ee660d56d60005e40e03f9ed4e6fbaf
 vendor/lib64/hw/displayfeature.default.so|cd9c36fe59c2a698c5ef4374824444f113e8c6e7
 vendor/lib64/hw/vendor.xiaomi.hardware.displayfeature@1.0-impl.so|44823f34668049898d67c44b0344ce9fdcb6c54b
@@ -1463,7 +1462,7 @@ vendor/lib64/libsdr2hdr.so|72a60a9280ef8f5f910a947b893486eb1e8067b3
 vendor/lib64/libsre.so|4d21c8ff32ab66bfdcd55ca64c221f12fdc4a2f2
 vendor/lib64/libtruetone.so|48a282fe363db3ecd154ef4129c00d609cfcb97d
 vendor/lib64/libvideomode.so|f6ec6b66335b5ff10827c00593d4166f85487f56
-vendor/lib64/vendor.xiaomi.hardware.displayfeature@1.0.so;MODULE_SUFFIX=_vendor|5f8bab4f92695146cce69b0851e318e4ebbda30b
+vendor/lib64/vendor.xiaomi.hardware.displayfeature@1.0.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF|5f8bab4f92695146cce69b0851e318e4ebbda30b
 
 # Display HDR - from missi_phone_eea-user-14-UKQ1.230917.001-V816.0.1.0.ULFEUXM-release-keys
 vendor/lib/libhdr_backlight_adapter.so|27a76877b0ef7c090c469b3784bce9d2ecc857d8
