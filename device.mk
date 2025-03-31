@@ -433,7 +433,6 @@ PRODUCT_PACKAGES += \
     libstagefright_softomx_plugin.vendor \
     libstagefright_softomx.vendor \
     libstagefright_omx.vendor \
-    libstagefrighthw \
     libvorbisidec.vendor \
     libvpx.vendor
 
@@ -452,7 +451,7 @@ PRODUCT_PACKAGES += \
 
 # misc 
 PRODUCT_PACKAGES += \
-    vendor.xiaomi.hardware.mlipay@1.2.vendor \
+    vendor.xiaomi.hardware.mlipay@1.1.vendor \
     vendor.xiaomi.hardware.mtdservice@1.2.vendor
 
 # Network
