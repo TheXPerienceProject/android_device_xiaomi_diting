@@ -89,6 +89,12 @@ vendor/lib64/vendor\.xiaomi\.hardware\.misight-V1-ndk_platform\.so         u:obj
 /data/vendor/images(/.*)?                                                 u:object_r:ta_data_file:s0
 /mnt/vendor/persist/fdsd(/.*)?                                            u:object_r:vendor_persist_drm_file:s0
 
+# Misys
+/vendor/bin/hw/vendor\.xiaomi\.hardware\.misys@1\.0-service                  u:object_r:hal_misys_default_exec:s0
+/vendor/bin/hw/vendor\.xiaomi\.hardware\.misys@2\.0-service                  u:object_r:hal_misys_default_exec:s0
+/vendor/bin/hw/vendor\.xiaomi\.hardware\.misys@3\.0-service                  u:object_r:hal_misys_default_exec:s0
+/vendor/bin/hw/vendor\.xiaomi\.hardware\.misys@4\.0-service                  u:object_r:hal_misys_default_exec:s0
+
 # Modem
 /dev/smd8 u:object_r:vendor_radio_smd_device:s0
 

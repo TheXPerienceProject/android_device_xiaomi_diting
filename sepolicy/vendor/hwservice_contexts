@@ -24,6 +24,9 @@ com.fingerprints.extension::IFingerprintOptical              u:object_r:vendor_h
 # MiCharge
 vendor.xiaomi.hardware.micharge::IMiCharge                   u:object_r:vendor_hal_micharge_xiaomi_hwservice:s0
 
+# MiSys
+vendor.xiaomi.hardware.misys::IMiSys                                                 u:object_r:hal_misys_hwservice:s0
+
 # Mlipay
 vendor.qti.sla.service::ISlaService                          u:object_r:hal_slaservice_hwservice:s0
 vendor.xiaomi.hardware.mfidoca::IFidoService                 u:object_r:hal_mfidoca_hwservice:s0
