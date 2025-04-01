@@ -394,7 +394,7 @@ vendor/lib64/libcamera_nn_stub.so
 vendor/lib64/libcamera_scene.so
 vendor/lib64/libcamerapostproc.so
 vendor/lib64/libcamlog.so
-vendor/lib64/libcamxcommonutils.so
+vendor/lib64/libcamxcommonutils.so;DISABLE_CHECKELF
 vendor/lib64/libcamxexternalformatutils.so
 vendor/lib64/libcamxfacialfeatures.so
 vendor/lib64/libcamxfdalgo.so
