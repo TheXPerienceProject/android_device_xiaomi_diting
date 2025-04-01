@@ -206,8 +206,8 @@ vendor/lib/hw/gyro_fusion_interface.so
 vendor/lib/libxlog.so
 vendor/lib/libadm.so
 vendor/lib/libadsprpc.so
-vendor/lib/libar-acdb.so;MODULE_SUFFIX=_vendor
-vendor/lib/libar-gpr.so;MODULE_SUFFIX=_vendor
+vendor/lib/libar-acdb.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
+vendor/lib/libar-gpr.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
 vendor/lib/libar-gsl.so;MODULE_SUFFIX=_vendor
 vendor/lib/libats.so;MODULE_SUFFIX=_vendor
 vendor/lib/libaudio_log_utils.so
@@ -219,8 +219,8 @@ vendor/lib/libcapiv2svarnnvendor.so
 vendor/lib/libcapiv2uvvendor.so
 vendor/lib/libfmpal.so;MODULE_SUFFIX=_vendor
 vendor/lib/libkaraokepal.so
-vendor/lib/liblx-ar_util.so;MODULE_SUFFIX=_vendor
-vendor/lib/liblx-osal.so;MODULE_SUFFIX=_vendor
+vendor/lib/liblx-ar_util.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
+vendor/lib/liblx-osal.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
 vendor/lib/libmcs.so;DISABLE_CHECKELF
 vendor/lib/libpal_net_if.so
 vendor/lib/libpalclient.so;MODULE_SUFFIX=_vendor
