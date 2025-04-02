@@ -127,7 +127,6 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.qti.hardware.AGMIPC@1.0',
         'libadreno_app_profiles',
         'libsndcardparser',
-        'libgps.utils',
     ): lib_fixup_remove,
 }
 
