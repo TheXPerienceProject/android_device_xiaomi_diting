@@ -19,6 +19,7 @@ from extract_utils.main import (
 )
 
 namespace_imports = [
+    'device/xiaomi/diting',
     'hardware/qcom-caf/sm8450',
     'hardware/qcom-caf/wlan',
     'hardware/xiaomi',
@@ -125,7 +126,8 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.qti.hardware.AGMIPC@1.0-impl',
         'vendor.qti.hardware.AGMIPC@1.0',
         'libadreno_app_profiles',
-        'libsndcardparser'
+        'libsndcardparser',
+        'libgps.utils',
     ): lib_fixup_remove,
 }
 
