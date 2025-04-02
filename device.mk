@@ -78,7 +78,8 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@7.0-impl \
     android.hardware.audio.service \
     android.hardware.soundtrigger@2.3-impl \
-    libaudioroute.vendor
+    libaudioroute.vendor \
+    libhapticgenerator
 
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
