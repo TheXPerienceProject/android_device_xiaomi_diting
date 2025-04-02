@@ -189,7 +189,7 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('IGNORED_IRQ=27,23,38', 'IGNORED_IRQ=27,23,38,115,332'),
     'vendor/etc/seccomp_policy/atfwd@2.0.policy': blob_fixup()
         .add_line_if_missing('gettid: 1'),
-    'vendor/lib64/vendor.libdpmframework.so': blob_fixup()
+    ('vendor/lib/vendor.libdpmframework.so','vendor/lib64/vendor.libdpmframework.so'): blob_fixup()
         .add_needed('libhidlbase_shim.so'),
     'vendor/bin/hw/android.hardware.neuralnetworks-shim-service-qti': blob_fixup()
         .replace_needed('android.hardware.neuralnetworks-V1-ndk_platform.so', 'android.hardware.neuralnetworks-V1-ndk.so')
