@@ -163,7 +163,7 @@ blob_fixups: blob_fixups_user_type = {
         )
         .add_needed('android.hardware.security.rkp-V3-ndk.so'),
     ('vendor/lib/c2.dolby.client.so', 'vendor/lib64/c2.dolby.client.so'): blob_fixup()
-        .add_needed('dolbycodec_shim.so'),
+        .add_needed('libcodec2_hidl_shim.so'),
     'vendor/lib64/hw/displayfeature.default.so': blob_fixup()
         .replace_needed(
             'libstagefright_foundation.so',

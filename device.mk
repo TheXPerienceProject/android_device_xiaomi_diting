@@ -447,7 +447,6 @@ PRODUCT_PACKAGES += \
     libcodec2_vndk.vendor \
     libpalclient \
     libsfplugin_ccodec_utils.vendor \
-    dolbycodec_shim \
     libopus.vendor \
     libstagefright_amrnb_common.vendor \
     libstagefright_enc_common.vendor \

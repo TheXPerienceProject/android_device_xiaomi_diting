@@ -1,11 +1,14 @@
 //
-// Copyright (C) 2021 The LineageOS Project
+// Copyright (C) 2025 The LineageOS Project
 //
 // SPDX-License-Identifier: Apache-2.0
 //
 
 cc_library_shared {
-    name: "dolbycodec_shim",
-    srcs: ["dolbycodec_shim.c"],
-    vendor: true,
+    name: "libcodec2_hidl_shim",
+    srcs: ["libcodec2_hidl_shim.cpp"],
+    shared_libs: [
+        "libcodec2_hidl@1.0",
+    ],
+    vendor_available: true,
 }
