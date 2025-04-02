@@ -208,7 +208,7 @@ vendor/lib/libadm.so
 vendor/lib/libadsprpc.so
 vendor/lib/libar-acdb.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
 vendor/lib/libar-gpr.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
-vendor/lib/libar-gsl.so;MODULE_SUFFIX=_vendor
+vendor/lib/libar-gsl.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
 vendor/lib/libats.so;MODULE_SUFFIX=_vendor
 vendor/lib/libaudio_log_utils.so
 vendor/lib/libaudiocloudctrl.so
@@ -233,9 +233,9 @@ vendor/lib64/hw/audio.primary.taro.so;DISABLE_CHECKELF;MODULE_SUFFIX=_vendor
 vendor/lib64/hw/gyro_fusion_interface.so
 vendor/lib64/libxlog.so
 vendor/lib64/libadm.so
-vendor/lib64/libar-acdb.so;MODULE_SUFFIX=_vendor
-vendor/lib64/libar-gpr.so;MODULE_SUFFIX=_vendor
-vendor/lib64/libar-gsl.so;MODULE_SUFFIX=_vendor
+vendor/lib64/libar-acdb.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
+vendor/lib64/libar-gpr.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
+vendor/lib64/libar-gsl.so;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
 vendor/lib64/libats.so;MODULE_SUFFIX=_vendor
 vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libaudiocloudctrl.so
