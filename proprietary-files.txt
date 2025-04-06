@@ -4,11 +4,7 @@
 # libcne, libmasc, lowi-server, qms depend on libwpa_client, which is a gnu makefile target
 # libmcs depends on libar-acdb, libagm, libats, liblx-osal which are gnu makefile targets
 # libqc2audio_hwaudiocodec depends on libpalclient, which is a gnu makefile target
-# audio.primary.taro depends on vendor.qti.hardware.pal@1.0-impl, which is a gnu makefile target
 # libalAILDC, libalhLDC, libalLDC, libmorpho_ubwc, libTrueSight depends on NDK libnativewindow and build is unable to resolve its symbols
-# libqtigefar depends on libar-pal, which is a gnu makefile target
-# libar-pal depends on libagmclient, which is a gnu makefile target
-# libcrussp depends on libagmclient, which is a gnu makefile target
 
 # ACDB
 vendor/etc/acdbdata/diwali_idp/IDP_diwali_acdb_cal.acdb
@@ -131,26 +127,15 @@ vendor/lib64/hw/com.dsi.ant@1.0-impl.so
 vendor/etc/audio/sku_cape/audio_effects.conf
 vendor/etc/audio/sku_cape/audio_effects.xml
 vendor/etc/audio/sku_cape/audio_policy_configuration.xml
-vendor/etc/audio/sku_cape/mixer_paths_overlay_dynamic.xml
-vendor/etc/audio/sku_cape/mixer_paths_overlay_static.xml
-vendor/etc/audio/sku_cape/mixer_paths_waipio_cdp.xml
-vendor/etc/audio/sku_cape/mixer_paths_waipio_mtp.xml
-vendor/etc/audio/sku_cape/mixer_paths_waipio_qrd.xml
 vendor/etc/audio/sku_cape/resourcemanager_upd.xml
-vendor/etc/audio/sku_cape/resourcemanager_waipio_cdp.xml
-vendor/etc/audio/sku_cape/resourcemanager_waipio_mtp.xml
-vendor/etc/audio/sku_cape/resourcemanager_waipio_qrd.xml													
-vendor/etc/audio_cloud_control_white_list.xml
+
 vendor/etc/audio_policy_engine_configuration_mi.xml:vendor/etc/audio_policy_engine_configuration.xml
 vendor/etc/audio_policy_engine_default_stream_volumes.xml
 vendor/etc/audio_policy_engine_product_strategies.xml
 vendor/etc/audio_policy_engine_stream_volumes.xml
-vendor/etc/card-defs.xml
-vendor/etc/kvh2xml.xml
 vendor/etc/models/acd/event.eai
 vendor/etc/models/acd/music.eai
 vendor/etc/models/acd/speech.eai
-vendor/etc/usecaseKvManager.xml
 
 # Audio firmware 
 vendor/firmware/B-cs35l41-dsp1-spk-cali.bin
@@ -172,7 +157,6 @@ vendor/etc/ftm_test_config_diwali-qrd-snd-card
 vendor/etc/ftm_test_config_waipio-qrd-snd-card
 
 # Audio graph manager
-vendor/lib64/libagm.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.AGMIPC@1.0-impl.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
 vendor/bin/agmcap;MAKE_COPY_RULE_ONLY;MODULE_SUFFIX=_vendor
 vendor/bin/agmcompressplay;MAKE_COPY_RULE_ONLY;MODULE_SUFFIX=_vendor
@@ -188,8 +172,6 @@ vendor/lib64/libagmmixer.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.AGMIPC@1.0.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
 
 # Audio libraries
-vendor/lib64/libar-pal.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
-vendor/lib64/hw/audio.primary.taro.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
 vendor/lib64/hw/gyro_fusion_interface.so
 vendor/lib64/libxlog.so
 vendor/lib64/libadm.so
@@ -203,9 +185,7 @@ vendor/lib64/libaudioroute_ext.so
 vendor/lib64/libbatterylistener.so;;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
 vendor/lib64/libcapiv2svacnnvendor.so
 vendor/lib64/libcapiv2uvvendor.so
-vendor/lib64/libcrussp.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
 vendor/lib64/libfmpal.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
-vendor/lib64/libkaraokepal.so;DISABLE_CHECKELF
 vendor/lib64/liblx-ar_util.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
 vendor/lib64/liblx-osal.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
 vendor/lib64/libmcs.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor

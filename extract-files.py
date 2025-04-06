@@ -68,8 +68,6 @@ lib_fixups: lib_fixups_user_type = {
         'libagm_compress_plugin',
         'libagm_mixer_plugin',
         'libagm_pcm_plugin',
-        'libagmclient',
-        'libagmmixer',
         'libmisight',
         'libsndcardparser',
         'vendor.qti.hardware.AGMIPC@1.0-impl',
@@ -84,7 +82,6 @@ lib_fixups: lib_fixups_user_type = {
         'liblx-osal',        
         # pal
         'libpalclient',
-        'vendor.qti.hardware.pal@1.0-impl',
         'vendor.qti.hardware.pal@1.0',
         # primary-hal
         'audio.primary.taro',
