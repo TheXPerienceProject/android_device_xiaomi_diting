@@ -1124,14 +1124,6 @@ vendor/lib64/libcdsprpc.so
 # CIT Sensor
 odm/etc/camera/camerabooster.json
 system_ext/etc/camerabooster.json
-vendor/bin/hw/vendor.xiaomi.sensor.citsensorservice@2.0-service
-vendor/etc/init/vendor.xiaomi.sensor.citsensorservice@2.0-service.rc
-vendor/etc/vintf/manifest/vendor.xiaomi.sensor.citsensorservice@2.0-service.xml
-vendor/lib/vendor.xiaomi.sensor.citsensorservice@1.1.so
-vendor/lib/vendor.xiaomi.sensor.citsensorservice@2.0.so
-vendor/lib64/hw/vendor.xiaomi.sensor.citsensorservice@2.0-impl.so
-vendor/lib64/vendor.xiaomi.sensor.citsensorservice@1.1.so
-vendor/lib64/vendor.xiaomi.sensor.citsensorservice@2.0.so
 
 # CNE
 vendor/app/CneApp/CneApp.apk;REQUIRED=CneApp.libvndfwk_detect_jni.qti_vendor_symlink
@@ -2848,12 +2840,6 @@ vendor/lib64/jcos_nq_client.so
 vendor/lib64/ls_nq_client.so
 vendor/lib64/se_nq_extn_client-v1.so
 vendor/lib64/se_nq_extn_client.so
-
-# Sensor communicate
-vendor/bin/hw/vendor.xiaomi.sensor.communicate@1.0-service
-vendor/etc/init/vendor.xiaomi.sensor.communicate@1.0-service.rc
-vendor/etc/vintf/manifest/vendor.xiaomi.sensor.communicate@1.0_manifest.xml
-vendor/lib64/vendor.xiaomi.sensor.communicate@1.0.so
 
 # Sensors
 vendor/bin/hw/vendor.qti.hardware.sensorscalibrate@1.0-service
