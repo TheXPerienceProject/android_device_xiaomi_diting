@@ -192,6 +192,10 @@ class XiaomiSm8450UdfpsHander : public UdfpsHandler {
         }).detach();
     }
 
+    void notify(udfpshandler_msg_t /*msg*/) override {
+        // not implemented yet
+    }
+
     void extCmd(int32_t cmd, int32_t param) {
         mDevice->extCmd(mDevice, COMMAND_FOD_PRESS_X, fodX);
         mDevice->extCmd(mDevice, COMMAND_FOD_PRESS_Y, fodY);
