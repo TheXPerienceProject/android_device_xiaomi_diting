@@ -169,11 +169,6 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('vendor.qti.hardware.display.config-V2-ndk_platform.so', 'vendor.qti.hardware.display.config-V2-ndk.so'),
     ('vendor/lib64/hw/com.qti.chi.override.so', 'vendor/lib64/libmialgoengine.so'): blob_fixup()
         .add_needed('libprocessgroup_shim.so'),
-    ('vendor/bin/hw/android.hardware.identity-service-qti',
-     'vendor/lib/libqtiidentitycredential.so',
-     'vendor/lib64/libqtiidentitycredential.so'): blob_fixup()
-        .replace_needed('android.hardware.identity-V3-ndk_platform.so', 'android.hardware.identity-V3-ndk.so')
-        .replace_needed('android.hardware.keymaster-V3-ndk_platform.so', 'android.hardware.keymaster-V3-ndk.so'),
     ('vendor/lib/nfc_nci.nqx.default.hw.v1.so','vendor/lib64/nfc_nci.nqx.default.hw.v1.so',): blob_fixup()
         .add_needed('libbase_shim.so'),
 }  # fmt: skip
