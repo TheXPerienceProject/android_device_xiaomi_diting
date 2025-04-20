@@ -2709,13 +2709,6 @@ vendor/firmware/novatek_spi_fw.bin:recovery/root/vendor/firmware/novatek_spi_fw.
 vendor/firmware/st_fts_l12.ftb:recovery/root/vendor/firmware/st_fts_l12.ftb
 vendor/firmware/stm_fts_production_limits.csv:recovery/root/vendor/firmware/stm_fts_production_limits.csv
 
-# TouchFeature
-vendor/bin/hw/vendor.xiaomi.hw.touchfeature@1.0-service|5a06ed9618fc73188701b6e842d9864f74f29a06
-vendor/etc/init/vendor.xiaomi.hw.touchfeature@1.0-service.rc|07e74f30d232f2767d0f86a6df5efd7b4a592e03
-vendor/etc/vintf/manifest/vendor.xiaomi.hw.touchfeature@1.0-service.xml|96cd6606fc97c995d808ba1f83fa148fe6f37784
-vendor/lib64/hw/vendor.xiaomi.hw.touchfeature@1.0-impl.so|500e60fafa7bf2600ca298fb01dfc6651124d2c6
-vendor/lib64/vendor.xiaomi.hw.touchfeature@1.0.so;MODULE_SUFFIX=_vendor|e2fbb35d402f8b0ec10974a1a1eae16786bc5c80
-
 # Trusted Execution Environment connector
 vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service|aca4bb9f1348c1e01f2e2e286cb2b5052d64da54
 vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc|55c2f0c1e93fccb49ef9919cd56e5903ac14d517
