@@ -103,6 +103,9 @@ on boot
     chmod 0664 /sys/class/touch/touch_dev/abnormal_event
     chown system system /sys/class/touch/touch_dev/abnormal_event
 
+on charger
+    write /sys/class/touch/touch_dev/touch_doze_analysis 6
+
 service touch_report /vendor/bin/touch_report
     class hal
     user system

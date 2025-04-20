@@ -141,29 +141,6 @@ vendor/lib64/vendor\.xiaomi\.hardware\.misight-V1-ndk_platform\.so         u:obj
 /dev/xiaomi-touch                                                         u:object_r:touchfeature_device:s0
 /vendor/bin/hw/vendor\.xperience\.touch@1\.0-service\.diting         u:object_r:hal_lineage_touch_default_exec:s0
 
-# Touchscreen
-/data/vendor/touch(/.*)? u:object_r:vendor_data_touchreport_file:s0
-/sys/devices/virtual/touch/touch_dev/abnormal_event                         u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/clicktouch_raw                           u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/ear_sensor                                u:object_r:sysfs_tp_virtual_prox:s0
-/sys/devices/virtual/touch/touch_dev/ear_sensor_data                         u:object_r:sysfs_tp_virtual_prox:s0
-/sys/devices/virtual/touch/touch_dev/enable_touch_delta                     u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/enable_touch_raw                       u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/force_calibration                         u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/hold_sensor                               u:object_r:sysfs_tp_virtual_prox:s0
-/sys/devices/virtual/touch/touch_dev/palm_sensor                              u:object_r:sysfs_tp_virtual_prox:s0
-/sys/devices/virtual/touch/touch_dev/touch_sensor                             u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/rx_num                                     u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/suspend_state                            u:object_r:sysfs_touch_suspend:s0
-/sys/devices/virtual/touch/touch_dev/touch_doze_analysis                    u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/touch_ic_buffer                           u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/touch_sensor_ctrl                        u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/touch_thp_(.*)                             u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/tx_num                                      u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/touch_dev/update_rawdata                           u:object_r:sysfs_touch_hostprocess:s0
-/sys/devices/virtual/touch/tp_dev/fod_status                                       u:object_r:sysfs_tp_fodstatus:s0
-/sys/devices/virtual/touch/touch_dev/fod_press_status                              u:object_r:sysfs_tp_fodstatus:s0
-
 # Vibrator
 /vendor/bin/hw/vendor\.qti\.hardware\.vibrator\.service\.xiaomi_taro           u:object_r:hal_vibrator_default_exec:s0
 /vendor/bin/hw/vendor\.qti\.hardware\.vibrator\.service\.xiaomi           u:object_r:hal_vibrator_default_exec:s0
