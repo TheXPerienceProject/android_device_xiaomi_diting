@@ -217,7 +217,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.3.vendor \
     android.hardware.biometrics.fingerprint-service.xiaomi \
-    libudfpshandler \
+    libudfpshandler:64 \
     sensors.xiaomi
 
 PRODUCT_COPY_FILES += \
@@ -495,40 +495,38 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml
 
-# Overlays
-PRODUCT_PACKAGES += \
-    FrameworksResOverlayDiting \
-    FrameworksResOverlayDitingGlobal \
-    SettingsOverlayDiting \
-    SystemUIOverlayDiting \
-
-PRODUCT_PACKAGES += \
-    AospWifiResOverlayDitingChina \
-    AospWifiResOverlayDitingGlobal \
-    SettingsOverlayGlobal \
-    SettingsOverlayChina \
-    SettingsProviderOverlayChina \
-    SettingsProviderOverlayGlobal
 
 # Overlays
 PRODUCT_PACKAGES += \
     CarrierConfigResCommon \
-    DitingNfcOverlay \
     FrameworksResCommon \
     SettingsResCommon \
     SystemUIResCommon \
-    TelecommResCommon \
     TelephonyResCommon \
     WifiResCommon
 
 PRODUCT_PACKAGES += \
-    ApertureResOverlay \
-    FrameworksResTarget_Vendor \
+    DialerResXiaomi \
+    FrameworksResTarget \
     FrameworksResXiaomi \
+    LineageResXiaomi \
     SettingsProviderResXiaomi \
-    UpdaterOverlay \
+    SettingsResXiaomi \
     WifiResTarget \
+    WifiResTarget_cape \
     WifiResTarget_spf
+
+# Overlay
+PRODUCT_PACKAGES += \
+    ApertureResDiting \
+    FrameworksResDiting \
+    NfcResDiting \
+    SettingsProviderResDiting \
+    SettingsProviderResDitingCN \
+    SettingsResDiting \
+    SystemUIResDiting \
+    WifiResDiting \
+    WifiResDitingCN
 
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
@@ -538,7 +536,7 @@ PRODUCT_PACKAGES += \
     DeviceAsWebcamResXiaomi
 
 # Parts
-PRODUCT_PACKAGES += \
+# PRODUCT_PACKAGES += \
     XiaomiDolby \
     XiaomiParts
 
