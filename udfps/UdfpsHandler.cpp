@@ -142,10 +142,6 @@ public:
         }).detach();
     }
 
-    void notify(udfpshandler_msg_t /*msg*/) override {
-        // not implemented yet
-    }
-
     void onFingerDown(uint32_t x, uint32_t y, float /*minor*/, float /*major*/) {
         LOG(DEBUG) << __func__ << "x: " << x << ", y: " << y;
 

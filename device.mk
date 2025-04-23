@@ -217,8 +217,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.3.vendor \
     android.hardware.biometrics.fingerprint-service.xiaomi \
-    libudfpshandler:64 \
-    sensors.xiaomi
+    libudfpshandler:64
+
+PRODUCT_PACKAGES += \
+    sensors.xiaomi.v2:64
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
@@ -639,9 +641,6 @@ PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor \
     android.hardware.sensors-service.xiaomi-multihal \
 
-PRODUCT_PACKAGES += \
-    sensors.xiaomi
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/sensors/hals.conf:$(TARGET_COPY_OUT_ODM)/etc/sensors/hals.conf
 
@@ -734,7 +733,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
 
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     vendor.xperience.touch@1.0-service.diting
 
 # USB
