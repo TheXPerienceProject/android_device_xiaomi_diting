@@ -231,6 +231,10 @@ vendor/lib64/soundfx/libvisualizer.so
 vendor/lib64/vendor.qti.hardware.pal@1.0-impl.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.pal@1.0.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
 
+# Spatial Audio - from oriole BP1A.250305.019
+vendor/lib/soundfx/libspatialaudio.so
+vendor/lib64/soundfx/libspatialaudio.so
+
 # Batterysecret 
 vendor/bin/batterysecret|c43ff25b0dde6ac7890426ca220503f0ee78f8f5
 vendor/etc/init/hw/init.batterysecret.rc|f43a2c265b79442fb8e82244caefdd2d3cdce48a
