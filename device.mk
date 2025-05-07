@@ -189,6 +189,10 @@ PRODUCT_COPY_FILES += \
     hardware/qcom-caf/sm8450/display/config/snapdragon_color_libs_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/snapdragon_color_libs_config.xml \
     $(LOCAL_PATH)/configs/display/advanced_sf_offsets.xml:$(TARGET_COPY_OUT_VENDOR)/etc/display/advanced_sf_offsets.xml
 
+#dolby
+TARGET_SHIPS_SOUND_ENHANCEMENT := true
+$(call inherit-product, vendor/sony/extra/extra.mk)
+
 # Doze
 PRODUCT_PACKAGES += \
     Doze
@@ -543,7 +547,6 @@ PRODUCT_PACKAGES += \
 
 # Parts
 # PRODUCT_PACKAGES += \
-    XiaomiDolby \
     XiaomiParts
 
 # Partitions

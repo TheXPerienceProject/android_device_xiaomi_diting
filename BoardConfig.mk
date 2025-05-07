@@ -103,6 +103,10 @@ SOONG_CONFIG_NAMESPACES += dolby_vision
 SOONG_CONFIG_dolby_vision += enabled
 SOONG_CONFIG_dolby_vision_enabled := true
 
+# Dolby
+TARGET_SHIPS_SOUND_ENHANCEMENT := true
+include vendor/sony/extra/BoardConfigExtra.mk
+
 # Fstab
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom

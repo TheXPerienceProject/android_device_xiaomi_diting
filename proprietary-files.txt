@@ -222,7 +222,6 @@ vendor/lib64/soundfx/libbundlewrapper.so
 vendor/lib64/soundfx/libdownmix.so
 vendor/lib64/soundfx/libdynproc.so
 vendor/lib64/soundfx/libeffectproxy.so
-vendor/lib64/soundfx/libhwdap.so
 vendor/lib64/soundfx/libldnhncr.so
 vendor/lib64/soundfx/libmisoundfx.so
 vendor/lib64/soundfx/libreverbwrapper.so
@@ -1330,39 +1329,9 @@ vendor/etc/mdss_dsi_l12_36_02_0b_dsc_cmd_mi.xml|c2df065ea55148fb702d6f9349a7fd32
 vendor/etc/mdss_dsi_l12_42_02_0a_dsc_cmd_mi.xml|c2df065ea55148fb702d6f9349a7fd32cd1598cf
 
 # Dolby music
-system_ext/lib/libdovi_omx.so|35fa73649f422df0b20bcbf5a5dcf68a68f242fc
-system_ext/lib/libdolbyottcontrol.so|57e233616430a0de17c02d1dc93d8fcce42ae87d
-system_ext/lib/libdolbyeffect.so|de49e9383e5db74f2476212392257d0ab9baf4c8
-system_ext/lib/libmpeg4pro.so|c955b9b84208a022c19e52aef8f04579873fddcc
-system_ext/lib64/libdovi_omx.so|e8e6ad517ccece54cb4da3ef156e8b22797c39cd
-system_ext/lib64/libdolbyottcontrol.so|67e48459696d06cc325ef0433eb076543f67e1f4
-system_ext/lib64/libdolbyeffect.so|8065fd8a60cb56c6b5bc3b4aaf3d83f4c991ab35
-system_ext/lib64/libmpeg4pro.so|9045492a672b30e0e420909f552f2828d6b5dde7
-vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service|eb3dfe12845201eec35d3ceb0c18e8eb8e877a0f
 vendor/etc/dolby/dax-default.xml|6081c6470f337f900e01526e0ea5150910c04f90
-vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc|29296ebfe89b2697fec573be73cc3757fd97bed6
 vendor/etc/init/vendor.dolby.media.c2@1.0-service.rc|1ea8b363e94fd4f5410cadceb30de8229fb38045
 vendor/etc/media_codecs_dolby_audio.xml|a794eb15fc198d0285510260025cd99b53fa174f
-vendor/etc/vintf/manifest/manifest_vendor.dolby.hardware.dms.xml|e14caab9b769e58a993583c0486d58b30249ca92
-vendor/lib/libdeccfg.so|ddda752fe04aeb90c94ccc950b1c0cd07f7be804
-vendor/lib/libdapparamstorage.so|e9f21d9ca0bd28b705e91772041e706508131c72
-vendor/lib/libstagefrightdolby.so|ad2d4ff0aa06ab9642311ab469b50b4a79bf8afa
-vendor/lib/libstagefright_soft_ac4dec.so|c3e2fffd52b3263fbc155ecec6f59be28d2689f0
-vendor/lib/libstagefright_soft_ddpdec.so|9eb8298b52e7435075edf0b4b44fe5a4a4ecf5f0
-vendor/lib/soundfx/libhwdap.so|1eb53dc54f31b151a6fa6c6256be84a55f38b4d8
-vendor/lib/soundfx/libswdap.so|e99c53949d65bc74f7dfb05def433d0d25447ff1
-vendor/lib/soundfx/libswgamedap.so|4f19d912050dce5ddb45ad5e848764bda4d80498
-vendor/lib/soundfx/libswvqe.so|e3418164eb56d98f2cb8929731933a6203e8cb98
-vendor/lib/vendor.dolby.hardware.dms@2.0.so|3cf1aa84144609b8b1e050f2dbb6e6e69141f993
-vendor/lib64/libdapparamstorage.so|738bb86eaf9cf93a10c5a3352a6e6c6572a8566b
-vendor/lib64/libdlbdsservice.so|2db3896c230631ff0d0a77042c4137bf1069978d
-vendor/lib64/libstagefrightdolby.so|6736c39633d64a8e285f5c1f478af97c4f22cb5d
-vendor/lib64/soundfx/libswdap.so|a8d588772c7e1b3ceb14b0490e59b0ee17418723
-vendor/lib64/soundfx/libswgamedap.so|5d20994e801f11c098af4cd646b96574dba40e71
-vendor/lib64/soundfx/libswvqe.so|0f56d1adfab8ee3961b1af2b55f5d717099b3ef6
-vendor/lib64/vendor.dolby.hardware.dms@2.0-impl.so|48bf9299172f0626a74c5a3c21b7b598c4d2a185
-vendor/lib64/vendor.dolby.hardware.dms@2.0.so|975fee7ab5d90b6e66984d9f67f198c3a4ea358f
-
 
 # Dolby Vision - from diting
 vendor/bin/hw/dolbycodec2|10ddf8bc38a85054eb2b352823e7befe754ea2ff
@@ -1770,7 +1739,6 @@ vendor/lib64/libEvrcSwCodec.so|73ddf515180f583a807fe809d999988738fd109e
 vendor/lib64/libOmxCore.so|da7aa3c72310cf596124f1a5bae453c19b1963a8
 vendor/lib64/libQcelp13SwCodec.so|61069cee238d8d9cde0ececd9516b1995c6a93ec
 vendor/lib64/libavservices_minijail.so;MODULE_SUFFIX=_vendor|82318115d71928995567f26040a8ab1bdf3b44ca
-vendor/lib64/libdeccfg.so|1720f4998f666c1b08fe3116d45ca76d48b0a610
 vendor/lib64/libmm-omxcore.so|019996e0d6008340e6e649380d825d715d7ce417
 vendor/lib64/libplatformconfig.so|d15fd0e9884df27c90c1060860c4970bbe9f6f4a
 vendor/lib64/libqc2audio_base.so|8eda523c893863e360c9683135a01f27a8270fb1
@@ -1794,8 +1762,6 @@ vendor/lib64/libqcodec2_mockqc2filter.so|222ddeb3aba697e0c2ed1f403a41e19ac647f9b
 vendor/lib64/libqcodec2_platform.so|cdbdbe135bfec5ef542026370e2fcac2ed520658
 vendor/lib64/libqcodec2_utils.so|53aed339f5293d27a431c05775a31e69485192f9
 vendor/lib64/libqcodec2_v4l2codec.so|1c18ff9ae0d11cd1613f9a00898da03e15fa431e
-vendor/lib64/libstagefright_soft_ac4dec.so|e8cf70b7c84fc35f3dd615384b67225019b7e7fd
-vendor/lib64/libstagefright_soft_ddpdec.so|99cef1c2ff617e2f4a9006c7bae9326804a59e63
 #vendor/lib64/libstagefright_softomx.so|959a3bd5b94b223fbe6314f1499c1f23aae2a885
 #vendor/lib64/libstagefrighthw.so|a6390b3b607922fcd8d9da02f95b75943b57545a
 vendor/lib64/qti.video.utils.videobufferlayout.so|72bfcd0c434048d06b9bc5555226cbe83098a8e2
