@@ -284,10 +284,6 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 TARGET_QTI_VIBRATOR_EFFECT_LIB := libqtivibratoreffect.xiaomi_taro
 TARGET_QTI_VIBRATOR_USE_EFFECT_STREAM := true
 
-# Sensors
-TARGET_SENSOR_NOTIFIER_EXT ?= libsensor-notifier-ext
-$(call soong_config_set, xiaomiSm8450SensorVars, extensionLibs, $(TARGET_SENSOR_NOTIFIER_EXT))
-
 # VINTF
 # HIDL
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml
