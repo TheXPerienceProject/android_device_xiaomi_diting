@@ -137,6 +137,7 @@ blob_fixups: blob_fixups_user_type = {
             'libstagefright_foundation.so',
             'libstagefright_foundation-v33.so',
         ),
+<<<<<<< HEAD
     ('vendor/bin/hw/dolbycodec2', 'vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service', 'vendor/bin/hw/vendor.dolby.media.c2@1.0-service'): blob_fixup()
         .add_needed('libstagefright_foundation-v33.so'),
     ('vendor/lib64/hw/audio.primary.taro.so', 'vendor/lib64/hw/audio.primary.taro.so'): blob_fixup()
@@ -172,6 +173,21 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libprocessgroup_shim.so'),
     ('vendor/lib/nfc_nci.nqx.default.hw.v1.so','vendor/lib64/nfc_nci.nqx.default.hw.v1.so',): blob_fixup()
         .add_needed('libbase_shim.so'),
+=======
+    (
+       'vendor/etc/media_codecs_cape.xml',
+       'vendor/etc/media_codecs_diwali_v0.xml',
+       'vendor/etc/media_codecs_diwali_v1.xml',
+       'vendor/etc/media_codecs_diwali_v2.xml',
+       'vendor/etc/media_codecs_taro.xml',
+       'vendor/etc/media_codecs_ukee.xml',
+    ): blob_fixup()
+        .regex_replace('.+media_codecs_(google_audio|google_c2|google_telephony|vendor_audio).+\n', ''),
+    'vendor/etc/vintf/manifest/c2_manifest_vendor.xml': blob_fixup()
+        .regex_replace('.+dolby.+\n', ''),
+    'vendor/lib64/vendor.libdpmframework.so': blob_fixup()
+        .add_needed('libhidlbase_shim.so'),
+>>>>>>> 696ae828 (sm8450-common: Copy media related audio configs from audio hal)
 }  # fmt: skip
 
 module = ExtractUtilsModule(
