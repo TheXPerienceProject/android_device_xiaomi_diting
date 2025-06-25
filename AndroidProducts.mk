@@ -5,4 +5,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/voltage_diting.mk
+    $(LOCAL_DIR)/xperience_diting.mk

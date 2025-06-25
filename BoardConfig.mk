@@ -105,7 +105,7 @@ SOONG_CONFIG_dolby_vision_enabled := true
 
 # Dolby
 TARGET_SHIPS_SOUND_ENHANCEMENT := true
-include vendor/sony/extra/BoardConfigExtra.mk
+-include vendor/sony/extra/BoardConfigExtra.mk
 
 # Fstab
 PRODUCT_COPY_FILES += \

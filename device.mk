@@ -191,7 +191,7 @@ PRODUCT_COPY_FILES += \
 
 #dolby
 TARGET_SHIPS_SOUND_ENHANCEMENT := true
-$(call inherit-product, vendor/sony/extra/extra.mk)
+$(call inherit-product-if-exist, vendor/sony/extra/extra.mk)
 
 # Doze
 PRODUCT_PACKAGES += \
