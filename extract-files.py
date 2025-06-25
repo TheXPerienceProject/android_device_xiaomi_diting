@@ -52,6 +52,7 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.qti.hardware.wifidisplaysession@1.0',
         'vendor.qti.qspmhal@1.0',
         'vendor.qti.qspmhal-V1-ndk',
+        'vendor.nxp.hardware.nfc',
         'vendor.xiaomi.hardware.misight-V1-ndk_platform',
         'vendor.xiaomi.hardware.misys@1.0.so',
         'vendor.xiaomi.hardware.misys@2.0.so',
