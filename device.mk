@@ -67,32 +67,39 @@ PRODUCT_PACKAGES += \
     android.hardware.atrace@1.0-service
 
 # Audio
-SOONG_CONFIG_NAMESPACES += android_hardware_audio
-SOONG_CONFIG_android_hardware_audio += \
-    run_64bit
-SOONG_CONFIG_android_hardware_audio_run_64bit := true
-
 PRODUCT_PACKAGES += \
-    android.media.audio.common.types-V1-cpp.vendor \
-    android.hardware.audio@7.1-impl \
-    android.hardware.audio.effect@7.0-impl \
+    android.hardware.audio@7.0-impl:64 \
+    android.hardware.audio.effect@7.0-impl:64 \
     android.hardware.audio.service \
-    android.hardware.soundtrigger@2.3-impl \
-    libaudioroute.vendor \
-    libhapticgenerator
+    android.hardware.soundtrigger@2.3-impl:64 \
+    vendor.qti.hardware.AGMIPC@1.0-service
 
 PRODUCT_PACKAGES += \
-    audio.bluetooth.default \
-    audio.r_submix.default \
-    audio.usb.default
+    audio.bluetooth.default:64 \
+    audio.primary.taro:64 \
+    audio.r_submix.default:64 \
+    audio.usb.default:64 \
+    sound_trigger.primary.taro:64
 
 PRODUCT_PACKAGES += \
-    libvolumelistener \
-    libqcompostprocbundle \
-    libqcomvisualizer \
-    libqcomvoiceprocessing \
-    libhfp_pal \
-    libbatterylistener
+    audioadsprpcd
+
+PRODUCT_PACKAGES += \
+    lib_bt_aptx:64 \
+    lib_bt_ble:64 \
+    lib_bt_bundle:64 \
+    libagm_compress_plugin:64 \
+    libagm_mixer_plugin:64 \
+    libagm_pcm_plugin:64 \
+    libbatterylistener:64 \
+    libfmpal:64 \
+    libpalclient:64 \
+    libqcompostprocbundle:64 \
+    libqcomvisualizer:64 \
+    libqcomvoiceprocessing:64 \
+    libvolumelistener:64
+
+$(call soong_config_set, android_hardware_audio, run_64bit, true)
 
 # audio dsp
 PRODUCT_PACKAGES += \
@@ -140,7 +147,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0.vendor \
     android.hardware.bluetooth.audio-V2-ndk.vendor \
-    android.hardware.bluetooth.audio-impl \
+    android.hardware.bluetooth.audio-impl:64 \
     libldacBT_abr \
     libldacBT_enc \
     vendor.qti.hardware.bluetooth_audio@2.1.vendor \
@@ -568,6 +575,8 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_PACKAGES += \
     libpsi.vendor \
     libtflite \
+    vendor.qti.hardware.perf@2.2 \
+    vendor.qti.hardware.perf@2.2.vendor \
     vendor.qti.hardware.perf@2.3 \
     vendor.qti.hardware.perf@2.3.vendor \
     vendor.qti.hardware.qspa-V1-ndk

@@ -14,7 +14,7 @@ vendor/etc/acdbdata/diwali_idp_sku1/IDP_diwali_sku1_workspaceFileXml.qwsp
 vendor/etc/acdbdata/diwali_qrd/QRD_diwali_acdb_cal.acdb
 vendor/etc/acdbdata/diwali_qrd/QRD_diwali_workspaceFileXml.qwsp
 vendor/etc/acdbdata/diwali_qrd_sku1/QRD_diwali_sku1_acdb_cal.acdb
-vendor/etc/acdbdata/Forte/Forte_acdb_cal.acdb;SYMLINK=vendor/etc/acdbdata/waipio_mtp/Forte_acdb_cal.acdb
+vendor/etc/acdbdata/Forte/Forte_acdb_cal.acdb:vendor/etc/acdbdata/waipio_mtp/Forte_acdb_cal.acdb
 vendor/etc/acdbdata/Forte/Forte_workspaceFileXml.qwsp:vendor/etc/acdbdata/waipio_mtp/Forte_workspaceFileXml.qwsp
 vendor/etc/acdbdata/IDP_UPD_diwali/IDP_UPD_diwali_acdb_cal.acdb
 vendor/etc/acdbdata/IDP_UPD_diwali/IDP_UPD_diwali_workspaceFileXml.qwsp
@@ -128,14 +128,11 @@ vendor/etc/audio/sku_cape/audio_effects.conf
 vendor/etc/audio/sku_cape/audio_effects.xml
 vendor/etc/audio/sku_cape/audio_policy_configuration.xml
 vendor/etc/audio/sku_cape/resourcemanager_upd.xml
-
 vendor/etc/audio_policy_engine_configuration_mi.xml:vendor/etc/audio_policy_engine_configuration.xml
 vendor/etc/audio_policy_engine_default_stream_volumes.xml
 vendor/etc/audio_policy_engine_product_strategies.xml
 vendor/etc/audio_policy_engine_stream_volumes.xml
-vendor/etc/models/acd/event.eai
-vendor/etc/models/acd/music.eai
-vendor/etc/models/acd/speech.eai
+
 
 # Audio firmware 
 vendor/firmware/B-cs35l41-dsp1-spk-cali.bin
@@ -156,44 +153,18 @@ vendor/etc/ftm_test_config_diwali-qrd-sku1-snd-card
 vendor/etc/ftm_test_config_diwali-qrd-snd-card
 vendor/etc/ftm_test_config_waipio-qrd-snd-card
 
-# Audio graph manager
-vendor/lib64/vendor.qti.hardware.AGMIPC@1.0-impl.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
-vendor/bin/agmcap;MAKE_COPY_RULE_ONLY;MODULE_SUFFIX=_vendor
-vendor/bin/agmcompressplay;MAKE_COPY_RULE_ONLY;MODULE_SUFFIX=_vendor
-vendor/bin/agmplay;MAKE_COPY_RULE_ONLY;MODULE_SUFFIX=_vendor
-vendor/bin/cplay;MAKE_COPY_RULE_ONLY;MODULE_SUFFIX=_vendor
-vendor/bin/hw/vendor.qti.hardware.AGMIPC@1.0-service;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
-vendor/etc/init/vendor.qti.hardware.AGMIPC@1.0-service.rc
-vendor/lib64/libagm_compress_plugin.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
-vendor/lib64/libagm_mixer_plugin.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
-vendor/lib64/libagm_pcm_plugin.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
-vendor/lib64/libagmclient.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
-vendor/lib64/libagmmixer.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
-vendor/lib64/vendor.qti.hardware.AGMIPC@1.0.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
-
-# Audio libraries
-vendor/lib64/hw/gyro_fusion_interface.so
-vendor/lib64/libxlog.so
+# Audio
+vendor/etc/models/acd/event.eai
+vendor/etc/models/acd/music.eai
+vendor/etc/models/acd/speech.eai
 vendor/lib64/libadm.so
-vendor/lib64/libar-acdb.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
-vendor/lib64/libar-gpr.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
-vendor/lib64/libar-gsl.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
-vendor/lib64/libats.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
 vendor/lib64/libaudio_log_utils.so
-vendor/lib64/libaudiocloudctrl.so
-vendor/lib64/libaudioroute_ext.so
-vendor/lib64/libbatterylistener.so;;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
 vendor/lib64/libcapiv2svacnnvendor.so
+vendor/lib64/libcapiv2svarnnvendor.so
 vendor/lib64/libcapiv2uvvendor.so
-vendor/lib64/libfmpal.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
-vendor/lib64/liblx-ar_util.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
-vendor/lib64/liblx-osal.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
-vendor/lib64/libmcs.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
+vendor/lib64/libmcs.so;DISABLE_CHECKELF
 vendor/lib64/libpal_net_if.so
-vendor/lib64/libpalclient.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
-vendor/lib64/libqtigefar.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor;DISABLE_CHECKELF
-vendor/lib64/libresampler.so
-vendor/lib64/libsndcardparser.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
+vendor/lib64/libqtigefar.so;DISABLE_CHECKELF
 
 # Audio soundfx
 vendor/lib64/soundfx/libasphere.so
@@ -207,8 +178,6 @@ vendor/lib64/soundfx/libmisoundfx.so
 vendor/lib64/soundfx/libreverbwrapper.so
 vendor/lib64/soundfx/libshoebox.so
 vendor/lib64/soundfx/libvisualizer.so
-vendor/lib64/vendor.qti.hardware.pal@1.0-impl.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
-vendor/lib64/vendor.qti.hardware.pal@1.0.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
 
 # Spatial Audio - from oriole BP1A.250305.019
 vendor/lib/soundfx/libspatialaudio.so
@@ -1684,7 +1653,6 @@ vendor/lib64/libqtikeymint.so
 # Listen
 vendor/etc/vintf/manifest/manifest_non_qmaa.xml
 vendor/etc/vintf/manifest/manifest_non_qmaa_extn.xml
-vendor/lib64/hw/sound_trigger.primary.taro.so;DISABLE_CHECKELF
 vendor/lib64/libeai_fixed.so
 vendor/lib64/libeai_float.so
 vendor/lib64/liblistensoundmodel2vendor.so
@@ -1718,7 +1686,7 @@ vendor/lib64/libqc2audio_base.so|8eda523c893863e360c9683135a01f27a8270fb1
 vendor/lib64/libqc2audio_basecodec.so|b3885ed642e34ea6ac7bf69b108cfea42a242d18
 vendor/lib64/libqc2audio_core.so|5d36387cc2c92abbbc61a584fd2c9d87ff836135
 vendor/lib64/libqc2audio_hooks.so|af60f201787cb06ce2ded96ae72dafe8eb604198
-vendor/lib64/libqc2audio_hwaudiocodec.so|e810ee6e48fd32b6a9eb9e25ccbb8f4873e3e994
+vendor/lib64/libqc2audio_hwaudiocodec.so;DISABLE_CHECKELF|e810ee6e48fd32b6a9eb9e25ccbb8f4873e3e994
 vendor/lib64/libqc2audio_platform.so|c5ee9c04f5b813a4cf2d9d1a14606fcc3e50658a
 vendor/lib64/libqc2audio_swaudiocodec.so|9e2a26c7d99d98dac14be5066caef55028ecfcba
 vendor/lib64/libqc2audio_utils.so|7f1e09a9a2ae176d3c2f5ae19681f90b38d6bf67
@@ -2964,7 +2932,7 @@ system_ext/lib64/libwfdmmsink.so
 system_ext/lib64/libwfdmmsrc_system.so
 system_ext/lib64/libwfdnative.so;SYMLINK=system_ext/priv-app/WfdService/lib/arm64/libwfdnative.so
 system_ext/lib64/libwfdrtsp.so
-system_ext/lib64/libwfdservice.so
+system_ext/lib64/libwfdservice.so;DISABLE_CHECKELF
 system_ext/lib64/libwfdsinksm.so
 system_ext/lib64/libwfduibcinterface.so
 system_ext/lib64/libwfduibcsink.so
