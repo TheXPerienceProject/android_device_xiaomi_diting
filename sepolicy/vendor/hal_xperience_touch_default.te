@@ -1,0 +1,14 @@
+type hal_xperience_touch_default_sysfs, fs_type, sysfs_type;
+
+allow hal_xperience_touch_default touchfeature_device:chr_file rw_file_perms;
+ 
+allow hal_xperience_touch_default sysfs:dir r_dir_perms;
+
+# required to handle the recognition of screen on/off
+allow hal_xperience_touch_default vendor_sysfs_graphics:dir r_dir_perms;
+allow hal_xperience_touch_default vendor_sysfs_graphics:file r_file_perms;
+
+# required by getevent to handle touch events
+allow hal_xperience_touch_default input_device:dir r_dir_perms;
+#allow hal_xperience_touch_default sysfs_devices_cs_etm:dir r_dir_perms;
+#allow hal_xperience_touch_default sysfs_touch_hostprocess:file rw_file_perms;

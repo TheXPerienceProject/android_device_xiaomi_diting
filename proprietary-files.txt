@@ -2960,23 +2960,10 @@ vendor/lib64/libwvkeybox.so|bdc770cf525e0c166c1a1728b15d1fa1a1f6c425
 vendor/lib64/mediadrm/libwvdrmengine.so|8f30147864e1c937a8337d868bef67189e55f43d
 
 # WiFi
-vendor/bin/athdiag|4480ba854ddd01b97757a6373fe78b8bffbc5633
-vendor/bin/cnss-daemon|1d266903d1d04dc60c7bd87dd8228b5769d34a15
-vendor/bin/hal_proxy_daemon;DISABLE_CHECKELF|9541b442fd12d527688955764c7f24f9d962a9d8
-vendor/bin/pktlogconf|05c237c677c12cec2fdd37dc2f62c335ded3482c
-vendor/bin/spectraltool|ec9272c2826417ea60c3e87b9c42627787a22fef
-vendor/bin/vendor_cmd_tool|7f08bd3a66b9ce9a9e59d4aedc7c6f17d08498b8
-vendor/bin/wificfrtool|325c155d07d0e4a8202096ff1ab9e60af5ee2a74
-vendor/bin/wifilearner|6048cf0a9d6afb26cba5904a43629ab8aeb8450a
-vendor/etc/init/vendor.qti.hardware.wifi.wificfr@1.0-service.rc|08b6ed473663feca673c396dcda809558dd5d664
-vendor/etc/init/vendor.qti.hardware.wifi.wifilearner@1.0-service.rc|aacefc44da5e64760bc12779a83b905ca6b78f01
-vendor/etc/init/init.vendor.wlan.rc|a4d45be8c1e12d4690adbb9a79e882b2f094b2da
-vendor/etc/vintf/manifest/vendor.qti.hardware.wifi.wificfr@1.0-service.xml|a2edc2c22ed12f393b9e64505565f45624ace1ff
-vendor/etc/wifi/p2p_supplicant_overlay.conf|ab99ffdd6ec54ca47b33c10862e69a9a8ac5c1d0
-vendor/etc/wifi/vendor_cmd.xml|b984ecbb79d2ca0b789274fce3fde793b41d3dc6
-vendor/etc/wifi/wpa_supplicant_overlay.conf|c2b028c454942c2c5fe7306e0e65c5bece5a0f64
-vendor/lib64/vendor.qti.hardware.wifi.wificfr@1.0.so|fa92902e22c771025c53ce1842bb708e5d98acb4
-vendor/lib64/vendor.qti.hardware.wifi.wifilearner@1.0.so|46ef7a8bbbcaf2a29012c10cacb746253ba04051
+vendor/bin/cnss-daemon
+vendor/etc/init/init.vendor.wlan.rc
+vendor/etc/wifi/p2p_supplicant_overlay.conf
+vendor/etc/wifi/wpa_supplicant_overlay.conf
 
 # WiFi Display
 system/framework/WfdCommon.jar
