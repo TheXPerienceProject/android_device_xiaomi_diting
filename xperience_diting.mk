@@ -26,3 +26,6 @@ PRODUCT_MODEL := diting
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 BUILD_FINGERPRINT := Xiaomi/diting/diting:12/SKQ1.230401.001/V816.0.8.0.ULFMIXM:user/release-keys
+
+PRODUCT_PACKAGES += \
+    LatinIME
