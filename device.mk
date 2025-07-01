@@ -747,7 +747,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Target platform
 TARGET_BOARD_PLATFORM := taro
 TARGET_COMMON_QTI_COMPONENTS := \
-    bt \
     perf
 
 # Telephony
