@@ -10,6 +10,20 @@ persist.audio.fluence.voicecall=true
 persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=true
 
+# Bluetooth
+bluetooth.core.le.max_number_of_concurrent_connections=10
+bluetooth.device.class_of_device=90,2,12
+bluetooth.leaudio.dual_bidirection_swb.supported=true
+bluetooth.profile.pan.nap.enabled=true
+bluetooth.profile.pan.panu.enabled=true
+bluetooth.profile.pbap.sim.enabled=true
+bluetooth.profile.sap.server.enabled=true
+persist.bluetooth.leaudio.allow.multiple.context=false
+persist.bluetooth.leaudio.bypass_allow_list=true
+persist.bluetooth.leaudio.notify.idle.during.call=true
+persist.bluetooth.leaudio_offload.disabled=false
+ro.bluetooth.leaudio_offload.supported=true
+
 # Camera
 persist.vendor.camera.privapp.list=org.lineageos.aperture.org.codeaurora.snapcam,com.android.camera,com.google.camera
 vendor.camera.aux.packagelist=org.lineageos.aperture,org.codeaurora.snapcam,com.android.camera,com.google.camera
