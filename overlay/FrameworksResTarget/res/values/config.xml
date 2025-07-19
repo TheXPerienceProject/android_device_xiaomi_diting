@@ -21,13 +21,6 @@
          on the headphone/microphone jack. When false use the older uevent framework. -->
     <bool name="config_useDevInputEventForAudioJack">true</bool>
 
-    <!-- Default files to pin via Pinner Service -->
-    <string-array name="config_defaultPinnerServiceFiles" translatable="false">
-        <item>/system/framework/framework.jar</item>
-        <item>/system/framework/services.jar</item>
-        <item>/system/bin/surfaceflinger</item>
-    </string-array>
-
     <!-- Whether the device enable the standalone (SA) mode of 5G NR.-->
     <bool name="config_telephony5gStandalone">true</bool>
 
