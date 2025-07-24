@@ -43,6 +43,7 @@ allow hal_camera_default stmvl53l5_device:chr_file { ioctl open read write };
 allow hal_camera_default hal_quickcamera_hwservice:hwservice_manager { add find };
 dontaudit hal_camera graphics_device:dir search;
 dontaudit hal_camera_default default_prop:file read;
+allow hal_camera_default system_prop:file read;
 
 # Thermal
 allow hal_camera_default sys_thermal_flash_state:file rw_file_perms;

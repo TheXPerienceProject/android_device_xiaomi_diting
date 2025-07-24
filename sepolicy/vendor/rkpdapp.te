@@ -1,0 +1,1 @@
+allow rkpdapp vendor_hal_perf_default:binder call;
