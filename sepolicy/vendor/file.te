@@ -46,3 +46,4 @@ type sysfs_tp_fodstatus, fs_type, sysfs_type;
 type vendor_hal_misight_xiaomi_default_exec, exec_type, file_type, vendor_file_type;
 
 type vendor_proc_display, fs_type, proc_type;
+type vendor_proc_wireless, fs_type, proc_type;
