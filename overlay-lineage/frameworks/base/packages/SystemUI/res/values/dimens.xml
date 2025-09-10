@@ -21,6 +21,7 @@
     <!-- Insert description here (guess we need something like this) -->
     <dimen name="rounded_corner_content_padding">16.0dp</dimen>
 
-    <!-- Udfps fingerprint animation -->
-    <dimen name="udfps_animation_offset">0dip</dimen>
+    <!-- Udfps animation -->
+    <dimen name="udfps_animation_size">200dp</dimen> <!-- ~556 px -->
+    <dimen name="udfps_animation_offset">17dp</dimen> <!-- ~47 px -->
 </resources>
