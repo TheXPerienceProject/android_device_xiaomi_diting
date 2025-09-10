@@ -6,5 +6,5 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Udfps animation -->
     <dimen name="udfps_animation_size">200dp</dimen> <!-- ~556 px -->
-    <dimen name="udfps_animation_offset">17dp</dimen> <!-- ~47 px -->
+    <dimen name="udfps_animation_offset">20dp</dimen> <!-- ~55.6 px -->
 </resources>
