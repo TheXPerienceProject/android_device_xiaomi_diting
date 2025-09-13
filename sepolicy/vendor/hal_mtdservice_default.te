@@ -1,2 +1,22 @@
 set_prop(hal_mtdservice_default, vendor_mlipay_prop)
 
+# Allow MTD HAL to read sepolicy file_contexts (common for vendor HALs)
+allow hal_mtdservice_default file_contexts_file:file { read getattr open };
+
+# Allow MTD HAL to access vendor persist partitions
+allow hal_mtdservice_default vendor_fingerprint_data_file:dir getattr;
+allow hal_mtdservice_default vendor_persist_audio_file:dir getattr;
+allow hal_mtdservice_default vendor_persist_hvdcp_file:dir getattr;
+allow hal_mtdservice_default vendor_persist_rfs_file:dir getattr;
+allow hal_mtdservice_default vendor_persist_haptics_file:dir getattr;
+allow hal_mtdservice_default vendor_persist_time_file:dir getattr;
+allow hal_mtdservice_default vendor_persist_sensors_file:dir getattr;
+allow hal_mtdservice_default vendor_persist_vpp_file:dir getattr;
+allow hal_mtdservice_default vendor_persist_rfs_shared_hlos_file:dir getattr;
+allow hal_mtdservice_default vendor_persist_iar_db_file:dir getattr;
+allow hal_mtdservice_default vendor_persist_display_file:dir getattr;
+allow hal_mtdservice_default camera_persist_file:dir getattr;
+allow hal_mtdservice_default vendor_persist_secnvm_file:dir getattr;
+
+# Allow MTD HAL to getattr and read generic vendor persist files
+allow hal_mtdservice_default mnt_vendor_file:file getattr;
