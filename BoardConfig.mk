@@ -150,8 +150,8 @@ BOARD_VENDOR_RAMDISK_FRAGMENT.dlkm.KERNEL_MODULE_DIRS := top
 BOARD_KERNEL_CMDLINE := \
     video=vfb:640x400,bpp=32,memsize=3072000 \
     disable_dma32=on \
-    swinfo.fingerprint=$(VOLTAGEVERSION) \
-    mtdoops.fingerprint=$(VOLTAGEVERSION)
+    swinfo.fingerprint=$(XPERIENCE_VERSION) \
+    mtdoops.fingerprint=$(XPERIENCE_VERSION)
 BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
     androidboot.memcg=1 \
