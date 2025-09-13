@@ -167,8 +167,8 @@ PRODUCT_PACKAGES_DEBUG += \
     bootctl
 
 # Camera
-$(call inherit-product-if-exists, device/xiaomi/miuicamera-cupid/device.mk)
-$(call soong_config_set,camera,package_name,com.android.camera)
+PRODUCT_PACKAGES += \
+    Aperture
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.7.vendor \
@@ -722,7 +722,6 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    device/xiaomi/miuicamera-cupid \
     hardware/xiaomi \
     kernel/xiaomi/sm8450 \
     kernel/xiaomi/sm8450-modules

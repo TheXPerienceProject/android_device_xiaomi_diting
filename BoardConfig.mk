@@ -82,8 +82,6 @@ TARGET_USES_MIUI_CAMERA := true
 
 #TARGET_CAMERA_PACKAGE_NAME := com.android.camera
 $(call soong_config_set, qtidisplay, use_ycrcb_camera_encode, true)
-# Inherit from proprietary files for miuicamera
--include device/xiaomi/miuicamera-cupid/BoardConfig.mk
 
 # Display
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
