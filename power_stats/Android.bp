@@ -1,0 +1,28 @@
+/*
+ * Copyright (C) 2025 The XPerience Project
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+// Xiaomi Stats AIDL Service
+cc_binary {
+    name: "android.hardware.stats-service.xiaomi",
+    relative_install_path: "hw",
+    vendor: true,
+    init_rc: ["android.hardware.stats-service.xiaomi.rc"],
+    vintf_fragments: ["android.hardware.stats-service.xiaomi.xml"],
+    srcs: [
+        "service.cpp",
+        "Stats.cpp",
+    ],
+    shared_libs: [
+        "libbase",
+        "libbinder_ndk",
+        "liblog",
+        "android.hardware.stats-V1-ndk",  # Cambiado a shared_lib
+    ],
+    cflags: [
+        "-Wall",
+        "-Werror",
+        "-DLOG_TAG=\"StatsXiaomi\"",
+    ],
+}

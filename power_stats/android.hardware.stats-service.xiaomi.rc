@@ -1,0 +1,12 @@
+# Copyright (C) 2025 The XPerience Project
+# SPDX-License-Identifier: Apache-2.0
+
+# Xiaomi Stats AIDL Service init script
+service stats-service-xiaomi /vendor/bin/hw/android.hardware.stats-service.xiaomi
+    class hal
+    user system
+    group system
+    capabilities SYS_NICE
+    shutdown critical
+    onrestart restart vendor.servicemanager
+    seclabel u:r:hal_stats_xiaomi:s0

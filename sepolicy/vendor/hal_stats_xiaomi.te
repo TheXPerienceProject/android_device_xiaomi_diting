@@ -1,0 +1,44 @@
+# HAL para stats service de Xiaomi
+type hal_stats_xiaomi, domain;
+type hal_stats_xiaomi_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(hal_stats_xiaomi)
+
+# Permisos básicos
+allow hal_stats_xiaomi self:process { execmem };
+allow hal_stats_xiaomi hal_stats_xiaomi_exec:file { execute map read open getattr };
+
+# Permitir acceso a stats del sistema
+allow hal_stats_xiaomi proc:file { read open getattr };
+allow hal_stats_xiaomi proc_stat:file { read open getattr };
+allow hal_stats_xiaomi proc_meminfo:file { read open getattr };
+allow hal_stats_xiaomi sysfs:file { read open getattr };
+allow hal_stats_xiaomi sysfs:dir { search getattr };
+
+# Permitir acceso a thermal stats
+allow hal_stats_xiaomi sysfs_thermal:file { read open getattr };
+allow hal_stats_xiaomi sysfs_thermal:dir { search getattr };
+
+# Permitir acceso a GPU stats
+allow hal_stats_xiaomi sysfs_gpu:file { read open getattr };
+allow hal_stats_xiaomi sysfs_gpu:dir { search getattr };
+
+# Permitir acceso a power stats
+allow hal_stats_xiaomi power_device:dir { search getattr };
+allow hal_stats_xiaomi power_device:file { read open getattr };
+
+# Permitir binder communication
+allow hal_stats_xiaomi servicemanager:binder { call transfer };
+allow hal_stats_xiaomi { appdomain -isolated_app }:binder { call transfer };
+binder_use(hal_stats_xiaomi)
+binder_service(hal_stats_xiaomi)
+
+# Permitir logging
+allow hal_stats_xiaomi devlog:sock_file { write open getattr };
+allow hal_stats_xiaomi kernel:system { syslog_read };
+allow hal_stats_xiaomi { -auditd -logd -vold }:unix_stream_socket connectto;
+
+# Permitir acceso a propiedades del sistema
+allow hal_stats_xiaomi system_prop:property_service { set };
+get_prop(hal_stats_xiaomi, system_prop)
+get_prop(hal_stats_xiaomi, vendor_default_prop)
