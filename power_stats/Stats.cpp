@@ -246,38 +246,47 @@ int64_t readCpuEnergy() {
         cluster_weight[cluster_id] = (max_freq > 2500000) ? 2 : 1;
     }
 
-    // Calculate CPU energy
-    for (int cpu = 0; cpu < num_cpus; cpu++) {
+    // Read /proc/stat once
+    std::ifstream stat_file("/proc/stat");
+    std::string line;
+    std::vector<int64_t> active_jiffies(num_cpus, 0);
+
+    while (std::getline(stat_file, line)) {
+        if (!line.starts_with("cpu")) continue;
+
+        int cpu_id = -1;
+        if (line[3] != ' ') { // cpu0, cpu1, ...
+            cpu_id = std::stoi(line.substr(3, line.find(' ') - 3));
+        }
+
+        if (cpu_id < 0 || cpu_id >= num_cpus) continue;
+
+        std::istringstream iss(line);
+        std::string cpu_label;
+        int64_t user, nice, system, idle, iowait, irq, softirq, steal;
+        iss >> cpu_label >> user >> nice >> system >> idle >> iowait >> irq >> softirq >> steal;
+        int64_t total_active = user + nice + system + irq + softirq + steal; // ignore idle + iowait
+        active_jiffies[cpu_id] = total_active;
+    }
+
+    // Convert jiffies to ms
+    long hz = sysconf(_SC_CLK_TCK);
+    if (hz <= 0) hz = 100; // fallback
+    std::vector<int64_t> active_ms(num_cpus,0);
+    for (int cpu=0; cpu<num_cpus; cpu++) {
+        active_ms[cpu] = active_jiffies[cpu] * 1000 / hz;
+    }
+
+    // Calculate energy per cluster
+    for (int cpu=0; cpu<num_cpus; cpu++) {
         int cluster_id = cpu_to_cluster[cpu];
         int64_t weight = cluster_weight[cluster_id];
-
-        int64_t freq_hz = readCpuFrequency(cpu);
-        if (freq_hz <= 0) {
-            freq_hz = readInt64File("/sys/devices/system/cpu/cpu" + std::to_string(cpu) + "/cpufreq/cpuinfo_max_freq") * 1000;
-            if (freq_hz <= 0) freq_hz = 1000000000;
-        }
-
-        int state_count = 0;
-        while (true) {
-            std::string state_path = "/sys/devices/system/cpu/cpu" + std::to_string(cpu) + "/cpuidle/state" + std::to_string(state_count) + "/time";
-            if (access(state_path.c_str(), F_OK) != 0) break;
-            state_count++;
-        }
-
-        int64_t idle_ms = 0;
-        for (int state = 0; state < state_count; state++) {
-            idle_ms += readCpuIdleTime(cpu, state);
-        }
-
-        int64_t active_ms = 1000 - idle_ms;
-        if (active_ms < 0) active_ms = 0;
-
-        // Weighted energy: base * active fraction * cluster weight
-        total_energy += (voltage * current / 1000000LL) * active_ms * weight;
+        total_energy += (voltage * current / 1000000LL) * active_ms[cpu] * weight;
     }
 
     return total_energy;
 }
+
 
 /**
  * @brief Calculate GPU energy in µW·ms weighted by busy percentage and frequency
@@ -285,18 +294,27 @@ int64_t readCpuEnergy() {
 int64_t readGpuEnergy() {
     int64_t voltage = readBatteryVoltage();
     int64_t current = readBatteryCurrent();
-    if (voltage <=0 || current <=0) { voltage=3700000; current=1000; }
+    if (voltage <= 0 || current <= 0) { voltage = 3700000; current = 1000; }
 
-    int32_t busy = readGpuUsage();
-    if (busy <= 0) busy = 10;
+    // GPU busy fraction (0.0 - 1.0)
+    int32_t busy_pct = readGpuUsage();
+    if (busy_pct < 0) busy_pct = 0;
+    if (busy_pct > 100) busy_pct = 100;
+    double busy_frac = static_cast<double>(busy_pct) / 100.0;
 
-    int64_t freq_hz = readGpuFrequency();
-    if (freq_hz <=0) freq_hz = 300000000;
+    // GPU frequency factor (0.0 - 1.0)
+    int64_t freq = readGpuFrequency();
+    int64_t max_freq = readInt64File("/sys/class/kgsl/kgsl-3d0/max_gpuclk");
+    if (freq <= 0) freq = 300000000;        // fallback 300 MHz
+    if (max_freq <= 0) max_freq = 600000000; // fallback 600 MHz
+
+    double freq_factor = static_cast<double>(freq) / static_cast<double>(max_freq);
+    if (freq_factor > 1.0) freq_factor = 1.0;
 
     // Weighted energy: base * busy fraction * frequency factor
-    double freq_factor = static_cast<double>(freq_hz) / 1000000000.0;
-    return static_cast<int64_t>((voltage * current / 1000000LL) * busy * freq_factor);
+    return static_cast<int64_t>((voltage * current / 1000000LL) * busy_frac * freq_factor);
 }
+
 
 /**
  * @brief Reads communication energy (modem/WiFi) weighted by proportion
