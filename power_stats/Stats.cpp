@@ -55,6 +55,8 @@ SocType detectSocType() {
     if (soc_model.find("SM8450") != std::string::npos) return SocType::SM8450;
     if (soc_model.find("SM8350") != std::string::npos) return SocType::SM8350;
     if (soc_model.find("SM8750") != std::string::npos) return SocType::SM8750;
+    // mid range
+    if (soc_model.find("SM7325") != std::string::npos) return SocType::SM7325;
 
     // Fallback to platform code names
     if (platform.find("pineapple") != std::string::npos) return SocType::SM8650;  // Snapdragon 8 Gen 3
@@ -62,6 +64,7 @@ SocType detectSocType() {
     if (platform.find("taro") != std::string::npos) return SocType::SM8450;       // Snapdragon 8 Gen 1
     if (platform.find("lahaina") != std::string::npos) return SocType::SM8350;    // Snapdragon 888
     if (platform.find("sun") != std::string::npos) return SocType::SM8750;        // Snapdragon 8 Elite
+    if (platform.find("yupik") != std::string::npos) return SocType::SM7325;      // Snapdragon 778G
 
     ALOGW("Unknown SoC platform: %s, model: %s", platform.c_str(), soc_model.c_str());
     return SocType::UNKNOWN;
@@ -188,6 +191,7 @@ ndk::ScopedAStatus Stats::getEnergyConsumerInfo(std::vector<EnergyConsumer>* _ai
         case SocType::SM8550: soc_name = "SD8Gen2"; break;
         case SocType::SM8650: soc_name = "SD8Gen3"; break;
         case SocType::SM8750: soc_name = "SD8Elite"; break;
+        case SocType::SM7325: soc_name = "SD778G+"; break;
         default: soc_name = "Snapdragon";
     }
     
@@ -305,6 +309,7 @@ ndk::ScopedAStatus Stats::getPowerEntityInfo(std::vector<PowerEntity>* _aidl_ret
         case SocType::SM8550: soc_prefix = "SD8G2_"; break;
         case SocType::SM8650: soc_prefix = "SD8G3_"; break;
         case SocType::SM8750: soc_prefix = "SD8E_"; break;
+        case SocType::SM7325: soc_prefix = "SD778G_"; break;
         default: soc_prefix = "SD_";
     }
     

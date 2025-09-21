@@ -22,6 +22,7 @@ enum class SocType {
     SM8550,  // Snapdragon 8 Gen 2  
     SM8650,  // Snapdragon 8 Gen 3
     SM8750,  // Snapdragon 8 Elite
+    SM7325,  // Snapdragon 778G+
     UNKNOWN  // Unknown or unsupported platform
 };
 
