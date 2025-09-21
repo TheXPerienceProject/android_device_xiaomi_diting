@@ -24,8 +24,8 @@ int main() {
     // Create Xiaomi-specific power stats service instance
     std::shared_ptr<Stats> statsService = ndk::SharedRefBase::make<Stats>();
 
-    // Register service with instance name "xiaomi"
-    const std::string instance = std::string() + Stats::descriptor + "/xiaomi";
+    // Register service with instance name "default"
+    const std::string instance = std::string() + Stats::descriptor + "/default";
     binder_status_t status = AServiceManager_addService(statsService->asBinder().get(), instance.c_str());
     
     if (status != STATUS_OK) {

@@ -9,4 +9,9 @@
         <version>2</version>
         <fqname>IPowerStats/default</fqname>
     </hal>
+    <hal format="aidl">
+        <name>android.hardware.power.stats</name>
+        <version>2</version>
+        <fqname>IPowerStats/xiaomi</fqname>
+    </hal>
 </manifest>

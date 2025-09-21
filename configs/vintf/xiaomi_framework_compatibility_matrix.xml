@@ -148,4 +148,12 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.power.stats</name>
+        <version>2</version>
+        <interface>
+            <name>IPowerStats</name>
+            <instance>xiaomi</instance>
+        </interface>
+    </hal>
 </compatibility-matrix>
