@@ -1,0 +1,6 @@
+# Copyright (C) 2025 The XPerience Project
+# SPDX-License-Identifier: Apache-2.0
+
+# HWService context for Xiaomi Power Stats
+type hal_power_stats_xiaomi_hwservice, hwservice_manager_type;
+

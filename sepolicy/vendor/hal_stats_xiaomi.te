@@ -1,44 +1,47 @@
-# HAL para stats service de Xiaomi
-type hal_stats_xiaomi, domain;
-type hal_stats_xiaomi_exec, exec_type, vendor_file_type, file_type;
+# Copyright (C) 2025 The XPerience Project
+# SPDX-License-Identifier: Apache-2.0
 
-init_daemon_domain(hal_stats_xiaomi)
+# Domain for Xiaomi Power Stats AIDL Service
+type hal_power_stats_xiaomi, domain;
+type hal_power_stats_xiaomi_exec, exec_type, vendor_file_type, file_type;
 
-# Permisos básicos
-allow hal_stats_xiaomi self:process { execmem };
-allow hal_stats_xiaomi hal_stats_xiaomi_exec:file { execute map read open getattr };
+# Initialize as daemon domain
+init_daemon_domain(hal_power_stats_xiaomi)
 
-# Permitir acceso a stats del sistema
-allow hal_stats_xiaomi proc:file { read open getattr };
-allow hal_stats_xiaomi proc_stat:file { read open getattr };
-allow hal_stats_xiaomi proc_meminfo:file { read open getattr };
-allow hal_stats_xiaomi sysfs:file { read open getattr };
-allow hal_stats_xiaomi sysfs:dir { search getattr };
+# Allow basic process operations
+allow hal_power_stats_xiaomi self:process { fork sigchld };
+allow hal_power_stats_xiaomi self:capability { sys_nice };
+allow hal_power_stats_xiaomi self:fd use;
 
-# Permitir acceso a thermal stats
-allow hal_stats_xiaomi sysfs_thermal:file { read open getattr };
-allow hal_stats_xiaomi sysfs_thermal:dir { search getattr };
+# Allow execution of own binary
+allow hal_power_stats_xiaomi hal_power_stats_xiaomi_exec:file { 
+    execute read open getattr 
+};
 
-# Permitir acceso a GPU stats
-allow hal_stats_xiaomi sysfs_gpu:file { read open getattr };
-allow hal_stats_xiaomi sysfs_gpu:dir { search getattr };
+# ========== GENÉRIC PERMISSIONS ==========
+# Acceso a /proc para estadísticas del sistema
+allow hal_power_stats_xiaomi proc:dir { search getattr };
+allow hal_power_stats_xiaomi proc:file { read open getattr };
 
-# Permitir acceso a power stats
-allow hal_stats_xiaomi power_device:dir { search getattr };
-allow hal_stats_xiaomi power_device:file { read open getattr };
+# Acceso a /sys para hardware monitoring
+allow hal_power_stats_xiaomi sysfs:dir { search getattr };
+allow hal_power_stats_xiaomi sysfs:file { read open getattr };
 
-# Permitir binder communication
-allow hal_stats_xiaomi servicemanager:binder { call transfer };
-allow hal_stats_xiaomi { appdomain -isolated_app }:binder { call transfer };
-binder_use(hal_stats_xiaomi)
-binder_service(hal_stats_xiaomi)
+# Acceso a dispositivos de caracteres genéricos
+allow hal_power_stats_xiaomi device:chr_file { read open getattr };
 
-# Permitir logging
-allow hal_stats_xiaomi devlog:sock_file { write open getattr };
-allow hal_stats_xiaomi kernel:system { syslog_read };
-allow hal_stats_xiaomi { -auditd -logd -vold }:unix_stream_socket connectto;
+# ========== BINDER COMMUNICATION ==========
+allow hal_power_stats_xiaomi servicemanager:binder { call transfer };
+binder_use(hal_power_stats_xiaomi)
+binder_service(hal_power_stats_xiaomi)
 
-# Permitir acceso a propiedades del sistema
-allow hal_stats_xiaomi system_prop:property_service { set };
-get_prop(hal_stats_xiaomi, system_prop)
-get_prop(hal_stats_xiaomi, vendor_default_prop)
+# Allow to be found by servicemanager
+allow hal_power_stats_xiaomi service_manager_type:service_manager find;
+
+# ========== LOGGING PERMISSIONS ==========
+allow hal_power_stats_xiaomi logd_socket:sock_file { write };
+
+# ========== SYSTEM PROPERTIES ==========
+allow hal_power_stats_xiaomi system_prop:property_service { set };
+get_prop(hal_power_stats_xiaomi, system_prop)
+get_prop(hal_power_stats_xiaomi, vendor_default_prop)

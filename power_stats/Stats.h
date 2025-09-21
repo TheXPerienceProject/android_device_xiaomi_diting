@@ -5,96 +5,51 @@
 
 #pragma once
 
-#include <aidl/android/hardware/stats/BnStats.h>
+#include <aidl/android/hardware/power/stats/BnPowerStats.h>
 #include <android-base/logging.h>
+#include <log/log.h>
 
 namespace aidl {
 namespace android {
 namespace hardware {
+namespace power {
 namespace stats {
 
+// SoC type enumeration for Snapdragon platforms
+enum class SocType {
+    SM8350,  // Snapdragon 888/888+
+    SM8450,  // Snapdragon 8 Gen 1
+    SM8550,  // Snapdragon 8 Gen 2  
+    SM8650,  // Snapdragon 8 Gen 3
+    SM8750,  // Snapdragon 8 Elite
+    UNKNOWN  // Unknown or unsupported platform
+};
+
 /**
- * Xiaomi-specific Stats AIDL service implementation
- * Provides system statistics for Xiaomi devices including CPU, GPU, memory, thermal and power data
+ * Xiaomi-specific Power Stats AIDL service implementation for Snapdragon platforms
+ * Provides real hardware statistics for SM8350, SM8450, SM8550, SM8650, SM8750
+ * Uses ro.board.platform and ro.soc.model for precise SoC detection
+ * Implements AIDL IPowerStats interface version 2
  */
-class Stats : public BnStats {
+class Stats : public BnPowerStats {
 public:
     Stats() = default;
     ~Stats() = default;
 
-    /**
-     * Retrieves CPU statistics including tick counts for various states
-     * @param[out] _aidl_return CpuStats structure filled with current CPU metrics
-     * @return ndk::ScopedAStatus OK on success, error otherwise
-     */
-    ndk::ScopedAStatus getCpuStats(CpuStats* _aidl_return) override;
-
-    /**
-     * Retrieves GPU utilization and frequency statistics
-     * @param[out] _aidl_return GpuStats structure with GPU performance data
-     * @return ndk::ScopedAStatus OK on success, error otherwise
-     */
-    ndk::ScopedAStatus getGpuStats(GpuStats* _aidl_return) override;
-
-    /**
-     * Retrieves system memory usage statistics
-     * @param[out] _aidl_return MemoryStats structure with memory allocation data
-     * @return ndk::ScopedAStatus OK on success, error otherwise
-     */
-    ndk::ScopedAStatus getMemoryStats(MemoryStats* _aidl_return) override;
-
-    /**
-     * Retrieves thermal sensor readings from device sensors
-     * @param[out] _aidl_return ThermalStats structure with temperature data
-     * @return ndk::ScopedAStatus OK on success, error otherwise
-     */
-    ndk::ScopedAStatus getThermalStats(ThermalStats* _aidl_return) override;
-
-    /**
-     * Retrieves power-related statistics including battery information
-     * @param[out] _aidl_return PowerStats structure with power consumption data
-     * @return ndk::ScopedAStatus OK on success, error otherwise
-     */
-    ndk::ScopedAStatus getPowerStats(PowerStats* _aidl_return) override;
-
-private:
-    /**
-     * Internal method to read CPU statistics from kernel interfaces
-     * @param[out] stats CpuStats structure to populate
-     * @return bool true if successful, false otherwise
-     */
-    bool readCpuStats(CpuStats* stats);
-
-    /**
-     * Internal method to read GPU statistics from vendor-specific interfaces
-     * @param[out] stats GpuStats structure to populate
-     * @return bool true if successful, false otherwise
-     */
-    bool readGpuStats(GpuStats* stats);
-
-    /**
-     * Internal method to read memory statistics from /proc/meminfo
-     * @param[out] stats MemoryStats structure to populate
-     * @return bool true if successful, false otherwise
-     */
-    bool readMemoryStats(MemoryStats* stats);
-
-    /**
-     * Internal method to read thermal statistics from thermal zones
-     * @param[out] stats ThermalStats structure to populate
-     * @return bool true if successful, false otherwise
-     */
-    bool readThermalStats(ThermalStats* stats);
-
-    /**
-     * Internal method to read power statistics from power supply subsystem
-     * @param[out] stats PowerStats structure to populate
-     * @return bool true if successful, false otherwise
-     */
-    bool readPowerStats(PowerStats* stats);
+    // Methods from aidl::android::hardware::power::stats::IPowerStats
+    ndk::ScopedAStatus getEnergyConsumerInfo(std::vector<EnergyConsumer>* _aidl_return) override;
+    ndk::ScopedAStatus getEnergyConsumed(const std::vector<int32_t>& in_energyConsumerIds,
+                                         std::vector<EnergyConsumerResult>* _aidl_return) override;
+    ndk::ScopedAStatus getPowerEntityInfo(std::vector<PowerEntity>* _aidl_return) override;
+    ndk::ScopedAStatus getStateResidency(const std::vector<int32_t>& in_powerEntityIds,
+                                         std::vector<StateResidencyResult>* _aidl_return) override;
+    ndk::ScopedAStatus getEnergyMeterInfo(std::vector<Channel>* _aidl_return) override;
+    ndk::ScopedAStatus readEnergyMeter(const std::vector<int32_t>& in_channelIds,
+                                       std::vector<EnergyMeasurement>* _aidl_return) override;
 };
 
 }  // namespace stats
+}  // namespace power
 }  // namespace hardware
 }  // namespace android
 }  // namespace aidl

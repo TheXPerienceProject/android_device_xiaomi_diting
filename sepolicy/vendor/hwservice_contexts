@@ -42,5 +42,6 @@ android.frameworks.sensorservice::ISensorManager             u:object_r:fwk_sens
 vendor.xiaomi.sensor.citsensorservice::ICitSensorService     u:object_r:vendor_hal_citsensorservice_xiaomi_hwservice:s0
 vendor.xiaomi.sensor.communicate::ISensorCommunicate         u:object_r:vendor_hal_sensorcommunicate_hwservice:s0
 
-android.hardware.stats::IStats/default                           u:object_r:hal_stats_xiaomi_hwservice:s0
+# Xiaomi Power Stats HWService
+android.hardware.power.stats::IPowerStats/xiaomi u:object_r:hal_power_stats_xiaomi_hwservice:s0
 

@@ -127,9 +127,28 @@ vendor/lib64/vendor\.xiaomi\.hardware\.misight-V1-ndk_platform\.so         u:obj
 /(vendor|system/vendor)/lib(64)?/libui\.so                                                   u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/libqspm-mem-utils-vendor\.so                                u:object_r:same_process_hal_file:s0
 
-# Stats service xiaomi
-/vendor/bin/hw/android\.hardware\.stats-service\.xiaomi u:object_r:hal_stats_xiaomi_exec:s0
-/vendor/etc/init/android\.hardware\.stats-service\.xiaomi\.rc u:object_r:vendor_configs_file:s0
+# Xiaomi Power Stats Service
+/vendor/bin/hw/android\.hardware\.power\.stats-service\.xiaomi u:object_r:hal_power_stats_xiaomi_exec:s0
+/vendor/etc/init/android\.hardware\.power\.stats-service\.xiaomi\.rc u:object_r:vendor_configs_file:s0
+
+# GPU interfaces
+/sys/class/kgsl/kgsl-3d0/gpuclk u:object_r:sysfs_kgsl:s0
+/sys/class/kgsl/kgsl-3d0/gpu_busy_percentage u:object_r:sysfs_kgsl:s0
+/sys/class/kgsl(/.*)? u:object_r:sysfs_kgsl:s0
+
+# Thermal interfaces
+/sys/class/thermal/thermal_zone[0-9]*/temp u:object_r:sysfs_thermal:s0
+
+# Power supply interfaces
+/sys/class/power_supply/battery/capacity u:object_r:vendor_sysfs_battery_supply:s0
+/sys/class/power_supply/battery/current_now u:object_r:vendor_sysfs_battery_supply:s0
+/sys/class/power_supply(/.*)? u:object_r:vendor_sysfs_battery_supply:s0
+
+# CPU frequency interfaces
+/sys/devices/system/cpu/cpu[0-9]*/cpufreq/scaling_cur_freq u:object_r:sysfs_devices_system_cpu:s0
+/sys/devices/system/cpu/cpu[0-9]*/cpufreq(/.*)? u:object_r:sysfs_devices_system_cpu:s0
+
+## Finish power stats
 
 # Thermal
 /(vendor|system/vendor)/bin/mi_thermald                                   u:object_r:mi_thermald_exec:s0

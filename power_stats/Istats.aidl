@@ -2,7 +2,6 @@ package android.hardware.stats;
 
 @VintfStability
 interface IStats {
-    // Estructuras de datos
     parcelable CpuStats {
         int64 userTicks;
         int64 niceTicks;
@@ -25,7 +24,7 @@ interface IStats {
     }
 
     parcelable ThermalStats {
-        int32[] temperatures; // Temperaturas en décimas de grado C
+        int32[] temperatures;
     }
 
     parcelable PowerStats {

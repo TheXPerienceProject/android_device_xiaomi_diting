@@ -5,11 +5,11 @@
 
 // Xiaomi Stats AIDL Service
 cc_binary {
-    name: "android.hardware.stats-service.xiaomi",
+    name: "android.hardware.power.stats-service.xiaomi",
     relative_install_path: "hw",
     vendor: true,
-    init_rc: ["android.hardware.stats-service.xiaomi.rc"],
-    vintf_fragments: ["android.hardware.stats-service.xiaomi.xml"],
+    init_rc: ["android.hardware.power.stats-service.xiaomi.rc"],
+    vintf_fragments: ["android.hardware.power.stats-service.xiaomi.xml"],
     srcs: [
         "service.cpp",
         "Stats.cpp",
@@ -18,11 +18,11 @@ cc_binary {
         "libbase",
         "libbinder_ndk",
         "liblog",
-        "android.hardware.stats-V1-ndk",  # Cambiado a shared_lib
+        "android.hardware.power.stats-V2-ndk",
     ],
     cflags: [
         "-Wall",
         "-Werror",
-        "-DLOG_TAG=\"StatsXiaomi\"",
+        "-DLOG_TAG=\"PowerStatsXiaomi\"",
     ],
 }

@@ -4,8 +4,8 @@
  */
 
 /**
- * Main entry point for Xiaomi Stats AIDL Service
- * Registers the stats service with servicemanager and enters binder loop
+ * Main entry point for Xiaomi Power Stats AIDL Service V2
+ * Registers the power stats service with servicemanager and enters binder loop
  */
 
 #include <android/binder_manager.h>
@@ -15,13 +15,13 @@
 
 #include "Stats.h"
 
-using aidl::android::hardware::stats::Stats;
+using aidl::android::hardware::power::stats::Stats;
 
 int main() {
     // Configure binder thread pool
     ABinderProcess_setThreadPoolMaxThreadCount(0);
     
-    // Create Xiaomi-specific stats service instance
+    // Create Xiaomi-specific power stats service instance
     std::shared_ptr<Stats> statsService = ndk::SharedRefBase::make<Stats>();
 
     // Register service with instance name "xiaomi"
@@ -29,11 +29,11 @@ int main() {
     binder_status_t status = AServiceManager_addService(statsService->asBinder().get(), instance.c_str());
     
     if (status != STATUS_OK) {
-        ALOGE("Failed to register Xiaomi stats service: %d", status);
+        ALOGE("Failed to register Xiaomi power stats service: %d", status);
         return 1;
     }
 
-    ALOGI("Xiaomi Stats AIDL Service started successfully (instance: %s)", instance.c_str());
+    ALOGI("Xiaomi Power Stats AIDL Service V2 started successfully (instance: %s)", instance.c_str());
     
     // Enter binder thread pool (this call doesn't return)
     ABinderProcess_joinThreadPool();
