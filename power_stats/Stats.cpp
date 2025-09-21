@@ -11,18 +11,21 @@
 #include <dirent.h>
 #include <unistd.h>
 #include <map>
-#include <ctime>
 #include <set>
+#include <ctime>
+#include <charconv>
+#include <regex>
+#include <future>
+#include <numeric>
+#include <atomic>
 #include <android-base/file.h>
 #include <android-base/strings.h>
 #include <android-base/properties.h>
 #include <log/log.h>
-#include <cstdlib> // For strtoll
 
 using android::base::ReadFileToString;
 using android::base::Trim;
 using android::base::GetProperty;
-using android::base::StartsWith;
 
 namespace aidl {
 namespace android {
@@ -33,318 +36,276 @@ namespace stats {
 // ==================== Constants ====================
 
 constexpr const char* kProcStat = "/proc/stat";
-constexpr const char* kProcMeminfo = "/proc/meminfo";
 constexpr const char* kGpuFreqPath = "/sys/class/kgsl/kgsl-3d0/gpuclk";
 constexpr const char* kGpuBusyPath = "/sys/class/kgsl/kgsl-3d0/gpu_busy_percentage";
-constexpr const char* kBatteryCapacity = "/sys/class/power_supply/battery/capacity";
+constexpr const char* kBatteryVoltagePath = "/sys/class/power_supply/battery/voltage_now";
+constexpr const char* kBatteryCurrentPath = "/sys/class/power_supply/battery/current_now";
 constexpr const char* kCpuFreqBase = "/sys/devices/system/cpu/cpu";
 
 // Possible CPU idle time paths
 const std::vector<std::string> kCpuIdleTimePaths = {
     "/sys/devices/system/cpu/cpu%d/cpuidle/state%d/time",
     "/sys/devices/system/cpu/cpu%d/cpuidle/state%d/residency",
-    "/sys/devices/system/cpu/cpuidle/state%d/time"
+    "/sys/devices/system/cpu/cpu%d/cpuidle/state%d/time"
 };
+
+// ==================== Cached / Lazy Variables ====================
+
+static SocType gCachedSoc = SocType::UNKNOWN;
+static int64_t gCachedVoltage = -1;
+static int64_t gCachedCurrent = -1;
+
+struct ClusterInfo {
+    int weight;               ///< Weight of the cluster based on max frequency
+    std::vector<int> cpus;    ///< CPUs belonging to this cluster
+};
+static std::vector<ClusterInfo> gClusterInfo;
+static bool gClusterInitialized = false;
 
 // ==================== Utility Functions ====================
 
 /**
- * @brief Reads the first readable file from a list of paths
+ * @brief Reads int64_t from sysfs file, returns fallback if failed
+ * @param path Path to read
+ * @param fallback Value to return on failure
+ * @return Parsed int64_t or fallback
  */
-std::string readFirstAvailable(const std::vector<std::string>& paths) {
-    for (const auto& path : paths) {
-        std::string content;
-        if (ReadFileToString(path, &content)) {
-            return Trim(content);
-        }
-    }
-    return "";
-}
-
-/**
- * @brief Reads int64_t from sysfs file, returns -1 if failed
- */
-static int64_t readInt64File(const std::string& path) {
+static int64_t readInt64File(const std::string& path, int64_t fallback = -1) {
     std::string data;
-    if (!ReadFileToString(path, &data)) return -1;
-    char* endptr;
-    int64_t val = strtoll(Trim(data).c_str(), &endptr, 10);
-    if (endptr == Trim(data).c_str()) return -1;
+    if (!ReadFileToString(path, &data)) return fallback;
+    int64_t val = 0;
+    auto [ptr, ec] = std::from_chars(data.data(), data.data() + data.size(), val);
+    if (ec != std::errc()) return fallback;
     return val;
 }
 
 /**
- * @brief Reads CPU idle time for a specific core and state
+ * @brief Detects SoC type, cached after first detection
+ * @return Detected SocType
  */
-int64_t readCpuIdleTime(int cpu_id, int state_id) {
-    for (const auto& pattern : kCpuIdleTimePaths) {
-        char path[256];
-        snprintf(path, sizeof(path), pattern.c_str(), cpu_id, state_id);
-        std::string time_str;
-        if (ReadFileToString(path, &time_str)) {
-            char* endptr;
-            int64_t val = strtoll(Trim(time_str).c_str(), &endptr, 10);
-            if (endptr != Trim(time_str).c_str()) return val;
-        }
-    }
-    return 0;
-}
+static SocType detectSocType() {
+    if (gCachedSoc != SocType::UNKNOWN) return gCachedSoc;
 
-/**
- * @brief Reads CPU frequency for a specific core
- */
-int64_t readCpuFrequency(int cpu_id) {
-    std::string freq_path = kCpuFreqBase + std::to_string(cpu_id) + "/cpufreq/scaling_cur_freq";
-    std::string freq_str;
-    if (!ReadFileToString(freq_path, &freq_str)) return 0;
-    char* endptr;
-    int64_t freq = strtoll(Trim(freq_str).c_str(), &endptr, 10);
-    if (endptr == Trim(freq_str).c_str()) return 0;
-    return freq * 1000; // KHz -> Hz
-}
-
-/**
- * @brief Reads GPU busy percentage
- */
-int32_t readGpuUsage() {
-    std::string busy_str;
-    if (!ReadFileToString(kGpuBusyPath, &busy_str)) return 0;
-    char* endptr;
-    int64_t val = strtoll(Trim(busy_str).c_str(), &endptr, 10);
-    if (endptr == Trim(busy_str).c_str()) return 0;
-    return static_cast<int32_t>(val);
-}
-
-/**
- * @brief Reads GPU frequency
- */
-int64_t readGpuFrequency() {
-    std::string freq_str;
-    if (!ReadFileToString(kGpuFreqPath, &freq_str)) return 0;
-    char* endptr;
-    int64_t val = strtoll(Trim(freq_str).c_str(), &endptr, 10);
-    if (endptr == Trim(freq_str).c_str()) return 0;
-    return val;
-}
-
-/**
- * @brief Reads battery voltage in µV
- */
-int64_t readBatteryVoltage() {
-    int64_t voltage = readInt64File("/sys/class/power_supply/battery/voltage_now");
-    if (voltage <= 0) voltage = 3700000; // fallback 3.7V
-    return voltage;
-}
-
-/**
- * @brief Reads battery current in µA
- */
-int64_t readBatteryCurrent() {
-    int64_t current = readInt64File("/sys/class/power_supply/battery/current_now");
-    if (current <= 0) current = 1000; // fallback 1mA
-    return current;
-}
-
-/**
- * @brief Reads battery power in µW
- */
-int64_t readBatteryPower() {
-    int64_t power = readInt64File("/sys/class/power_supply/battery/power_now");
-    if (power > 0) return power;
-
-    int64_t voltage = readBatteryVoltage();
-    int64_t current = readBatteryCurrent();
-    return (voltage * current) / 1000000LL; // µW
-}
-
-/**
- * @brief Reads RPMh residency stats (Lahaina only)
- */
-static std::map<std::string, int64_t> readRpmhResidency() {
-    std::map<std::string,int64_t> result;
-    const char* path = "/sys/power/rpmh_stats/master_stats";
-    std::string stats;
-    if (!ReadFileToString(path, &stats)) return result;
-
-    std::istringstream iss(stats);
-    std::string line;
-    while (std::getline(iss, line)) {
-        auto pos = line.find(':');
-        if (pos == std::string::npos) continue;
-        std::string key = Trim(line.substr(0, pos));
-        std::string val_str = Trim(line.substr(pos+1));
-        char* endptr;
-        int64_t val = 0;
-        if (val_str.find("0x") == 0) {
-            val = strtoll(val_str.c_str(), &endptr, 16);
-        } else {
-            val = strtoll(val_str.c_str(), &endptr, 10);
-        }
-        if (endptr != val_str.c_str()) result[key] = val;
-    }
-    return result;
-}
-
-/**
- * @brief Detects SoC type
- */
-SocType detectSocType() {
     std::string platform = GetProperty("ro.board.platform", "");
     std::string soc_model = GetProperty("ro.soc.model", "");
-    if (soc_model.find("SM8350") != std::string::npos) return SocType::SM8350;
-    if (soc_model.find("SM8450") != std::string::npos) return SocType::SM8450;
-    if (soc_model.find("SM8550") != std::string::npos) return SocType::SM8550;
-    if (soc_model.find("SM8650") != std::string::npos) return SocType::SM8650;
-    if (soc_model.find("SM8750") != std::string::npos) return SocType::SM8750;
-    if (soc_model.find("SM7325") != std::string::npos) return SocType::SM7325;
 
-    if (platform.find("lahaina") != std::string::npos) return SocType::SM8350;
-    if (platform.find("taro") != std::string::npos) return SocType::SM8450;
-    if (platform.find("kalama") != std::string::npos) return SocType::SM8550;
-    if (platform.find("pineapple") != std::string::npos) return SocType::SM8650;
-    if (platform.find("sun") != std::string::npos) return SocType::SM8750;
-    if (platform.find("yupik") != std::string::npos) return SocType::SM7325;
+    ALOGD("Platform detection: platform='%s', soc_model='%s'", platform.c_str(), soc_model.c_str());
+    if (soc_model.find("SM8350") != std::string::npos) gCachedSoc = SocType::SM8350;
+    else if (soc_model.find("SM8450") != std::string::npos) gCachedSoc = SocType::SM8450;
+    else if (soc_model.find("SM8550") != std::string::npos) gCachedSoc = SocType::SM8550;
+    else if (soc_model.find("SM8650") != std::string::npos) gCachedSoc = SocType::SM8650;
+    else if (soc_model.find("SM8750") != std::string::npos) gCachedSoc = SocType::SM8750;
+    else if (soc_model.find("SM7325") != std::string::npos) gCachedSoc = SocType::SM7325;
+    else gCachedSoc = SocType::UNKNOWN;
 
-    ALOGW("Unknown SoC platform: %s, model: %s", platform.c_str(), soc_model.c_str());
-    return SocType::UNKNOWN;
+    return gCachedSoc;
 }
 
-// ==================== Energy Calculation Functions ====================
+/**
+ * @brief Lazy cached voltage in µV
+ * @return Voltage in microvolts
+ */
+static int64_t getCachedVoltage() {
+    if (gCachedVoltage < 0) {
+        gCachedVoltage = readInt64File(kBatteryVoltagePath, 3700000);
+    }
+    return gCachedVoltage;
+}
 
 /**
- * @brief Calculate CPU energy in µW·ms with dynamic cluster weights per physical cluster
+ * @brief Lazy cached current in µA
+ * @return Current in microamps
  */
-int64_t readCpuEnergy() {
-    int64_t total_energy = 0;
-    int64_t voltage = readBatteryVoltage();
-    int64_t current = readBatteryCurrent();
-    if (voltage <= 0 || current <= 0) { voltage = 3700000; current = 1000; }
+static int64_t getCachedCurrent() {
+    if (gCachedCurrent < 0) {
+        gCachedCurrent = readInt64File(kBatteryCurrentPath, 1000);
+    }
+    return gCachedCurrent;
+}
+
+// ==================== CPU Cluster Initialization ====================
+/**
+ * @brief Detects CPU clusters and assigns weights based on max frequency.
+ *        Uses parallel tasks for faster initialization on multi-core systems.
+ *        Caches results for subsequent calls.
+ */
+static void initializeClustersParallel() {
+    if (gClusterInitialized) return;
 
     int num_cpus = sysconf(_SC_NPROCESSORS_ONLN);
     if (num_cpus <= 0) num_cpus = 8;
 
-    std::map<int,int> cpu_to_cluster;
-    std::map<int,int64_t> cluster_weight;
-    std::set<int> clusters;
+    std::vector<int> cpu_to_cluster(num_cpus);
+    std::set<int> cluster_ids;
 
-    // Map CPUs to clusters
+    // Read cluster ID for each CPU in parallel
+    std::vector<std::future<void>> futures;
     for (int cpu = 0; cpu < num_cpus; cpu++) {
-        std::string path = "/sys/devices/system/cpu/cpu" + std::to_string(cpu) + "/topology/physical_package_id";
-        int cluster_id = static_cast<int>(readInt64File(path));
-        cpu_to_cluster[cpu] = cluster_id;
-        clusters.insert(cluster_id);
+        futures.push_back(std::async(std::launch::async, [cpu, &cpu_to_cluster]() {
+            int cluster_id = static_cast<int>(
+                readInt64File(kCpuFreqBase + std::to_string(cpu) + "/topology/physical_package_id", 0)
+            );
+            cpu_to_cluster[cpu] = cluster_id;
+        }));
     }
 
-    // Assign cluster weights based on max frequency
-    for (int cluster_id : clusters) {
-        int64_t max_freq = 0;
-        for (auto& [cpu, cid] : cpu_to_cluster) {
-            if (cid != cluster_id) continue;
-            int64_t freq = readInt64File("/sys/devices/system/cpu/cpu" + std::to_string(cpu) + "/cpufreq/cpuinfo_max_freq");
-            if (freq > max_freq) max_freq = freq;
-        }
-        cluster_weight[cluster_id] = (max_freq > 2500000) ? 2 : 1;
-    }
+    // Wait for all cluster ID reads to complete
+    for (auto& f : futures) f.get();
 
-    // Read /proc/stat once
-    std::ifstream stat_file("/proc/stat");
-    std::string line;
-    std::vector<int64_t> active_jiffies(num_cpus, 0);
+    cluster_ids.insert(cpu_to_cluster.begin(), cpu_to_cluster.end());
+    gClusterInfo.clear();
 
-    while (std::getline(stat_file, line)) {
-        if (!line.starts_with("cpu")) continue;
-
-        int cpu_id = -1;
-        if (line[3] != ' ') { // cpu0, cpu1, ...
-            cpu_id = std::stoi(line.substr(3, line.find(' ') - 3));
+    // Assign cluster weights and CPU lists
+    for (int cluster_id : cluster_ids) {
+        ClusterInfo info;
+        info.weight = 1;  // default weight
+        for (int cpu = 0; cpu < num_cpus; cpu++) {
+            if (cpu_to_cluster[cpu] == cluster_id) {
+                info.cpus.push_back(cpu);
+            }
         }
 
-        if (cpu_id < 0 || cpu_id >= num_cpus) continue;
+        // Determine cluster weight in parallel
+        futures.clear();
+        std::atomic<int> max_weight{1};
+        for (int cpu : info.cpus) {
+            futures.push_back(std::async(std::launch::async, [cpu, &max_weight]() {
+                int64_t max_freq = readInt64File(
+                    kCpuFreqBase + std::to_string(cpu) + "/cpufreq/cpuinfo_max_freq", 0
+                );
+                if (max_freq > 2500000) max_weight.store(2, std::memory_order_relaxed);
+            }));
+        }
+        for (auto& f : futures) f.get();
+        info.weight = max_weight.load();
 
-        std::istringstream iss(line);
-        std::string cpu_label;
-        int64_t user, nice, system, idle, iowait, irq, softirq, steal;
-        iss >> cpu_label >> user >> nice >> system >> idle >> iowait >> irq >> softirq >> steal;
-        int64_t total_active = user + nice + system + irq + softirq + steal; // ignore idle + iowait
-        active_jiffies[cpu_id] = total_active;
+        gClusterInfo.push_back(info);
     }
 
-    // Convert jiffies to ms
-    long hz = sysconf(_SC_CLK_TCK);
-    if (hz <= 0) hz = 100; // fallback
-    std::vector<int64_t> active_ms(num_cpus,0);
-    for (int cpu=0; cpu<num_cpus; cpu++) {
-        active_ms[cpu] = active_jiffies[cpu] * 1000 / hz;
-    }
-
-    // Calculate energy per cluster
-    for (int cpu=0; cpu<num_cpus; cpu++) {
-        int cluster_id = cpu_to_cluster[cpu];
-        int64_t weight = cluster_weight[cluster_id];
-        total_energy += (voltage * current / 1000000LL) * active_ms[cpu] * weight;
-    }
-
-    return total_energy;
+    gClusterInitialized = true;
 }
 
+// ==================== CPU Energy ====================
 
 /**
- * @brief Calculate GPU energy in µW·ms weighted by busy percentage and frequency
+ * @brief Calculate CPU energy in µW·ms using cpuidle residency times
+ * @return Total CPU energy in µW·ms
+ */
+int64_t readCpuEnergyParallel() {
+    initializeClustersParallel();
+
+    int64_t voltage = getCachedVoltage();
+    int64_t current = getCachedCurrent();
+    int64_t power = (voltage * current) / 1000000LL;
+
+    int num_cpus = sysconf(_SC_NPROCESSORS_ONLN);
+    if (num_cpus <= 0) num_cpus = 8;
+
+    std::atomic<int64_t> total_energy{0};
+
+    for (const auto& cluster : gClusterInfo) {
+        for (int cpu : cluster.cpus) {
+            int state_id = 0;
+            while (true) {
+                std::ostringstream oss;
+                oss << "/sys/devices/system/cpu/cpu" << cpu 
+                    << "/cpuidle/state" << state_id << "/time";
+                std::string path = oss.str();
+
+                int64_t time_ms = readInt64File(path, -1);
+                if (time_ms < 0) break;
+
+                // Weighted energy per cluster
+                total_energy.fetch_add(time_ms * power * cluster.weight, std::memory_order_relaxed);
+                state_id++;
+            }
+        }
+    }
+
+    return total_energy.load();
+}
+
+// ==================== GPU Energy ====================
+
+/**
+ * @brief Reads GPU energy using runtime_active_time if available
+ *        Falls back to previous busy% * freq calculation
+ * @return Total GPU energy in µW·ms
  */
 int64_t readGpuEnergy() {
-    int64_t voltage = readBatteryVoltage();
-    int64_t current = readBatteryCurrent();
-    if (voltage <= 0 || current <= 0) { voltage = 3700000; current = 1000; }
+    int64_t voltage = getCachedVoltage();
+    int64_t current = getCachedCurrent();
+    int64_t power = (voltage * current) / 1000000LL;
 
-    // GPU busy fraction (0.0 - 1.0)
-    int32_t busy_pct = readGpuUsage();
-    if (busy_pct < 0) busy_pct = 0;
-    if (busy_pct > 100) busy_pct = 100;
-    double busy_frac = static_cast<double>(busy_pct) / 100.0;
-
-    // GPU frequency factor (0.0 - 1.0)
-    int64_t freq = readGpuFrequency();
-    int64_t max_freq = readInt64File("/sys/class/kgsl/kgsl-3d0/max_gpuclk");
-    if (freq <= 0) freq = 300000000;        // fallback 300 MHz
-    if (max_freq <= 0) max_freq = 600000000; // fallback 600 MHz
-
-    double freq_factor = static_cast<double>(freq) / static_cast<double>(max_freq);
-    if (freq_factor > 1.0) freq_factor = 1.0;
-
-    // Weighted energy: base * busy fraction * frequency factor
-    return static_cast<int64_t>((voltage * current / 1000000LL) * busy_frac * freq_factor);
-}
-
-
-/**
- * @brief Reads communication energy (modem/WiFi) weighted by proportion
- */
-int64_t readCommEnergy(double proportion) {
-    int64_t power = readBatteryPower();
-    if (power <= 0) power = 5000000;
-
-    // Weighted energy: total power * proportion of usage
-    return static_cast<int64_t>(power * proportion);
-}
-
-/**
- * @brief Reads RPMh energy per state (Lahaina only)
- */
-std::map<std::string,int64_t> readRpmhEnergy() {
-    std::map<std::string,int64_t> rpmh_energy;
-    SocType soc = detectSocType();
-    if (soc != SocType::SM8350) return rpmh_energy;
-
-    auto stats = readRpmhResidency();
-    int64_t voltage = readBatteryVoltage();
-    int64_t current = readBatteryCurrent();
-    if (voltage <=0 || current<=0) { voltage=3700000; current=1000; }
-
-    for (auto& [state, ms] : stats) {
-        // Weighted energy: base * residency in ms
-        rpmh_energy[state] = (voltage * current / 1000000LL) * ms;
+    // Try reading runtime_active_time (ns) for GPU
+    int64_t runtime_ns = readInt64File("/sys/class/kgsl/kgsl-3d0/power/runtime_active_time", -1);
+    if (runtime_ns > 0) {
+        // Convert ns → ms
+        int64_t runtime_ms = runtime_ns / 1000000LL;
+        return power * runtime_ms;
     }
-    return rpmh_energy;
+
+    // Fallback: busy% * freq factor
+    int32_t busy_pct = readInt64File(kGpuBusyPath,0);
+    busy_pct = std::clamp(busy_pct, 0, 100);
+    double busy_frac = busy_pct / 100.0;
+
+    int64_t freq = readInt64File(kGpuFreqPath, 300000000);
+    int64_t max_freq = readInt64File("/sys/class/kgsl/kgsl-3d0/max_gpuclk", 600000000);
+    double freq_factor = std::min(1.0, static_cast<double>(freq)/max_freq);
+
+    return static_cast<int64_t>(power * busy_frac * freq_factor);
+}
+
+// ==================== Communication Energy ====================
+
+/**
+ * @brief Reads communication energy (modem/WiFi) intelligently per SoC
+ *        Uses real battery power readings if available, otherwise estimates.
+ * @param type "modem" or "wifi"
+ * @return Weighted energy in µW·ms
+ */
+int64_t readCommEnergy(const std::string& type) {
+    int64_t power = -1;
+
+    // Try kernel-exposed energy files
+    power = readInt64File("/sys/class/power_supply/battery/power_now", -1);
+    if (power < 0) power = readInt64File("/sys/class/power_supply/battery/power_avg", -1);
+
+    if (power < 0) {
+        // fallback to (V*I)/1e6
+        int64_t voltage = getCachedVoltage();
+        int64_t current = getCachedCurrent();
+        power = (voltage * current) / 1000000LL;
+    }
+
+    // Default proportion
+    double proportion = 0.1;
+
+    SocType soc = detectSocType();
+    if (type == "modem") {
+        switch (soc) {
+            case SocType::SM8350: proportion = 0.25; break;
+            case SocType::SM8450: proportion = 0.2;  break;
+            case SocType::SM8550: proportion = 0.18; break;
+            case SocType::SM8650: proportion = 0.15; break;
+            case SocType::SM8750: proportion = 0.15; break;
+            case SocType::SM7325: proportion = 0.22; break;
+            default: proportion = 0.2;
+        }
+    } else if (type == "wifi") {
+        switch (soc) {
+            case SocType::SM8350: proportion = 0.1; break;
+            case SocType::SM8450: proportion = 0.08; break;
+            case SocType::SM8550: proportion = 0.07; break;
+            case SocType::SM8650: proportion = 0.06; break;
+            case SocType::SM8750: proportion = 0.06; break;
+            case SocType::SM7325: proportion = 0.09; break;
+            default: proportion = 0.08;
+        }
+    }
+
+    return static_cast<int64_t>(power * proportion);
 }
 
 // ==================== IPowerStats Interface ====================
@@ -396,6 +357,7 @@ ndk::ScopedAStatus Stats::getEnergyConsumerInfo(std::vector<EnergyConsumer>* _ai
         .type = EnergyConsumerType::WIFI,
         .name = soc_name + " WiFi"
     });
+
     if (soc == SocType::SM8650 || soc == SocType::SM8750) {
         consumers.push_back({
             .id = 4,
@@ -427,11 +389,19 @@ ndk::ScopedAStatus Stats::getEnergyConsumed(
     std::vector<EnergyConsumerResult> results;
     int64_t timestamp_ms = static_cast<int64_t>(std::time(nullptr)) * 1000;
 
-    int64_t cpu_energy = readCpuEnergy();
-    int64_t gpu_energy = readGpuEnergy();
-    int64_t modem_energy = readCommEnergy(0.2);
-    int64_t wifi_energy = readCommEnergy(0.1);
+    // Launch parallel tasks for each energy consumer
+    auto cpu_future   = std::async(std::launch::async, [](){ return readCpuEnergyParallel(); });
+    auto gpu_future   = std::async(std::launch::async, [](){ return readGpuEnergy(); });
+    auto modem_future = std::async(std::launch::async, [](){ return readCommEnergy("modem"); });
+    auto wifi_future  = std::async(std::launch::async, [](){ return readCommEnergy("wifi"); });
 
+    // Retrieve results from futures
+    int64_t cpu_energy   = cpu_future.get();
+    int64_t gpu_energy   = gpu_future.get();
+    int64_t modem_energy = modem_future.get();
+    int64_t wifi_energy  = wifi_future.get();
+
+    // Map input consumer IDs to their respective energy
     for (const auto& id : in_energyConsumerIds) {
         EnergyConsumerResult result = {
             .id = id,
@@ -441,11 +411,11 @@ ndk::ScopedAStatus Stats::getEnergyConsumed(
         };
 
         switch(id) {
-            case 0: result.energyUWs = cpu_energy; break;
-            case 1: result.energyUWs = gpu_energy; break;
-            case 2: result.energyUWs = modem_energy; break;
-            case 3: result.energyUWs = wifi_energy; break;
-            default: result.energyUWs = 1000000;
+            case 0: result.energyUWs = cpu_energy; break;    // CPU cluster
+            case 1: result.energyUWs = gpu_energy; break;    // GPU
+            case 2: result.energyUWs = modem_energy; break;  // Modem
+            case 3: result.energyUWs = wifi_energy; break;   // WiFi
+            default: result.energyUWs = 1000000;             // Fallback
         }
         results.push_back(result);
     }
@@ -456,9 +426,6 @@ ndk::ScopedAStatus Stats::getEnergyConsumed(
 
 /**
  * Retrieves information about available power entities
- * Maps to the hardware monitoring functions you implemented
- * * @param[out] _aidl_return Vector of PowerEntity information
- * @return ndk::ScopedAStatus OK on success
  */
 ndk::ScopedAStatus Stats::getPowerEntityInfo(std::vector<PowerEntity>* _aidl_return) {
     std::vector<PowerEntity> entities;
@@ -499,35 +466,32 @@ ndk::ScopedAStatus Stats::getPowerEntityInfo(std::vector<PowerEntity>* _aidl_ret
         }
     });
     
-    // Memory power entity
+    // Memory / Comm entity
     entities.push_back({
         .id = 2,
-        .name = soc_prefix + "MEM",
+        .name = soc_prefix + "COMM",
         .states = {
             {.id = 0, .name = "active"},
-            {.id = 1, .name = "self_refresh"},
-            {.id = 2, .name = "power_down"}
+            {.id = 1, .name = "idle"}
         }
     });
-    
-    // Modem power entity
-    entities.push_back({
-        .id = 3,
-        .name = soc_prefix + "MODEM",
-        .states = {
-            {.id = 0, .name = "active"},
-            {.id = 1, .name = "idle"},
-            {.id = 2, .name = "sleep"}
-        }
-    });
-    
+
     *_aidl_return = entities;
     return ndk::ScopedAStatus::ok();
 }
 
 /**
- * Implementation of getStateResidency()
- * Uses RPMh stats if available, otherwise dummy fallback.
+ * @brief Implementation of getStateResidency()
+ * 
+ * Provides residency information for each power entity.
+ * 
+ * RPMh stats (specific to Lahaina) are no longer used.
+ * For all SoCs, fallback dummy values are returned to ensure
+ * compatibility across Snapdragon 8350 → 8750 and future SoCs.
+ *
+ * @param in_powerEntityIds Vector of power entity IDs to query
+ * @param[out] _aidl_return Vector of StateResidencyResult
+ * @return ndk::ScopedAStatus OK on success
  */
 ndk::ScopedAStatus Stats::getStateResidency(
         const std::vector<int32_t>& in_powerEntityIds,
@@ -536,32 +500,51 @@ ndk::ScopedAStatus Stats::getStateResidency(
     std::vector<StateResidencyResult> results;
     int64_t current_time_ms = static_cast<int64_t>(std::time(nullptr)) * 1000;
 
-    auto rpmh_stats = readRpmhResidency();
-
     for (const auto& id : in_powerEntityIds) {
-        StateResidencyResult result = {.id = id};
+        StateResidencyResult result;
+        result.id = id;
 
-        if (!rpmh_stats.empty()) {
-            // Build residency data from RPMh
-            for (const auto& [state, val] : rpmh_stats) {
-                result.stateResidencyData.push_back({
-                    .id = static_cast<int32_t>(result.stateResidencyData.size()),
-                    .totalTimeInStateMs = val,
-                    .totalStateEntryCount = 0,
-                    .lastEntryTimestampMs = current_time_ms - 1000
-                });
+        std::vector<StateResidency> states;
+
+        int num_cpus = sysconf(_SC_NPROCESSORS_ONLN);
+        if (num_cpus <= 0) num_cpus = 8;
+
+        for (int cpu = 0; cpu < num_cpus; cpu++) {
+            int state_id = 0;
+            while (true) {
+                std::ostringstream oss;
+                oss << "/sys/devices/system/cpu/cpu" << cpu
+                    << "/cpuidle/state" << state_id << "/time";
+                std::string path = oss.str();
+
+                int64_t time_ms = readInt64File(path, -1);
+                if (time_ms < 0) break;
+
+                StateResidency s;
+                s.id = state_id;
+                s.totalTimeInStateMs = time_ms;
+                s.totalStateEntryCount = 0;  // no se expone por defecto
+                s.lastEntryTimestampMs = current_time_ms - 1000;
+                states.push_back(s);
+
+                state_id++;
             }
-        } else {
-            // Fallback dummy values
-            result.stateResidencyData = {
-                {.id = 0, .totalTimeInStateMs = 10000, .totalStateEntryCount = 10, .lastEntryTimestampMs = current_time_ms - 2000},
-                {.id = 1, .totalTimeInStateMs = 20000, .totalStateEntryCount = 5,  .lastEntryTimestampMs = current_time_ms - 5000}
-            };
         }
 
+        if (states.empty()) {
+            // fallback mínimo si kernel no expone cpuidle
+            StateResidency s;
+            s.id = 0;
+            s.totalTimeInStateMs = 1;
+            s.totalStateEntryCount = 1;
+            s.lastEntryTimestampMs = current_time_ms;
+            states.push_back(s);
+        }
+
+        result.stateResidencyData = states;
         results.push_back(result);
     }
-    
+
     *_aidl_return = results;
     return ndk::ScopedAStatus::ok();
 }

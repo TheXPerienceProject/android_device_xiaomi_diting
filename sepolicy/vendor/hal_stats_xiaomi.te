@@ -45,3 +45,9 @@ allow hal_power_stats_xiaomi logd_socket:sock_file { write };
 allow hal_power_stats_xiaomi system_prop:property_service { set };
 get_prop(hal_power_stats_xiaomi, system_prop)
 get_prop(hal_power_stats_xiaomi, vendor_default_prop)
+
+# ========== VENDOR PROPERTIES ==========
+allow hal_power_stats_xiaomi vendor_sysfs_battery_supply:dir r_dir_perms;
+allow hal_power_stats_xiaomi vendor_sysfs_battery_supply:file r_file_perms;
+allow hal_power_stats_xiaomi vendor_sysfs_kgsl_gpuclk:file r_file_perms;
+allow hal_power_stats_xiaomi vendor_sysfs_kgsl:file r_file_perms;
