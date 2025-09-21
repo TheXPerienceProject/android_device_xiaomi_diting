@@ -1,12 +1,13 @@
 # Copyright (C) 2025 The XPerience Project
 # SPDX-License-Identifier: Apache-2.0
 
-# Xiaomi Power Stats AIDL Service V2
-service power-stats-xiaomi /vendor/bin/hw/android.hardware.power.stats-service.xiaomi
+# Servicio AIDL de Power Stats
+service stats /vendor/bin/hw/android.hardware.power.stats-service.xiaomi
     class hal
     user system
     group system
     capabilities SYS_NICE
     shutdown critical
+    restart on-failure
     onrestart restart vendor.servicemanager
     seclabel u:r:hal_power_stats_xiaomi:s0

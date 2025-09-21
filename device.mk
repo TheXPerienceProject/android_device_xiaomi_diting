@@ -585,6 +585,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     vendor/qcom/opensource/power/config/taro/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
 
+# Power Stats
+PRODUCT_PACKAGES += \
+    android.hardware.power.stats-service.xiaomi \
+    android.hardware.power.stats-service.xiaomi.xml
+
 # Product
 PRODUCT_USE_SCUDO := true
 
