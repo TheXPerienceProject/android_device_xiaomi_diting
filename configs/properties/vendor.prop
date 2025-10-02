@@ -584,4 +584,4 @@ ro.qcom.adreno.qgl.ShaderStorageImageExtendedFormats=0
 zygote.critical_window.minute=10
 
 # Resolution switch
-#ro.xperience.display.resolution_switch=1
+ro.xperience.display.resolution_switch=1
