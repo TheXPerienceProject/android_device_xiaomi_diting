@@ -61,6 +61,10 @@ on boot
     chown system system /sys/devices/virtual/touch/touch_dev/bump_sample_rate
     chmod 0660 /sys/devices/virtual/touch/touch_dev/bump_sample_rate
 
+    # Game Bar
+    chown system system /sys/class/power_supply/battery/temp
+    chmod 0660 /sys/class/power_supply/battery/temp
+
 on post-fs
     chown system system /sys/class/backlight/panel0-backlight/brightness
     chown system system /sys/class/backlight/panel0-backlight/max_brightness
