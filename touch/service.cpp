@@ -12,8 +12,8 @@
 
 #include "HighTouchPollingRate.h"
 
-using ::vendor::lineage::touch::V1_0::IHighTouchPollingRate;
-using ::vendor::lineage::touch::V1_0::implementation::HighTouchPollingRate;
+using ::vendor::xperience::touch::V1_0::IHighTouchPollingRate;
+using ::vendor::xperience::touch::V1_0::implementation::HighTouchPollingRate;
 
 int main() {
     android::sp<IHighTouchPollingRate> highTouchPollingRate = new HighTouchPollingRate();

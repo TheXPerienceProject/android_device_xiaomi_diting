@@ -4,4 +4,9 @@
         <transport>hwbinder</transport>
         <fqname>@1.0::IHighTouchPollingRate/default</fqname>
     </hal>
+    <hal format="hidl">
+        <name>vendor.xperience.touch</name>
+        <transport>hwbinder</transport>
+        <fqname>@1.0::IHighTouchPollingRate/default</fqname>
+    </hal>
 </manifest>

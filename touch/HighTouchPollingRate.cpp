@@ -35,7 +35,7 @@
 #define TOUCH_ID 0
 
 namespace vendor {
-namespace lineage {
+namespace xperience {
 namespace touch {
 namespace V1_0 {
 namespace implementation {
@@ -277,5 +277,5 @@ bool HighTouchPollingRate::isScreenOn() {
 }  // namespace implementation
 }  // namespace V1_0
 }  // namespace touch
-}  // namespace lineage
+}  // namespace xperience
 }  // namespace vendor
