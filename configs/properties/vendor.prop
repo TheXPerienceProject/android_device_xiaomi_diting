@@ -487,6 +487,7 @@ ro.vendor.se.type=eSE,HCE,UICC
 ro.vendor.se.chip.model=SN110T
 
 # Perf
+ro.vendor.perf-hal.ver=3.0
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.perf.scroll_opt=true
 ro.vendor.perf.scroll_opt.heavy_app=2
