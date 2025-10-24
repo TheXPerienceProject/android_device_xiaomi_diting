@@ -1,1 +1,2 @@
 allow nfc vendor_nfc_vendor_data_file:dir search;
+allow nfc nfc_device:chr_file rw_file_perms;
