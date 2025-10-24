@@ -238,4 +238,7 @@
          spatial audio is enabled for a newly connected audio device -->
     <bool name="config_spatial_audio_head_tracking_enabled_default">true</bool>
 
+     <!-- Fingerprint from stock ROM -->
+     <string name="config_stockFingerprint" translatable="false">Xiaomi/diting/diting:12/SKQ1.230401.001/OS2.0.203.0.VLFMIXM:user/release-keys</string>
+
 </resources>
