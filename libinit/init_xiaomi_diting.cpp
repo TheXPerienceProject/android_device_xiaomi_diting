@@ -23,7 +23,7 @@ static const variant_info_t diting_global_info = {
     .device = "diting",
     .marketname = "Xiaomi 12T Pro",
     .model = "22081212G",
-    .mod_device = "ditingp_global",
+    .mod_device = "diting_global",
     .build_fingerprint = FINGERPRINT_GL,
 };
 
