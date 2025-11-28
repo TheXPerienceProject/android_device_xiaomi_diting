@@ -576,6 +576,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
+# Boot Jars
+PRODUCT_BOOT_JARS += \
+    QPerformance \
+    UxPerformance
+
 # Perf
 PRODUCT_PACKAGES += \
     libpsi.vendor \
