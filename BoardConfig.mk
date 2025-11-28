@@ -80,9 +80,6 @@ TARGET_BUILD_APERTURE_CAMERA := false
 TARGET_INCLUDES_MIUI_CAMERA := true
 TARGET_USES_MIUI_CAMERA := true
 
--include device/xiaomi/peridot-miuicamera/BoardConfig.mk
-
-
 #TARGET_CAMERA_PACKAGE_NAME := com.android.camera
 $(call soong_config_set, qtidisplay, use_ycrcb_camera_encode, true)
 
@@ -286,7 +283,6 @@ include packages/apps/GameBar/sepolicy/SEPolicy.mk
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
-BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/memcam
 
 # Vibrator
 TARGET_QTI_VIBRATOR_EFFECT_LIB := libqtivibratoreffect.xiaomi_taro

@@ -167,12 +167,8 @@ PRODUCT_PACKAGES_DEBUG += \
     bootctl
 
 # Camera
-$(call inherit-product-if-exists, device/xiaomi/peridot-miuicamera/device.mk)
-#$(call inherit-product-if-exists, device/xiaomi/miuicamera-cupid/device.mk)
-#-include vendor/xiaomi/miuicamera-cupid/miuicamera-cupid-vendor.mk
-
 PRODUCT_PACKAGES += \
-    #Aperture
+    Aperture
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.7.vendor \
