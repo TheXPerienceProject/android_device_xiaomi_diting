@@ -51,6 +51,7 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.qti.hardware.iop@2.0',
         'vendor.qti.hardware.wifidisplaysession@1.0',
         'vendor.qti.qspmhal@1.0',
+        'vendor.qti.qspmhal-V1-ndk',
         'vendor.nxp.hardware.nfc',
         'vendor.xiaomi.hardware.misight-V1-ndk_platform',
         'vendor.xiaomi.hardware.misys@1.0.so',
@@ -73,11 +74,6 @@ lib_fixups: lib_fixups_user_type = {
         'libats',
         'liblx-osal',
         'libpalclient',
-        "vendor.qti.qspmhal-V1-ndk",
-        "vendor.qti.memory.pasrmanager@1.0",
-        "vendor.qti.memory.pasrmanager@1.1",
-        "libqspm-mem-utils-vendor",
-        "libpasrutils",
     ): lib_fixup_remove,
 }
 

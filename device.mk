@@ -586,6 +586,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.perf@2.3.vendor \
     vendor.qti.hardware.qspa-V1-ndk
 
+include device/xperience/common/system/perf/qti-perf.mk
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service
@@ -752,7 +754,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Target platform
 TARGET_BOARD_PLATFORM := taro
 TARGET_COMMON_QTI_COMPONENTS := \
-    perf
+    bt
+
 
 # Telephony
 PRODUCT_PACKAGES += \
