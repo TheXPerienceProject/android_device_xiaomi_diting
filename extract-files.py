@@ -123,7 +123,8 @@ blob_fixups: blob_fixups_user_type = {
         ),
     'vendor/lib/libcodec2_hidl@1.0_vendor.so': blob_fixup()
         .replace_needed('libcodec2_vndk.so', 'libcodec2_vndk_vendor.so',)
-        .fix_soname(),
+        .fix_soname()
+        .add_needed('dolbycodec_shim.so'),
     'vendor/lib/libcodec2_vndk_vendor.so': blob_fixup()
         .fix_soname()
         .add_needed('libui_shim.so'),

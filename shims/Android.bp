@@ -1,0 +1,11 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_library_shared {
+    name: "dolbycodec_shim",
+    srcs: ["dolbycodec_shim.cpp"],
+    shared_libs: ["libutils"],
+    device_specific: true,
+}
