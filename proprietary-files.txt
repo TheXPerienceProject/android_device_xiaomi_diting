@@ -95,10 +95,8 @@ vendor/lib/rfsa/adsp/libmobilenet_dsp_frc_networks.so
 vendor/lib/rfsa/adsp/libmobilenet_dsp_frc.so
 vendor/lib/rfsa/adsp/libQ6MSFR_manager_skel.so
 vendor/lib/rfsa/adsp/libQnnHtpAltPrepV69Skel.so
-vendor/lib/rfsa/adsp/libQnnHtpV69Skel.so|393e442b843d37bd6d2d9681a0fb923a067e98a2
 vendor/lib/rfsa/adsp/libqvr_cam_dsp_driver_skel.so
 vendor/lib/rfsa/adsp/libqvr_dsp_driver_skel.so
-vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so|396429c72bae75fcdf40e623d19e83b2c1e4969a
 vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/rfsa/adsp/libsnpe_dsp_v65_domains_v2_skel.so
 vendor/lib/rfsa/adsp/libsnpe_dsp_v66_domains_v2_skel.so
@@ -199,9 +197,6 @@ vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so
 vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so
-vendor/lib64/lib_bt_aptx.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
-vendor/lib64/lib_bt_ble.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
-vendor/lib64/lib_bt_bundle.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
 vendor/lib64/lib_bt_lhdc.so;MAKE_COPY_RULE;MODULE_SUFFIX=_vendor
 vendor/lib64/libbluetooth_audio_session_qti.so
 vendor/lib64/libbluetooth_audio_session_qti_2_1.so
@@ -1444,9 +1439,6 @@ vendor/lib64/com.fingerprints.extension@3.0.so
 vendor/lib64/libgf_hal.so
 vendor/lib64/libmisight.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.xiaomi.hardware.dtool@1.0.so
-odm/lib64/vendor.xiaomi.hardware.fx.tunnel@1.0.so:vendor/lib64/vendor.xiaomi.hardware.fx.tunnel@1.0.so;MODULE_SUFFIX=_vendor|7a32dc0e74318ed2156306287f68ee7cd304b0e5
-# Test FP on k50u
-vendor/lib64/vendor.xiaomi.hardware.fingerprintextension@1.0.so;MODULE_SUFFIX=_vendor
 
 # misight
 system/lib/vendor.xiaomi.hardware.misight-V1-ndk_platform.so
@@ -1712,7 +1704,6 @@ vendor/etc/vintf/manifest/c2_manifest_vendor.xml|dfaad7360e85bf2d1a8293bb878a4f0
 vendor/etc/vintf/manifest/c2_manifest_vendor_audio.xml|7801d5fb9104883e33e874011caa25c28b7bec71
 vendor/lib64/libEvrcSwCodec.so|73ddf515180f583a807fe809d999988738fd109e
 vendor/lib64/libQcelp13SwCodec.so|61069cee238d8d9cde0ececd9516b1995c6a93ec
-vendor/lib64/libavservices_minijail.so;MODULE_SUFFIX=_vendor|82318115d71928995567f26040a8ab1bdf3b44ca
 vendor/lib64/libdeccfg.so|1720f4998f666c1b08fe3116d45ca76d48b0a610
 vendor/lib64/libmm-omxcore.so|019996e0d6008340e6e649380d825d715d7ce417
 vendor/lib64/libplatformconfig.so|d15fd0e9884df27c90c1060860c4970bbe9f6f4a
@@ -1772,8 +1763,6 @@ vendor/lib64/libmt.so|02a11bd0e180c357a8bb75802e16b37af394b026
 vendor/lib64/libmt@1.3.so|63fdc6970eb1f007c93b64446dbb94b0874b1f57
 vendor/lib64/libteeclientjni.so|11c33e519d832aa9bf0d541f85a3d4b694c5225a
 vendor/lib64/libtida@1.2.so|a3cd3997a9f74f173a35bd98fc08099f5450fdc2
-vendor/lib64/vendor.xiaomi.hardware.mfidoca@1.0.so;MODULE_SUFFIX=_vendor|5c665f941fa7cca35336841236ce169ceaf4fbcd
-vendor/lib64/vendor.xiaomi.hardware.mtdservice@1.3.so;MODULE_SUFFIX=_vendor|e48799ce7a0c66fd2290d7028f8fbb52c98339ab
 vendor/lib64/vendor.xiaomi.hardware.tidaservice@1.0.so|1a28052c4fe102493352ee44c0f547e0ee7954a9
 vendor/lib64/vendor.xiaomi.hardware.tidaservice@1.1.so|4edcfabcc2403b4e0136f2ba5637861d1f6c1471
 vendor/lib64/vendor.xiaomi.hardware.tidaservice@1.2.so|5fb6a1453d2b335f4d693e42c29aea903198403e
@@ -2453,13 +2442,7 @@ vendor/bin/hw/vendor.qti.hardware.servicetracker@1.2-service
 vendor/etc/init/vendor.qti.hardware.servicetracker@1.2-service.rc
 vendor/etc/vintf/manifest/vendor.qti.hardware.servicetracker@1.2-service.xml
 vendor/lib/hw/vendor.qti.hardware.servicetracker@1.2-impl.so
-vendor/lib/vendor.qti.hardware.servicetracker@1.0.so;MODULE_SUFFIX=_vendor
-vendor/lib/vendor.qti.hardware.servicetracker@1.1.so;MODULE_SUFFIX=_vendor
-vendor/lib/vendor.qti.hardware.servicetracker@1.2.so;MODULE_SUFFIX=_vendor
 vendor/lib64/hw/vendor.qti.hardware.servicetracker@1.2-impl.so
-vendor/lib64/vendor.qti.hardware.servicetracker@1.0.so;MODULE_SUFFIX=_vendor
-vendor/lib64/vendor.qti.hardware.servicetracker@1.1.so;MODULE_SUFFIX=_vendor
-vendor/lib64/vendor.qti.hardware.servicetracker@1.2.so;MODULE_SUFFIX=_vendor
 
 # Secure element
 vendor/bin/hw/vendor.qti.secure_element@1.2-service

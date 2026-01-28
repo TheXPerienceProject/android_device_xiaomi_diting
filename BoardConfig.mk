@@ -278,7 +278,7 @@ SOONG_CONFIG_SENSORS_XIAOMI_USES_SINGLE_TAP_SENSOR := true
 
 # Sepolicy
 include device/qcom/sepolicy_vndr/SEPolicy.mk
-include packages/apps/GameBar/sepolicy/SEPolicy.mk
+-include packages/apps/GameBar/sepolicy/SEPolicy.mk
 
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public

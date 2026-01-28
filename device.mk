@@ -99,7 +99,7 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing:64 \
     libvolumelistener:64
 
-$(call soong_config_set, android_hardware_audio, run_64bit, true)
+$(call soong_config_set_bool, android_hardware_audio, run_64bit, true)
 
 # audio dsp
 PRODUCT_PACKAGES += \
