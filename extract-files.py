@@ -150,6 +150,7 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/lib/nfc_nci.nqx.default.hw.v1.so',
         'vendor/lib64/nfc_nci.nqx.default.hw.v1.so',
         'vendor/lib/libcodec2_hidl@1.0_vendor.so',
+        'vendor/bin/qguard',
      ): blob_fixup()
         .add_needed('libbase_shim.so'),
     (
