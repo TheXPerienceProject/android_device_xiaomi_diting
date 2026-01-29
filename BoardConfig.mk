@@ -81,7 +81,7 @@ TARGET_INCLUDES_MIUI_CAMERA := true
 TARGET_USES_MIUI_CAMERA := true
 
 #TARGET_CAMERA_PACKAGE_NAME := com.android.camera
-$(call soong_config_set, qtidisplay, use_ycrcb_camera_encode, true)
+$(call soong_config_set_bool, qtidisplay, use_ycrcb_camera_encode, true)
 
 # Display
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
@@ -302,7 +302,6 @@ DEVICE_MANIFEST_CAPE_FILES := \
     $(DEVICE_PATH)/configs/vintf/manifest_xiaomi.xml
 
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
-    vendor/qcom/opensource/core-utils/vendor_framework_compatibility_matrix.xml \
     $(DEVICE_PATH)/configs/vintf/vendor_framework_compatibility_matrix.xml \
     $(DEVICE_PATH)/configs/vintf/xiaomi_framework_compatibility_matrix.xml \
     $(DEVICE_PATH)/configs/vintf/device_framework_matrix.xml

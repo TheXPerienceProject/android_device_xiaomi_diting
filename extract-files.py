@@ -36,7 +36,6 @@ def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     (
-        'libavservices_minijail',
         'libmisight',
         'libQnnHtp',
         'libQnnHtpV69Stub',
@@ -63,7 +62,6 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.xiaomi.hardware.displayfeature@1.0',
         'vendor.qti.hardware.display.composer-service.xml',
         'com.qualcomm.qti.dpm.api@1.0',
-        'libmisight',
     ): lib_fixup_vendor_suffix,
     (
         'libwpa_client',
@@ -147,7 +145,11 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('vendor.qti.hardware.display.config-V2-ndk_platform.so', 'vendor.qti.hardware.display.config-V2-ndk.so'),
     ('vendor/lib64/hw/com.qti.chi.override.so', 'vendor/lib64/libmialgoengine.so'): blob_fixup()
         .add_needed('libprocessgroup_shim.so'),
-    ('vendor/lib/nfc_nci.nqx.default.hw.v1.so','vendor/lib64/nfc_nci.nqx.default.hw.v1.so',): blob_fixup()
+    (
+        'vendor/lib/nfc_nci.nqx.default.hw.v1.so',
+        'vendor/lib64/nfc_nci.nqx.default.hw.v1.so',
+        'vendor/lib/libcodec2_hidl@1.0_vendor.so',
+     ): blob_fixup()
         .add_needed('libbase_shim.so'),
     (
         'vendor/bin/hw/vendor.qti.camera.provider@2.7-service_64',
