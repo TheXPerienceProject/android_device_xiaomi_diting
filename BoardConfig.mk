@@ -31,7 +31,7 @@ AB_OTA_PARTITIONS += \
 
 # Architecture
 TARGET_ARCH := arm64
-TARGET_ARCH_VARIANT := armv9-a
+TARGET_ARCH_VARIANT := armv8-a-branchprot
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := generic
@@ -133,7 +133,8 @@ BOARD_KERNEL_PAGESIZE    := 4096
 BOARD_KERNEL_IMAGE_NAME := Image
 
 
-TARGET_KERNEL_ADDITIONAL_FLAGS := TARGET_PRODUCT=$(PRODUCT_DEVICE) KCFLAGS="-fno-stack-protector -Wno-macro-redefined" #-Wno-default-const-init-field-unsafe -Wno-macro-redefined"
+#TARGET_KERNEL_ADDITIONAL_FLAGS := TARGET_PRODUCT=$(PRODUCT_DEVICE) KCFLAGS="-fno-stack-protector -Wno-macro-redefined" #-Wno-default-const-init-field-unsafe -Wno-macro-redefined"
+TARGET_KERNEL_ADDITIONAL_FLAGS := TARGET_PRODUCT=$(PRODUCT_DEVICE)
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8450
 TARGET_KERNEL_CONFIG := \
     gki_defconfig \
@@ -156,7 +157,8 @@ BOARD_KERNEL_CMDLINE := \
 BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
     androidboot.memcg=1 \
-    androidboot.usbcontroller=a600000.dwc3
+    androidboot.usbcontroller=a600000.dwc3 \
+    androidboot.selinux=permissive
 
 # Kernel modules
 first_stage_modules := $(strip $(shell cat $(TARGET_KERNEL_SOURCE)/modules.list.msm.waipio))
