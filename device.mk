@@ -22,6 +22,8 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 # Call the proprietary setup.
 $(call inherit-product, vendor/xiaomi/diting/diting-vendor.mk)
 
+$(call inherit-product, hardware/qcom-caf/common/common.mk)
+
 PRODUCT_SHIPPING_API_LEVEL := 31
 BOARD_SHIPPING_API_LEVEL := 31
 
@@ -565,7 +567,7 @@ PRODUCT_PACKAGES += \
 
 # Parts
 PRODUCT_PACKAGES += \
-    XiaomiDolby \
+    LunarisDolby \
     XiaomiParts
 
 # Partitions
