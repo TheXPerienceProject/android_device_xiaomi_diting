@@ -169,7 +169,6 @@ PRODUCT_PACKAGES_DEBUG += \
     bootctl:64
 
 # Camera
-$(call soong_config_set_bool,camera,override_format_from_reserved,true)
 PRODUCT_PACKAGES += \
     Aperture
 
@@ -353,8 +352,7 @@ PRODUCT_COPY_FILES += \
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl-diting \
-    android.hardware.health@2.1-service \
-    android.hardware.health@2.1-service_recovery
+    android.hardware.health@2.1-service
 
 # HotwordEnrollement
 PRODUCT_COPY_FILES += \
@@ -419,7 +417,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.keystore.app_attest_key.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.keystore.app_attest_key.xml
 
 # Lineage Health
-$(call soong_config_set_bool,lineage_health,charging_control_supports_bypass,false)
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
 
@@ -807,8 +804,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml
 
 PRODUCT_PACKAGES += \
-    vendor.lineage.touch-service.xiaomi
-$(call soong_config_set, XIAOMI_TOUCH, HIGH_TOUCH_POLLING_PATH, /sys/devices/virtual/touch/touch_dev/bump_sample_rate)
+    vendor.xperience.touch@1.0-service.diting
 
 # USB
 PRODUCT_HAS_GADGET_HAL := true

@@ -73,6 +73,8 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 
 # Camera
+TARGET_CAMERA_OVERRIDE_FORMAT_FROM_RESERVED := true
+
 TARGET_BUILD_APERTURE_CAMERA := false
 TARGET_INCLUDES_MIUI_CAMERA := true
 TARGET_USES_MIUI_CAMERA := true
@@ -194,6 +196,9 @@ TARGET_KERNEL_EXT_MODULES := \
 	qcom/opensource/video-driver \
 	qcom/opensource/wlan/qcacld-3.0/.qca6490 \
 	qcom/opensource/wlan/qcacld-3.0/.qca6750
+
+# Lineage Health
+TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
