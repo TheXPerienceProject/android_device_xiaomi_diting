@@ -34,3 +34,8 @@ allow init touchfeature_device:chr_file { read open write ioctl};
 
 # allow to bind brightness
 allow init vendor_sysfs_graphics:file mounton;
+
+recovery_only(`
+allow init proc:file write;
+')
+
