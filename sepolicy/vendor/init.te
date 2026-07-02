@@ -38,4 +38,3 @@ allow init vendor_sysfs_graphics:file mounton;
 recovery_only(`
 allow init proc:file write;
 ')
-
