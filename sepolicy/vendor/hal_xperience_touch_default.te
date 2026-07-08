@@ -12,4 +12,4 @@ allow hal_lineage_touch_default vendor_sysfs_graphics:file r_file_perms;
 allow hal_lineage_touch_default input_device:dir r_dir_perms;
 #allow hal_lineage_touch_default sysfs_devices_cs_etm:dir r_dir_perms;
 #allow hal_lineage_touch_default sysfs_touch_hostprocess:file rw_file_perms;
-allow hal_lineage_touch_default default_android_hwservice:hwservice_manager find;
+allow hal_lineage_touch_default vendor_sysfs_touch:file rw_file_perms;
