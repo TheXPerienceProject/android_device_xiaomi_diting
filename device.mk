@@ -170,7 +170,7 @@ PRODUCT_PACKAGES_DEBUG += \
 
 # Camera
 $(call soong_config_set_bool,camera,override_format_from_reserved,true)
-$(call inherit-product-if-exists, vendor/xiaomi/camera/miuicamera.mk)
+#$(call inherit-product-if-exists, vendor/xiaomi/camera/miuicamera.mk)
 #PRODUCT_PACKAGES += \
     Aperture
 
