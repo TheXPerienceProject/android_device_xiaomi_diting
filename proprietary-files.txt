@@ -1,4 +1,4 @@
-# Unpinned blobs from missi-user-15-AQ3A.241006.001-OS2.0.202.0.VLFMIXM-release-keys
+# Unpinned blobs from OS3.0.4.0.VLFMIXM
 
 # Current blobs with ELF checks disabled:
 # libcne, libmasc, lowi-server, qms depend on libwpa_client, which is a gnu makefile target
@@ -179,8 +179,8 @@ vendor/lib64/soundfx/libshoebox.so
 vendor/lib64/soundfx/libvisualizer.so
 
 # Spatial Audio - from oriole BP1A.250305.019
-vendor/lib/soundfx/libspatialaudio.so
-vendor/lib64/soundfx/libspatialaudio.so
+vendor/lib/soundfx/libspatialaudio.so|16dea6f58d0d3d46e0e7f31bf776bcffafb70ba0
+vendor/lib64/soundfx/libspatialaudio.so|bb09a1d58c46493e0c4ab7feb820cad443c05974
 
 # Batterysecret 
 vendor/bin/batterysecret|c43ff25b0dde6ac7890426ca220503f0ee78f8f5
@@ -1013,7 +1013,7 @@ vendor/lib64/camera/com.qti.sensormodule.diting_ofilm_gc02m1_macro.bin
 vendor/lib64/camera/com.qti.sensormodule.diting_semco_s5khp1_wide.bin|c74a17d0de78907e8ae27c965302b115711414c4
 vendor/lib64/camera/com.qti.sensormodule.diting_sunny_imx596_front.bin
 vendor/lib64/camera/com.qti.sensormodule.diting_sunny_s5k4h7_ultra.bin
-vendor/lib64/camera/com.qti.sensormodule.diting_sunny_s5khm6_wide.bin
+vendor/lib64/camera/com.qti.sensormodule.diting_sunny_s5khm6_wide.bin|83132d46c26cbd520005539693f2e8f7095f7409
 vendor/lib64/camera/com.qti.tuned.default.bin
 vendor/lib64/camera/com.qti.tuned.diting_ofilm_gc02m1_macro.bin
 vendor/lib64/camera/com.qti.tuned.diting_semco_s5khp1_wide.bin
@@ -1031,7 +1031,6 @@ vendor/lib64/libcdsprpc.so
 
 # CIT Sensor
 odm/etc/camera/camerabooster.json
-system_ext/etc/camerabooster.json
 
 # CNE
 vendor/app/CneApp/CneApp.apk;REQUIRED=CneApp.libvndfwk_detect_jni.qti_vendor_symlink
@@ -1076,6 +1075,7 @@ vendor/lib64/libcne.so;DISABLE_CHECKELF
 vendor/lib64/libcneapiclient.so
 vendor/lib64/libcneoplookup.so
 vendor/lib64/libcneqmiutils.so
+vendor/lib64/libjnihelper.so
 vendor/lib64/libmasc.so;DISABLE_CHECKELF
 vendor/lib64/libshsc.so
 vendor/lib64/libwms.so
@@ -1215,12 +1215,12 @@ vendor/bin/qdcmss|727147cbaf4d74f0eb38c534fda9beebdfec31f6
 vendor/etc/init/qdcmss.rc|53d78d686678c4f923a9ec4ace7d4d3575b13788
 vendor/lib64/libbacklight-calib.so|a5990fa87932196f9e2c38b2ec85786daa6b3a9c
 vendor/lib64/libdigital-dimming.so|66506a386dc80da0994c9d4aeac34edfc1830c5c
-vendor/lib64/libdpps.so|d8e9cc561a3ab706697880975413db23bb41640c
+vendor/lib64/libdpps.so|5d3e5f10ce5adff610e67acd837b19a551412876
 vendor/lib64/libmemutils.so|e122c3ff95b10a6263e698261abafe62cee98010
 vendor/lib64/libqdcm-algo.so|e873dc21878d92d20f6937453c9d3265a0d3a93d
 vendor/lib64/libqdcm-json-mode-parser.so|1c8f1a841a877efbed0a0b3db3d551ff1283f14f
 vendor/lib64/libqdcm-mode-parser.so|341178dfb18e03b6fabff27a080fb96f15188942
-vendor/lib64/libsnapdragoncolor-manager.so|72291478bd56bada0fc3df3617e765b28ef54f66
+vendor/lib64/libsnapdragoncolor-manager.so|ba9a38c02dae4cc2211895714969c589faaff1f4
 vendor/lib64/libsnapdragoncolor-qdcm.so|9f0bc72290618324e95cd9f4eca6987a6733bd06
 
 # Display postprocessing - from ingot-user 14 UKQ1.240227.165 release-keys
@@ -1458,18 +1458,9 @@ vendor/lib/libmisight.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.xiaomi.hardware.misight-V1-ndk_platform.so;MODULE_SUFFIX=_vendor
 
 # MiSys
-system/framework/vendor.xiaomi.hardware.misys-V1.0-java.jar
-system/framework/vendor.xiaomi.hardware.misys-V2.0-java.jar
-system/framework/vendor.xiaomi.hardware.misys-V4.0-java.jar
-system/framework/vendor.xiaomi.hardware.misys.V3_0.jar
-system/lib64/libmisys_jni.xiaomi.so
-system/lib64/vendor.xiaomi.hardware.misys@1.0.so
-system/lib64/vendor.xiaomi.hardware.misys@2.0.so
-system/lib64/vendor.xiaomi.hardware.misys@3.0.so
-system/lib64/vendor.xiaomi.hardware.misys@4.0.so
-system_ext/framework/vendor.xiaomi.hardware.misys.common-V1-java.jar
 system_ext/lib/vendor.xiaomi.hardware.misys.common-V1-ndk.so
 system_ext/lib64/vendor.xiaomi.hardware.misys.common-V1-ndk.so
+system_ext/lib64/vendor.xiaomi.hardware.misys.common-V3-ndk.so
 vendor/bin/hw/vendor.xiaomi.hardware.misys@1.0-service
 vendor/bin/hw/vendor.xiaomi.hardware.misys@2.0-service
 vendor/bin/hw/vendor.xiaomi.hardware.misys@3.0-service
@@ -1625,8 +1616,8 @@ vendor/firmware/a730_zap.mdt
 vendor/firmware/gmu_gen70000.bin
 
 # HotwordEnrollment
-product/priv-app/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND.apk|cf8c9894a7fc488cf046e77f3b26d3972410c7d1
-product/priv-app/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND.apk|5fb2b8661d994ceed732975929555fea481c92ed
+product/priv-app/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND.apk|1f9eb653ab838483ca643976bd9d7aca02755bf5
+product/priv-app/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND.apk|194bbcc27ebad3952294fc3617b2a23db92e767a
 system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml|99cfd80965c170f4885a7dd62c0eaad1a0c7840f
 system_ext/framework/com.android.hotwordenrollment.common.util.jar|a418f5697951468fb93788b6e92d2912e7ae7149
 
@@ -1851,7 +1842,7 @@ system_ext/bin/qspmsvc
 system_ext/etc/init/perfservice.rc
 system_ext/etc/init/qspmsvc.rc
 system_ext/etc/perf/wlc_model.tflite
-system_ext/etc/permissions/privapp-permissions-com.qualcomm.qti.performancemode.xml
+system_ext/etc/permissions/privapp-permissions-com.qualcomm.qti.performancemode.xml|00d2aba6697be44b7673db999a68a071fa065d11
 system_ext/etc/seccomp_policy/perfservice.policy
 system_ext/lib/libbeluga.so
 system_ext/lib/libcomposerextn.qti.so
@@ -1877,7 +1868,7 @@ system_ext/lib/vendor.qti.hardware.perf@2.1.so
 system_ext/lib/vendor.qti.hardware.perf@2.2.so
 system_ext/lib/vendor.qti.hardware.perf@2.3.so
 system_ext/lib/vendor.qti.qspmhal@1.0.so
-system_ext/lib/vendor.qti.qspmhal-V1-ndk.so
+#system_ext/lib/vendor.qti.qspmhal-V1-ndk.so
 system_ext/lib64/libbeluga.so
 system_ext/lib64/libcomposerextn.qti.so
 system_ext/lib64/libdolphin.so
@@ -2064,7 +2055,7 @@ system_ext/lib64/libqccdme.so|c05eb3ae79142a0d7bef3664028560a257872c8d
 system_ext/lib64/libqccfileservice.so|8f46735705105dcd1237f45e311378512a844b4e
 system_ext/lib64/vendor.qti.hardware.qccsyshal@1.0.so|196bce8c481180705cc04074af4fd8362f15f6d9
 system_ext/lib64/vendor.qti.hardware.qccsyshal@1.1.so|cb060471bccda79a173bd26f58aea0e7162d65eb
-system_ext/lib64/vendor.qti.hardware.qccsyshal@1.2-halimpl.so|9663f4512a1e33956a9a348ac19b139ddfe02ee6
+system_ext/lib64/vendor.qti.hardware.qccsyshal@1.2-halimpl.so|f4852b7274b4dad270b10c0114af6c5fc8a85be8
 system_ext/lib64/vendor.qti.hardware.qccsyshal@1.2.so|db1ea124c0f42fcc1a814d69308d4f9522012e1b
 system_ext/lib64/vendor.qti.hardware.qccvndhal@1.0.so|15a47e8d6f3746e3cb3baa91577f206a1089edd5
 system_ext/lib64/vendor.qti.qccvndhal_aidl-V1-ndk.so|ffccfde321f48e390c5af8d546e1c7cdf23f9152
@@ -2130,12 +2121,12 @@ vendor/lib64/libqmiservices.so
 vendor/bin/vendor.qti.qspmhal@1.0-service
 vendor/etc/init/vendor.qti.qspmhal@1.0-service.rc
 vendor/etc/seccomp_policy/qspm.policy
-vendor/lib/vendor.qti.qspmhal-V1-ndk.so;MODULE_SUFFIX=_vendor
+#vendor/lib/vendor.qti.qspmhal-V1-ndk.so;MODULE_SUFFIX=_vendor
 vendor/lib/vendor.qti.qspmhal@1.0-impl.so
 vendor/lib/vendor.qti.qspmhal@1.0.so;MODULE_SUFFIX=_vendor
-vendor/lib64/vendor.qti.qspmhal-V1-ndk.so;MODULE_SUFFIX=_vendor
+#vendor/lib64/vendor.qti.qspmhal-V1-ndk.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.qspmhal@1.0-impl.so
-vendor/lib64/vendor.qti.qspmhal@1.0.so;MODULE_SUFFIX=_vendor
+#vendor/lib64/vendor.qti.qspmhal@1.0.so;MODULE_SUFFIX=_vendor
 
 # RIL
 product/app/uimgbaservice/uimgbaservice.apk
@@ -2147,7 +2138,6 @@ product/framework/uimgbamanagerlibrary.jar
 product/framework/uimservicelibrary.jar
 system_ext/app/AtFwd2/AtFwd2.apk
 system_ext/app/DeviceInfo/DeviceInfo.apk
-system_ext/app/DeviceStatisticsService/DeviceStatisticsService.apk
 system_ext/app/DynamicDDSService/DynamicDDSService.apk
 system_ext/app/ImsDataChannelService/ImsDataChannelService.apk
 system_ext/app/ImsRcsService/ImsRcsService.apk

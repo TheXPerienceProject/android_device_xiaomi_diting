@@ -85,7 +85,7 @@ blob_fixups: blob_fixups_user_type = {
     'system_ext/lib64/libwfdservice.so': blob_fixup()
         .add_needed('libaudiobase.so')
         .replace_needed(
-            'android.media.audio.common.types-V4-cpp.so',
+            'android.media.audio.common.types-V2-cpp.so',
             'android.media.audio.common.types-V5-cpp.so',
         ),
     ('vendor/etc/camera/diting_enhance_motiontuning.xml','vendor/etc/camera/diting_motiontuning.xml',): blob_fixup()
@@ -109,6 +109,15 @@ blob_fixups: blob_fixups_user_type = {
             'android.hardware.security.sharedsecret-V1-ndk.so',
         )
         .add_needed('android.hardware.security.rkp-V1-ndk.so'),
+    ('vendor/lib64/libqtiidentitycredential.so','vendor/bin/hw/android.hardware.identity-service-qti'): blob_fixup()
+        .replace_needed(
+            'android.hardware.identity-V3-ndk_platform.so',
+            'android.hardware.identity-V3-ndk.so',
+        )
+        .replace_needed(
+            'android.hardware.keymaster-V3-ndk_platform.so',
+            'android.hardware.keymaster-V3-ndk.so',
+        ),
     ('vendor/lib/c2.dolby.client.so', 'vendor/lib64/c2.dolby.client.so'): blob_fixup()
         .add_needed('libcodec2_hidl_shim.so'),
     'vendor/lib64/hw/displayfeature.default.so': blob_fixup()
@@ -133,8 +142,8 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib/c2.dolby.client.so': blob_fixup()
         .replace_needed('libcodec2_vndk.so', 'libcodec2_vndk_vendor.so',)
         .replace_needed('libcodec2_hidl@1.0.so', 'libcodec2_hidl@1.0_vendor.so',),
-    'vendor/etc/msm_irqbalance.conf': blob_fixup()
-        .replace_needed('IGNORED_IRQ=27,23,38', 'IGNORED_IRQ=27,23,38,115,332'),
+    #'vendor/etc/msm_irqbalance.conf': blob_fixup()
+    #    .replace_needed('IGNORED_IRQ=27,23,38', 'IGNORED_IRQ=27,23,38,115,332'),
     ('vendor/lib/vendor.libdpmframework.so','vendor/lib64/vendor.libdpmframework.so'): blob_fixup()
         .add_needed('libhidlbase_shim.so')
         .replace_needed('libhidlbase.so','libhidlbase-v32.so'),
@@ -182,6 +191,7 @@ module = ExtractUtilsModule(
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,
     namespace_imports=namespace_imports,
+    add_firmware_proprietary_file=True,
 )
 
 if __name__ == '__main__':

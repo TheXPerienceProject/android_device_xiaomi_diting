@@ -200,6 +200,8 @@ on early-boot
     #write /sys/kernel/cnss/recovery 1
     start vendor.sensors
     verity_update_state
+    # Wait for ADSP FastRPC device before dependent services
+    wait /dev/fastrpc-adsp 2
 
 on boot
     chown system system /sys/class/thermal/thermal_message/sconfig

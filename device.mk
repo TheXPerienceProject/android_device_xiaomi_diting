@@ -742,6 +742,8 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
+    kernel/xiaomi/sm8450 \
+    kernel/xiaomi/sm8450-modules \
     hardware/xiaomi
 
 # Spatial Audio

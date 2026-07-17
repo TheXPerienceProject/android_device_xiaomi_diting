@@ -57,3 +57,4 @@ allow hal_camera_default system_prop:file { open read getattr };
 
 # Allow Camera HAL to read serial number property
 allow hal_camera_default serialno_prop:file read;
+get_prop(hal_camera_default, serialno_prop)
