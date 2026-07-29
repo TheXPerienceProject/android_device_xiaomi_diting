@@ -63,7 +63,7 @@
             <instance>default</instance>
         </interface>
         <interface>
-            <name>IColorEnhancement</name>
+            <name>IColorEnhancement</name>android.hardware.health
             <instance>default</instance>
         </interface>
         <interface>
@@ -213,6 +213,22 @@
         </interface>
         <interface>
             <name>ITouchscreenGesture</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>android.hardware.health</name>
+        <version>2.1</version>
+        <interface>
+            <name>IHealth</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>android.hardware.ir</name>
+        <version>1.0</version>
+        <interface>
+            <name>IConsumerIr</name>
             <instance>default</instance>
         </interface>
     </hal>
