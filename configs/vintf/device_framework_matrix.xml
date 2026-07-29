@@ -232,4 +232,9 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.ir</name>
+        <version>1</version>
+        <fqname>IConsumerIr/default</fqname>
+    </hal>
 </compatibility-matrix>
