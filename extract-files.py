@@ -142,8 +142,8 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib/c2.dolby.client.so': blob_fixup()
         .replace_needed('libcodec2_vndk.so', 'libcodec2_vndk_vendor.so',)
         .replace_needed('libcodec2_hidl@1.0.so', 'libcodec2_hidl@1.0_vendor.so',),
-    #'vendor/etc/msm_irqbalance.conf': blob_fixup()
-    #    .replace_needed('IGNORED_IRQ=27,23,38', 'IGNORED_IRQ=27,23,38,115,332'),
+    'vendor/etc/msm_irqbalance.conf': blob_fixup()
+        .regex_replace(r'(IGNORED_IRQ=27,23,38)$',r'\1,115,332'),
     ('vendor/lib/vendor.libdpmframework.so','vendor/lib64/vendor.libdpmframework.so'): blob_fixup()
         .add_needed('libhidlbase_shim.so')
         .replace_needed('libhidlbase.so','libhidlbase-v32.so'),
