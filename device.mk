@@ -199,6 +199,7 @@ PRODUCT_COPY_FILES += \
 
 # Codec2
 PRODUCT_PACKAGES += \
+    dolbycodec2 \
     libqti_c2_store_abi_check
 
 # Display

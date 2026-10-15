@@ -1285,7 +1285,7 @@ system_ext/lib64/libmpeg4pro.so|9045492a672b30e0e420909f552f2828d6b5dde7
 vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service|eb3dfe12845201eec35d3ceb0c18e8eb8e877a0f
 vendor/etc/dolby/dax-default.xml|6081c6470f337f900e01526e0ea5150910c04f90
 vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc|29296ebfe89b2697fec573be73cc3757fd97bed6
-vendor/etc/init/vendor.dolby.media.c2@1.0-service.rc|1ea8b363e94fd4f5410cadceb30de8229fb38045
+#vendor/etc/init/vendor.dolby.media.c2@1.0-service.rc|1ea8b363e94fd4f5410cadceb30de8229fb38045
 vendor/etc/media_codecs_dolby_audio.xml|a794eb15fc198d0285510260025cd99b53fa174f
 vendor/etc/vintf/manifest/manifest_vendor.dolby.hardware.dms.xml|e14caab9b769e58a993583c0486d58b30249ca92
 vendor/lib/libdeccfg.so|ddda752fe04aeb90c94ccc950b1c0cd07f7be804
@@ -1309,7 +1309,7 @@ vendor/lib64/vendor.dolby.hardware.dms@2.0.so|975fee7ab5d90b6e66984d9f67f198c3a4
 
 
 # Dolby Vision - from diting
-vendor/bin/hw/dolbycodec2|10ddf8bc38a85054eb2b352823e7befe754ea2ff
+#vendor/bin/hw/dolbycodec2|10ddf8bc38a85054eb2b352823e7befe754ea2ff
 vendor/etc/dolby_vision.cfg|abca2cc759c13415afc5f88932a04818886e55a4
 #vendor/etc/init/dolbycodec2.rc
 vendor/lib/c2.dolby.avc.dec.so

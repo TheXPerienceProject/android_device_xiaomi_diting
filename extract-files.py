@@ -120,7 +120,9 @@ blob_fixups: blob_fixups_user_type = {
             'libstagefright_foundation.so',
             'libstagefright_foundation-v33.so',
         ),
-    ('vendor/bin/hw/dolbycodec2', 'vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service', 'vendor/bin/hw/vendor.dolby.media.c2@1.0-service'): blob_fixup()
+    'vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service': blob_fixup()
+        .add_needed('libstagefright_foundation-v33.so'),
+    'vendor/bin/hw/vendor.dolby.media.c2@1.0-service': blob_fixup()
         .add_needed('libstagefright_foundation-v33.so'),
     ('vendor/lib64/hw/audio.primary.taro.so', 'vendor/lib64/hw/audio.primary.taro.so'): blob_fixup()
         .replace_needed(
