@@ -9,7 +9,7 @@ cc_binary {
     relative_install_path: "hw",
     compile_multilib: "64",
     init_rc: ["vendor.dolby.media.c2@1.0-service.rc"],
-    vintf_fragments: ["vendor.dolby.media.c2@1.0-service.xml"],
+    //vintf_fragments: ["vendor.dolby.media.c2@1.0-service.xml"],
     srcs: ["service.cpp"],
     shared_libs: [
         "android.hardware.media.c2@1.0",
