@@ -198,6 +198,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml
 
 # Codec2
+$(call soong_config_set_bool,codec2_compat,legacy_dolby_igba,true)
 PRODUCT_PACKAGES += \
     dolbycodec2 \
     libqti_c2_store_abi_check

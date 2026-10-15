@@ -317,7 +317,9 @@ persist.vendor.audio.spatializer.speaker_enabled=true
 ro.vendor.audio.feature.spatial=7
 
 # Dolby Vision
-ro.vendor.audio.dolby.vision.support=true
+ro.vendor.display.dolbyvision.support=true
+persist.vendor.dolbyvision.flat_on=true
+debug.config.media.video.dolby_vision_supports=true
 debug.config.media.video.dolby_vision_suports=true
 
 # DPM
