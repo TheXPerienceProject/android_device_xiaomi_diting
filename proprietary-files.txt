@@ -1,4 +1,4 @@
-# Unpinned blobs from OS3.0.4.0.VLFMIXM
+# Unpinned blobs from OS3.0.7.0.VLFMIXM
 
 # Current blobs with ELF checks disabled:
 # libcne, libmasc, lowi-server, qms depend on libwpa_client, which is a gnu makefile target

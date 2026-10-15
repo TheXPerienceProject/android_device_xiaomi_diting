@@ -10,8 +10,8 @@
 
 #include "vendor_init.h"
 
-#define FINGERPRINT_GL "Xiaomi/diting/diting:12/SKQ1.230401.001/OS2.0.5.0.VLFCNXM:user/release-keys"
-#define FINGERPRINT_CN "Xiaomi/diting/diting:12/SKQ1.230401.001/OS2.0.5.0.VLFCNXM:user/release-keys"
+#define FINGERPRINT_GL "Xiaomi/diting/diting:12/SKQ1.230401.001/OS3.0.7.0.VLFMIXM:user/release-keys"
+#define FINGERPRINT_CN "Xiaomi/diting/diting:12/SKQ1.230401.001/OS3.0.4.0.VLFCNXM:user/release-keys"
 #define FINGERPRINT_JP "Xiaomi/ditingp_jp/diting:12/SKQ1.230401.001/OS2.0.5.0.VLFCNXM:user/release-keys"
 #define FINGERPRINT_RU "Xiaomi/ditingp_ru/diting:13/SKQ1.230401.001/OS2.0.5.0.VLFCNXM:user/release-keys"
 
