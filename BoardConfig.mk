@@ -108,9 +108,6 @@ PRODUCT_COPY_FILES += \
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config/config.fs
 
-# Firmware
--include vendor/xiaomi/diting-firmware/BoardConfigVendor.mk
-
 # GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
 $(call soong_config_set, qtilocation, feature_nhz, false)
