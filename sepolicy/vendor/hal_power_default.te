@@ -1,0 +1,3 @@
+hal_client_domain(hal_power_default, hal_graphics_composer)
+
+allow hal_power_default vendor_hal_vnddisplayconfig_service:service_manager find;
