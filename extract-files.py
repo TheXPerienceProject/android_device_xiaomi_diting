@@ -129,6 +129,16 @@ blob_fixups: blob_fixups_user_type = {
             'libstagefright_foundation.so',
             'libstagefright_foundation-v33.so',
         ),
+    (
+        'vendor/lib/soundfx/libhwdap.so',
+        'vendor/lib64/soundfx/libhwdap.so',
+        'vendor/lib/soundfx/libmisoundfx.so',
+        'vendor/lib64/soundfx/libmisoundfx.so',
+    ): blob_fixup()
+        .replace_needed(
+            'libstagefright_foundation.so',
+            'libstagefright_foundation-v33.so',
+        ),
     'vendor/lib/libcodec2_hidl@1.0_vendor.so': blob_fixup()
         .replace_needed('libcodec2_vndk.so', 'libcodec2_vndk_vendor.so',)
         .fix_soname()
