@@ -42,4 +42,11 @@ void set_variant_props(const variant_info_t variant) {
         property_override("bluetooth.device.default_name", variant.marketname, true);
         property_override("ro.build.description", fingerprint_to_description(variant.build_fingerprint));
     }
+
+    if (!variant.front_cam.empty()) {
+        property_override("ro.device.front_cam", variant.front_cam, true);
+    }
+    if (!variant.rear_cam.empty()) {
+        property_override("ro.device.rear_cam", variant.rear_cam, true);
+    }
 }

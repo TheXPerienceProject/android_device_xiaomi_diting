@@ -25,6 +25,9 @@ static const variant_info_t diting_global_info = {
     .model = "22081212G",
     .mod_device = "ditingp_global",
     .build_fingerprint = FINGERPRINT_GL,
+
+    .front_cam = "20MP",
+    .rear_cam = "200MP + 8MP + 2MP",
 };
 
 static const variant_info_t diting_info = {
@@ -37,6 +40,9 @@ static const variant_info_t diting_info = {
     .model = "22081212C",
     .mod_device = "diting_global",
     .build_fingerprint = FINGERPRINT_CN,
+
+    .front_cam = "20MP",
+    .rear_cam = "108MP + 8MP + 2MP",
 };
 
 static const variant_info_t ditingp_info = {
@@ -49,6 +55,9 @@ static const variant_info_t ditingp_info = {
     .model = "22081212R",
     .mod_device = "diting_global",
     .build_fingerprint = FINGERPRINT_JP,
+
+    .front_cam = "20MP",
+    .rear_cam = "200MP + 8MP + 2MP",
 };
 
 static const variant_info_t diting_ru_info = {
@@ -61,6 +70,9 @@ static const variant_info_t diting_ru_info = {
     .model = "22081212UG",
     .mod_device = "diting_global",
     .build_fingerprint = FINGERPRINT_RU,
+
+    .front_cam = "20MP",
+    .rear_cam = "200MP + 8MP + 2MP",
 };
 
 static const std::vector<variant_info_t> variants = {

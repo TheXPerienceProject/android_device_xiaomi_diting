@@ -21,6 +21,8 @@ typedef struct variant_info {
     std::string mod_device;
     std::string build_fingerprint;
 
+    std::string front_cam;
+    std::string rear_cam;
 } variant_info_t;
 
 void search_variant(const std::vector<variant_info_t> variants);
