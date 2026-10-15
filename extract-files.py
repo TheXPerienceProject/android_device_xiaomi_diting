@@ -213,6 +213,9 @@ blob_fixups: blob_fixups_user_type = {
     ): blob_fixup().binary_regex_replace(
         b'\x00\x21\x80\x52', b'\x00\x24\x80\x52',
     ),
+    'vendor/lib64/libdolbyvision.so': blob_fixup().binary_regex_replace(
+        b'\x00\x20\x80\x52', b'\x00\x00\x82\x52',
+    ),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
